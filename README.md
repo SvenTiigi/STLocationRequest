@@ -15,7 +15,7 @@ STLocationRequest is a UIViewController Extension which is used to request the u
 
 ## Usage
 
-To show the STLocationRequestController simply call 
+To show the STLocationRequestController simply call  
 
 ```swift
 import STLocationRequest
