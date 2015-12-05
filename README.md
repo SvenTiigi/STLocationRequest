@@ -30,22 +30,22 @@ Also you can add NSNotificationObserver to get notified what the user tapped
 
 ```swift
 override func viewDidLoad() {
-super.viewDidLoad()
-NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestNotNow", name: "locationRequestNotNow", object: nil)
-NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestAuthorized", name: "locationRequestAuthorized", object: nil)
-NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestDenied", name: "locationRequestDenied", object: nil)
+    super.viewDidLoad()
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestNotNow", name: "locationRequestNotNow", object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestAuthorized", name: "locationRequestAuthorized", object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestDenied", name: "locationRequestDenied", object: nil)
 }
 
 func locationRequestNotNow(){
-print("The user cancled the locationRequestScreen")
+    print("The user cancled the locationRequestScreen")
 }
 
 func locationRequestAuthorized(){
-print("Location service is allowed by the user. You have now access to the user location")
+    print("Location service is allowed by the user. You have now access to the user location")
 }
 
 func locationRequestDenied(){
-print("Location service are denied by the user")
+    print("Location service are denied by the user")
 }
 
 ```
