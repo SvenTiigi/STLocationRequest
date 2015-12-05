@@ -1,0 +1,17 @@
+PODS:
+  - Font-Awesome-Swift (1.4.3)
+  - STLocationRequest (0.1.0):
+    - Font-Awesome-Swift (~> 1.4.3)
+
+DEPENDENCIES:
+  - STLocationRequest (from `../`)
+
+EXTERNAL SOURCES:
+  STLocationRequest:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Font-Awesome-Swift: fb4184509f353a648324d88b0f3dd3cf1d6162bf
+  STLocationRequest: 768a0b0975e548070c3fc29659ac715db9ea2732
+
+COCOAPODS: 0.39.0
