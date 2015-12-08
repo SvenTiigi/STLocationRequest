@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/cocoapods/l/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
 [![Platform](https://img.shields.io/cocoapods/p/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
 
-STLocationRequest is a UIViewController-Extension which is used to request the User-Location in a simple and elegent way, at the very first time, written in Swift. It shows a beautiful 3D 360 degree Flyover-MapView which shows 13 random citys or landmarks.
+STLocationRequest is a UIViewController-Extension which is used to request the User-Location, at the very first time, in a simple and elegent way written in Swift. It shows a beautiful 3D 360 degree Flyover-MapView which shows 13 random citys or landmarks.
 
 <p align="center">
 <img src="./Preview/STLocationRequest.gif" alt="STLocationRequest" title="STLocationRequest">
@@ -21,13 +21,15 @@ To show the `STLocationRequest` Controller simply call
 ```swift
 import STLocationRequest
 
-self.showLocationRequestController(setTitle: "We need your location for some awesome features", setAllowButtonTitle: "Alright", setNotNowButtonTitle: "Not now", setMapViewAlphaValue: 0.7, setBackgroundViewColor: UIColor.lightGrayColor())
+func showLocationRequest(){
+    self.showLocationRequestController(setTitle: "We need your location for some awesome features", setAllowButtonTitle: "Alright", setNotNowButtonTitle: "Not now", setMapViewAlphaValue: 0.7, setBackgroundViewColor: UIColor.lightGrayColor())
+}
 
 ```
 
 To match with your design of your app, simply playaround with the parameters `setMapViewAlphaValue` and `setBackgroundViewColor` to get your very own design.
 
-Also you can add `NSNotificationObserver` to get notified what the user tapped a button
+Also you can add `NSNotificationObserver` to get notified what the user tapped a `UIButton`
 
 ```swift
 override func viewDidLoad() {
