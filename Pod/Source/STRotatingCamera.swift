@@ -4,7 +4,7 @@
 //
 //  Created by Sven Tiigi on 03.12.15.
 //
-//
+// inspired by https://github.com/fernandospr/FSRotatingCamera
 
 import UIKit
 import MapKit
@@ -48,7 +48,6 @@ class STRotatingCamera: NSObject {
         self.headingStep = headingStep
     }
     
-  
     func startRotatingWithCoordinate(coordinate : CLLocationCoordinate2D){
         self.startRotatingWithCoordinate(coordinate, heading: self.DEFAULT_HEADING, pitch: self.DEFAULT_PITCH, altitude: self.DEFAULT_ALTITUDE, headingStep: self.DEFAULT_HEADING_STEP)
     }
@@ -74,5 +73,4 @@ class STRotatingCamera: NSObject {
             }, completion: nil)
         }
     }
-    
 }
