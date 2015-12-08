@@ -1,16 +1,13 @@
-
 <p align="center">
 <img width=300 src="./Preview/STLocationRequest_AppIcon.jpg" alt="STLocationRequestAppIcon" title="STLocationRequestAppIcon">
 </p>
-
 # STLocationRequest
 
 [![Version](https://img.shields.io/cocoapods/v/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
 [![License](https://img.shields.io/cocoapods/l/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
 [![Platform](https://img.shields.io/cocoapods/p/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
 
-STLocationRequest is a UIViewController Extension which is used to request the user location at the very first time written in Swift.
-
+STLocationRequest is a UIViewController-Extension which is used to request the User-Location in a simple and elegent way, at the very first time, written in Swift. It shows a beautiful 3D 360 degree Flyover-MapView which shows 13 random citys or landmarks.
 
 <p align="center">
 <img src="./Preview/STLocationRequest.gif" alt="STLocationRequest" title="STLocationRequest">
@@ -55,6 +52,10 @@ func locationRequestDenied(){
 ```
 
 For more details check out the example application
+
+## Simulator
+
+Please mind that the 3D Flyover-View will only work on a real iOS device (not in the Simulator) with at least iOS 9.0 installed. A 2D fallback for Simulator or iOS 8.0 devices is already integrated.
 
 
 ## Installation
