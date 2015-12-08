@@ -29,7 +29,7 @@ func showLocationRequest(){
 
 To match with your design of your app, simply playaround with the parameters `setMapViewAlphaValue` and `setBackgroundViewColor` to get your very own design.
 
-Also you can add `NSNotificationObserver` to get notified what the user tapped a `UIButton`
+Also you can add `NSNotificationObserver` to get notified if the user has authorized or denied the Location Services or if the user has tapped the _Not-Now Button_.
 
 ```swift
 override func viewDidLoad() {
