@@ -30,10 +30,10 @@ func showLocationRequest(){
 To match with your design of your app, simply playaround with the parameters `setMapViewAlphaValue` and `setBackgroundViewColor` to get your very own design.
 
 <p align="center">
-<img width=100 src="./Preview/STLocationRequest_Purple.png" alt="STLocationRequest" title="STLocationRequest">
-<img width=100 src="./Preview/STLocationRequest_Green.png" alt="STLocationRequest" title="STLocationRequest">
-<img width=100 src="./Preview/STLocationRequest_Orange.png" alt="STLocationRequest" title="STLocationRequest">
-<img width=100 src="./Preview/STLocationRequest_Red.png" alt="STLocationRequest" title="STLocationRequest">
+<img width=200 src="./Preview/STLocationRequest_Purple.jpg" alt="STLocationRequest" title="STLocationRequest">
+<img width=200 src="./Preview/STLocationRequest_Green.jpg" alt="STLocationRequest" title="STLocationRequest">
+<img width=200 src="./Preview/STLocationRequest_Orange.jpg" alt="STLocationRequest" title="STLocationRequest">
+<img width=200 src="./Preview/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
 </p>
 
 Also you can add `NSNotificationObserver` to get notified if the user has authorized or denied the Location Services or if the user has tapped the _Not-Now Button_.
