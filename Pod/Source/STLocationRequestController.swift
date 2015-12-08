@@ -44,6 +44,7 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
     */
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Setting the text for UILabel and UIButtons
         self.descriptionLabel.text = self.titleLabelText
         self.allowButton.setTitle(allowButtonTitle, forState: UIControlState.Normal)

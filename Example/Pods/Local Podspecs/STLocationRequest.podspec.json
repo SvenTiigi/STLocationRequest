@@ -19,7 +19,7 @@
   "source_files": "Pod/Source/**/*",
   "resource_bundles": {
     "STLocationRequest": [
-      "Pod/Assets/*.png"
+      "Pod/Assets/*.storyboard"
     ]
   },
   "frameworks": [

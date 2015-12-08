@@ -26,6 +26,6 @@ Pod::Spec.new do |s|
     s.frameworks = 'UIKit', 'MapKit'
     s.dependency 'Font-Awesome-Swift', '~> 1.4.3'
     s.resource_bundles = {
-        'STLocationRequest' => ['Pod/Assets/*.{lproj,storyboard}']
+        'STLocationRequest' => ['Pod/Assets/*.storyboard']
     }
 end

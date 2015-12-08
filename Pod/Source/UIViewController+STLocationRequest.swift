@@ -14,10 +14,11 @@ extension UIViewController {
         UIViewController extension for showing the LocationRequestScreen
     */
     public func showLocationRequestController(setTitle title: String,setAllowButtonTitle allowButtonTitle : String,setNotNowButtonTitle notNowButtonTitle : String,setMapViewAlphaValue mapViewAlphaValue:CGFloat,setBackgroundViewColor backgroundViewColor: UIColor){
-        // Create a Bundle
-        let frameworkBundle = NSBundle(identifier: "org.cocoapods.STLocationRequest")
+        // Create the Bundle Path for Resources
+        let bundlePath = NSBundle(forClass: STLocationRequestController.self).pathForResource("STLocationRequest", ofType: "bundle")
+        let bundle = NSBundle(path: bundlePath!)
         // Get the Storyboard File
-        let stb = UIStoryboard(name: "StoryboardLocationRequest", bundle:frameworkBundle)
+        let stb = UIStoryboard(name: "StoryboardLocationRequest", bundle:bundle)
         // Instantiate the ViewController by Identifer as STLocationRequestController
         let locationRequestViewController = stb.instantiateViewControllerWithIdentifier("locationRequestController") as! STLocationRequestController
         // Passing the parameters Values
