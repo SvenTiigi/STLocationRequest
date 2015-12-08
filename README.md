@@ -17,7 +17,7 @@ STLocationRequest is a UIViewController-Extension which is used to request the U
 
 ## Usage
 
-To show the `STLocationRequest` Controller simply call 
+To show the `STLocationRequest`-Controller simply call 
 
 ```swift
 import STLocationRequest
@@ -37,7 +37,7 @@ To match with your design of your app, simply playaround with the parameters `se
 <img width=200 src="./Preview/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
 </p>
 
-Also you can add `NSNotificationObserver` to get notified if the user has authorized or denied the Location Services or if the user has tapped the _Not-Now Button_.
+Also you can add `NSNotificationObserver` to get notified if the user has authorized or denied the Location Services or if the user just tapped the _Not-Now_ Button.
 
 ```swift
 override func viewDidLoad() {
