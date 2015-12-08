@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = "STLocationRequest"
-    s.version          = "0.1.0"
+    s.version          = "0.1.1"
     s.summary          = "A simple and elegant way to request the user location"
     s.description  = <<-DESC
                         A simple user interface to request the user location. With nice citys and a rotating 3D Map View
