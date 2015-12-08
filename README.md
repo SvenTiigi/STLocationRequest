@@ -1,7 +1,6 @@
 
 <p align="center">
-<img width=350 src="./Preview/STLocationRequest_AppIcon.jpg" alt="STLocationRequestAppIcon" title="STLocationRequestAppIcon">
-
+<img width=200 src="./Preview/STLocationRequest_AppIcon.jpg" alt="STLocationRequestAppIcon" title="STLocationRequestAppIcon">
 </p>
 
 # STLocationRequest
