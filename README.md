@@ -60,8 +60,15 @@ func locationRequestDenied(){
 }
 
 ```
+Also don't forget to add the following key to your `Info.plist`
 
-For more details check out the example application
+```swift
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
+```
+This text will show in the standard iOS Location-Request-Dialog which will show up, when the user tapped the allow button
+
+For more details check out the example application.
 
 ## Simulator
 
