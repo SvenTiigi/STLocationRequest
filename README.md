@@ -48,7 +48,7 @@ override func viewDidLoad() {
 }
 
 func locationRequestNotNow(){
-    print("The user cancled the locationRequestScreen")
+    print("The user canceled the locationRequestScreen")
 }
 
 func locationRequestAuthorized(){
