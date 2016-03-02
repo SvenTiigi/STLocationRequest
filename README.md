@@ -98,7 +98,6 @@ pod "STLocationRequest"
 ## Author
 
 Sven Tiigi
-
 http://sven.tiigi.de
 
 ## License
