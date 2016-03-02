@@ -57,14 +57,6 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		self.mapView.alpha = self.mapViewAlphaValue
 		self.view.backgroundColor = self.backgroundViewColor
 		
-		// Set the appearence of the mapView
-		self.mapView.delegate = self
-		self.mapView.zoomEnabled = false
-		self.mapView.scrollEnabled = false
-		self.mapView.userInteractionEnabled = false
-		self.mapView.showsBuildings = true
-		self.mapView.pitchEnabled = true
-		
 		// Check if SatelliteFlyover is avaible
 		if #available(iOS 9.0, *) {
 			self.mapView.mapType = .SatelliteFlyover
