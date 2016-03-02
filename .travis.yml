@@ -6,7 +6,6 @@ language: objective-c
 cache: cocoapods
 podfile: Example/Podfile
 before_install:
-- gem install cocoapods 
 - pod install --project-directory=Example
 script:
 - set -o pipefail && xcodebuild test -workspace Example/STLocationRequest.xcworkspace -scheme STLocationRequest-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
