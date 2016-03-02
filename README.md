@@ -24,7 +24,12 @@ To show the `STLocationRequest`-Controller simply call
 import STLocationRequest
 
 func showLocationRequest(){
-    self.showLocationRequestController(setTitle: "We need your location for some awesome features", setAllowButtonTitle: "Alright", setNotNowButtonTitle: "Not now", setMapViewAlphaValue: 0.7, setBackgroundViewColor: UIColor.lightGrayColor())
+    self.showLocationRequestController(
+						setTitle: "We need your location for some awesome features",
+						setAllowButtonTitle: "Alright",
+						setNotNowButtonTitle: "Not now",
+						setMapViewAlphaValue: 0.9,
+						setBackgroundViewColor: UIColor.lightGrayColor())
 }
 
 ```
