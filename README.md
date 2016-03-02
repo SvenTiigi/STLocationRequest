@@ -91,10 +91,6 @@ it, simply add the following line to your Podfile:
 pod "STLocationRequest"
 ```
 
-## Dependency
-
-* Font-Awesome-Swift (https://github.com/Vaberer/Font-Awesome-Swift)
-
 ## Author
 
 Sven Tiigi (http://sven.tiigi.de)
