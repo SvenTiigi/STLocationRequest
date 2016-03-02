@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User-Location-Address:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inr-gK-VtC">
-                                <rect key="frame" x="197" y="479" width="206" height="20.5"/>
+                                <rect key="frame" x="197" y="479" width="206" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="piW-IH-bPr"/>
                                 </constraints>
@@ -37,10 +37,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-Nh-KhA">
-                                <rect key="frame" x="20" y="141.5" width="560" height="317"/>
+                                <rect key="frame" x="20" y="143" width="560" height="315"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wla-WH-Ofj">
-                                <rect key="frame" x="20" y="37" width="560" height="71.5"/>
+                                <rect key="frame" x="20" y="37" width="560" height="73"/>
                                 <state key="normal" title="Request Location">
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
