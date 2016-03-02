@@ -23,6 +23,7 @@
                             </mapView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ0-E0-6Gc">
                                 <rect key="frame" x="44" y="434" width="512" height="63"/>
+                                <color key="backgroundColor" white="1" alpha="0.084186422413793108" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="TtP-1M-LAP"/>
                                 </constraints>
@@ -34,6 +35,7 @@
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inn-4H-eK6">
                                 <rect key="frame" x="44" y="517" width="512" height="63"/>
+                                <color key="backgroundColor" white="1" alpha="0.080000000000000002" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Not now"/>
                                 <connections>
