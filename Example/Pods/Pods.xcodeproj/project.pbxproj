@@ -257,8 +257,8 @@
 		64A139CF04196A1EDED6983DEF509C28 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				4532804E26F87765A8E8A8B5A7B8CFC7 /* LFTPulseAnimation.swift */,
 				8D95C38F5892CF4FE17BB5836CEEFBE6 /* STLocationRequestController.swift */,
+				4532804E26F87765A8E8A8B5A7B8CFC7 /* LFTPulseAnimation.swift */,
 				0213C5DE1B9F176CEB8CDCEFF3E54772 /* STRotatingCamera.swift */,
 				BBD6BB6A138C3E4F50962D244F986F5B /* UIViewController+STLocationRequest.swift */,
 			);

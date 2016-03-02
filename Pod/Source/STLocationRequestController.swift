@@ -157,27 +157,27 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		Add citys to cityCoordinate Array
 	*/
 	private func addStandardCity() {
-		let eiffelTower = CLLocationCoordinate2DMake(48.85815,2.29452);
-		let statueOfLiberty = CLLocationCoordinate2DMake(40.689249, -74.044500);
-		let goldenGateBridge = CLLocationCoordinate2DMake(37.826040, -122.479448);
+		let pariseiffelTower = CLLocationCoordinate2DMake(48.85815,2.29452);
+		let newYorkStatueOfLiberty = CLLocationCoordinate2DMake(40.689249, -74.044500);
+		let sanFGoldenGateBridge = CLLocationCoordinate2DMake(37.826040, -122.479448);
 		let berlinBrandenburgerGate = CLLocationCoordinate2DMake(52.516275, 13.377704);
 		let hamburgTownHall = CLLocationCoordinate2DMake(53.550416, 9.992527);
 		let newYork = CLLocationCoordinate2DMake(40.702749, -74.014120);
 		let cologneCathedral = CLLocationCoordinate2DMake(50.941278, 6.958281);
-		let romKolluseum = CLLocationCoordinate2DMake(41.89021, 12.492231);
+		let romeColosseum = CLLocationCoordinate2DMake(41.89021, 12.492231);
 		let munichCurch = CLLocationCoordinate2DMake(48.138631, 11.573625);
 		let neuschwansteinCastle = CLLocationCoordinate2DMake(47.557574, 10.749800);
 		let londonBigBen = CLLocationCoordinate2DMake(51.500729, -0.124625);
 		let londonEye = CLLocationCoordinate2DMake(51.503324, -0.119543);
 		let sydneyOperaHouse = CLLocationCoordinate2DMake(-33.857197, 151.215140);
-		self.cityCoordinates.append(eiffelTower)
-		self.cityCoordinates.append(statueOfLiberty)
-		self.cityCoordinates.append(goldenGateBridge)
+		self.cityCoordinates.append(pariseiffelTower)
+		self.cityCoordinates.append(newYorkStatueOfLiberty)
+		self.cityCoordinates.append(sanFGoldenGateBridge)
 		self.cityCoordinates.append(berlinBrandenburgerGate)
 		self.cityCoordinates.append(hamburgTownHall)
 		self.cityCoordinates.append(newYork)
 		self.cityCoordinates.append(cologneCathedral)
-		self.cityCoordinates.append(romKolluseum)
+		self.cityCoordinates.append(romeColosseum)
 		self.cityCoordinates.append(munichCurch)
 		self.cityCoordinates.append(neuschwansteinCastle)
 		self.cityCoordinates.append(londonBigBen)
