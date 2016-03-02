@@ -88,7 +88,7 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		// Setting the Pulse Effect
 		self.pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:180, position:self.view.center)
 		self.pulseEffect.backgroundColor = UIColor.whiteColor().CGColor
-		self.view.layer .insertSublayer(pulseEffect, below: self.locationSymbolLabel.layer)
+		self.view.layer.insertSublayer(pulseEffect, below: self.locationSymbolLabel.layer)
 		
 		// Create a rotating camera object and pass a mapView
 		self.rotatingCamera = STRotatingCamera(mapView: self.mapView)
