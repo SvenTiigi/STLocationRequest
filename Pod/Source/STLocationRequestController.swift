@@ -42,11 +42,10 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	public var mapViewAlphaValue = CGFloat()
 	public var backgroundViewColor = UIColor()
 	
-	/*
-		viewDidLoad Method
-	*/
 	public override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		UIApplication.sharedApplication().statusBarStyle = .LightContent
 		
 		// Setting the text for UILabel and UIButtons
 		self.descriptionLabel.text = self.titleLabelText
@@ -56,14 +55,6 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		// Setting the Background Color and Alpha Value for the map
 		self.mapView.alpha = self.mapViewAlphaValue
 		self.view.backgroundColor = self.backgroundViewColor
-		
-		// Set the appearence of the mapView
-		self.mapView.delegate = self
-		self.mapView.zoomEnabled = false
-		self.mapView.scrollEnabled = false
-		self.mapView.userInteractionEnabled = false
-		self.mapView.showsBuildings = true
-		self.mapView.pitchEnabled = true
 		
 		// Check if SatelliteFlyover is avaible
 		if #available(iOS 9.0, *) {
@@ -79,7 +70,6 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		
 		// Set the location-symbol using fontAwesom
 		self.locationSymbolLabel.setFAIcon(FAType.FALocationArrow, iconSize: 150)
-		self.locationSymbolLabel.textColor = UIColor.whiteColor()
 		
 		// Set custom stlye to the UIButton
 		self.setCustomButtonStyle(self.allowButton)
@@ -101,6 +91,12 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		
 		// Start the timer for changing location even more magic here :)
 		NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: "changeRandomFlyOverCity", userInfo: nil, repeats: true)
+	}
+	
+	public override func viewDidDisappear(animated: Bool) {
+		super.viewWillDisappear(animated)
+		
+		UIApplication.sharedApplication().statusBarStyle = .Default
 	}
 	
 	/*
@@ -157,9 +153,9 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		Add citys to cityCoordinate Array
 	*/
 	private func addStandardCity() {
-		let pariseiffelTower = CLLocationCoordinate2DMake(48.85815,2.29452);
+		let parisEiffelTower = CLLocationCoordinate2DMake(48.85815,2.29452);
 		let newYorkStatueOfLiberty = CLLocationCoordinate2DMake(40.689249, -74.044500);
-		let sanFGoldenGateBridge = CLLocationCoordinate2DMake(37.826040, -122.479448);
+		let sFGoldenGateBridge = CLLocationCoordinate2DMake(37.826040, -122.479448);
 		let berlinBrandenburgerGate = CLLocationCoordinate2DMake(52.516275, 13.377704);
 		let hamburgTownHall = CLLocationCoordinate2DMake(53.550416, 9.992527);
 		let newYork = CLLocationCoordinate2DMake(40.702749, -74.014120);
@@ -170,9 +166,9 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		let londonBigBen = CLLocationCoordinate2DMake(51.500729, -0.124625);
 		let londonEye = CLLocationCoordinate2DMake(51.503324, -0.119543);
 		let sydneyOperaHouse = CLLocationCoordinate2DMake(-33.857197, 151.215140);
-		self.cityCoordinates.append(pariseiffelTower)
+		self.cityCoordinates.append(parisEiffelTower)
 		self.cityCoordinates.append(newYorkStatueOfLiberty)
-		self.cityCoordinates.append(sanFGoldenGateBridge)
+		self.cityCoordinates.append(sFGoldenGateBridge)
 		self.cityCoordinates.append(berlinBrandenburgerGate)
 		self.cityCoordinates.append(hamburgTownHall)
 		self.cityCoordinates.append(newYork)
@@ -186,14 +182,13 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	}
 	
 	/*
-	Set a custom style for a given UIButton
+		Set a custom style for a given UIButton
 	*/
 	private func setCustomButtonStyle(button: UIButton) {
 		button.layer.borderWidth = 1.0
 		button.layer.borderColor = UIColor.whiteColor().CGColor
 		button.layer.cornerRadius = 5.0
 		button.layer.masksToBounds = true
-		button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
 		button.setTitleColor(UIColor.clearColor().colorWithAlphaComponent(0.5), forState: UIControlState.Highlighted)
 		button.setBackgroundImage(getImageWithColor(UIColor.whiteColor(), size: button.bounds.size), forState: UIControlState.Highlighted)
 	}
@@ -220,6 +215,7 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		} while (self.random == self.tempRandom)
 		
 		self.tempRandom = self.random
+		
 		UIView.animateWithDuration(0.5) { () -> Void in
 			self.rotatingCamera.stopRotating()
 			self.mapView.region = MKCoordinateRegionMakeWithDistance(self.cityCoordinates[self.random], 1000, 1000)

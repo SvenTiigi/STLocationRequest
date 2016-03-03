@@ -32,7 +32,9 @@ public extension UIBarButtonItem {
         
         get {
             if let title = title {
+                
                 if let index =  FAIcons.indexOf(title) {
+                    
                     return FAType(rawValue: index)
                 }
             }
@@ -90,7 +92,7 @@ public extension UIButton {
     }
     
     
-    func setFAText(prefixText prefixText: String, icon: FAType?, postfixText: String, size: CGFloat?, forState: UIControlState, iconSize: CGFloat? = nil) {
+    func setFAText(prefixText prefixText: String, icon: FAType?, postfixText: String, size: CGFloat?, forState state: UIControlState, iconSize: CGFloat? = nil) {
         
         if let titleLabel = titleLabel {
             
@@ -102,12 +104,10 @@ public extension UIButton {
             let textAttribute = [NSFontAttributeName : titleLabel.font]
             let myString = NSMutableAttributedString(string: prefixText, attributes: textAttribute )
             
-            
             if let iconText = icon?.text {
                 
                 let iconFont = UIFont(name: FAStruct.FontName, size: iconSize ?? size ?? titleLabel.font.pointSize)!
                 let iconAttribute = [NSFontAttributeName : iconFont]
-                
                 
                 let iconString = NSAttributedString(string: iconText, attributes: iconAttribute)
                 myString.appendAttributedString(iconString)
@@ -116,8 +116,15 @@ public extension UIButton {
             let postfixString = NSAttributedString(string: postfixText)
             myString.appendAttributedString(postfixString)
             
-            setAttributedTitle(myString, forState: .Normal)
+            setAttributedTitle(myString, forState: state)
         }
+    }
+    
+    
+    func setFATitleColor(color: UIColor) {
+    
+        let attributedString = NSMutableAttributedString(attributedString: titleLabel!.attributedText!)
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: NSMakeRange(0, titleLabel!.text!.characters.count))
     }
 }
 
@@ -145,6 +152,7 @@ public extension UILabel {
             if let text = text {
               
                 if let index =  FAIcons.indexOf(text) {
+                    
                     return FAType(rawValue: index)
                 }
             }
@@ -185,7 +193,6 @@ public extension UILabel {
         
         let postfixString = NSAttributedString(string: postfixText)
         myString.appendAttributedString(postfixString)
-        
         
         self.attributedText = myString
     }
@@ -250,6 +257,21 @@ public extension UIImage {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.init(CGImage: image.CGImage!, scale: image.scale, orientation: image.imageOrientation)
+    }
+}
+
+
+public extension UISlider {
+    
+    func setFAMaximumValueImage(icon: FAType, customSize: CGSize? = nil) {
+        
+        maximumValueImage = UIImage(icon: icon, size: customSize ?? CGSizeMake(25, 25))
+    }
+
+    
+    func setFAMinimumValueImage(icon: FAType, customSize: CGSize? = nil) {
+        
+        minimumValueImage = UIImage(icon: icon, size: customSize ?? CGSizeMake(25, 25))
     }
 }
 

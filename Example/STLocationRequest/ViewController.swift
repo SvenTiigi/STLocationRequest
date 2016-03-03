@@ -26,9 +26,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		// Set the delegate for the MapView
-		self.mapView.delegate = self
+
 		self.mapView.layer.cornerRadius = 5.0
 		
 		// Get a nice looking UIButton
@@ -80,7 +78,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		STLocationRequest NotificationCenter Methods
 	*/
 	func locationRequestNotNow() {
-		print("The user cancled the locationRequestScreen")
+		print("The user denied the use of location services")
 	}
 	
 	func locationRequestAuthorized() {
@@ -93,7 +91,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 	}
 	
 	func locationRequestDenied() {
-		print("Location service is denied by the user")
+		print("The user denied the use of location services")
 	}
 	
 	/*
@@ -154,9 +152,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 	}
 	
 	/*
-		#######
 		These are just Method for a nice UIButton :)
-		#######
 	*/
 	
 	/*

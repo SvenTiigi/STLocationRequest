@@ -18,64 +18,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DJb-NH-ULm">
+                            <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJb-NH-ULm">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </mapView>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ0-E0-6Gc">
-                                <rect key="frame" x="44" y="434" width="512" height="63"/>
-                                <color key="backgroundColor" white="1" alpha="0.084186422413793108" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="TtP-1M-LAP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Allow"/>
                                 <connections>
-                                    <action selector="allowButtonTouched:" destination="Ilg-zd-NQN" eventType="touchUpInside" id="kaI-6m-HwL"/>
+                                    <outlet property="delegate" destination="Ilg-zd-NQN" id="nnm-bu-LbI"/>
                                 </connections>
-                            </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inn-4H-eK6">
-                                <rect key="frame" x="44" y="517" width="512" height="63"/>
-                                <color key="backgroundColor" white="1" alpha="0.080000000000000002" colorSpace="calibratedWhite"/>
+                            </mapView>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="inn-4H-eK6">
+                                <rect key="frame" x="20" y="520" width="560" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="0.084186422413793108" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Not now"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="notNowButtonTouched:" destination="Ilg-zd-NQN" eventType="touchUpInside" id="sT8-xw-78N"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Symbol" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aok-0h-Jcg">
-                                <rect key="frame" x="20" y="202" width="560" height="196"/>
+                                <rect key="frame" x="20" y="200" width="560" height="200"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwy-z4-pBi">
-                                <rect key="frame" x="20" y="35" width="560" height="94"/>
+                                <rect key="frame" x="20" y="35" width="560" height="100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nJ0-E0-6Gc">
+                                <rect key="frame" x="20" y="452" width="560" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="0.084186422413793108" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="TtP-1M-LAP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Allow"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="allowButtonTouched:" destination="Ilg-zd-NQN" eventType="touchUpInside" id="kaI-6m-HwL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DJb-NH-ULm" firstAttribute="leading" secondItem="83y-vW-dCb" secondAttribute="leading" id="0xh-3H-33t"/>
-                            <constraint firstItem="nJ0-E0-6Gc" firstAttribute="top" secondItem="Aok-0h-Jcg" secondAttribute="bottom" constant="36" id="3yJ-Fa-9fQ"/>
+                            <constraint firstItem="nJ0-E0-6Gc" firstAttribute="top" secondItem="Aok-0h-Jcg" secondAttribute="bottom" constant="52" id="3yJ-Fa-9fQ"/>
                             <constraint firstItem="Xwy-z4-pBi" firstAttribute="leading" secondItem="83y-vW-dCb" secondAttribute="leadingMargin" id="4vB-fb-Vbu"/>
                             <constraint firstItem="Xwy-z4-pBi" firstAttribute="trailing" secondItem="83y-vW-dCb" secondAttribute="trailingMargin" id="7F9-A4-BUF"/>
                             <constraint firstItem="inn-4H-eK6" firstAttribute="width" secondItem="nJ0-E0-6Gc" secondAttribute="width" id="9PW-BH-8T3"/>
                             <constraint firstItem="jgY-wP-497" firstAttribute="top" secondItem="inn-4H-eK6" secondAttribute="bottom" constant="20" id="9ln-ga-uDE"/>
                             <constraint firstItem="DJb-NH-ULm" firstAttribute="bottom" secondItem="jgY-wP-497" secondAttribute="top" id="9rL-NZ-LHT"/>
                             <constraint firstItem="DJb-NH-ULm" firstAttribute="top" secondItem="83y-vW-dCb" secondAttribute="top" id="BPA-UZ-Igx"/>
-                            <constraint firstItem="nJ0-E0-6Gc" firstAttribute="leading" secondItem="83y-vW-dCb" secondAttribute="leadingMargin" constant="24" id="F7N-a1-M4X"/>
-                            <constraint firstItem="inn-4H-eK6" firstAttribute="leading" secondItem="83y-vW-dCb" secondAttribute="leadingMargin" constant="24" id="Fo6-7z-RHE"/>
+                            <constraint firstItem="nJ0-E0-6Gc" firstAttribute="leading" secondItem="83y-vW-dCb" secondAttribute="leadingMargin" id="F7N-a1-M4X"/>
+                            <constraint firstItem="inn-4H-eK6" firstAttribute="leading" secondItem="83y-vW-dCb" secondAttribute="leadingMargin" id="Fo6-7z-RHE"/>
                             <constraint firstItem="inn-4H-eK6" firstAttribute="height" secondItem="nJ0-E0-6Gc" secondAttribute="height" id="TLz-ah-5EI"/>
-                            <constraint firstItem="inn-4H-eK6" firstAttribute="top" secondItem="nJ0-E0-6Gc" secondAttribute="bottom" constant="20" id="XTS-RP-5Pl"/>
+                            <constraint firstItem="inn-4H-eK6" firstAttribute="top" secondItem="nJ0-E0-6Gc" secondAttribute="bottom" constant="8" id="XTS-RP-5Pl"/>
                             <constraint firstItem="Xwy-z4-pBi" firstAttribute="top" secondItem="1Cg-wv-ZoI" secondAttribute="bottom" constant="15" id="aR4-5W-fPl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nJ0-E0-6Gc" secondAttribute="trailing" constant="24" id="adr-gc-Zfy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="inn-4H-eK6" secondAttribute="trailing" constant="24" id="jEv-Bq-n5T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nJ0-E0-6Gc" secondAttribute="trailing" id="adr-gc-Zfy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="inn-4H-eK6" secondAttribute="trailing" id="jEv-Bq-n5T"/>
                             <constraint firstItem="Aok-0h-Jcg" firstAttribute="leading" secondItem="83y-vW-dCb" secondAttribute="leadingMargin" id="jFh-ce-K5D"/>
-                            <constraint firstItem="Aok-0h-Jcg" firstAttribute="top" secondItem="Xwy-z4-pBi" secondAttribute="bottom" constant="73" id="lAa-5t-js3"/>
+                            <constraint firstItem="Aok-0h-Jcg" firstAttribute="top" secondItem="Xwy-z4-pBi" secondAttribute="bottom" constant="65" id="lAa-5t-js3"/>
                             <constraint firstItem="Aok-0h-Jcg" firstAttribute="trailing" secondItem="83y-vW-dCb" secondAttribute="trailingMargin" id="orn-F6-pT3"/>
                             <constraint firstItem="DJb-NH-ULm" firstAttribute="centerY" secondItem="Aok-0h-Jcg" secondAttribute="centerY" id="tMm-ct-RAv"/>
                             <constraint firstItem="Xwy-z4-pBi" firstAttribute="centerX" secondItem="DJb-NH-ULm" secondAttribute="centerX" id="zzN-5r-snm"/>
