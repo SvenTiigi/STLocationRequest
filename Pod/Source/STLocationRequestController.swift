@@ -42,11 +42,10 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	public var mapViewAlphaValue = CGFloat()
 	public var backgroundViewColor = UIColor()
 	
-	/*
-		viewDidLoad Method
-	*/
 	public override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		UIApplication.sharedApplication().statusBarStyle = .LightContent
 		
 		// Setting the text for UILabel and UIButtons
 		self.descriptionLabel.text = self.titleLabelText
@@ -93,6 +92,12 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		
 		// Start the timer for changing location even more magic here :)
 		NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: "changeRandomFlyOverCity", userInfo: nil, repeats: true)
+	}
+	
+	public override func viewDidDisappear(animated: Bool) {
+		super.viewWillDisappear(animated)
+		
+		UIApplication.sharedApplication().statusBarStyle = .Default
 	}
 	
 	/*
@@ -178,7 +183,7 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	}
 	
 	/*
-	Set a custom style for a given UIButton
+		Set a custom style for a given UIButton
 	*/
 	private func setCustomButtonStyle(button: UIButton) {
 		button.layer.borderWidth = 1.0

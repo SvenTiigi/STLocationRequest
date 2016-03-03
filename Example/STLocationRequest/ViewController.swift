@@ -80,7 +80,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		STLocationRequest NotificationCenter Methods
 	*/
 	func locationRequestNotNow() {
-		print("The user cancled the locationRequestScreen")
+		print("The user denied the use of location services")
 	}
 	
 	func locationRequestAuthorized() {
@@ -93,7 +93,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 	}
 	
 	func locationRequestDenied() {
-		print("Location service is denied by the user")
+		print("The user denied the use of location services")
 	}
 	
 	/*
