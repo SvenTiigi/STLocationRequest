@@ -8,30 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		049AA06541B8EFF00F73A5CBEE5BD6C4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C276405978C362BCA7CC1933270E2B /* CoreText.framework */; };
+		04FE5F36BF0B0FD4AC123C554AEF6C25 /* UIViewController+STLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE4907C94C0FBD77203979B7A02FD6 /* UIViewController+STLocationRequest.swift */; };
+		1FFEAB266D85B71E032B9EF7A212E5C3 /* STLocationRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706F5DD6402F2DB5759EEF9910B6D92 /* STLocationRequestController.swift */; };
 		22FD2DC5B6AD04572A7C8CD298FCB13E /* Pods-STLocationRequest_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C7640DD7A9A9E92A62421412D77EA15 /* Pods-STLocationRequest_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26D54AF4D9A1F4DDBC4ED62673691523 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E523DB958A158203E845F825AEE6E4CD /* UIKit.framework */; };
 		3A3C4B2049D2898F3562853D70F0BD43 /* STLocationRequest.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60D5FEE188364C016591F1DEA36A61C4 /* STLocationRequest.bundle */; };
 		3D4813D03899C8BEB3A0F72D32E4EBA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 336BAF1862D7EFF4F3248C2EB47CED5F /* Foundation.framework */; };
 		3F7352FEF3E467DBB9D52B2C567F5C57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 336BAF1862D7EFF4F3248C2EB47CED5F /* Foundation.framework */; };
-		456C7C76601BD8243BE6A20B5BEB4115 /* STLocationRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95C38F5892CF4FE17BB5836CEEFBE6 /* STLocationRequestController.swift */; };
 		4A0EA61C96AE953BB72D6FB44A82CC7B /* Pods-STLocationRequest_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A803F92E0A0EDB40F14447DF156D7C71 /* Pods-STLocationRequest_Tests-dummy.m */; };
 		5AECCB0CE7896F8F1438DB1667C49258 /* StoryboardLocationRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8558C63327800B7563D9AE28F3EFC292 /* StoryboardLocationRequest.storyboard */; };
 		713EC8E979428E05F5B8E8991F441734 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E523DB958A158203E845F825AEE6E4CD /* UIKit.framework */; };
+		7340F3A3ACAFB751208A0F83FBAB51A3 /* STRotatingCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3A37720943F47520BBAE277631D16 /* STRotatingCamera.swift */; };
+		7AA9F952A70AB91A5F2443B33280819B /* LFTPulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D96DD5BEE0EA2FC629C5A90AEA919E5 /* LFTPulseAnimation.swift */; };
 		92008D943EC8D99381A68A7D6758D602 /* Pods-STLocationRequest_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB07B8D81D51A9AB1DF1EF09C2453B1 /* Pods-STLocationRequest_Example-dummy.m */; };
 		9ADC75C7813D33978E2F9D18793539D1 /* Pods-STLocationRequest_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC9F7B4A2561D8F2A925799877C69614 /* Pods-STLocationRequest_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9CA60CD108CFC2E3B4EBE17237F4C6BC /* UIViewController+STLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6BB6A138C3E4F50962D244F986F5B /* UIViewController+STLocationRequest.swift */; };
-		9D846BF46DED1627DA6C3E0B9AAA2B66 /* STRotatingCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0213C5DE1B9F176CEB8CDCEFF3E54772 /* STRotatingCamera.swift */; };
 		A0B282A01089A52A1EE39282B7BFBACC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2907ADD9DE89E61E0D587E8FF188CB14 /* MapKit.framework */; };
 		ABABCE508732806103FE5B6FAB95F761 /* Font-Awesome-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB959A2D5F276942BBB6435E4415810B /* Font-Awesome-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC0D5B72C02D9F1837B1EA611A3C6587 /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A762782E2AF6946A363F199E9C1ED16 /* Font_Awesome_Swift.framework */; };
 		AD21048848B2AC16684D649013D7FFE5 /* STLocationRequest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 976502F92250B01385EBD6C3A3DC6B21 /* STLocationRequest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2359160D4FC6CF8AA66C892B2B7C590 /* Font-Awesome-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4DF730A6C68B7EE9345E2594D5EEDD /* Font-Awesome-Swift-dummy.m */; };
-		BD8207A3EBDF318C797225B250925F88 /* LFTPulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532804E26F87765A8E8A8B5A7B8CFC7 /* LFTPulseAnimation.swift */; };
 		BDE1212E948A9CDCAEA1621A6B65F5FA /* FAIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477F47E80C0389427129FA886B3DABE0 /* FAIcon.swift */; };
 		BEA8DF1E226293FF1B8F26F5F2D2E47F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 336BAF1862D7EFF4F3248C2EB47CED5F /* Foundation.framework */; };
 		DF6631DD498411E7CF772869E0BD9F3B /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98B67691E24CA60D70463AE73D92017D /* FontAwesome.ttf */; };
+		E537A0CABE7885DBFB234E060B04F500 /* STLocationRequest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 613DEAB730C6A089276F654145D411ED /* STLocationRequest-dummy.m */; };
 		F69AFB0352D787322B3E60F9F8E530F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 336BAF1862D7EFF4F3248C2EB47CED5F /* Foundation.framework */; };
-		F6A177A31D41CE930EC54A7D2F800EBD /* STLocationRequest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 613DEAB730C6A089276F654145D411ED /* STLocationRequest-dummy.m */; };
 		F90F25956B624AAA592BEB3DCBDA0CA8 /* Font-Awesome-Swift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F34B3B47AB58A6B15F3A8EB13A51FB7B /* Font-Awesome-Swift.bundle */; };
 /* End PBXBuildFile section */
 
@@ -88,15 +88,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0213C5DE1B9F176CEB8CDCEFF3E54772 /* STRotatingCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STRotatingCamera.swift; sourceTree = "<group>"; };
 		0667CC407DBE458466E5C38C20453543 /* Pods-STLocationRequest_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Example-resources.sh"; sourceTree = "<group>"; };
+		0D96DD5BEE0EA2FC629C5A90AEA919E5 /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
 		170AB8D1828669D87E44F873BE1760D8 /* Pods-STLocationRequest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1A036C9BC4D4D534F00E8A29DD0F3833 /* Pods-STLocationRequest_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		2907ADD9DE89E61E0D587E8FF188CB14 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		2D450AA1348032C02D74453EC00C963A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EBB3B80B33D2509983FC5F9DE63D194 /* Pods-STLocationRequest_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Tests-resources.sh"; sourceTree = "<group>"; };
 		336BAF1862D7EFF4F3248C2EB47CED5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4532804E26F87765A8E8A8B5A7B8CFC7 /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
 		477F47E80C0389427129FA886B3DABE0 /* FAIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FAIcon.swift; path = Source/FAIcon.swift; sourceTree = "<group>"; };
 		49FAD432A7BC2EBC5B7CA24D6798FAD0 /* STLocationRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STLocationRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		567F270CE635360444DCC4D950D54AEB /* Pods-STLocationRequest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,9 +110,9 @@
 		8558C63327800B7563D9AE28F3EFC292 /* StoryboardLocationRequest.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = StoryboardLocationRequest.storyboard; sourceTree = "<group>"; };
 		87B7E28835288F50BA9B35C8FD9AC6F8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C7640DD7A9A9E92A62421412D77EA15 /* Pods-STLocationRequest_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-STLocationRequest_Tests-umbrella.h"; sourceTree = "<group>"; };
-		8D95C38F5892CF4FE17BB5836CEEFBE6 /* STLocationRequestController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestController.swift; sourceTree = "<group>"; };
 		976502F92250B01385EBD6C3A3DC6B21 /* STLocationRequest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STLocationRequest-umbrella.h"; sourceTree = "<group>"; };
 		98B67691E24CA60D70463AE73D92017D /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FontAwesome.ttf; path = Source/FontAwesome.ttf; sourceTree = "<group>"; };
+		9BB3A37720943F47520BBAE277631D16 /* STRotatingCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STRotatingCamera.swift; sourceTree = "<group>"; };
 		9DB07B8D81D51A9AB1DF1EF09C2453B1 /* Pods-STLocationRequest_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STLocationRequest_Example-dummy.m"; sourceTree = "<group>"; };
 		A06EE33444A42710C077F139069D9569 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F128D696930BDFCE4725FA9B316FC8 /* Pods_STLocationRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,11 +123,12 @@
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BADF206278EC34829EA237D090B9B3E5 /* STLocationRequest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = STLocationRequest.xcconfig; sourceTree = "<group>"; };
 		BB2D7A2DA339D94D350A0CF03A5DCF09 /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBD6BB6A138C3E4F50962D244F986F5B /* UIViewController+STLocationRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+STLocationRequest.swift"; sourceTree = "<group>"; };
 		BD843A4A0638F2AB53687EB47FF80726 /* Pods-STLocationRequest_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-STLocationRequest_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		C54865557E37556976969B2E65BECA6D /* Pods-STLocationRequest_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-STLocationRequest_Example.modulemap"; sourceTree = "<group>"; };
+		C706F5DD6402F2DB5759EEF9910B6D92 /* STLocationRequestController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestController.swift; sourceTree = "<group>"; };
 		D8B16C83EFDD74878660DE4E7B8B3CC1 /* Font-Awesome-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-prefix.pch"; sourceTree = "<group>"; };
 		DB959A2D5F276942BBB6435E4415810B /* Font-Awesome-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-umbrella.h"; sourceTree = "<group>"; };
+		DCFE4907C94C0FBD77203979B7A02FD6 /* UIViewController+STLocationRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+STLocationRequest.swift"; sourceTree = "<group>"; };
 		E1F7B7A10A9AAE50087DFF77D5473077 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E386E93EB3C4905D0CA60B10909E7171 /* Pods-STLocationRequest_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STLocationRequest_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E523DB958A158203E845F825AEE6E4CD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -205,6 +205,25 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		227DE39C4A227460B9141EFA457A1A37 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				2A2197CCCEB05917418F5F12EF29EB77 /* Source */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		2A2197CCCEB05917418F5F12EF29EB77 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0D96DD5BEE0EA2FC629C5A90AEA919E5 /* LFTPulseAnimation.swift */,
+				C706F5DD6402F2DB5759EEF9910B6D92 /* STLocationRequestController.swift */,
+				9BB3A37720943F47520BBAE277631D16 /* STRotatingCamera.swift */,
+				DCFE4907C94C0FBD77203979B7A02FD6 /* UIViewController+STLocationRequest.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		3496C48C3059DD1B62232EC0250788A6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,21 +273,10 @@
 			path = "Target Support Files/Pods-STLocationRequest_Tests";
 			sourceTree = "<group>";
 		};
-		64A139CF04196A1EDED6983DEF509C28 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				8D95C38F5892CF4FE17BB5836CEEFBE6 /* STLocationRequestController.swift */,
-				4532804E26F87765A8E8A8B5A7B8CFC7 /* LFTPulseAnimation.swift */,
-				0213C5DE1B9F176CEB8CDCEFF3E54772 /* STRotatingCamera.swift */,
-				BBD6BB6A138C3E4F50962D244F986F5B /* UIViewController+STLocationRequest.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		777F8BEF3F739134153380D16EC386FC /* STLocationRequest */ = {
 			isa = PBXGroup;
 			children = (
-				CBD896FDADC646468B9D5C2426AFF2E1 /* Pod */,
+				227DE39C4A227460B9141EFA457A1A37 /* Pod */,
 				3496C48C3059DD1B62232EC0250788A6 /* Resources */,
 				7CCFAF8EA8033447D4BA722114EF005E /* Support Files */,
 			);
@@ -360,14 +368,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CBD896FDADC646468B9D5C2426AFF2E1 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				64A139CF04196A1EDED6983DEF509C28 /* Source */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
 		D7033BE5BFFDBD9D8C4DFAAAF9E1E11D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,7 +444,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F79C1080F340DEED48001484272699A0 /* Build configuration list for PBXNativeTarget "STLocationRequest" */;
 			buildPhases = (
-				5A7A727806A7C64FC13448CA50FB2E1E /* Sources */,
+				E769D46CF1F7F74E1E9185AC279B4B50 /* Sources */,
 				100D8664365F38E8E760F23525B2B888 /* Frameworks */,
 				555600984BB60354589AFE9CCD8B256E /* Resources */,
 				2401DEB1D25317EAB135F42E8C02CB39 /* Headers */,
@@ -643,18 +643,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A7A727806A7C64FC13448CA50FB2E1E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BD8207A3EBDF318C797225B250925F88 /* LFTPulseAnimation.swift in Sources */,
-				F6A177A31D41CE930EC54A7D2F800EBD /* STLocationRequest-dummy.m in Sources */,
-				456C7C76601BD8243BE6A20B5BEB4115 /* STLocationRequestController.swift in Sources */,
-				9D846BF46DED1627DA6C3E0B9AAA2B66 /* STRotatingCamera.swift in Sources */,
-				9CA60CD108CFC2E3B4EBE17237F4C6BC /* UIViewController+STLocationRequest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6C4627ED613500764BCC4B9C1FF47472 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -666,6 +654,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E769D46CF1F7F74E1E9185AC279B4B50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA9F952A70AB91A5F2443B33280819B /* LFTPulseAnimation.swift in Sources */,
+				E537A0CABE7885DBFB234E060B04F500 /* STLocationRequest-dummy.m in Sources */,
+				1FFEAB266D85B71E032B9EF7A212E5C3 /* STLocationRequestController.swift in Sources */,
+				7340F3A3ACAFB751208A0F83FBAB51A3 /* STRotatingCamera.swift in Sources */,
+				04FE5F36BF0B0FD4AC123C554AEF6C25 /* UIViewController+STLocationRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
