@@ -26,9 +26,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		// Set the delegate for the MapView
-		self.mapView.delegate = self
+
 		self.mapView.layer.cornerRadius = 5.0
 		
 		// Get a nice looking UIButton
@@ -154,9 +152,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 	}
 	
 	/*
-		#######
 		These are just Method for a nice UIButton :)
-		#######
 	*/
 	
 	/*
