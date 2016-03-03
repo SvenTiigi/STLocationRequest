@@ -70,7 +70,6 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		
 		// Set the location-symbol using fontAwesom
 		self.locationSymbolLabel.setFAIcon(FAType.FALocationArrow, iconSize: 150)
-		self.locationSymbolLabel.textColor = UIColor.whiteColor()
 		
 		// Set custom stlye to the UIButton
 		self.setCustomButtonStyle(self.allowButton)
@@ -190,7 +189,6 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		button.layer.borderColor = UIColor.whiteColor().CGColor
 		button.layer.cornerRadius = 5.0
 		button.layer.masksToBounds = true
-		button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
 		button.setTitleColor(UIColor.clearColor().colorWithAlphaComponent(0.5), forState: UIControlState.Highlighted)
 		button.setBackgroundImage(getImageWithColor(UIColor.whiteColor(), size: button.bounds.size), forState: UIControlState.Highlighted)
 	}
@@ -217,6 +215,7 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		} while (self.random == self.tempRandom)
 		
 		self.tempRandom = self.random
+		
 		UIView.animateWithDuration(0.5) { () -> Void in
 			self.rotatingCamera.stopRotating()
 			self.mapView.region = MKCoordinateRegionMakeWithDistance(self.cityCoordinates[self.random], 1000, 1000)

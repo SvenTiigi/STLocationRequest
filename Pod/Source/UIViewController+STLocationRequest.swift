@@ -17,10 +17,9 @@ extension UIViewController {
 		
 		// Create the Bundle Path for Resources
 		let bundlePath = NSBundle(forClass: STLocationRequestController.self).pathForResource("STLocationRequest", ofType: "bundle")
-		let bundle = NSBundle(path: bundlePath!)
 		
 		// Get the Storyboard File
-		let stb = UIStoryboard(name: "StoryboardLocationRequest", bundle:bundle)
+		let stb = UIStoryboard(name: "StoryboardLocationRequest", bundle:NSBundle(path: bundlePath!))
 		
 		// Instantiate the ViewController by Identifer as STLocationRequestController
 		let locationRequestViewController = stb.instantiateViewControllerWithIdentifier("locationRequestController") as! STLocationRequestController

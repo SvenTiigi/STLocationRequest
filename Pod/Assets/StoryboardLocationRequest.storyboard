@@ -24,11 +24,14 @@
                                     <outlet property="delegate" destination="Ilg-zd-NQN" id="nnm-bu-LbI"/>
                                 </connections>
                             </mapView>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inn-4H-eK6">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="inn-4H-eK6">
                                 <rect key="frame" x="20" y="520" width="560" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="0.080000000000000002" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="0.084186422413793108" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Not now"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="notNowButtonTouched:" destination="Ilg-zd-NQN" eventType="touchUpInside" id="sT8-xw-78N"/>
                                 </connections>
@@ -47,7 +50,7 @@
                                 <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ0-E0-6Gc">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nJ0-E0-6Gc">
                                 <rect key="frame" x="20" y="452" width="560" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="0.084186422413793108" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -55,6 +58,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Allow"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="allowButtonTouched:" destination="Ilg-zd-NQN" eventType="touchUpInside" id="kaI-6m-HwL"/>
                                 </connections>
