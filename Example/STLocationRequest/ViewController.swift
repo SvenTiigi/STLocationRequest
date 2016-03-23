@@ -38,9 +38,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		self.locationManager.distanceFilter=kCLDistanceFilterNone
 		
 		// Add the NotificationCenter Observer
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestNotNow", name: "locationRequestNotNow", object: nil)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestAuthorized", name: "locationRequestAuthorized", object: nil)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestDenied", name: "locationRequestDenied", object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.locationRequestNotNow), name: "locationRequestNotNow", object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.locationRequestAuthorized), name: "locationRequestAuthorized", object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.locationRequestDenied), name: "locationRequestDenied", object: nil)
 	}
 	
 	/*
