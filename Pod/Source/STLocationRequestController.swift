@@ -88,7 +88,7 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		self.changeRandomFlyOverCity()
 		
 		// Start the timer for changing location even more magic here :)
-		self.timer = NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: "changeRandomFlyOverCity", userInfo: nil, repeats: true)
+		self.timer = NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: #selector(STLocationRequestController.changeRandomFlyOverCity), userInfo: nil, repeats: true)
 	}
     
     /*
