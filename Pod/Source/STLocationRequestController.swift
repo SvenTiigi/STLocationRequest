@@ -13,6 +13,8 @@ import MapKit
 import Font_Awesome_Swift
 
 public class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    // IBOutlets connections
 	@IBOutlet weak var allowButton: UIButton!
 	@IBOutlet weak var notNowButton: UIButton!
 	@IBOutlet weak var mapView: MKMapView!
@@ -20,7 +22,7 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	@IBOutlet weak var locationSymbolLabel: UILabel!
 	
 	// CitryCoordinate which store all coordinates
-	var cityCoordinates: [CLLocationCoordinate2D] = []
+	var cityOrLandmarks3DCoordinates: [CLLocationCoordinate2D] = []
 	
 	// tempRandom & random to select a random coordinate
 	var tempRandom = 0
@@ -41,30 +43,28 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	// Variables for appearance
 	public var mapViewAlphaValue = CGFloat()
 	public var backgroundViewColor = UIColor()
+    
+    // Variable for NSTimer
+    var timer : NSTimer?
 	
+    /*
+        viewDidLoad
+    */
 	public override func viewDidLoad() {
 		super.viewDidLoad()
 		
+        // Set statusbar style to white color
 		UIApplication.sharedApplication().statusBarStyle = .LightContent
 		
-		// Setting the text for UILabel and UIButtons
-		self.descriptionLabel.text = self.titleLabelText
-		self.allowButton.setTitle(allowButtonTitle, forState: UIControlState.Normal)
-		self.notNowButton.setTitle(notNowButtonTitle, forState: UIControlState.Normal)
+        // Set the text for Description and Button Labels
+        self.setDescriptionAndButtonText()
+        
+        // Set the custom color scheme
+        self.setColorScheme()
 		
-		// Setting the Background Color and Alpha Value for the map
-		self.mapView.alpha = self.mapViewAlphaValue
-		self.view.backgroundColor = self.backgroundViewColor
-		
-		// Check if SatelliteFlyover is avaible
-		if #available(iOS 9.0, *) {
-			self.mapView.mapType = .SatelliteFlyover
-			self.mapView.showsCompass = false
-			self.mapView.showsScale = false
-		} else {
-			self.mapView.mapType = .Satellite
-		}
-		
+        // Set the settings for MKMapView
+        self.setMapViewSettings()
+	
 		// Set the Delegate of the locationManager
 		self.locationManager.delegate = self
 		
@@ -75,10 +75,8 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		self.setCustomButtonStyle(self.allowButton)
 		self.setCustomButtonStyle(self.notNowButton)
 		
-		// Setting the Pulse Effect
-		self.pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:180, position:self.view.center)
-		self.pulseEffect.backgroundColor = UIColor.whiteColor().CGColor
-		self.view.layer.insertSublayer(pulseEffect, below: self.locationSymbolLabel.layer)
+        // Add the Pulse-Effect under the Location-Symbol
+        self.addPulseEffect()
 		
 		// Create a rotating camera object and pass a mapView
 		self.rotatingCamera = STRotatingCamera(mapView: self.mapView)
@@ -90,13 +88,65 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		self.changeRandomFlyOverCity()
 		
 		// Start the timer for changing location even more magic here :)
-		NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: "changeRandomFlyOverCity", userInfo: nil, repeats: true)
+		self.timer = NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: "changeRandomFlyOverCity", userInfo: nil, repeats: true)
 	}
+    
+    /*
+        Set the text for the description and button labels
+    */
+    private func setDescriptionAndButtonText(){
+        // Setting the text for UILabel and UIButtons
+        self.descriptionLabel.text = self.titleLabelText
+        self.allowButton.setTitle(allowButtonTitle, forState: UIControlState.Normal)
+        self.notNowButton.setTitle(notNowButtonTitle, forState: UIControlState.Normal)
+    }
 	
+    /*
+        Set the color scheme to get a individual look and feel for the STLocationRequest Screen
+    */
+    private func setColorScheme(){
+        // Setting the Background Color and Alpha Value for the map
+        self.mapView.alpha = self.mapViewAlphaValue
+        self.view.backgroundColor = self.backgroundViewColor
+    }
+    
+    /*
+        Set the specific MKMapView Settings
+    */
+    private func setMapViewSettings(){
+        // Check if SatelliteFlyover is avaible
+        if #available(iOS 9.0, *) {
+            self.mapView.mapType = .SatelliteFlyover
+            self.mapView.showsCompass = false
+            self.mapView.showsScale = false
+        } else {
+            self.mapView.mapType = .Satellite
+        }
+        
+    }
+    
+    /*
+        Adding the pulse effect under the Location-Symbol in the middle of the STLocationRequest Screen
+    */
+    private func addPulseEffect(){
+        // Setting the Pulse Effect
+        self.pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:180, position:self.view.center)
+        self.pulseEffect.backgroundColor = UIColor.whiteColor().CGColor
+        self.view.layer.insertSublayer(pulseEffect, below: self.locationSymbolLabel.layer)
+    }
+    
+    /*
+        viewDidDisappear
+    */
 	public override func viewDidDisappear(animated: Bool) {
 		super.viewWillDisappear(animated)
-		
-		UIApplication.sharedApplication().statusBarStyle = .Default
+        UIApplication.sharedApplication().statusBarStyle = .Default
+        // invalidate the timer and release it.
+        guard let timerUnwrapped = self.timer else{
+            return
+        }
+        timerUnwrapped.invalidate()
+        self.timer = nil
 	}
 	
 	/*
@@ -166,21 +216,21 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		let londonBigBen = CLLocationCoordinate2DMake(51.500729, -0.124625);
 		let londonEye = CLLocationCoordinate2DMake(51.503324, -0.119543);
 		let sydneyOperaHouse = CLLocationCoordinate2DMake(-33.857197, 151.215140);
-		self.cityCoordinates.append(parisEiffelTower)
-		self.cityCoordinates.append(newYorkStatueOfLiberty)
-		self.cityCoordinates.append(sFGoldenGateBridge)
-		self.cityCoordinates.append(berlinBrandenburgerGate)
-		self.cityCoordinates.append(hamburgTownHall)
-		self.cityCoordinates.append(newYork)
-		self.cityCoordinates.append(cologneCathedral)
-		self.cityCoordinates.append(romeColosseum)
-		self.cityCoordinates.append(munichCurch)
-		self.cityCoordinates.append(neuschwansteinCastle)
-		self.cityCoordinates.append(londonBigBen)
-		self.cityCoordinates.append(londonEye)
-		self.cityCoordinates.append(sydneyOperaHouse)
+		self.cityOrLandmarks3DCoordinates.append(parisEiffelTower)
+		self.cityOrLandmarks3DCoordinates.append(newYorkStatueOfLiberty)
+		self.cityOrLandmarks3DCoordinates.append(sFGoldenGateBridge)
+		self.cityOrLandmarks3DCoordinates.append(berlinBrandenburgerGate)
+		self.cityOrLandmarks3DCoordinates.append(hamburgTownHall)
+		self.cityOrLandmarks3DCoordinates.append(newYork)
+		self.cityOrLandmarks3DCoordinates.append(cologneCathedral)
+		self.cityOrLandmarks3DCoordinates.append(romeColosseum)
+		self.cityOrLandmarks3DCoordinates.append(munichCurch)
+		self.cityOrLandmarks3DCoordinates.append(neuschwansteinCastle)
+		self.cityOrLandmarks3DCoordinates.append(londonBigBen)
+		self.cityOrLandmarks3DCoordinates.append(londonEye)
+		self.cityOrLandmarks3DCoordinates.append(sydneyOperaHouse)
 	}
-	
+
 	/*
 		Set a custom style for a given UIButton
 	*/
@@ -211,16 +261,15 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	*/
 	func changeRandomFlyOverCity() {
 		repeat {
-			self.random = Int(arc4random_uniform(UInt32(self.cityCoordinates.count)))
+			self.random = Int(arc4random_uniform(UInt32(self.cityOrLandmarks3DCoordinates.count)))
 		} while (self.random == self.tempRandom)
 		
 		self.tempRandom = self.random
 		
 		UIView.animateWithDuration(0.5) { () -> Void in
 			self.rotatingCamera.stopRotating()
-			self.mapView.region = MKCoordinateRegionMakeWithDistance(self.cityCoordinates[self.random], 1000, 1000)
-			//self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(self.cityCoordinates[self.random], 1000, 1000), animated: true)
-			self.rotatingCamera.startRotatingWithCoordinate(self.cityCoordinates[self.random], heading: 45, pitch: 45, altitude: 500, headingStep: 10)
+			self.mapView.region = MKCoordinateRegionMakeWithDistance(self.cityOrLandmarks3DCoordinates[self.random], 1000, 1000)
+			self.rotatingCamera.startRotatingWithCoordinate(self.cityOrLandmarks3DCoordinates[self.random], heading: 45, pitch: 45, altitude: 500, headingStep: 10)
 		}
 	}
 	
