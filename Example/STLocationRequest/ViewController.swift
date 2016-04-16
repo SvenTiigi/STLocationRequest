@@ -11,7 +11,7 @@ import STLocationRequest
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, LocationRequestDelegate {
 	// Storyboard IBOutlet for the Request Location Button
 	@IBOutlet weak var requestLocationButton: UIButton!
 	
@@ -26,7 +26,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+    
 		self.mapView.layer.cornerRadius = 5.0
 		
 		// Get a nice looking UIButton
@@ -36,11 +36,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		self.locationManager.delegate = self
 		self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
 		self.locationManager.distanceFilter=kCLDistanceFilterNone
-		
-		// Add the NotificationCenter Observer
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.locationRequestNotNow), name: "locationRequestNotNow", object: nil)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.locationRequestAuthorized), name: "locationRequestAuthorized", object: nil)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.locationRequestDenied), name: "locationRequestDenied", object: nil)
 	}
 	
 	/*
@@ -59,7 +54,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 						setAllowButtonTitle: "Alright",
 						setNotNowButtonTitle: "Not now",
 						setMapViewAlphaValue: 0.9,
-						setBackgroundViewColor: UIColor.lightGrayColor())
+						setBackgroundViewColor: UIColor.lightGrayColor(),
+						setDelegate: self)
 				} else {
 					// The user has already allowed your app to use location services
 					if #available(iOS 9.0, *) {
@@ -73,14 +69,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 			// Location Services are disabled
 		}
 	}
-	
+    
 	/*
-		STLocationRequest NotificationCenter Methods
+		STLocationRequest Delegate Methods
 	*/
 	func locationRequestNotNow() {
-		print("The user denied the use of location services")
+		print("Not Now Button tapped")
 	}
-	
+    
 	func locationRequestAuthorized() {
 		if #available(iOS 9.0, *) {
 			self.locationManager.requestLocation()
@@ -93,6 +89,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 	func locationRequestDenied() {
 		print("The user denied the use of location services")
 	}
+    
+    func locationRequestControllerPresented() {
+        print("STLocationRequestController presented")
+    }
 	
 	/*
 		CLLocationManagerDelegate Methods
@@ -115,26 +115,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 				return
 			}
 			
-			var thoroughfare = ""
-			var subThoroughfare = ""
-			var postalCode = ""
-			var locality = ""
-			
-			if let optThoroughfare = placemark.thoroughfare {
-				thoroughfare = optThoroughfare + " "
-			}
-			
-			if let optSubThorughfare = placemark.subThoroughfare{
-				subThoroughfare = " " + optSubThorughfare + " "
-			}
-			
-			if let optPostalCode = placemark.postalCode{
-				postalCode = " " + optPostalCode + " "
-			}
-			
-			if let optLocality = placemark.locality{
-				locality = " " + optLocality
-			}
+			let thoroughfare = self.unwrapString(placemark.thoroughfare) + " "
+			let subThoroughfare = " " + self.unwrapString(placemark.subThoroughfare) + " "
+			let postalCode = " " + self.unwrapString(placemark.postalCode) + " "
+			let locality = " " + self.unwrapString(placemark.locality)
 			
 			UIView.animateWithDuration(0.8, animations: { () -> Void in
 				self.mapView.alpha = 0
@@ -143,6 +127,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 			})
 		}
 	}
+    
+    /*
+        Unwrap an optional String and return an unwrapped a String or an Empty String
+    */
+    func unwrapString(optionalString : String?) -> String{
+        guard let string = optionalString else{
+            return ""
+        }
+        return string
+    }
 	
 	/*
 		Delegate Method didUpdateUserLocation for the MapView to zoom in to the user location

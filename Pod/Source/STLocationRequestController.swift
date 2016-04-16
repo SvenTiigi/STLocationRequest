@@ -12,6 +12,22 @@ import CoreLocation
 import MapKit
 import Font_Awesome_Swift
 
+
+ /*
+    STLocationRequest Delegate
+ */
+public protocol LocationRequestDelegate{
+    
+    // Called when the user tapped the "Not Now" button
+    func locationRequestNotNow()
+    // Called when the user authorized to the location request
+    func locationRequestAuthorized()
+    // Called when the user denied the location request
+    func locationRequestDenied()
+    // Called when the STLocationRequestController is presented
+    func locationRequestControllerPresented()
+}
+
 public class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     // IBOutlets connections
@@ -46,6 +62,9 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
     
     // Variable for NSTimer
     var timer : NSTimer?
+    
+    // Delegate Object
+    public var delegate : LocationRequestDelegate?
 	
     /*
         viewDidLoad
@@ -176,12 +195,12 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	public func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 		switch status {
 		case .AuthorizedWhenInUse:
-			NSNotificationCenter.defaultCenter().postNotificationName("locationRequestAuthorized", object: nil)
+            self.delegate?.locationRequestAuthorized()
 			self.dismissViewControllerAnimated(true, completion: nil)
 			break
 			
 		case .Denied:
-			NSNotificationCenter.defaultCenter().postNotificationName("locationRequestDenied", object: nil)
+            self.delegate?.locationRequestDenied()
 			self.dismissViewControllerAnimated(true, completion: nil)
 			break
 			
@@ -284,7 +303,7 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		Not now button was touched dismiss Viewcontroller
 	*/
 	@IBAction func notNowButtonTouched(sender: UIButton) {
-		NSNotificationCenter.defaultCenter().postNotificationName("locationRequestNotNow", object: nil)
+        self.delegate?.locationRequestNotNow()
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
 }
