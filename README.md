@@ -29,7 +29,8 @@ func showLocationRequest(){
 						setAllowButtonTitle: "Alright",
 						setNotNowButtonTitle: "Not now",
 						setMapViewAlphaValue: 0.9,
-						setBackgroundViewColor: UIColor.lightGrayColor())
+						setBackgroundViewColor: UIColor.lightGrayColor(),
+						setDelegate: self)
 }
 
 ```
