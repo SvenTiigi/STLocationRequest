@@ -43,15 +43,9 @@ To match with your design of your app, simply playaround with the parameters `se
 <img width=200 src="./Preview/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
 </p>
 
-Also you can add `NSNotificationObserver` to get notified if the user has authorized or denied the Location Services or if the user just tapped the _Not-Now_ Button.
+Also you can apply to the `LocationRequestDelegate` to get notified if the user has authorized, denied the Location Services, tapped the _Not-Now_ Button or if the `STLocationRequestController` is presented.
 
 ```swift
-override func viewDidLoad() {
-    super.viewDidLoad()
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestNotNow", name: "locationRequestNotNow", object: nil)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestAuthorized", name: "locationRequestAuthorized", object: nil)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationRequestDenied", name: "locationRequestDenied", object: nil)
-}
 
 func locationRequestNotNow(){
     print("The user canceled the locationRequestScreen")
@@ -63,6 +57,10 @@ func locationRequestAuthorized(){
 
 func locationRequestDenied(){
     print("Location service are denied by the user")
+}
+
+func locationRequestControllerPresented() {
+    print("STLocationRequestController presented")
 }
 
 ```
