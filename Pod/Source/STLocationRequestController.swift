@@ -72,9 +72,6 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	public override func viewDidLoad() {
 		super.viewDidLoad()
 		
-        // Set statusbar style to white color
-		UIApplication.sharedApplication().statusBarStyle = .LightContent
-		
         // Set the text for Description and Button Labels
         self.setDescriptionAndButtonText()
         
@@ -159,7 +156,6 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
     */
 	public override func viewDidDisappear(animated: Bool) {
 		super.viewWillDisappear(animated)
-        UIApplication.sharedApplication().statusBarStyle = .Default
         // invalidate the timer and release it.
         guard let timerUnwrapped = self.timer else{
             return
