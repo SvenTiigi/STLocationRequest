@@ -41,8 +41,9 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	var cityOrLandmarks3DCoordinates: [CLLocationCoordinate2D] = []
 	
 	// tempRandom & random to select a random coordinate
-	var tempRandom = 0
-	var random = 0
+	//var tempRandom = 0
+	//var random = 0
+    var randomNumbers: [Int] = []
 	
 	// Initialize STRotatingCamera
 	var rotatingCamera = STRotatingCamera()
@@ -98,7 +99,7 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		self.rotatingCamera = STRotatingCamera(mapView: self.mapView)
 		
 		// Add standard city to cityArray
-		self.addStandardCity()
+		self.fillCityOrLandmarks3DCoordinatesArray()
 		
 		// Start the flyover Magic
 		self.changeRandomFlyOverCity()
@@ -217,7 +218,7 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	/*
 		Add citys to cityCoordinate Array
 	*/
-	private func addStandardCity() {
+	private func fillCityOrLandmarks3DCoordinatesArray() {
 		let parisEiffelTower = CLLocationCoordinate2DMake(48.85815,2.29452);
 		let newYorkStatueOfLiberty = CLLocationCoordinate2DMake(40.689249, -74.044500);
 		let sFGoldenGateBridge = CLLocationCoordinate2DMake(37.826040, -122.479448);
@@ -231,6 +232,10 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		let londonBigBen = CLLocationCoordinate2DMake(51.500729, -0.124625);
 		let londonEye = CLLocationCoordinate2DMake(51.503324, -0.119543);
 		let sydneyOperaHouse = CLLocationCoordinate2DMake(-33.857197, 151.215140);
+        let hollywoodSign = CLLocationCoordinate2DMake(34.134115, -118.321548)
+        let sagradaFamiliaSpain = CLLocationCoordinate2DMake(41.404024, 2.174370)
+        let facebookHQ = CLLocationCoordinate2DMake(37.484947, -122.148201)
+        let disneyConcertHall = CLLocationCoordinate2DMake(34.055436, -118.249940)
 		self.cityOrLandmarks3DCoordinates.append(parisEiffelTower)
 		self.cityOrLandmarks3DCoordinates.append(newYorkStatueOfLiberty)
 		self.cityOrLandmarks3DCoordinates.append(sFGoldenGateBridge)
@@ -244,6 +249,10 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		self.cityOrLandmarks3DCoordinates.append(londonBigBen)
 		self.cityOrLandmarks3DCoordinates.append(londonEye)
 		self.cityOrLandmarks3DCoordinates.append(sydneyOperaHouse)
+        self.cityOrLandmarks3DCoordinates.append(hollywoodSign)
+        self.cityOrLandmarks3DCoordinates.append(sagradaFamiliaSpain)
+        self.cityOrLandmarks3DCoordinates.append(facebookHQ)
+        self.cityOrLandmarks3DCoordinates.append(disneyConcertHall)
 	}
 
 	/*
@@ -275,18 +284,27 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		Get a random City and change the location on the map
 	*/
 	func changeRandomFlyOverCity() {
-		repeat {
-			self.random = Int(arc4random_uniform(UInt32(self.cityOrLandmarks3DCoordinates.count)))
-		} while (self.random == self.tempRandom)
-		
-		self.tempRandom = self.random
-		
+		let generateRandomNumber = randomSequenceGenerator(0, max: self.cityOrLandmarks3DCoordinates.count-1)
+        let randomNumber = generateRandomNumber()
 		UIView.animateWithDuration(0.5) { () -> Void in
 			self.rotatingCamera.stopRotating()
-			self.mapView.region = MKCoordinateRegionMakeWithDistance(self.cityOrLandmarks3DCoordinates[self.random], 1000, 1000)
-			self.rotatingCamera.startRotatingWithCoordinate(self.cityOrLandmarks3DCoordinates[self.random], heading: 45, pitch: 45, altitude: 500, headingStep: 10)
+			self.mapView.region = MKCoordinateRegionMakeWithDistance(self.cityOrLandmarks3DCoordinates[randomNumber], 1000, 1000)
+			self.rotatingCamera.startRotatingWithCoordinate(self.cityOrLandmarks3DCoordinates[randomNumber], heading: 45, pitch: 45, altitude: 500, headingStep: 10)
 		}
 	}
+    
+    /*
+        Get a random Index from an given array without repeating an index
+    */
+    func randomSequenceGenerator(min: Int, max: Int) -> () -> Int {
+        return {
+            if self.randomNumbers.count == 0 {
+                self.randomNumbers = Array(min...max)
+            }
+            let index = Int(arc4random_uniform(UInt32(self.randomNumbers.count)))
+            return self.randomNumbers.removeAtIndex(index)
+        }
+    }
 	
 	/*
 		Allow button was touched request authorization
