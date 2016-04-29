@@ -9,7 +9,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
 [![codebeat badge](https://codebeat.co/badges/ce1c3749-fca8-4c3b-ae28-6210fd0e129a)](https://codebeat.co/projects/github-com-sventiigi-stlocationrequest)
 
-STLocationRequest is a UIViewController-Extension which is used to request the User-Location, at the very first time, in a simple and elegent way written in Swift. It shows a beautiful 3D 360 degree Flyover-MapView which shows 13 random citys or landmarks.
+STLocationRequest is a UIViewController-Extension which is used to request the User-Location, at the very first time, in a simple and elegent way written in Swift. It shows a beautiful 3D 360 degree Flyover-MapView which shows 17 random citys or landmarks.
 
 <p align="center">
 <img src="./Preview/STLocationRequest.gif" alt="STLocationRequest" title="STLocationRequest">
