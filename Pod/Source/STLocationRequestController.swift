@@ -12,12 +12,10 @@ import CoreLocation
 import MapKit
 import Font_Awesome_Swift
 
-
  /*
     STLocationRequest Delegate
  */
 public protocol LocationRequestDelegate{
-    
     // Called when the user tapped the "Not Now" button
     func locationRequestNotNow()
     // Called when the user authorized to the location request
@@ -40,9 +38,7 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	// CitryCoordinate which store all coordinates
 	var cityOrLandmarks3DCoordinates: [CLLocationCoordinate2D] = []
 	
-	// tempRandom & random to select a random coordinate
-	//var tempRandom = 0
-	//var random = 0
+	// Array to store random integer values
     var randomNumbers: [Int] = []
 	
 	// Initialize STRotatingCamera
@@ -53,20 +49,20 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	var pulseEffect = LFTPulseAnimation(radius: 0, position: CGPointMake(0,0))
 	
 	// Variables for UILabel and UIButton
-	public var titleLabelText = String()
+    public var titleLabelText = String()
 	public var allowButtonTitle = String()
 	public var notNowButtonTitle = String()
 	
 	// Variables for appearance
-	public var mapViewAlphaValue = CGFloat()
-	public var backgroundViewColor = UIColor()
+    public var mapViewAlphaValue : CGFloat?
+    public var backgroundViewColor : UIColor?
     
     // Variable for NSTimer
     var timer : NSTimer?
     
     // Delegate Object
     public var delegate : LocationRequestDelegate?
-	
+
     /*
         viewDidLoad
     */
@@ -123,8 +119,16 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
     */
     private func setColorScheme(){
         // Setting the Background Color and Alpha Value for the map
-        self.mapView.alpha = self.mapViewAlphaValue
-        self.view.backgroundColor = self.backgroundViewColor
+        if let alphaValue = self.mapViewAlphaValue{
+            self.mapView.alpha = alphaValue
+        }else{
+            self.mapView.alpha = 1
+        }
+        if let backgroundColor = self.backgroundViewColor {
+            self.view.backgroundColor = backgroundColor
+        }else{
+            self.view.backgroundColor = UIColor.whiteColor()
+        }
     }
     
     /*
@@ -139,7 +143,6 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
         } else {
             self.mapView.mapType = .Satellite
         }
-        
     }
     
     /*

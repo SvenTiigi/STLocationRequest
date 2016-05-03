@@ -13,7 +13,7 @@ extension UIViewController {
     /*
 		UIViewController extension for showing the LocationRequestScreen
 	*/
-    public func showLocationRequestController(setTitle title: String, setAllowButtonTitle allowButtonTitle: String, setNotNowButtonTitle notNowButtonTitle: String, setMapViewAlphaValue mapViewAlphaValue: CGFloat, setBackgroundViewColor backgroundViewColor: UIColor, setDelegate delegate: LocationRequestDelegate) {
+    public func showLocationRequestController(setTitle title: String, setAllowButtonTitle allowButtonTitle: String, setNotNowButtonTitle notNowButtonTitle: String, setMapViewAlphaValue mapViewAlphaValue: CGFloat?, setBackgroundViewColor backgroundViewColor: UIColor?, setDelegate delegate: LocationRequestDelegate?) {
 		
 		// Create the Bundle Path for Resources
 		let bundlePath = NSBundle(forClass: STLocationRequestController.self).pathForResource("STLocationRequest", ofType: "bundle")
@@ -34,7 +34,7 @@ extension UIViewController {
 
 		// Present the locationRequestViewController
         self.presentViewController(locationRequestViewController, animated: true) { 
-            delegate.locationRequestControllerPresented()
+            delegate?.locationRequestControllerPresented()
         }
 	}
 }
