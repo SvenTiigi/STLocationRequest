@@ -232,7 +232,6 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		let londonBigBen = CLLocationCoordinate2DMake(51.500729, -0.124625);
 		let londonEye = CLLocationCoordinate2DMake(51.503324, -0.119543);
 		let sydneyOperaHouse = CLLocationCoordinate2DMake(-33.857197, 151.215140);
-        let hollywoodSign = CLLocationCoordinate2DMake(34.134115, -118.321548)
         let sagradaFamiliaSpain = CLLocationCoordinate2DMake(41.404024, 2.174370)
         let facebookHQ = CLLocationCoordinate2DMake(37.484947, -122.148201)
         let disneyConcertHall = CLLocationCoordinate2DMake(34.055436, -118.249940)
@@ -249,7 +248,6 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 		self.cityOrLandmarks3DCoordinates.append(londonBigBen)
 		self.cityOrLandmarks3DCoordinates.append(londonEye)
 		self.cityOrLandmarks3DCoordinates.append(sydneyOperaHouse)
-        self.cityOrLandmarks3DCoordinates.append(hollywoodSign)
         self.cityOrLandmarks3DCoordinates.append(sagradaFamiliaSpain)
         self.cityOrLandmarks3DCoordinates.append(facebookHQ)
         self.cityOrLandmarks3DCoordinates.append(disneyConcertHall)
