@@ -26,7 +26,7 @@ public protocol LocationRequestDelegate{
     func locationRequestControllerPresented()
 }
 
-public class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     // IBOutlets connections
 	@IBOutlet weak var allowButton: UIButton!

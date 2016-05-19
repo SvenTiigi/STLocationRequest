@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     /*
 		UIViewController extension for showing the LocationRequestScreen
 	*/
