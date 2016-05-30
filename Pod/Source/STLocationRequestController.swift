@@ -15,15 +15,15 @@ import Font_Awesome_Swift
  /*
     STLocationRequest Delegate
  */
-public protocol LocationRequestDelegate{
+@objc public protocol LocationRequestDelegate{
     // Called when the user tapped the "Not Now" button
-    func locationRequestNotNow()
+    @objc func locationRequestNotNow()
     // Called when the user authorized to the location request
-    func locationRequestAuthorized()
+    @objc func locationRequestAuthorized()
     // Called when the user denied the location request
-    func locationRequestDenied()
+    @objc func locationRequestDenied()
     // Called when the STLocationRequestController is presented
-    func locationRequestControllerPresented()
+    @objc func locationRequestControllerPresented()
 }
 
 class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
