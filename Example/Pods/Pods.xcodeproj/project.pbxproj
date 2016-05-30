@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		049AA06541B8EFF00F73A5CBEE5BD6C4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C276405978C362BCA7CC1933270E2B /* CoreText.framework */; };
-		04FE5F36BF0B0FD4AC123C554AEF6C25 /* UIViewController+STLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE4907C94C0FBD77203979B7A02FD6 /* UIViewController+STLocationRequest.swift */; };
+		04FE5F36BF0B0FD4AC123C554AEF6C25 /* STLocationRequestUIVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE4907C94C0FBD77203979B7A02FD6 /* STLocationRequestUIVCExtension.swift */; };
 		1FFEAB266D85B71E032B9EF7A212E5C3 /* STLocationRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706F5DD6402F2DB5759EEF9910B6D92 /* STLocationRequestController.swift */; };
 		22FD2DC5B6AD04572A7C8CD298FCB13E /* Pods-STLocationRequest_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C7640DD7A9A9E92A62421412D77EA15 /* Pods-STLocationRequest_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26D54AF4D9A1F4DDBC4ED62673691523 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E523DB958A158203E845F825AEE6E4CD /* UIKit.framework */; };
@@ -128,7 +128,7 @@
 		C706F5DD6402F2DB5759EEF9910B6D92 /* STLocationRequestController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestController.swift; sourceTree = "<group>"; };
 		D8B16C83EFDD74878660DE4E7B8B3CC1 /* Font-Awesome-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-prefix.pch"; sourceTree = "<group>"; };
 		DB959A2D5F276942BBB6435E4415810B /* Font-Awesome-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-umbrella.h"; sourceTree = "<group>"; };
-		DCFE4907C94C0FBD77203979B7A02FD6 /* UIViewController+STLocationRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+STLocationRequest.swift"; sourceTree = "<group>"; };
+		DCFE4907C94C0FBD77203979B7A02FD6 /* STLocationRequestUIVCExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestUIVCExtension.swift; sourceTree = "<group>"; };
 		E1F7B7A10A9AAE50087DFF77D5473077 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E386E93EB3C4905D0CA60B10909E7171 /* Pods-STLocationRequest_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STLocationRequest_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E523DB958A158203E845F825AEE6E4CD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -219,7 +219,7 @@
 				0D96DD5BEE0EA2FC629C5A90AEA919E5 /* LFTPulseAnimation.swift */,
 				C706F5DD6402F2DB5759EEF9910B6D92 /* STLocationRequestController.swift */,
 				9BB3A37720943F47520BBAE277631D16 /* STRotatingCamera.swift */,
-				DCFE4907C94C0FBD77203979B7A02FD6 /* UIViewController+STLocationRequest.swift */,
+				DCFE4907C94C0FBD77203979B7A02FD6 /* STLocationRequestUIVCExtension.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -665,7 +665,7 @@
 				E537A0CABE7885DBFB234E060B04F500 /* STLocationRequest-dummy.m in Sources */,
 				1FFEAB266D85B71E032B9EF7A212E5C3 /* STLocationRequestController.swift in Sources */,
 				7340F3A3ACAFB751208A0F83FBAB51A3 /* STRotatingCamera.swift in Sources */,
-				04FE5F36BF0B0FD4AC123C554AEF6C25 /* UIViewController+STLocationRequest.swift in Sources */,
+				04FE5F36BF0B0FD4AC123C554AEF6C25 /* STLocationRequestUIVCExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
