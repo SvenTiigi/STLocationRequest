@@ -92,7 +92,10 @@ func locationRequestControllerPresented() {
 }
 
 ```
-Also don't forget to add the following key to your `Info.plist`
+
+## Location Usage Description
+
+Also don't forget to add the `NSLocationWhenInUseUsageDescription` key to your `Info.plist`
 
 ```swift
 <key>NSLocationWhenInUseUsageDescription</key>
