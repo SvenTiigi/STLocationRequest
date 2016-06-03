@@ -13,7 +13,7 @@ import UIKit
     public var titleText = String()
     public var allowButtonTitle = String()
     public var notNowButtonTitle = String()
-    public var mapViewAlphaValue : CGFloat?
+    public var mapViewAlphaValue = CGFloat()
     public var backgroundViewColor : UIColor?
     public var delegate : LocationRequestDelegate?
     public var viewController : UIViewController?
