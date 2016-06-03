@@ -61,12 +61,12 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
     var timer : NSTimer?
     
     // Delegate Object
-    public var delegate : LocationRequestDelegate?
+    var delegate : LocationRequestDelegate?
 
     /*
         viewDidLoad
     */
-	public override func viewDidLoad() {
+    override func viewDidLoad() {
 		super.viewDidLoad()
 		
         // Set the text for Description and Button Labels
@@ -158,7 +158,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
     /*
         viewDidDisappear
     */
-	public override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(animated: Bool) {
 		super.viewWillDisappear(animated)
         // invalidate the timer and release it.
         guard let timerUnwrapped = self.timer else{
@@ -171,7 +171,8 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 	/*
 		If Device is going landscape hide the location symbol and the pulse layer
 	*/
-	override public func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    
+	override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
 		if UIDevice.currentDevice().orientation.isLandscape.boolValue {
 			UIView.animateWithDuration(0.5, animations: { () -> Void in
 				self.locationSymbolLabel.alpha = 1
@@ -192,7 +193,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 	/*
 		CLLocationManager Delegate if the User allowed oder denied the location request
 	*/
-	public func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 		switch status {
 		case .AuthorizedWhenInUse:
             self.delegate?.locationRequestAuthorized()
@@ -212,7 +213,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 	/*
 		MKMapView Delegate regionDidChangeAnimated
 	*/
-	public func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 		if (self.rotatingCamera.isStopped() == true) {
 			self.rotatingCamera.continueRotating()
 		}
@@ -221,7 +222,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 	/*
 		Add citys to cityCoordinate Array
 	*/
-	private func fillCityOrLandmarks3DCoordinatesArray() {
+    func fillCityOrLandmarks3DCoordinatesArray() {
 		let parisEiffelTower = CLLocationCoordinate2DMake(48.85815,2.29452);
 		let newYorkStatueOfLiberty = CLLocationCoordinate2DMake(40.689249, -74.044500);
 		let sFGoldenGateBridge = CLLocationCoordinate2DMake(37.826040, -122.479448);
@@ -259,7 +260,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 	/*
 		Set a custom style for a given UIButton
 	*/
-	private func setCustomButtonStyle(button: UIButton) {
+    func setCustomButtonStyle(button: UIButton) {
 		button.layer.borderWidth = 1.0
 		button.layer.borderColor = UIColor.whiteColor().CGColor
 		button.layer.cornerRadius = 5.0
@@ -271,7 +272,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 	/*
 		Return a UIImage with a given UIColor and CGSize
 	*/
-	private func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+    func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
 		let rect = CGRectMake(0, 0, size.width, size.height)
 		UIGraphicsBeginImageContextWithOptions(size, false, 0)
 		color.setFill()
