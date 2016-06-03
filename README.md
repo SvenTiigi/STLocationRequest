@@ -62,6 +62,8 @@ func showLocationRequest(){
 
 ```
 
+## Customizing Styling
+
 To match with your design of your app, simply playaround with the parameters `setMapViewAlphaValue` and `setBackgroundViewColor` to get your very own design.
 
 <p align="center">
@@ -70,6 +72,8 @@ To match with your design of your app, simply playaround with the parameters `se
 <img width=200 src="./Preview/STLocationRequest_Orange.jpg" alt="STLocationRequest" title="STLocationRequest">
 <img width=200 src="./Preview/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
 </p>
+
+## LocationRequestDelegate
 
 Also you can apply to the `LocationRequestDelegate` to get notified if the user has authorized, denied the Location Services, tapped the _Not-Now_ Button or if the `STLocationRequestController` is presented.
 
