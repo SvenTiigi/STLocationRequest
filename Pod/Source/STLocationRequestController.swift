@@ -26,7 +26,7 @@ import Font_Awesome_Swift
     @objc func locationRequestControllerPresented()
 }
 
-public class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+internal class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     // IBOutlets connections
 	@IBOutlet weak var allowButton: UIButton!
@@ -49,13 +49,13 @@ public class STLocationRequestController: UIViewController, MKMapViewDelegate, C
 	var pulseEffect = LFTPulseAnimation(radius: 0, position: CGPointMake(0,0))
 	
 	// Variables for UILabel and UIButton
-    public var titleLabelText = String()
-	public var allowButtonTitle = String()
-	public var notNowButtonTitle = String()
+    var titleLabelText = String()
+    var allowButtonTitle = String()
+    var notNowButtonTitle = String()
 	
 	// Variables for appearance
-    public var mapViewAlphaValue : CGFloat?
-    public var backgroundViewColor : UIColor?
+    var mapViewAlphaValue : CGFloat?
+    var backgroundViewColor : UIColor?
     
     // Variable for NSTimer
     var timer : NSTimer?

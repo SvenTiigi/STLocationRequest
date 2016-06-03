@@ -35,6 +35,24 @@ func showLocationRequest(){
 
 ```
 
+Or you can initialize an `STLocationRequest`-Object as an alternative way
+
+```swift
+import STLocationRequest
+
+func showLocationRequest(){
+    let locationRequest = STLocationRequest(viewController: self)
+    locationRequest.titleText = "We need your location for some awesome features"
+    locationRequest.allowButtonTitle = "Alright"
+    locationRequest.notNowButtonTitle = "Not now"
+    locationRequest.mapViewAlphaValue = 0.9
+    locationRequest.backgroundViewColor = UIColor.lightGrayColor()
+    locationRequest.delegate = self
+    locationRequest.presentLocationRequestController()
+}
+
+```
+
 To match with your design of your app, simply playaround with the parameters `setMapViewAlphaValue` and `setBackgroundViewColor` to get your very own design.
 
 <p align="center">

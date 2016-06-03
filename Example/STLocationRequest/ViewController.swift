@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import STLocationRequest
 import CoreLocation
 import MapKit
+import STLocationRequest
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, LocationRequestDelegate {
 	// Storyboard IBOutlet for the Request Location Button
@@ -56,6 +56,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 						setMapViewAlphaValue: 0.9,
 						setBackgroundViewColor: UIColor.lightGrayColor(),
 						setDelegate: self)
+                    /*
+                    // Also you can initialize an STLocationRequest Object and set all attributes
+                    // and at the end call presentLocationRequestController
+                    let locationRequest = STLocationRequest(viewController: self)
+                    locationRequest.titleText = "We need your location for some awesome features"
+                    locationRequest.allowButtonTitle = "Alright"
+                    locationRequest.notNowButtonTitle = "Not now"
+                    locationRequest.mapViewAlphaValue = 0.9
+                    locationRequest.backgroundViewColor = UIColor.lightGrayColor()
+                    locationRequest.delegate = self
+                    locationRequest.presentLocationRequestController()
+                    */
 				} else {
 					// The user has already allowed your app to use location services
 					if #available(iOS 9.0, *) {
