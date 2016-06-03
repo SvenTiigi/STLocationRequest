@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-internal class STRotatingCamera: NSObject {
+class STRotatingCamera: NSObject {
 	var mapView: MKMapView
 	var rotating: Bool
 	var headingStep: Double

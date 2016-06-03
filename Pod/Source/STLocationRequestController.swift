@@ -26,7 +26,7 @@ import Font_Awesome_Swift
     @objc func locationRequestControllerPresented()
 }
 
-internal class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     // IBOutlets connections
 	@IBOutlet weak var allowButton: UIButton!

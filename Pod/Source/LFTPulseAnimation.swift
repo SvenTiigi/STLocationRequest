@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class LFTPulseAnimation: CALayer {
+class LFTPulseAnimation: CALayer {
 	
 	var radius:                 CGFloat = 200.0
 	var fromValueForRadius:     Float = 0.0
