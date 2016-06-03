@@ -98,6 +98,32 @@ For more details check out the example application.
 
 Please mind that the 3D Flyover-View will only work on a real iOS device (not in the Simulator) with at least iOS 9.0 installed. A 2D fallback for Simulator or iOS 8.0 devices is already integrated.
 
+## Objective-C
+
+To show the STLocationRequest Controller in an Objective-C Project you can do it like so.
+
+```objective-c
+#import "ViewController.h"
+@import STLocationRequest;
+
+@interface ViewController () <LocationRequestDelegate>
+
+@end
+
+@implementation ViewController
+
+-(void)showLocationRequestController{
+    STLocationRequest *locationRequest = [[STLocationRequest alloc] initWithViewController:self];
+    locationRequest.titleText = @"We need your location for some awesome features";
+    locationRequest.allowButtonTitle = @"Alright";
+    locationRequest.notNowButtonTitle = @"Not now";
+    locationRequest.mapViewAlphaValue = 0.9;
+    locationRequest.backgroundViewColor = [UIColor lightGrayColor];
+    locationRequest.delegate = self;
+    [locationRequest presentLocationRequestController];
+}
+
+```
 
 ## Installation
 
