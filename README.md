@@ -62,7 +62,7 @@ func showLocationRequest(){
 
 ```
 
-## Customizing Styling
+## Appearance
 
 To match with your design of your app, simply playaround with the parameters `setMapViewAlphaValue` and `setBackgroundViewColor` to get your very own design.
 
