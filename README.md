@@ -16,6 +16,15 @@ STLocationRequest is a UIViewController-Extension which is used to request the U
 
 </p>
 
+## Installation
+
+STLocationRequest is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'STLocationRequest'
+```
+
 ## Usage
 
 To show the `STLocationRequest`-Controller simply call 
@@ -35,7 +44,7 @@ func showLocationRequest(){
 
 ```
 
-Or you can initialize an `STLocationRequest`-Object as an alternative way
+or you can use the alternative way by initializing an `STLocationRequest`-Object.
 
 ```swift
 import STLocationRequest
@@ -100,7 +109,7 @@ Please mind that the 3D Flyover-View will only work on a real iOS device (not in
 
 ## Objective-C
 
-To show the STLocationRequest Controller in an Objective-C Project you can do it like so.
+To show the `STLocationRequest`-Controller in an `Objective-C` project you can do it like so.
 
 ```objective-c
 #import "ViewController.h"
@@ -123,15 +132,6 @@ To show the STLocationRequest Controller in an Objective-C Project you can do it
     [locationRequest presentLocationRequestController];
 }
 
-```
-
-## Installation
-
-STLocationRequest is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'STLocationRequest'
 ```
 
 ## Author
