@@ -94,7 +94,7 @@ This text will show in the standard iOS Location-Request-Dialog which will show 
 
 For more details check out the example application.
 
-## Simulator
+## 3D Flyover-View in Simulator
 
 Please mind that the 3D Flyover-View will only work on a real iOS device (not in the Simulator) with at least iOS 9.0 installed. A 2D fallback for Simulator or iOS 8.0 devices is already integrated.
 
