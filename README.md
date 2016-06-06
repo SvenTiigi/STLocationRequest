@@ -116,7 +116,7 @@ Please mind that the 3D Flyover-View will only work on a real iOS device (not in
 
 ## Objective-C
 
-To show the `STLocationRequest`-Controller in an `Objective-C` project you can do it like so.
+An Example of how to show the `STLocationRequest`-Controller in an `Objective-C` project.
 
 ```objective-c
 #import "ViewController.h"
