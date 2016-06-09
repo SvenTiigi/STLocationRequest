@@ -9,30 +9,29 @@
 /* Begin PBXBuildFile section */
 		065F009210989310C9BC44CC1B40FE03 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BBFA22F2513F6D9E5A0408FEB0B4B1 /* CoreText.framework */; };
 		0E0E8371EDEFB90405BC344A46CF7896 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896575222041CFAA2248A844428CC301 /* Foundation.framework */; };
+		0E409EC19ACC7A1FB623FD9DB3B7FB92 /* STLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359771E712B4F64BADCBBCAAB3D001D /* STLocationRequest.swift */; };
 		13A92373225688AB24C2523DB30DB4C0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855E998E127B27F858F8558DFEA6A08B /* MapKit.framework */; };
 		16D99D8DAD72477D4C889BF370237711 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019D5E0BDEF504896176BD168F1B8411 /* UIKit.framework */; };
-		1AFB6EA5CA638D23F806B5F84D9D5BA1 /* LFTPulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7646DAD3CBDEA918BF128BDD5D442B /* LFTPulseAnimation.swift */; };
 		1D0CF09649D2513CD0ECCA87A332CD5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896575222041CFAA2248A844428CC301 /* Foundation.framework */; };
 		1EA295196632637FDA1A4EB76BF92E95 /* StoryboardLocationRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441E7027A0F57E162B28143B1716D499 /* StoryboardLocationRequest.storyboard */; };
+		2613755EE97948F8AD930205C6DB2987 /* STLocationRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C671C2623D434A27922D34ACC7714AA1 /* STLocationRequestController.swift */; };
 		274229A1674A239127089663DC2E5FA2 /* Pods-STLocationRequest_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC9F7B4A2561D8F2A925799877C69614 /* Pods-STLocationRequest_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B5CBE35BE20FDC99DEDF47ADB4D0530 /* STLocationRequest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11126353155F3A5D539E821BCC902506 /* STLocationRequest-dummy.m */; };
 		336C5FEC4B4BBF89B4DB514889FA78A7 /* Font-Awesome-Swift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 78F42D869238FDC52E512806D3542EF6 /* Font-Awesome-Swift.bundle */; };
 		422C7168824CA3A050060471BBAA8F8A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BBA95072C791B11185074CA43CF481A /* FontAwesome.ttf */; };
 		4499492C8C09823F116C475716B0654C /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A762782E2AF6946A363F199E9C1ED16 /* Font_Awesome_Swift.framework */; };
 		4DA9A631B8217C04FCEF731798E1323F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896575222041CFAA2248A844428CC301 /* Foundation.framework */; };
-		4E35272086BB72F35BC5153706AB434C /* STLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF25AE4BB9AC7650CB6E470E6747F5E /* STLocationRequest.swift */; };
 		4F758AEFBA807C8BF1C2CDF453C6593F /* FAIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B73F4F412383A6B49EB0DF5B7FB2E7 /* FAIcon.swift */; };
-		57074BAB0272B2F3C7D7162B968604DA /* STLocationRequest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11126353155F3A5D539E821BCC902506 /* STLocationRequest-dummy.m */; };
 		5F0F3AB11ACA57B68DDF05E13632083B /* Font-Awesome-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0D3E9BFCD52127254DD23421C004BB /* Font-Awesome-Swift-dummy.m */; };
 		76563834F17F8D04B8C3DB575F17A3E0 /* Font-Awesome-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A2195F2B0D286598F61B13D48E12C6FB /* Font-Awesome-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83DEDC497EBB97D0FFA988AD8C599758 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019D5E0BDEF504896176BD168F1B8411 /* UIKit.framework */; };
 		9752D04F2187BBAD4446C935C47CCCF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896575222041CFAA2248A844428CC301 /* Foundation.framework */; };
+		9756E2C30368B8BFAD3A788FC29C9450 /* STRotatingCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D799A27AFAC145609BF7B3B99544FE /* STRotatingCamera.swift */; };
 		9FC41C43A587479BFE346374B65FE137 /* STLocationRequest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45CC48C44F5F2FB8FCDE7C3E2F36D07B /* STLocationRequest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0EA9A113A879DA58AFCC8087B110757 /* Pods-STLocationRequest_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C7640DD7A9A9E92A62421412D77EA15 /* Pods-STLocationRequest_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A32B37CB8263FFEF4661C70044C6C8BA /* STLocationRequest.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BDB39784257EF861146C6163E36D6553 /* STLocationRequest.bundle */; };
 		BF0576ABB8FF4E33C94FEF982DABB1A0 /* Pods-STLocationRequest_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB07B8D81D51A9AB1DF1EF09C2453B1 /* Pods-STLocationRequest_Example-dummy.m */; };
-		C518FC0AAEC801EA976EC15373CF6956 /* STLocationRequestUIVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1306012ADF6451901DD209AD56ED9 /* STLocationRequestUIVCExtension.swift */; };
-		CF8D0DD6DD537D2F78FDE4084A67474C /* STRotatingCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = D251B3CF105917D4657D4A413FC9B203 /* STRotatingCamera.swift */; };
-		EE3472E3C13ACA456F793541157056CC /* STLocationRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862CE5335F6245902DF78D066F5485A2 /* STLocationRequestController.swift */; };
+		D647120EAF1554736262C579D567EDCF /* LFTPulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2CD9F9624B3017F8B08209873347B /* LFTPulseAnimation.swift */; };
 		F219CCA429B1B79EA78A828130D960BF /* Pods-STLocationRequest_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A803F92E0A0EDB40F14447DF156D7C71 /* Pods-STLocationRequest_Tests-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +92,6 @@
 		441E7027A0F57E162B28143B1716D499 /* StoryboardLocationRequest.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = StoryboardLocationRequest.storyboard; sourceTree = "<group>"; };
 		45CC48C44F5F2FB8FCDE7C3E2F36D07B /* STLocationRequest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STLocationRequest-umbrella.h"; sourceTree = "<group>"; };
 		4C0D3E9BFCD52127254DD23421C004BB /* Font-Awesome-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Font-Awesome-Swift-dummy.m"; sourceTree = "<group>"; };
-		4C7646DAD3CBDEA918BF128BDD5D442B /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
 		567F270CE635360444DCC4D950D54AEB /* Pods-STLocationRequest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A762782E2AF6946A363F199E9C1ED16 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB31B9D53D5A468A371333513362DC7 /* Pods-STLocationRequest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,12 +101,10 @@
 		7DAE46878AB22724C5925B746402116D /* Pods-STLocationRequest_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Example-frameworks.sh"; sourceTree = "<group>"; };
 		82AEECD9273DDD6F9515C76A8B223706 /* Pods-STLocationRequest_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STLocationRequest_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		855E998E127B27F858F8558DFEA6A08B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		862CE5335F6245902DF78D066F5485A2 /* STLocationRequestController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestController.swift; sourceTree = "<group>"; };
 		896575222041CFAA2248A844428CC301 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		8A49E397D86B4643525158A60885884C /* Font-Awesome-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Font-Awesome-Swift.modulemap"; sourceTree = "<group>"; };
 		8B4EFA015F91F46504411F4C3660563C /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7640DD7A9A9E92A62421412D77EA15 /* Pods-STLocationRequest_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-STLocationRequest_Tests-umbrella.h"; sourceTree = "<group>"; };
-		8ED1306012ADF6451901DD209AD56ED9 /* STLocationRequestUIVCExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestUIVCExtension.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DB07B8D81D51A9AB1DF1EF09C2453B1 /* Pods-STLocationRequest_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STLocationRequest_Example-dummy.m"; sourceTree = "<group>"; };
 		A2195F2B0D286598F61B13D48E12C6FB /* Font-Awesome-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-umbrella.h"; sourceTree = "<group>"; };
@@ -119,14 +115,16 @@
 		BD843A4A0638F2AB53687EB47FF80726 /* Pods-STLocationRequest_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-STLocationRequest_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		BDB39784257EF861146C6163E36D6553 /* STLocationRequest.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STLocationRequest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		C54865557E37556976969B2E65BECA6D /* Pods-STLocationRequest_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-STLocationRequest_Example.modulemap"; sourceTree = "<group>"; };
+		C671C2623D434A27922D34ACC7714AA1 /* STLocationRequestController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestController.swift; sourceTree = "<group>"; };
 		D1C49C0FE323E9C7BDC4773084BDA77D /* Pods_STLocationRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D251B3CF105917D4657D4A413FC9B203 /* STRotatingCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STRotatingCamera.swift; sourceTree = "<group>"; };
-		DBF25AE4BB9AC7650CB6E470E6747F5E /* STLocationRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequest.swift; sourceTree = "<group>"; };
 		E0196283BE01CA1E288CF3679EE089F4 /* Font-Awesome-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-prefix.pch"; sourceTree = "<group>"; };
 		E1F7B7A10A9AAE50087DFF77D5473077 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E386E93EB3C4905D0CA60B10909E7171 /* Pods-STLocationRequest_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STLocationRequest_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E80F42A01623826A6D2FFC3B2FABA14D /* STLocationRequest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = STLocationRequest.modulemap; sourceTree = "<group>"; };
 		EDC394150EACBD34C04487DAF3561206 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFD2CD9F9624B3017F8B08209873347B /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
+		F2D799A27AFAC145609BF7B3B99544FE /* STRotatingCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STRotatingCamera.swift; sourceTree = "<group>"; };
+		F359771E712B4F64BADCBBCAAB3D001D /* STLocationRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequest.swift; sourceTree = "<group>"; };
 		F62369BC3987E13BE7C0512D0FBB0810 /* Pods-STLocationRequest_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-STLocationRequest_Tests.modulemap"; sourceTree = "<group>"; };
 		FC9F7B4A2561D8F2A925799877C69614 /* Pods-STLocationRequest_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-STLocationRequest_Example-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,7 +222,7 @@
 		32E959A8C44229678EAC85921677630E /* STLocationRequest */ = {
 			isa = PBXGroup;
 			children = (
-				FC6FD583DC510134F0CFB6F11CEDC034 /* Pod */,
+				4EDF220A246E8142D63835B11A000A60 /* Pod */,
 				72A2021FB8E44EBFDC1EB25EF1DD2E93 /* Resources */,
 				259BBAE1B09DDFF1BE1930D492A85114 /* Support Files */,
 			);
@@ -247,16 +245,12 @@
 			path = "../Target Support Files/Font-Awesome-Swift";
 			sourceTree = "<group>";
 		};
-		4B8F6F23A123538B32EA4C52854A52B1 /* Source */ = {
+		4EDF220A246E8142D63835B11A000A60 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				4C7646DAD3CBDEA918BF128BDD5D442B /* LFTPulseAnimation.swift */,
-				DBF25AE4BB9AC7650CB6E470E6747F5E /* STLocationRequest.swift */,
-				862CE5335F6245902DF78D066F5485A2 /* STLocationRequestController.swift */,
-				8ED1306012ADF6451901DD209AD56ED9 /* STLocationRequestUIVCExtension.swift */,
-				D251B3CF105917D4657D4A413FC9B203 /* STRotatingCamera.swift */,
+				6A9FF84849AC5F4C8B965B6BEAEB5534 /* Source */,
 			);
-			path = Source;
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		62F255B88FFF9774C53ED839E303C039 /* Pods-STLocationRequest_Tests */ = {
@@ -283,6 +277,17 @@
 				5BBA95072C791B11185074CA43CF481A /* FontAwesome.ttf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		6A9FF84849AC5F4C8B965B6BEAEB5534 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				EFD2CD9F9624B3017F8B08209873347B /* LFTPulseAnimation.swift */,
+				F359771E712B4F64BADCBBCAAB3D001D /* STLocationRequest.swift */,
+				C671C2623D434A27922D34ACC7714AA1 /* STLocationRequestController.swift */,
+				F2D799A27AFAC145609BF7B3B99544FE /* STRotatingCamera.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		6B162D70CE8D761282EB92C78057C65E /* Pod */ = {
@@ -387,14 +392,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FC6FD583DC510134F0CFB6F11CEDC034 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				4B8F6F23A123538B32EA4C52854A52B1 /* Source */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -488,7 +485,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B7A88EE9A3F568068559BA73275C37B /* Build configuration list for PBXNativeTarget "STLocationRequest" */;
 			buildPhases = (
-				BA3C572170BAFB5506AE9DEF4AB34D2C /* Sources */,
+				0462FBAD844D672C8E773D1856E2DF17 /* Sources */,
 				7C15D2FCBDC4370CF81C6E0FE2CBF875 /* Frameworks */,
 				0187C40CA936DE4A840BCBAB8014335F /* Resources */,
 				790468C62618F28823493F782FEA4570 /* Headers */,
@@ -609,6 +606,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0462FBAD844D672C8E773D1856E2DF17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D647120EAF1554736262C579D567EDCF /* LFTPulseAnimation.swift in Sources */,
+				2B5CBE35BE20FDC99DEDF47ADB4D0530 /* STLocationRequest-dummy.m in Sources */,
+				0E409EC19ACC7A1FB623FD9DB3B7FB92 /* STLocationRequest.swift in Sources */,
+				2613755EE97948F8AD930205C6DB2987 /* STLocationRequestController.swift in Sources */,
+				9756E2C30368B8BFAD3A788FC29C9450 /* STRotatingCamera.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		046E69A43FFE4D595CA3D30D6111E649 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -645,19 +654,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F219CCA429B1B79EA78A828130D960BF /* Pods-STLocationRequest_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BA3C572170BAFB5506AE9DEF4AB34D2C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AFB6EA5CA638D23F806B5F84D9D5BA1 /* LFTPulseAnimation.swift in Sources */,
-				57074BAB0272B2F3C7D7162B968604DA /* STLocationRequest-dummy.m in Sources */,
-				4E35272086BB72F35BC5153706AB434C /* STLocationRequest.swift in Sources */,
-				EE3472E3C13ACA456F793541157056CC /* STLocationRequestController.swift in Sources */,
-				C518FC0AAEC801EA976EC15373CF6956 /* STLocationRequestUIVCExtension.swift in Sources */,
-				CF8D0DD6DD537D2F78FDE4084A67474C /* STRotatingCamera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

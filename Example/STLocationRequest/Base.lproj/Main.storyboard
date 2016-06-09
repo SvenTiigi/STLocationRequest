@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,61 +16,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User location address:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inr-gK-VtC">
-                                <rect key="frame" x="197" y="496" width="206" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Wfr-7c-US3"/>
-                                    <constraint firstAttribute="width" constant="206" id="qFY-GS-Id5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Tap Request Location&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qe-af-LSf">
-                                <rect key="frame" x="20" y="525" width="560" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="huF-57-fm9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wla-WH-Ofj">
-                                <rect key="frame" x="20" y="37" width="560" height="70"/>
-                                <state key="normal" title="Request Location">
+                                <rect key="frame" x="129" y="302" width="343" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="8kZ-qh-Hgf"/>
+                                    <constraint firstAttribute="width" constant="343" id="NoC-4f-WaE"/>
+                                </constraints>
+                                <state key="normal" title="Present STLocationRequestController">
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="requestLocationButtonTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yzA-77-ll0"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-Nh-KhA">
-                                <rect key="frame" x="20" y="135" width="560" height="330"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="1FX-Ia-s6o"/>
-                                </connections>
-                            </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationRequestLogo" translatesAutoresizingMaskIntoConstraints="NO" id="4Ps-jN-ozD">
+                                <rect key="frame" x="188" y="58" width="224" height="161"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="58n-Ud-xyw"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8NG-Nh-KhA" firstAttribute="trailing" secondItem="Wla-WH-Ofj" secondAttribute="trailing" id="1FU-l3-zGp"/>
-                            <constraint firstItem="Wla-WH-Ofj" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="17" id="7Bs-U4-R2C"/>
-                            <constraint firstItem="4qe-af-LSf" firstAttribute="trailing" secondItem="8NG-Nh-KhA" secondAttribute="trailing" id="AaR-F9-YPh"/>
-                            <constraint firstItem="8NG-Nh-KhA" firstAttribute="top" secondItem="Wla-WH-Ofj" secondAttribute="bottom" constant="28" id="FYv-DL-wLZ"/>
-                            <constraint firstItem="8NG-Nh-KhA" firstAttribute="leading" secondItem="Wla-WH-Ofj" secondAttribute="leading" id="JJQ-Fg-khP"/>
-                            <constraint firstItem="inr-gK-VtC" firstAttribute="top" secondItem="8NG-Nh-KhA" secondAttribute="bottom" constant="31" id="JXf-LV-YfI"/>
-                            <constraint firstItem="8NG-Nh-KhA" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Xe3-JZ-vKL"/>
-                            <constraint firstAttribute="bottom" secondItem="4qe-af-LSf" secondAttribute="bottom" constant="20" symbolic="YES" id="Xqg-Jl-VMC"/>
-                            <constraint firstItem="4qe-af-LSf" firstAttribute="top" secondItem="inr-gK-VtC" secondAttribute="bottom" constant="8" symbolic="YES" id="ZMq-pp-vJo"/>
-                            <constraint firstItem="Wla-WH-Ofj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="eYi-Uo-PnJ"/>
-                            <constraint firstItem="inr-gK-VtC" firstAttribute="centerX" secondItem="4qe-af-LSf" secondAttribute="centerX" id="ge5-mX-676"/>
-                            <constraint firstItem="Wla-WH-Ofj" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="tgr-ei-36R"/>
-                            <constraint firstItem="8NG-Nh-KhA" firstAttribute="leading" secondItem="4qe-af-LSf" secondAttribute="leading" id="uMB-7l-eld"/>
+                            <constraint firstItem="4Ps-jN-ozD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="38" id="62B-AW-p8q"/>
+                            <constraint firstItem="4Ps-jN-ozD" firstAttribute="centerX" secondItem="Wla-WH-Ofj" secondAttribute="centerX" id="GDf-fK-LIN"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Wla-WH-Ofj" secondAttribute="bottom" constant="266" id="ext-Ql-bkM"/>
+                            <constraint firstItem="4Ps-jN-ozD" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="qmG-pS-SYC"/>
+                            <constraint firstItem="Wla-WH-Ofj" firstAttribute="top" secondItem="4Ps-jN-ozD" secondAttribute="bottom" constant="83" id="sNH-cR-Lau"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addressLabel" destination="4qe-af-LSf" id="k8w-pK-TKa"/>
-                        <outlet property="mapView" destination="8NG-Nh-KhA" id="t0x-A5-rQ6"/>
                         <outlet property="requestLocationButton" destination="Wla-WH-Ofj" id="ZzH-OK-yzO"/>
                     </connections>
                 </viewController>
@@ -81,4 +54,7 @@
             <point key="canvasLocation" x="849" y="504"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="locationRequestLogo" width="341" height="341"/>
+    </resources>
 </document>

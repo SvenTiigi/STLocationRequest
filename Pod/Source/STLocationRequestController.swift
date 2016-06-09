@@ -12,60 +12,46 @@ import CoreLocation
 import MapKit
 import Font_Awesome_Swift
 
- /*
-    STLocationRequest Delegate
- */
-@objc public protocol LocationRequestDelegate{
-    // Called when the user tapped the "Not Now" button
-    @objc func locationRequestNotNow()
-    // Called when the user authorized to the location request
-    @objc func locationRequestAuthorized()
-    // Called when the user denied the location request
-    @objc func locationRequestDenied()
-    // Called when the STLocationRequestController is presented
-    @objc func locationRequestControllerPresented()
-}
-
 class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    // IBOutlets connections
+    /// IBOutlets connections
 	@IBOutlet weak var allowButton: UIButton!
 	@IBOutlet weak var notNowButton: UIButton!
 	@IBOutlet weak var mapView: MKMapView!
 	@IBOutlet weak var descriptionLabel: UILabel!
 	@IBOutlet weak var locationSymbolLabel: UILabel!
 	
-	// CitryCoordinate which store all coordinates
+	/// CitryCoordinate which store all coordinates
 	var cityOrLandmarks3DCoordinates: [CLLocationCoordinate2D] = []
 	
-	// Array to store random integer values
+	/// Array to store random integer values
     var randomNumbers: [Int] = []
 	
-	// Initialize STRotatingCamera
+	/// Initialize STRotatingCamera
 	var rotatingCamera = STRotatingCamera()
 	
-	// Initialize CLLocationManager
+	/// Initialize CLLocationManager
 	var locationManager = CLLocationManager()
 	var pulseEffect = LFTPulseAnimation(radius: 0, position: CGPointMake(0,0))
 	
-	// Variables for UILabel and UIButton
+	/// Variables for UILabel and UIButton
     var titleLabelText = String()
     var allowButtonTitle = String()
     var notNowButtonTitle = String()
 	
-	// Variables for appearance
+	/// Variables for appearance
     var mapViewAlphaValue : CGFloat?
     var backgroundViewColor : UIColor?
     
-    // Variable for NSTimer
+    /// Variable for NSTimer
     var timer : NSTimer?
     
-    // Delegate Object
-    var delegate : LocationRequestDelegate?
+    var authorizeType : STLocationAuthorizeType?
+    
+    /// Delegate Object
+    var delegate : STLocationRequestDelegate?
 
-    /*
-        viewDidLoad
-    */
+    /// viewDidLoad
     override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -104,9 +90,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		self.timer = NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: #selector(STLocationRequestController.changeRandomFlyOverCity), userInfo: nil, repeats: true)
 	}
     
-    /*
-        Set the text for the description and button labels
-    */
+    /// Set the text for the description and button labels
     private func setDescriptionAndButtonText(){
         // Setting the text for UILabel and UIButtons
         self.descriptionLabel.text = self.titleLabelText
@@ -114,16 +98,17 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
         self.notNowButton.setTitle(notNowButtonTitle, forState: UIControlState.Normal)
     }
 	
-    /*
-        Set the color scheme to get a individual look and feel for the STLocationRequest Screen
-    */
+    /// Set the color scheme to get a individual look and feel for the STLocationRequest Screen
     private func setColorScheme(){
-        // Setting the Background Color and Alpha Value for the map
+        // Setting the alpha Value for MapView
+        // If it's nil then alphaValue will be 1
         if let alphaValue = self.mapViewAlphaValue{
             self.mapView.alpha = alphaValue
         }else{
             self.mapView.alpha = 1
         }
+        // Setting the backgroundColor for UIView
+        // If it's nil then backgroundColor will be white
         if let backgroundColor = self.backgroundViewColor {
             self.view.backgroundColor = backgroundColor
         }else{
@@ -131,9 +116,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
         }
     }
     
-    /*
-        Set the specific MKMapView Settings
-    */
+    /// Set the specific MKMapView Settings
     private func setMapViewSettings(){
         // Check if SatelliteFlyover is avaible
         if #available(iOS 9.0, *) {
@@ -145,9 +128,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
         }
     }
     
-    /*
-        Adding the pulse effect under the Location-Symbol in the middle of the STLocationRequest Screen
-    */
+    /// Adding the pulse effect under the Location-Symbol in the middle of the STLocationRequest Screen
     private func addPulseEffect(){
         // Setting the Pulse Effect
         self.pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:180, position:self.view.center)
@@ -155,9 +136,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
         self.view.layer.insertSublayer(pulseEffect, below: self.locationSymbolLabel.layer)
     }
     
-    /*
-        viewDidDisappear
-    */
+    /// viewDidDisappear
     override func viewDidDisappear(animated: Bool) {
 		super.viewWillDisappear(animated)
         // invalidate the timer and release it.
@@ -168,10 +147,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
         self.timer = nil
 	}
 	
-	/*
-		If Device is going landscape hide the location symbol and the pulse layer
-	*/
-    
+    /// If Device is going landscape hide the location symbol and the pulse layer
 	override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
 		if UIDevice.currentDevice().orientation.isLandscape.boolValue {
 			UIView.animateWithDuration(0.5, animations: { () -> Void in
@@ -190,18 +166,16 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		}
 	}
 	
-	/*
-		CLLocationManager Delegate if the User allowed oder denied the location request
-	*/
+    /// CLLocationManager Delegate if the User allowed oder denied the location request
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 		switch status {
 		case .AuthorizedWhenInUse:
-            self.delegate?.locationRequestAuthorized()
+            self.delegate?.locationRequestControllerDidChange(.LocationRequestAuthorized)
 			self.dismissViewControllerAnimated(true, completion: nil)
 			break
 			
 		case .Denied:
-            self.delegate?.locationRequestDenied()
+            self.delegate?.locationRequestControllerDidChange(.LocationRequestDenied)
 			self.dismissViewControllerAnimated(true, completion: nil)
 			break
 			
@@ -210,18 +184,14 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		}
 	}
 	
-	/*
-		MKMapView Delegate regionDidChangeAnimated
-	*/
+    /// MKMapView Delegate regionDidChangeAnimated
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 		if (self.rotatingCamera.isStopped() == true) {
 			self.rotatingCamera.continueRotating()
 		}
 	}
 	
-	/*
-		Add citys to cityCoordinate Array
-	*/
+    /// Add citys to cityCoordinate Array
     func fillCityOrLandmarks3DCoordinatesArray() {
 		let parisEiffelTower = CLLocationCoordinate2DMake(48.85815,2.29452);
 		let newYorkStatueOfLiberty = CLLocationCoordinate2DMake(40.689249, -74.044500);
@@ -237,8 +207,6 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		let londonEye = CLLocationCoordinate2DMake(51.503324, -0.119543);
 		let sydneyOperaHouse = CLLocationCoordinate2DMake(-33.857197, 151.215140);
         let sagradaFamiliaSpain = CLLocationCoordinate2DMake(41.404024, 2.174370)
-        let facebookHQ = CLLocationCoordinate2DMake(37.484947, -122.148201)
-        let disneyConcertHall = CLLocationCoordinate2DMake(34.055436, -118.249940)
 		self.cityOrLandmarks3DCoordinates.append(parisEiffelTower)
 		self.cityOrLandmarks3DCoordinates.append(newYorkStatueOfLiberty)
 		self.cityOrLandmarks3DCoordinates.append(sFGoldenGateBridge)
@@ -253,13 +221,9 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		self.cityOrLandmarks3DCoordinates.append(londonEye)
 		self.cityOrLandmarks3DCoordinates.append(sydneyOperaHouse)
         self.cityOrLandmarks3DCoordinates.append(sagradaFamiliaSpain)
-        self.cityOrLandmarks3DCoordinates.append(facebookHQ)
-        self.cityOrLandmarks3DCoordinates.append(disneyConcertHall)
 	}
 
-	/*
-		Set a custom style for a given UIButton
-	*/
+    /// Set a custom style for a given UIButton
     func setCustomButtonStyle(button: UIButton) {
 		button.layer.borderWidth = 1.0
 		button.layer.borderColor = UIColor.whiteColor().CGColor
@@ -269,9 +233,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		button.setBackgroundImage(getImageWithColor(UIColor.whiteColor(), size: button.bounds.size), forState: UIControlState.Highlighted)
 	}
 	
-	/*
-		Return a UIImage with a given UIColor and CGSize
-	*/
+    /// Return a UIImage with a given UIColor and CGSize
     func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
 		let rect = CGRectMake(0, 0, size.width, size.height)
 		UIGraphicsBeginImageContextWithOptions(size, false, 0)
@@ -282,9 +244,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		return image
 	}
 	
-	/*
-		Get a random City and change the location on the map
-	*/
+    /// Get a random City and change the location on the map
 	func changeRandomFlyOverCity() {
 		let generateRandomNumber = randomSequenceGenerator(0, max: self.cityOrLandmarks3DCoordinates.count-1)
         let randomNumber = generateRandomNumber()
@@ -295,9 +255,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		}
 	}
     
-    /*
-        Get a random Index from an given array without repeating an index
-    */
+    /// Get a random Index from an given array without repeating an index
     func randomSequenceGenerator(min: Int, max: Int) -> () -> Int {
         return {
             if self.randomNumbers.count == 0 {
@@ -308,18 +266,22 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
         }
     }
 	
-	/*
-		Allow button was touched request authorization
-	*/
+    /// Allow button was touched request authorization by AuthorizeType
 	@IBAction func allowButtonTouched(sender: UIButton) {
-		self.locationManager.requestWhenInUseAuthorization()
+        guard let authorizeTypeForLocationManager = self.authorizeType else{
+            self.locationManager.requestWhenInUseAuthorization()
+            return
+        }
+        if authorizeTypeForLocationManager == .RequestAlwaysAuthorization {
+            self.locationManager.requestAlwaysAuthorization()
+        }else{
+            self.locationManager.requestWhenInUseAuthorization()
+        }
 	}
 	
-	/*
-		Not now button was touched dismiss Viewcontroller
-	*/
+    /// Not now button was touched dismiss Viewcontroller
 	@IBAction func notNowButtonTouched(sender: UIButton) {
-        self.delegate?.locationRequestNotNow()
+        self.delegate?.locationRequestControllerDidChange(.NotNowButtonTapped)
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
 }

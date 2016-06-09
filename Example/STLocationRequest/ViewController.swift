@@ -8,182 +8,90 @@
 
 import UIKit
 import CoreLocation
-import MapKit
 import STLocationRequest
 
-class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, LocationRequestDelegate {
-	// Storyboard IBOutlet for the Request Location Button
-	@IBOutlet weak var requestLocationButton: UIButton!
-	
-	// Initialize CLLocationManager
-	var locationManager = CLLocationManager()
-	
-	// Storyboard IBOutlet
-	@IBOutlet weak var addressLabel: UILabel!
-	
-	// Storyboard IBOutlet MapView
-	@IBOutlet weak var mapView: MKMapView!
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+class ViewController: UIViewController, CLLocationManagerDelegate, STLocationRequestDelegate {
     
-		self.mapView.layer.cornerRadius = 5.0
-		
-		// Get a nice looking UIButton
-		self.setCustomButtonStyle(self.requestLocationButton)
-		
-		// Set the locationManager
-		self.locationManager.delegate = self
-		self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-		self.locationManager.distanceFilter=kCLDistanceFilterNone
-	}
-	
-	/*
-		requestLocationButtonTouched Method
-	*/
-	@IBAction func requestLocationButtonTouched(sender: UIButton) {
-		if CLLocationManager.locationServicesEnabled() {
-			if CLLocationManager.authorizationStatus() == .Denied {
-				// Location Services are Denied
-			} else {
-				if CLLocationManager.authorizationStatus() == .NotDetermined{
-					// The user has never been asked about his location show the locationRequest Screen
-					// Just play around with the setMapViewAlphaValue and setBackgroundViewColor parameters, to match with your design of your app
-					self.showLocationRequestController(
-						setTitle: "We need your location for some awesome features",
-						setAllowButtonTitle: "Alright",
-						setNotNowButtonTitle: "Not now",
-						setMapViewAlphaValue: 0.9,
-						setBackgroundViewColor: UIColor.lightGrayColor(),
-						setDelegate: self)
-                    /*
+    // Storyboard IBOutlet for the Request Location Button
+    @IBOutlet weak var requestLocationButton: UIButton!
+    
+    // Initialize CLLocationManager
+    var locationManager = CLLocationManager()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Set the locationManager
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.distanceFilter=kCLDistanceFilterNone
+    }
+    
+    // requestLocationButtonTouched Method
+    @IBAction func requestLocationButtonTouched(sender: UIButton) {
+        if CLLocationManager.locationServicesEnabled() {
+            if CLLocationManager.authorizationStatus() == .Denied {
+                // Location Services are Denied
+                print("Location Services are denied")
+            } else {
+                if CLLocationManager.authorizationStatus() == .NotDetermined{
+                    // The user has never been asked about his location show the locationRequest Screen
+                    // Just play around with the setMapViewAlphaValue and setBackgroundViewColor parameters, to match with your design of your app
                     // Also you can initialize an STLocationRequest Object and set all attributes
                     // and at the end call presentLocationRequestController
-                    let locationRequest = STLocationRequest(viewController: self)
+                    let locationRequest = STLocationRequest()
                     locationRequest.titleText = "We need your location for some awesome features"
                     locationRequest.allowButtonTitle = "Alright"
                     locationRequest.notNowButtonTitle = "Not now"
                     locationRequest.mapViewAlphaValue = 0.9
-                    locationRequest.backgroundViewColor = UIColor.lightGrayColor()
+                    locationRequest.backgroundColor = UIColor.lightGrayColor()
+                    locationRequest.authorizeType = .RequestWhenInUseAuthorization
                     locationRequest.delegate = self
-                    locationRequest.presentLocationRequestController()
-                    */
-				} else {
-					// The user has already allowed your app to use location services
-					if #available(iOS 9.0, *) {
-						self.locationManager.requestLocation()
-					} else {
-						self.locationManager.startUpdatingLocation()
-					}
-				}
-			}
-		} else {
-			// Location Services are disabled
-		}
-	}
-    
-	/*
-		STLocationRequest Delegate Methods
-	*/
-	func locationRequestNotNow() {
-		print("Not Now Button tapped")
-	}
-    
-	func locationRequestAuthorized() {
-		if #available(iOS 9.0, *) {
-			self.locationManager.requestLocation()
-		} else {
-			self.locationManager.startUpdatingLocation()
-		}
-		print("Location service is allowed by the user. You have now access to the user location")
-	}
-	
-	func locationRequestDenied() {
-		print("The user denied the use of location services")
-	}
-    
-    func locationRequestControllerPresented() {
-        print("STLocationRequestController presented")
-    }
-	
-	/*
-		CLLocationManagerDelegate Methods
-	*/
-	func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-		print("The Location couldn't be found")
-	}
-	
-	func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		self.locationManager.stopUpdatingLocation()
-		let geoCoder = CLGeocoder()
-		
-		guard let userLocation = locations.last else{
-			return
-		}
-		
-		self.mapView.showsUserLocation = true
-		geoCoder.reverseGeocodeLocation(userLocation) { (placemarks, error) -> Void in
-			guard let placemark = placemarks?.last else{
-				return
-			}
-			
-			let thoroughfare = self.unwrapString(placemark.thoroughfare) + " "
-			let subThoroughfare = " " + self.unwrapString(placemark.subThoroughfare) + " "
-			let postalCode = " " + self.unwrapString(placemark.postalCode) + " "
-			let locality = " " + self.unwrapString(placemark.locality)
-			
-			UIView.animateWithDuration(0.8, animations: { () -> Void in
-				self.mapView.alpha = 0
-				self.addressLabel.text = "\(thoroughfare)\(subThoroughfare)\(postalCode)\(locality)"
-				self.mapView.alpha = 1
-			})
-		}
-	}
-    
-    /*
-        Unwrap an optional String and return an unwrapped a String or an Empty String
-    */
-    func unwrapString(optionalString : String?) -> String{
-        guard let string = optionalString else{
-            return ""
+                    locationRequest.presentLocationRequestController(onViewController: self)
+                } else {
+                    // The user has already allowed your app to use location services
+                    self.startUpdatingLocation()
+                }
+            }
+        } else {
+            // Location Services are disabled
+            print("Location Services are disabled")
         }
-        return string
     }
-	
-	/*
-		Delegate Method didUpdateUserLocation for the MapView to zoom in to the user location
-	*/
-	func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-		self.mapView.showAnnotations([self.mapView.userLocation], animated: true)
-	}
-	
-	/*
-		These are just Method for a nice UIButton :)
-	*/
-	
-	/*
-		Set a custom style for a given UIButton
-	*/
-	private func setCustomButtonStyle(button : UIButton){
-		button.layer.borderWidth = 1.0
-		button.layer.borderColor = UIColor.orangeColor().CGColor
-		button.layer.cornerRadius = 5.0
-		button.layer.masksToBounds = true
-		button.setTitleColor(UIColor.orangeColor(), forState: UIControlState.Normal)
-		button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Highlighted)
-		button.setBackgroundImage(getImageWithColor(UIColor.orangeColor(), size: button.bounds.size), forState: UIControlState.Highlighted)
-	}
-	
-	/*
-		Return a UIImage with a given UIColor and CGSize
-	*/
-	private func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
-		let rect = CGRectMake(0, 0, size.width, size.height)
-		UIGraphicsBeginImageContextWithOptions(size, false, 0)
-		color.setFill()
-		UIRectFill(rect)
-		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
-		UIGraphicsEndImageContext()
-		return image
-	}
+
+    // STLocationRequest Delegate Methods
+    func locationRequestControllerDidChange(event: STLocationRequestEvent) {
+        switch event {
+        case .LocationRequestAuthorized:
+            self.startUpdatingLocation()
+            break
+        case .LocationRequestDenied:
+            print("The user denied the use of location services")
+            break
+        case .NotNowButtonTapped:
+            print("Not now button was tapped")
+            break
+        case .LocationRequestDidPresented:
+            print("STLocationRequestController presented")
+            break
+        }
+    }
+    
+    // Start updating user location
+    func startUpdatingLocation(){
+        self.locationManager.startUpdatingLocation()
+        print("Location service is allowed by the user. You have now access to the user location")
+    }
+    
+    // CLLocationManagerDelegate Methods
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("The Location couldn't be found")
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.locationManager.stopUpdatingLocation()
+        print("didUpdateLocations UserLocation: \(locations.last)")
+        
+    }
+    
 }
