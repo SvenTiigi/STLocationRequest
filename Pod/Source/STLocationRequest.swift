@@ -54,13 +54,11 @@ import UIKit
     /// The title for the notNowButton which will dismiss the STLocationRequestController. Default value is "Not now"
     public var notNowButtonTitle = "Not now"
     /// The alpha value for the MapView which is used in combination with `backgroundViewColor` to match the STLocationRequestController with the design of your app. Default value is 1
-    public var mapViewAlphaValue : CGFloat?
+    public var mapViewAlphaValue = 1.0
     /// The backgroundcolor for the view of the STLocationRequestController which is used in combination with `mapViewAlphaValue` to match the STLocationRequestController with the design of your app. Default value is a white color.
-    public var backgroundColor : UIColor?
-    
+    public var backgroundColor = UIColor.whiteColor()
     /// Set the authorize Type for STLocationRequestController. Choose between: `RequestWhenInUseAuthorization` and `RequestAlwaysAuthorization`. Default value is `RequestWhenInUseAuthorization`
-    public var authorizeType : STLocationAuthorizeType?
-    
+    public var authorizeType = STLocationAuthorizeType.RequestWhenInUseAuthorization
     /// STLocationRequestDelegate which is used to handle events from the STLocationRequestController.
     public var delegate : STLocationRequestDelegate?
     

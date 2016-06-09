@@ -40,7 +40,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
     var notNowButtonTitle = String()
 	
 	/// Variables for appearance
-    var mapViewAlphaValue : CGFloat?
+    var mapViewAlphaValue : Double?
     var backgroundViewColor : UIColor?
     
     /// Variable for NSTimer
@@ -103,7 +103,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
         // Setting the alpha Value for MapView
         // If it's nil then alphaValue will be 1
         if let alphaValue = self.mapViewAlphaValue{
-            self.mapView.alpha = alphaValue
+            self.mapView.alpha = CGFloat(alphaValue)
         }else{
             self.mapView.alpha = 1
         }
