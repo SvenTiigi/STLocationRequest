@@ -55,7 +55,7 @@ To match with your design of your app, simply playaround with the parameters `ma
 <img width=200 src="./Preview/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
 </p>
 
-Also you can apply to the `STLocationRequestDelegate` to get notified if the user has authorized or denied the Location Services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented.
+Also you can apply to the `STLocationRequestDelegate` to get notified if the user has authorized or denied the location services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented.
 
 ```swift
 
@@ -100,7 +100,7 @@ Please mind that the 3D Flyover-View will only work on a real iOS device (not in
 
 ## Objective-C
 
-To present the `STLocationRequest`-Controller in an `Objective-C` project you can do it like so.
+To present the `STLocationRequest`-Controller in an `Objective-C` project you can go like this.
 
 ```objective-c
 #import "ViewController.h"
