@@ -32,7 +32,7 @@ To present the `STLocationRequest`-Controller
 ```swift
 import STLocationRequest
 
-func showLocationRequest(){
+func presentLocationRequest(){
     let locationRequest = STLocationRequest()
     locationRequest.titleText = "We need your location for some awesome features"
     locationRequest.allowButtonTitle = "Alright"
