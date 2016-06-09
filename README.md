@@ -107,12 +107,11 @@ To show the `STLocationRequest`-Controller in an `Objective-C` project you can d
 @import STLocationRequest;
 
 @interface ViewController () <STLocationRequestDelegate>
-
 @end
 
 @implementation ViewController
 
--(void)showLocationRequestController{
+-(void)presentLocationRequest{
     STLocationRequest *locationRequest = [STLocationRequest new];
     locationRequest.titleText = @"We need your location for some awesome features";
     locationRequest.allowButtonTitle = @"Alright";
@@ -122,6 +121,19 @@ To show the `STLocationRequest`-Controller in an `Objective-C` project you can d
     locationRequest.authorizeType = STLocationAuthorizeTypeRequestWhenInUseAuthorization;
     locationRequest.delegate = self;
     [locationRequest presentLocationRequestControllerOnViewController:self];
+}
+
+-(void)locationRequestControllerDidChange:(enum STLocationRequestEvent)event{
+    switch (event) {
+        case STLocationRequestEventLocationRequestAuthorized:
+            break;
+        case STLocationRequestEventLocationRequestDenied:
+            break;
+        case STLocationRequestEventNotNowButtonTapped:
+            break;
+        case STLocationRequestEventLocationRequestDidPresented:
+            break;
+    }
 }
 
 ```
