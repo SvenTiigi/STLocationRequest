@@ -46,7 +46,7 @@ func presentLocationRequest(){
 
 ```
 
-To match with your design of your app, simply playaround with the parameters `mapViewAlphaValue` and `backgroundColor` to get your very own design.
+To perfectly match the design to your app, simply playaround with the parameters `mapViewAlphaValue` and `backgroundColor` to get your very own design.
 
 <p align="center">
 <img width=200 src="./Preview/STLocationRequest_Purple.jpg" alt="STLocationRequest" title="STLocationRequest">
