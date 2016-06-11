@@ -90,7 +90,7 @@ STLocationAuthorizeType.RequestAlwaysAuthorization
 <string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
 ```
 
-This text will be shown in the defailt iOS location request dialog which will show up, when the user tapped the allow button
+This text will be shown in the default iOS location request dialog, which will show up when the user tapped the allow button.
 
 For more details check out the example application.
 
