@@ -78,13 +78,13 @@ func locationRequestControllerDidChange(event: STLocationRequestEvent) {
 
 Also don't forget to add the usage description key to your `Info.plist` for you selected authorization type.
 
-STLocationAuthorizeType.RequestWhenInUseAuthorization
+STLocationAuthorizeType.**RequestWhenInUseAuthorization**
 ```swift
 <key>NSLocationWhenInUseUsageDescription</key>
 <string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
 ```
 
-STLocationAuthorizeType.RequestAlwaysAuthorization
+STLocationAuthorizeType.**RequestAlwaysAuthorization**
 ```swift
 <key>NSLocationAlwaysUsageDescription</key>
 <string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
