@@ -92,11 +92,21 @@ STLocationAuthorizeType.**RequestAlwaysAuthorization**
 
 This text will be shown in the default iOS location request dialog, which will show up when the user tapped the allow button.
 
+<p align="center">
+<img src="./Preview/iOSLocationRequestDialog.png" alt="iOSRequestDialog" title="iOSRequestDialog" width=300>
+
+</p>
+
 For more details check out the example application.
 
 ## 3D Flyover-View in Simulator
 
-Please mind that the 3D Flyover-View will only work on a real iOS device (not in the Simulator) with at least iOS 9.0 installed.
+Please mind that the 3D Flyover-View will only work on a real iOS device (not in the Simulator) with at least iOS 9.0 installed. A Screenshot taken from an **iOS Simulator** running `STLocationRequest`-Controller.
+
+<p align="center">
+<img src="./Preview/iOSSimulatorBehavior.jpg" alt="iOSSimulatorBehavior" title="iOSSimulatorBehavior" width=300>
+
+</p>
 
 ## Objective-C
 
