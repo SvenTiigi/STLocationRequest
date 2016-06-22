@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C393DC5DC5790FDF6875BD0 /* Pods_STLocationRequest_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C070D7790B2B94F5E983F11C /* Pods_STLocationRequest_Example.framework */; };
+		2ED29FD706A93B8B02002593 /* Pods_STLocationRequest_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA039F9A294412FC70BAE8C3 /* Pods_STLocationRequest_Example.framework */; };
+		3E08CCB7801D1840663F4E3F /* Pods_STLocationRequest_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD850A80BBEA9EBE2172087 /* Pods_STLocationRequest_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		DB90E62916530220757DF5FC /* Pods_STLocationRequest_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85D12E46C370F8323B5C924 /* Pods_STLocationRequest_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14889F4A1C06D60CB1D3FBA1 /* Pods-STLocationRequest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		38A89EC53F120208244377BD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		43F661B1405AE184EB2230C5 /* Pods-STLocationRequest_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		3FD850A80BBEA9EBE2172087 /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAA35BA35BF99B8CF978878 /* STLocationRequest.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = STLocationRequest.podspec; path = ../STLocationRequest.podspec; sourceTree = "<group>"; };
 		4CBEDACDEE720EB8E34CEEB1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		5F668D7D5DB7F2E0747890C6 /* Pods-STLocationRequest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* STLocationRequest_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STLocationRequest_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,9 +42,11 @@
 		607FACE51AFB9204008FA782 /* STLocationRequest_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STLocationRequest_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7DCC5CEE7E08FE88B7AF4631 /* Pods-STLocationRequest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C070D7790B2B94F5E983F11C /* Pods_STLocationRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D85D12E46C370F8323B5C924 /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72993D892E37891CD01166DF /* Pods-STLocationRequest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C5C5CD4250BF77477B90F0AC /* Pods-STLocationRequest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CA07FDCD06C3530E2AE28667 /* Pods-STLocationRequest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		EDABE7101DA7A4A96ECB91AE /* Pods-STLocationRequest_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		FA039F9A294412FC70BAE8C3 /* Pods_STLocationRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C393DC5DC5790FDF6875BD0 /* Pods_STLocationRequest_Example.framework in Frameworks */,
+				2ED29FD706A93B8B02002593 /* Pods_STLocationRequest_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,13 +62,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB90E62916530220757DF5FC /* Pods_STLocationRequest_Tests.framework in Frameworks */,
+				3E08CCB7801D1840663F4E3F /* Pods_STLocationRequest_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B49619F78635DF1DC101FF2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDABE7101DA7A4A96ECB91AE /* Pods-STLocationRequest_Example.debug.xcconfig */,
+				C5C5CD4250BF77477B90F0AC /* Pods-STLocationRequest_Example.release.xcconfig */,
+				72993D892E37891CD01166DF /* Pods-STLocationRequest_Tests.debug.xcconfig */,
+				CA07FDCD06C3530E2AE28667 /* Pods-STLocationRequest_Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -76,8 +87,8 @@
 				607FACD21AFB9204008FA782 /* Example for STLocationRequest */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				9008E74FD2B505EDA2BC932A /* Pods */,
-				ACC1D2583B834DB8F9297DA6 /* Frameworks */,
+				1B49619F78635DF1DC101FF2 /* Pods */,
+				F09F0AE27FAED442D1F07890 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,22 +150,11 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		9008E74FD2B505EDA2BC932A /* Pods */ = {
+		F09F0AE27FAED442D1F07890 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43F661B1405AE184EB2230C5 /* Pods-STLocationRequest_Example.debug.xcconfig */,
-				5F668D7D5DB7F2E0747890C6 /* Pods-STLocationRequest_Example.release.xcconfig */,
-				7DCC5CEE7E08FE88B7AF4631 /* Pods-STLocationRequest_Tests.debug.xcconfig */,
-				14889F4A1C06D60CB1D3FBA1 /* Pods-STLocationRequest_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		ACC1D2583B834DB8F9297DA6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C070D7790B2B94F5E983F11C /* Pods_STLocationRequest_Example.framework */,
-				D85D12E46C370F8323B5C924 /* Pods_STLocationRequest_Tests.framework */,
+				FA039F9A294412FC70BAE8C3 /* Pods_STLocationRequest_Example.framework */,
+				3FD850A80BBEA9EBE2172087 /* Pods_STLocationRequest_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -486,7 +486,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43F661B1405AE184EB2230C5 /* Pods-STLocationRequest_Example.debug.xcconfig */;
+			baseConfigurationReference = EDABE7101DA7A4A96ECB91AE /* Pods-STLocationRequest_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = STLocationRequest/Info.plist;
@@ -499,7 +499,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F668D7D5DB7F2E0747890C6 /* Pods-STLocationRequest_Example.release.xcconfig */;
+			baseConfigurationReference = C5C5CD4250BF77477B90F0AC /* Pods-STLocationRequest_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = STLocationRequest/Info.plist;
@@ -512,7 +512,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DCC5CEE7E08FE88B7AF4631 /* Pods-STLocationRequest_Tests.debug.xcconfig */;
+			baseConfigurationReference = 72993D892E37891CD01166DF /* Pods-STLocationRequest_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -530,7 +530,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14889F4A1C06D60CB1D3FBA1 /* Pods-STLocationRequest_Tests.release.xcconfig */;
+			baseConfigurationReference = CA07FDCD06C3530E2AE28667 /* Pods-STLocationRequest_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "";
