@@ -1,12 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'STLocationRequest_Example', :exclusive => true do
+target 'STLocationRequest_Example' do
   pod "STLocationRequest", :path => "../"
 end
 
-target 'STLocationRequest_Tests', :exclusive => true do
-  pod "STLocationRequest", :path => "../"
-
-  
+target 'STLocationRequest_Tests' do
+  inherit! :search_paths
 end

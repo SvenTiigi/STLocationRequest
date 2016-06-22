@@ -8,7 +8,7 @@ I like &#9733;. Do not forget to &#9733; this super convenient library.
 #There is also a very popular [Google Design Material Icons](https://github.com/Vaberer/Google-Material-Design-Icons-Swift) library which you will love!
 
 
-##Added ```UISegmentedControl``` and ```UITabbarItem``` support!
+##Added ```UISegmentedControl``` & ```UITabbarItem``` & ```UISlider``` support!
 
 
 ###Updated to Font Awesome 4.4 - Added 66 new icons!
@@ -45,7 +45,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Font-Awesome-Swift', '~> 1.4.3'
+pod 'Font-Awesome-Swift', '~> 1.4.5'
 ```
 
 Then, run the following command:
@@ -85,15 +85,15 @@ Super easy way how to add an icon.
 ```Swift
     labelName.FAIcon = FAType.FAGithub
     
-    //or if you want to set an icon size, use:
     labelName.setFAIcon(FAType.FAGithub, iconSize: 35)
-    labelName.textColor = UIColor.blueColor()
-    
     
     labelName.setFAText(prefixText: "follow me on ", icon: FAType.FATwitter, postfixText: ". Thanks!", size: 25)
     
-    //to have bigger icon, use: 
+    // bigger icon: 
     labelName.setFAText(prefixText: "follow me on  ", icon: FAType.FATwitter, postfixText: ". Thanks!", size: 25, iconSize: 30)
+    
+    
+    labelName.textColor = UIColor.blueColor()
         
 ```
 
@@ -101,31 +101,32 @@ Super easy way how to add an icon.
 ```Swift
     buttonName.setFAIcon(FAType.FAGithub, forState: .Normal)
     
-    //or if you want to set an icon size, use:
+    // set an icon size
     buttonName.setFAIcon(FAType.FAGithub, iconSize: 35, forState: .Normal)
-    
-    //changing the color:
-    buttonName.titleLabel?.textColor = UIColor.blueColor()
-
-    
+  
     buttonName.setFAText(prefixText: "follow me on ", icon: FAType.FATwitter, postfixText: ". Thanks!", size: 25, forState: .Normal)
     
-    //to have bigger icon, use: 
+    // bigger icon 
     buttonName.setFAText(prefixText: "follow me on ", icon: FAType.FATwitter, postfixText: ". Thanks!", size: 25, forState: .Normal, iconSize: 30)
+    
+    
+    // change a color:
+    buttonName.titleLabel?.textColor = UIColor.blueColor()
 ```
 
 ### UIBarButtonItem
 ```Swift
-    //Standard font size
+    // Standard font size
     barName.FAIcon = FAType.FAGithub
   
-    //Custom font size
+    // Custom font size
     barName.setFAIcon(FAType.FAGithub, iconSize: 35)
     
-    barName.tintColor = UIColor.redColor()
-    
-    
     barName.setFAText(prefixText: "follow me on ", icon: FAType.FATwitter, postfixText: ". Thanks!", size: 25)
+    
+    
+    barName.tintColor = UIColor.redColor()
+
 ```
 ### UISegmentedControl
 ```Swift
@@ -137,6 +138,20 @@ Super easy way how to add an icon.
 ```Swift
   tabBarController?.tabBar.items?.first?.setFAIcon(FAType.FATwitter)
 ```
+
+### UISlider
+```Swift
+  // change minimum or maximum value image
+  slider.setFAMinimumValueImage(.FABellSlashO)
+  slider.setFAMaximumValueImage(.FABellO)
+
+  // change minimum or maximum value image with a specific size
+  slider.setFAMinimumValueImage(.FABellSlashO, customSize:  CGSizeMake(35, 35))
+  slider.setFAMaximumValueImage(.FABellO, customSize:  CGSizeMake(35, 35))
+```
+
+
+
 
 ## Author
 

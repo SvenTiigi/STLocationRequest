@@ -1,5 +1,5 @@
 PODS:
-  - Font-Awesome-Swift (1.4.5)
+  - Font-Awesome-Swift (1.4.7)
   - STLocationRequest (0.1.1):
     - Font-Awesome-Swift (~> 1.4.3)
 
@@ -8,10 +8,12 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   STLocationRequest:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Font-Awesome-Swift: 0af30357ab68dbcfa2d211254a5c11a158261112
+  Font-Awesome-Swift: 0131fd0f683ac024ce9abf1fdbc9fb482150ce49
   STLocationRequest: 9f83fefe9b0a5febb147df7238ca944b385ac7b8
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 276f4371772a3591644ab2524011d9d3e68f6758
+
+COCOAPODS: 1.0.1
