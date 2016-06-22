@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = "STLocationRequest"
-    s.version          = "0.1.1"
+    s.version          = "1.1.0"
     s.summary          = "A simple and elegant way to request the user location"
     s.description  = <<-DESC
                         A simple user interface to request the user location. With nice citys and a rotating 3D Map View
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
         'STLocationRequest' => ['Pod/Assets/*.png']
     }
     s.frameworks = 'UIKit', 'MapKit'
-    s.dependency 'Font-Awesome-Swift', '~> 1.4.3'
+    s.dependency 'Font-Awesome-Swift', '~> 1.4.7'
     s.resource_bundles = {
         'STLocationRequest' => ['Pod/Assets/*.storyboard']
     }
