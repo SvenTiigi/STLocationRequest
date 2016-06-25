@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39AD272E4528CA70032AF692 /* Pods_STLocationRequest_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA8845C44CE134DE203920D /* Pods_STLocationRequest_Example.framework */; };
+		2ED29FD706A93B8B02002593 /* Pods_STLocationRequest_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA039F9A294412FC70BAE8C3 /* Pods_STLocationRequest_Example.framework */; };
+		3E08CCB7801D1840663F4E3F /* Pods_STLocationRequest_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD850A80BBEA9EBE2172087 /* Pods_STLocationRequest_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		A2763F8F767AFBFA5D2A5C76 /* Pods_STLocationRequest_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7DC992BC9C31999E525942 /* Pods_STLocationRequest_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		38A89EC53F120208244377BD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3FD850A80BBEA9EBE2172087 /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAA35BA35BF99B8CF978878 /* STLocationRequest.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = STLocationRequest.podspec; path = ../STLocationRequest.podspec; sourceTree = "<group>"; };
 		4CBEDACDEE720EB8E34CEEB1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* STLocationRequest_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STLocationRequest_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,12 +42,11 @@
 		607FACE51AFB9204008FA782 /* STLocationRequest_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STLocationRequest_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		AB8B0C9D36ED7486DF803396 /* Pods-STLocationRequest_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AF245533926A6E9DAC3D7CEA /* Pods-STLocationRequest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		BBC23B4EC8FB3A9CD1E8EF0A /* Pods-STLocationRequest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		CB8E6E715A675EEF1F473A91 /* Pods-STLocationRequest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example.release.xcconfig"; sourceTree = "<group>"; };
-		DA7DC992BC9C31999E525942 /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEA8845C44CE134DE203920D /* Pods_STLocationRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72993D892E37891CD01166DF /* Pods-STLocationRequest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C5C5CD4250BF77477B90F0AC /* Pods-STLocationRequest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CA07FDCD06C3530E2AE28667 /* Pods-STLocationRequest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		EDABE7101DA7A4A96ECB91AE /* Pods-STLocationRequest_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STLocationRequest_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		FA039F9A294412FC70BAE8C3 /* Pods_STLocationRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39AD272E4528CA70032AF692 /* Pods_STLocationRequest_Example.framework in Frameworks */,
+				2ED29FD706A93B8B02002593 /* Pods_STLocationRequest_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,20 +62,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2763F8F767AFBFA5D2A5C76 /* Pods_STLocationRequest_Tests.framework in Frameworks */,
+				3E08CCB7801D1840663F4E3F /* Pods_STLocationRequest_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3908438B9D58EADF4B571AEC /* Frameworks */ = {
+		1B49619F78635DF1DC101FF2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DEA8845C44CE134DE203920D /* Pods_STLocationRequest_Example.framework */,
-				DA7DC992BC9C31999E525942 /* Pods_STLocationRequest_Tests.framework */,
+				EDABE7101DA7A4A96ECB91AE /* Pods-STLocationRequest_Example.debug.xcconfig */,
+				C5C5CD4250BF77477B90F0AC /* Pods-STLocationRequest_Example.release.xcconfig */,
+				72993D892E37891CD01166DF /* Pods-STLocationRequest_Tests.debug.xcconfig */,
+				CA07FDCD06C3530E2AE28667 /* Pods-STLocationRequest_Tests.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -85,8 +87,8 @@
 				607FACD21AFB9204008FA782 /* Example for STLocationRequest */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				E1242F0816E50D354021E59F /* Pods */,
-				3908438B9D58EADF4B571AEC /* Frameworks */,
+				1B49619F78635DF1DC101FF2 /* Pods */,
+				F09F0AE27FAED442D1F07890 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,15 +150,13 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		E1242F0816E50D354021E59F /* Pods */ = {
+		F09F0AE27FAED442D1F07890 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AB8B0C9D36ED7486DF803396 /* Pods-STLocationRequest_Example.debug.xcconfig */,
-				CB8E6E715A675EEF1F473A91 /* Pods-STLocationRequest_Example.release.xcconfig */,
-				AF245533926A6E9DAC3D7CEA /* Pods-STLocationRequest_Tests.debug.xcconfig */,
-				BBC23B4EC8FB3A9CD1E8EF0A /* Pods-STLocationRequest_Tests.release.xcconfig */,
+				FA039F9A294412FC70BAE8C3 /* Pods_STLocationRequest_Example.framework */,
+				3FD850A80BBEA9EBE2172087 /* Pods_STLocationRequest_Tests.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,12 +166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "STLocationRequest_Example" */;
 			buildPhases = (
-				C900CAA37FA65673BE2F0E49 /* [CP] Check Pods Manifest.lock */,
+				690B4303A7240FC0C807556A /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				48247CB4F72EF95567371474 /* [CP] Embed Pods Frameworks */,
-				F8C415BE004CF97FDA580CF2 /* [CP] Copy Pods Resources */,
+				82EDF7272AE8DA56B3CDEF75 /* [CP] Embed Pods Frameworks */,
+				9D57ACF50758DEA513F78223 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,12 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "STLocationRequest_Tests" */;
 			buildPhases = (
-				AFFF9317AA0A7A19A552EB25 /* [CP] Check Pods Manifest.lock */,
+				5A9D0088CD77E7A8DEFCB73A /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				C8417807B5C3FCFC8614F487 /* [CP] Embed Pods Frameworks */,
-				061CD73CB46117BB0C086A0C /* [CP] Copy Pods Resources */,
+				85FA4FC4DBCA9360EC1A0C93 /* [CP] Embed Pods Frameworks */,
+				F048C6BAFFA1165AAECEF2EF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,22 +262,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		061CD73CB46117BB0C086A0C /* [CP] Copy Pods Resources */ = {
+		5A9D0088CD77E7A8DEFCB73A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		48247CB4F72EF95567371474 /* [CP] Embed Pods Frameworks */ = {
+		690B4303A7240FC0C807556A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		82EDF7272AE8DA56B3CDEF75 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -292,22 +307,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AFFF9317AA0A7A19A552EB25 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C8417807B5C3FCFC8614F487 /* [CP] Embed Pods Frameworks */ = {
+		85FA4FC4DBCA9360EC1A0C93 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,22 +322,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C900CAA37FA65673BE2F0E49 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F8C415BE004CF97FDA580CF2 /* [CP] Copy Pods Resources */ = {
+		9D57ACF50758DEA513F78223 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -350,6 +335,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F048C6BAFFA1165AAECEF2EF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -439,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -477,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -486,12 +486,10 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB8B0C9D36ED7486DF803396 /* Pods-STLocationRequest_Example.debug.xcconfig */;
+			baseConfigurationReference = EDABE7101DA7A4A96ECB91AE /* Pods-STLocationRequest_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = STLocationRequest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -501,12 +499,10 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB8E6E715A675EEF1F473A91 /* Pods-STLocationRequest_Example.release.xcconfig */;
+			baseConfigurationReference = C5C5CD4250BF77477B90F0AC /* Pods-STLocationRequest_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = STLocationRequest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -516,10 +512,10 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF245533926A6E9DAC3D7CEA /* Pods-STLocationRequest_Tests.debug.xcconfig */;
+			baseConfigurationReference = 72993D892E37891CD01166DF /* Pods-STLocationRequest_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -534,10 +530,10 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBC23B4EC8FB3A9CD1E8EF0A /* Pods-STLocationRequest_Tests.release.xcconfig */;
+			baseConfigurationReference = CA07FDCD06C3530E2AE28667 /* Pods-STLocationRequest_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
