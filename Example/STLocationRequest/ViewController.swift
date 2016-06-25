@@ -47,8 +47,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
                     locationRequest.backgroundColor = UIColor.lightGrayColor()
                     locationRequest.authorizeType = .RequestWhenInUseAuthorization
                     locationRequest.delegate = self
-                    locationRequest.pulseEffectEnabled = true
-                    locationRequest.locationSymbolHidden = false
                     locationRequest.presentLocationRequestController(onViewController: self)
                 } else {
                     // The user has already allowed your app to use location services

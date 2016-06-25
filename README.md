@@ -46,6 +46,8 @@ func presentLocationRequest(){
 
 ```
 
+## Customizing
+
 To perfectly match the design to your app, simply playaround with the parameters `mapViewAlphaValue` and `backgroundColor` to get your very own design.
 
 <p align="center">
@@ -55,7 +57,25 @@ To perfectly match the design to your app, simply playaround with the parameters
 <img width=200 src="./Preview/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
 </p>
 
-Also you can apply to the `STLocationRequestDelegate` to get notified if the user has authorized or denied the location services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented.
+Furthermore you can change the behavior of the `STLocationRequest`-Controller by changing these attributes on your purpose.
+
+```swift
+/// Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
+public var pulseEffectEnabled = true
+
+/// The color for the pulse effect behind the location symbol. Default value: white
+public var pulseEffectColor = UIColor.whiteColor()
+
+// The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
+public var locationSymbolColor = UIColor.whiteColor()
+
+// Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
+public var locationSymbolHidden = false
+```
+
+## Delegate
+
+You can apply to the `STLocationRequestDelegate` to get notified if the user has authorized or denied the location services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented or did disappear.
 
 ```swift
 
@@ -68,6 +88,8 @@ func locationRequestControllerDidChange(event: STLocationRequestEvent) {
         case .NotNowButtonTapped:
             break
         case .LocationRequestDidPresented:
+            break
+        case .LocationRequestDidDisappear:
             break
     }
 }
@@ -142,6 +164,8 @@ To present the `STLocationRequest`-Controller in an `Objective-C` project you ca
         case STLocationRequestEventNotNowButtonTapped:
             break;
         case STLocationRequestEventLocationRequestDidPresented:
+            break;
+        case STLocationRequestEventLocationRequestDidDisappear:
             break;
     }
 }
