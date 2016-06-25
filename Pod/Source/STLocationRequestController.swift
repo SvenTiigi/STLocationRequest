@@ -46,6 +46,19 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
     /// Variable for NSTimer
     var timer : NSTimer?
     
+    /// Pulse-Effect enabled
+    var pulseEffectEnabled = true
+
+    /// Pulse-Effect backgroundcolor
+    var pulseEffectColor = UIColor.whiteColor()
+    
+    /// Location symbol color
+    var locationSymbolColor = UIColor.whiteColor()
+    
+    // location symbol hidden
+    var locationSymbolHidden = false
+    
+    /// Authorization Type
     var authorizeType : STLocationAuthorizeType?
     
     /// Delegate Object
@@ -68,15 +81,22 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		self.locationManager.delegate = self
 		
 		// Set the location-symbol using fontAwesom
-		self.locationSymbolLabel.setFAIcon(FAType.FALocationArrow, iconSize: 150)
+        if !locationSymbolHidden {
+            self.locationSymbolLabel.setFAIcon(FAType.FALocationArrow, iconSize: 150)
+            self.locationSymbolLabel.textColor = locationSymbolColor
+        }else{
+            self.locationSymbolLabel.text = ""
+        }
 		
 		// Set custom stlye to the UIButton
 		self.setCustomButtonStyle(self.allowButton)
 		self.setCustomButtonStyle(self.notNowButton)
 		
         // Add the Pulse-Effect under the Location-Symbol
-        self.addPulseEffect()
-		
+        if pulseEffectEnabled {
+            self.addPulseEffect()
+        }
+        
 		// Create a rotating camera object and pass a mapView
 		self.rotatingCamera = STRotatingCamera(mapView: self.mapView)
 		
@@ -132,7 +152,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
     private func addPulseEffect(){
         // Setting the Pulse Effect
         self.pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:180, position:self.view.center)
-        self.pulseEffect.backgroundColor = UIColor.whiteColor().CGColor
+        self.pulseEffect.backgroundColor = self.pulseEffectColor.CGColor
         self.view.layer.insertSublayer(pulseEffect, below: self.locationSymbolLabel.layer)
     }
     
@@ -171,12 +191,16 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		switch status {
 		case .AuthorizedWhenInUse:
             self.delegate?.locationRequestControllerDidChange(.LocationRequestAuthorized)
-			self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismissViewControllerAnimated(true) {
+                self.delegate?.locationRequestControllerDidChange(.LocationRequestDidDisappear)
+            }
 			break
 			
 		case .Denied:
             self.delegate?.locationRequestControllerDidChange(.LocationRequestDenied)
-			self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismissViewControllerAnimated(true) {
+                self.delegate?.locationRequestControllerDidChange(.LocationRequestDidDisappear)
+            }
 			break
 			
 		default:
@@ -207,6 +231,10 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		let londonEye = CLLocationCoordinate2DMake(51.503324, -0.119543);
 		let sydneyOperaHouse = CLLocationCoordinate2DMake(-33.857197, 151.215140);
         let sagradaFamiliaSpain = CLLocationCoordinate2DMake(41.404024, 2.174370)
+        let hamburgElbPhilharmonic = CLLocationCoordinate2DMake(53.541227, 9.984075)
+        let griffithObservatory = CLLocationCoordinate2DMake(34.118536, -118.300446)
+        let miamiBeach = CLLocationCoordinate2DMake(25.791007, -80.148082)
+        let stonehenge = CLLocationCoordinate2DMake(51.178882, -1.826215)
 		self.cityOrLandmarks3DCoordinates.append(parisEiffelTower)
 		self.cityOrLandmarks3DCoordinates.append(newYorkStatueOfLiberty)
 		self.cityOrLandmarks3DCoordinates.append(sFGoldenGateBridge)
@@ -221,6 +249,10 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		self.cityOrLandmarks3DCoordinates.append(londonEye)
 		self.cityOrLandmarks3DCoordinates.append(sydneyOperaHouse)
         self.cityOrLandmarks3DCoordinates.append(sagradaFamiliaSpain)
+        self.cityOrLandmarks3DCoordinates.append(hamburgElbPhilharmonic)
+        self.cityOrLandmarks3DCoordinates.append(griffithObservatory)
+        self.cityOrLandmarks3DCoordinates.append(miamiBeach)
+        self.cityOrLandmarks3DCoordinates.append(stonehenge)
 	}
 
     /// Set a custom style for a given UIButton
@@ -282,6 +314,8 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
     /// Not now button was touched dismiss Viewcontroller
 	@IBAction func notNowButtonTouched(sender: UIButton) {
         self.delegate?.locationRequestControllerDidChange(.NotNowButtonTapped)
-		self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true) { 
+            self.delegate?.locationRequestControllerDidChange(.LocationRequestDidDisappear)
+        }
 	}
 }

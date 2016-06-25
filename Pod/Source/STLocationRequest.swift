@@ -14,6 +14,7 @@ import UIKit
     case LocationRequestDenied
     case NotNowButtonTapped
     case LocationRequestDidPresented
+    case LocationRequestDidDisappear
 }
 
 /// STLocationRequestType Enum for decide which location request type should be used
@@ -57,6 +58,14 @@ import UIKit
     public var mapViewAlphaValue = 1.0
     /// The backgroundcolor for the view of the STLocationRequestController which is used in combination with `mapViewAlphaValue` to match the STLocationRequestController with the design of your app. Default value is a white color.
     public var backgroundColor = UIColor.whiteColor()
+    /// Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
+    public var pulseEffectEnabled = true
+    /// The color for the pulse effect behind the location symbol. Default value: white
+    public var pulseEffectColor = UIColor.whiteColor()
+    // The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
+    public var locationSymbolColor = UIColor.whiteColor()
+    // Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
+    public var locationSymbolHidden = false
     /// Set the authorize Type for STLocationRequestController. Choose between: `RequestWhenInUseAuthorization` and `RequestAlwaysAuthorization`. Default value is `RequestWhenInUseAuthorization`
     public var authorizeType = STLocationAuthorizeType.RequestWhenInUseAuthorization
     /// STLocationRequestDelegate which is used to handle events from the STLocationRequestController.
@@ -105,6 +114,10 @@ import UIKit
         locationRequestViewController.notNowButtonTitle = self.notNowButtonTitle
         locationRequestViewController.mapViewAlphaValue = self.mapViewAlphaValue
         locationRequestViewController.backgroundViewColor = self.backgroundColor
+        locationRequestViewController.pulseEffectEnabled = self.pulseEffectEnabled
+        locationRequestViewController.pulseEffectColor = self.pulseEffectColor
+        locationRequestViewController.locationSymbolColor = self.locationSymbolColor
+        locationRequestViewController.locationSymbolHidden = self.locationSymbolHidden
         locationRequestViewController.authorizeType = self.authorizeType
         locationRequestViewController.delegate = self.delegate
         

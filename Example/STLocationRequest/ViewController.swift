@@ -47,6 +47,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
                     locationRequest.backgroundColor = UIColor.lightGrayColor()
                     locationRequest.authorizeType = .RequestWhenInUseAuthorization
                     locationRequest.delegate = self
+                    locationRequest.pulseEffectEnabled = true
+                    locationRequest.locationSymbolHidden = false
                     locationRequest.presentLocationRequestController(onViewController: self)
                 } else {
                     // The user has already allowed your app to use location services
@@ -63,16 +65,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
     func locationRequestControllerDidChange(event: STLocationRequestEvent) {
         switch event {
         case .LocationRequestAuthorized:
+            print("The user accepted the use of location services")
             self.startUpdatingLocation()
             break
         case .LocationRequestDenied:
             print("The user denied the use of location services")
             break
         case .NotNowButtonTapped:
-            print("Not now button was tapped")
+            print("The Not now button was tapped")
             break
         case .LocationRequestDidPresented:
-            print("STLocationRequestController presented")
+            print("STLocationRequestController did presented")
+            break
+        case .LocationRequestDidDisappear:
+            print("STLocationRequestController did disappear")
             break
         }
     }
