@@ -60,17 +60,20 @@ To perfectly match the design to your app, simply playaround with the parameters
 Furthermore you can change the behavior of the `STLocationRequest`-Controller by changing these attributes on your purpose.
 
 ```swift
-/// Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
-public var pulseEffectEnabled = true
+// Defines if the pulse Effect which will displayed under the location symbol should be
+// enabled or disabled. Default Value: true
+locationRequest.pulseEffectEnabled = true
 
-/// The color for the pulse effect behind the location symbol. Default value: white
-public var pulseEffectColor = UIColor.whiteColor()
+// The color for the pulse effect behind the location symbol. Default value: white
+locationRequest.pulseEffectColor = UIColor.whiteColor()
 
-// The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
-public var locationSymbolColor = UIColor.whiteColor()
+// The color of the location symbol which will be presented in the middle of 
+// the location request screen. Default value: white
+locationRequest.locationSymbolColor = UIColor.whiteColor()
 
-// Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
-public var locationSymbolHidden = false
+// Defines if the location symbol which will be presented in the middle of
+// the location request screen is hidden. Default value: false
+locationRequest.locationSymbolHidden = false
 ```
 
 ## Delegate
