@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Font_Awesome_Swift
 
 /// STLocationRequestEvent Enum for events in the delegate Method locationRequestControllerDidChange
 @objc public enum STLocationRequestEvent : Int{
@@ -62,9 +63,11 @@ import UIKit
     public var pulseEffectEnabled = true
     /// The color for the pulse effect behind the location symbol. Default value: white
     public var pulseEffectColor = UIColor.whiteColor()
-    // The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
+    /// Set the location symbol icon which will be displayed in the middle of the location request screen. Default value: FAType.FALocationArrow. Which icons are available can be found on http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift.
+    public var locationSymbolIcon = FAType.FALocationArrow
+    /// The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
     public var locationSymbolColor = UIColor.whiteColor()
-    // Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
+    /// Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
     public var locationSymbolHidden = false
     /// Set the authorize Type for STLocationRequestController. Choose between: `RequestWhenInUseAuthorization` and `RequestAlwaysAuthorization`. Default value is `RequestWhenInUseAuthorization`
     public var authorizeType = STLocationAuthorizeType.RequestWhenInUseAuthorization
@@ -116,6 +119,7 @@ import UIKit
         locationRequestViewController.backgroundViewColor = self.backgroundColor
         locationRequestViewController.pulseEffectEnabled = self.pulseEffectEnabled
         locationRequestViewController.pulseEffectColor = self.pulseEffectColor
+        locationRequestViewController.locationSymbolIcon = self.locationSymbolIcon
         locationRequestViewController.locationSymbolColor = self.locationSymbolColor
         locationRequestViewController.locationSymbolHidden = self.locationSymbolHidden
         locationRequestViewController.authorizeType = self.authorizeType

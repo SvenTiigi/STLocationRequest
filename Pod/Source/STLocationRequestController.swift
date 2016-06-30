@@ -52,6 +52,9 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
     /// Pulse-Effect backgroundcolor
     var pulseEffectColor = UIColor.whiteColor()
     
+    /// Location symbol icon
+    var locationSymbolIcon = FAType.FALocationArrow
+    
     /// Location symbol color
     var locationSymbolColor = UIColor.whiteColor()
     
@@ -82,7 +85,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		
 		// Set the location-symbol using fontAwesom
         if !locationSymbolHidden {
-            self.locationSymbolLabel.setFAIcon(FAType.FALocationArrow, iconSize: 150)
+            self.locationSymbolLabel.setFAIcon(locationSymbolIcon, iconSize: 150)
             self.locationSymbolLabel.textColor = locationSymbolColor
         }else{
             self.locationSymbolLabel.text = ""
