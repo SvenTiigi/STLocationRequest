@@ -237,7 +237,6 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
         let hamburgElbPhilharmonic = CLLocationCoordinate2DMake(53.541227, 9.984075)
         let griffithObservatory = CLLocationCoordinate2DMake(34.118536, -118.300446)
         let miamiBeach = CLLocationCoordinate2DMake(25.791007, -80.148082)
-        let stonehenge = CLLocationCoordinate2DMake(51.178882, -1.826215)
 		self.cityOrLandmarks3DCoordinates.append(parisEiffelTower)
 		self.cityOrLandmarks3DCoordinates.append(newYorkStatueOfLiberty)
 		self.cityOrLandmarks3DCoordinates.append(sFGoldenGateBridge)
@@ -255,7 +254,6 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
         self.cityOrLandmarks3DCoordinates.append(hamburgElbPhilharmonic)
         self.cityOrLandmarks3DCoordinates.append(griffithObservatory)
         self.cityOrLandmarks3DCoordinates.append(miamiBeach)
-        self.cityOrLandmarks3DCoordinates.append(stonehenge)
 	}
 
     /// Set a custom style for a given UIButton
