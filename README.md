@@ -32,16 +32,18 @@ To present the `STLocationRequest`-Controller
 ```swift
 import STLocationRequest
 
-func presentLocationRequest(){
-    let locationRequest = STLocationRequest()
-    locationRequest.titleText = "We need your location for some awesome features"
-    locationRequest.allowButtonTitle = "Alright"
-    locationRequest.notNowButtonTitle = "Not now"
-    locationRequest.mapViewAlphaValue = 0.9
-    locationRequest.backgroundColor = UIColor.lightGrayColor()
-    locationRequest.authorizeType = .RequestWhenInUseAuthorization
-    locationRequest.delegate = self
-    locationRequest.presentLocationRequestController(onViewController: self)
+class ViewController : UIViewController, STLocationRequestDelegate {
+
+    func presentLocationRequest(){
+        let locationRequest = STLocationRequest()
+        locationRequest.titleText = "We need your location for some awesome features"
+        locationRequest.allowButtonTitle = "Alright"
+        locationRequest.notNowButtonTitle = "Not now"
+        locationRequest.authorizeType = .RequestWhenInUseAuthorization
+        locationRequest.delegate = self
+        locationRequest.presentLocationRequestController(onViewController: self)
+    }
+    
 }
 
 ```
@@ -49,6 +51,14 @@ func presentLocationRequest(){
 ## Customizing
 
 To perfectly match the design to your app, simply playaround with the parameters `mapViewAlphaValue` and `backgroundColor` to get your very own design.
+
+```swift
+/// The alpha value for the MapView
+locationRequest.mapViewAlphaValue = 0.7
+
+/// The backgroundcolor for the view of the STLocationRequestController
+locationRequest.backgroundColor = UIColor.orangeColor()
+```
 
 <p align="center">
 <img width=200 src="./Preview/STLocationRequest_Purple.jpg" alt="STLocationRequest" title="STLocationRequest">
