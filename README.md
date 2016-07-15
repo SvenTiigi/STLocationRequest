@@ -9,7 +9,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
 [![codebeat badge](https://codebeat.co/badges/ce1c3749-fca8-4c3b-ae28-6210fd0e129a)](https://codebeat.co/projects/github-com-sventiigi-stlocationrequest)
 
-STLocationRequest is a simple and elegant way to request the user location at the very first time written in Swift. It shows a beautiful 3D 360 degree Flyover-MapView over 14 citys or landmarks.
+STLocationRequest is a simple and elegant way to request the user location at the very first time written in Swift. It shows a beautiful 3D 360 degree Flyover-MapView over 21 citys or landmarks.
 
 <p align="center">
 <img src="./Preview/STLocationRequest.gif" alt="STLocationRequest" title="STLocationRequest">
@@ -77,6 +77,12 @@ locationRequest.pulseEffectEnabled = true
 // The color for the pulse effect behind the location symbol. Default value: white
 locationRequest.pulseEffectColor = UIColor.whiteColor()
 
+// Set the location symbol icon which will be displayed in the middle of the STLocationRequest-Controller.
+// The devault value is FALocationArrow. You can browse at http://fontawesome.io/icons/ or 
+// https://github.com/Vaberer/Font-Awesome-Swift for other icons but be aware to use a icon 
+// which is in the context of a location request.
+locationRequest.locationSymbolIcon = FAType.FALocationArrow
+
 // The color of the location symbol which will be presented in the middle of 
 // the location request screen. Default value: white
 locationRequest.locationSymbolColor = UIColor.whiteColor()
@@ -84,6 +90,9 @@ locationRequest.locationSymbolColor = UIColor.whiteColor()
 // Defines if the location symbol which will be presented in the middle of
 // the location request screen is hidden. Default value: false
 locationRequest.locationSymbolHidden = false
+
+// Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
+locationRequest.timeTillPlaceSwitchesInSeconds = 15.0
 ```
 
 ## Delegate
