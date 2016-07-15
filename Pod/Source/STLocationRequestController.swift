@@ -22,7 +22,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 	@IBOutlet weak var locationSymbolLabel: UILabel!
 	
 	/// CitryCoordinate which store all coordinates
-	var cityOrLandmarks3DCoordinates: [CLLocationCoordinate2D] = []
+	var places: [CLLocationCoordinate2D] = []
 	
 	/// Array to store random integer values
     var randomNumbers: [Int] = []
@@ -66,6 +66,9 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
     
     /// Delegate Object
     var delegate : STLocationRequestDelegate?
+    
+    /// Time in Seconds till Place switches
+    var timeTillPlaceSwitchesInSeconds = 15.0
 
     /// viewDidLoad
     override func viewDidLoad() {
@@ -110,7 +113,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 		self.changeRandomFlyOverCity()
 		
 		// Start the timer for changing location even more magic here :)
-		self.timer = NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: #selector(STLocationRequestController.changeRandomFlyOverCity), userInfo: nil, repeats: true)
+		self.timer = NSTimer.scheduledTimerWithTimeInterval(self.timeTillPlaceSwitchesInSeconds, target: self, selector: #selector(STLocationRequestController.changeRandomFlyOverCity), userInfo: nil, repeats: true)
 	}
     
     /// Set the text for the description and button labels
@@ -188,7 +191,7 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 			self.pulseEffect.setPulseRadius(180)
 		}
 	}
-	
+    
     /// CLLocationManager Delegate if the User allowed oder denied the location request
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 		switch status {
@@ -210,7 +213,6 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
                 self.delegate?.locationRequestControllerDidChange(.LocationRequestDidDisappear)
             }
 			break
-			
 		default:
 			break
 		}
@@ -242,23 +244,31 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
         let hamburgElbPhilharmonic = CLLocationCoordinate2DMake(53.541227, 9.984075)
         let griffithObservatory = CLLocationCoordinate2DMake(34.118536, -118.300446)
         let miamiBeach = CLLocationCoordinate2DMake(25.791007, -80.148082)
-		self.cityOrLandmarks3DCoordinates.append(parisEiffelTower)
-		self.cityOrLandmarks3DCoordinates.append(newYorkStatueOfLiberty)
-		self.cityOrLandmarks3DCoordinates.append(sFGoldenGateBridge)
-		self.cityOrLandmarks3DCoordinates.append(berlinBrandenburgerGate)
-		self.cityOrLandmarks3DCoordinates.append(hamburgTownHall)
-		self.cityOrLandmarks3DCoordinates.append(newYork)
-		self.cityOrLandmarks3DCoordinates.append(cologneCathedral)
-		self.cityOrLandmarks3DCoordinates.append(romeColosseum)
-		self.cityOrLandmarks3DCoordinates.append(munichCurch)
-		self.cityOrLandmarks3DCoordinates.append(neuschwansteinCastle)
-		self.cityOrLandmarks3DCoordinates.append(londonBigBen)
-		self.cityOrLandmarks3DCoordinates.append(londonEye)
-		self.cityOrLandmarks3DCoordinates.append(sydneyOperaHouse)
-        self.cityOrLandmarks3DCoordinates.append(sagradaFamiliaSpain)
-        self.cityOrLandmarks3DCoordinates.append(hamburgElbPhilharmonic)
-        self.cityOrLandmarks3DCoordinates.append(griffithObservatory)
-        self.cityOrLandmarks3DCoordinates.append(miamiBeach)
+        let centralParkNY = CLLocationCoordinate2DMake(40.779269, -73.963201)
+        let googlePlex = CLLocationCoordinate2DMake(37.422001, -122.084109)
+        let lagunaBeach = CLLocationCoordinate2DMake(33.543361, -117.792315)
+        let leMontSaintMichel = CLLocationCoordinate2DMake(48.636063, -1.511457)
+        self.places.append(parisEiffelTower)
+		self.places.append(newYorkStatueOfLiberty)
+		self.places.append(sFGoldenGateBridge)
+		self.places.append(berlinBrandenburgerGate)
+		self.places.append(hamburgTownHall)
+		self.places.append(newYork)
+		self.places.append(cologneCathedral)
+		self.places.append(romeColosseum)
+		self.places.append(munichCurch)
+		self.places.append(neuschwansteinCastle)
+		self.places.append(londonBigBen)
+		self.places.append(londonEye)
+		self.places.append(sydneyOperaHouse)
+        self.places.append(sagradaFamiliaSpain)
+        self.places.append(hamburgElbPhilharmonic)
+        self.places.append(griffithObservatory)
+        self.places.append(miamiBeach)
+        self.places.append(centralParkNY)
+        self.places.append(googlePlex)
+        self.places.append(lagunaBeach)
+        self.places.append(leMontSaintMichel)
 	}
 
     /// Set a custom style for a given UIButton
@@ -284,12 +294,12 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
 	
     /// Get a random City and change the location on the map
 	func changeRandomFlyOverCity() {
-		let generateRandomNumber = randomSequenceGenerator(0, max: self.cityOrLandmarks3DCoordinates.count-1)
+		let generateRandomNumber = randomSequenceGenerator(0, max: self.places.count-1)
         let randomNumber = generateRandomNumber()
 		UIView.animateWithDuration(0.5) { () -> Void in
 			self.rotatingCamera.stopRotating()
-			self.mapView.region = MKCoordinateRegionMakeWithDistance(self.cityOrLandmarks3DCoordinates[randomNumber], 1000, 1000)
-			self.rotatingCamera.startRotatingWithCoordinate(self.cityOrLandmarks3DCoordinates[randomNumber], heading: 45, pitch: 45, altitude: 500, headingStep: 10)
+			self.mapView.region = MKCoordinateRegionMakeWithDistance(self.places[randomNumber], 1000, 1000)
+			self.rotatingCamera.startRotatingWithCoordinate(self.places[randomNumber], heading: 45, pitch: 45, altitude: 500, headingStep: 10)
 		}
 	}
     

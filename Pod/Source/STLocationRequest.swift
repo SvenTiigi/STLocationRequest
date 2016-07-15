@@ -73,6 +73,8 @@ import Font_Awesome_Swift
     public var authorizeType = STLocationAuthorizeType.RequestWhenInUseAuthorization
     /// STLocationRequestDelegate which is used to handle events from the STLocationRequestController.
     public var delegate : STLocationRequestDelegate?
+    /// Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
+    public var timeTillPlaceSwitchesInSeconds = 15.0
     
     /**
      Present the STLocationRequestController modally on a given UIViewController
