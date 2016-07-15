@@ -50,7 +50,6 @@ class STRotatingCamera: NSObject {
 		self.startRotatingWithCoordinate(coordinate, heading: self.DEFAULT_HEADING, pitch: self.DEFAULT_PITCH, altitude: self.DEFAULT_ALTITUDE, headingStep: self.DEFAULT_HEADING_STEP)
 	}
 	
-	
 	func startRotating() {
 		self.startRotatingWithCoordinate(self.mapView.centerCoordinate)
 	}

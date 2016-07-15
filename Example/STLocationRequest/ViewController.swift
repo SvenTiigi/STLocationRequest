@@ -12,22 +12,22 @@ import STLocationRequest
 
 class ViewController: UIViewController, CLLocationManagerDelegate, STLocationRequestDelegate {
     
-    // Storyboard IBOutlet for the Request Location Button
+    /// Storyboard IBOutlet for the Request Location Button
     @IBOutlet weak var requestLocationButton: UIButton!
     
-    // Initialize CLLocationManager
+    /// Initialize CLLocationManager
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set the locationManager
+        // Intialize the locationManager
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.distanceFilter=kCLDistanceFilterNone
     }
     
-    // requestLocationButtonTouched Method
+    /// requestLocationButtonTouched Method
     @IBAction func requestLocationButtonTouched(sender: UIButton) {
         if CLLocationManager.locationServicesEnabled() {
             if CLLocationManager.authorizationStatus() == .Denied {
@@ -59,7 +59,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
         }
     }
 
-    // STLocationRequest Delegate Methods
+    /// STLocationRequest Delegate Methods
     func locationRequestControllerDidChange(event: STLocationRequestEvent) {
         switch event {
         case .LocationRequestAuthorized:
@@ -81,21 +81,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
         }
     }
     
-    // Start updating user location
+    /// Start updating user location
     func startUpdatingLocation(){
         self.locationManager.startUpdatingLocation()
-        print("Location service is allowed by the user. You have now access to the user location")
     }
     
-    // CLLocationManagerDelegate Methods
+    /// CLLocationManagerDelegate DidFailWithError Methods
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("The Location couldn't be found")
+        print("Error. The Location couldn't be found. \(error)")
     }
     
+    /// CLLocationManagerDelegate didUpdateLocations Methods
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.locationManager.stopUpdatingLocation()
         print("didUpdateLocations UserLocation: \(locations.last)")
-        
     }
     
 }
