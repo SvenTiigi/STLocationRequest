@@ -198,7 +198,12 @@ class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocati
                 self.delegate?.locationRequestControllerDidChange(.LocationRequestDidDisappear)
             }
 			break
-			
+		case .AuthorizedAlways:
+            self.delegate?.locationRequestControllerDidChange(.LocationRequestAuthorized)
+            self.dismissViewControllerAnimated(true) {
+                self.delegate?.locationRequestControllerDidChange(.LocationRequestDidDisappear)
+            }
+            break
 		case .Denied:
             self.delegate?.locationRequestControllerDidChange(.LocationRequestDenied)
             self.dismissViewControllerAnimated(true) {
