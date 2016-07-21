@@ -52,11 +52,13 @@ class ViewController : UIViewController, STLocationRequestDelegate {
 
 To perfectly match the design to your app, simply playaround with the parameters `mapViewAlphaValue` and `backgroundColor` to get your very own design.
 
+The alpha value for the MapView
 ```swift
-/// The alpha value for the MapView
 locationRequest.mapViewAlphaValue = 0.7
+```
 
-/// The backgroundcolor for the view of the STLocationRequestController
+The backgroundcolor for the view of the STLocationRequestController
+```swift
 locationRequest.backgroundColor = UIColor.orangeColor()
 ```
 
@@ -69,29 +71,33 @@ locationRequest.backgroundColor = UIColor.orangeColor()
 
 Furthermore you can change the behavior of the `STLocationRequest`-Controller by changing these attributes on your purpose.
 
+Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
 ```swift
-// Defines if the pulse Effect which will displayed under the location symbol should be
-// enabled or disabled. Default Value: true
 locationRequest.pulseEffectEnabled = true
+```
 
-// The color for the pulse effect behind the location symbol. Default value: white
+The color for the pulse effect behind the location symbol. Default value: white
+```swift
 locationRequest.pulseEffectColor = UIColor.whiteColor()
+```
 
-// Set the location symbol icon which will be displayed in the middle of the STLocationRequest-Controller.
-// The devault value is FALocationArrow. You can browse at http://fontawesome.io/icons/ or 
-// https://github.com/Vaberer/Font-Awesome-Swift for other icons but be aware to use a icon 
-// which is in the context of a location request.
+Set the location symbol icon which will be displayed in the middle of the STLocationRequest-Controller. The devault value is FALocationArrow. You can browse at http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift for other icons but be aware to use a icon which is in the context of a location request.
+```swift
 locationRequest.locationSymbolIcon = FAType.FALocationArrow
+```
 
-// The color of the location symbol which will be presented in the middle of 
-// the location request screen. Default value: white
+The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
+```swift
 locationRequest.locationSymbolColor = UIColor.whiteColor()
+```
 
-// Defines if the location symbol which will be presented in the middle of
-// the location request screen is hidden. Default value: false
+Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
+```swift
 locationRequest.locationSymbolHidden = false
+```
 
-// Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
+Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
+```swift
 locationRequest.timeTillPlaceSwitchesInSeconds = 15.0
 ```
 
