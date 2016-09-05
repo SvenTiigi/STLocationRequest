@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import STLocationRequest
 
-class ViewController: UIViewController, CLLocationManagerDelegate, STLocationRequestDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, STLocationRequestControllerDelegate {
     
     /// Storyboard IBOutlet for the Request Location Button
     @IBOutlet weak var requestLocationButton: UIButton!
@@ -39,15 +39,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
                     // Just play around with the setMapViewAlphaValue and setBackgroundViewColor parameters, to match with your design of your app
                     // Also you can initialize an STLocationRequest Object and set all attributes
                     // and at the end call presentLocationRequestController
-                    let locationRequest = STLocationRequest()
-                    locationRequest.titleText = "We need your location for some awesome features"
-                    locationRequest.allowButtonTitle = "Alright"
-                    locationRequest.notNowButtonTitle = "Not now"
-                    locationRequest.mapViewAlphaValue = 0.9
-                    locationRequest.backgroundColor = UIColor.lightGrayColor()
-                    locationRequest.authorizeType = .RequestWhenInUseAuthorization
-                    locationRequest.delegate = self
-                    locationRequest.presentLocationRequestController(onViewController: self)
+                    self.presentLocationRequestController()
                 } else {
                     // The user has already allowed your app to use location services
                     self.startUpdatingLocation()
@@ -58,24 +50,37 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
             print("Location Services are disabled")
         }
     }
-
+    
+    /// Initialize and present STLocationRequestController
+    func presentLocationRequestController(){
+        let locationRequestController = STLocationRequestController.getInstance()
+        locationRequestController.titleText = "We need your location for some awesome features"
+        locationRequestController.allowButtonTitle = "Alright"
+        locationRequestController.notNowButtonTitle = "Not now"
+        locationRequestController.mapViewAlpha = 0.9
+        locationRequestController.backgroundColor = UIColor.lightGrayColor()
+        locationRequestController.authorizeType = .RequestWhenInUseAuthorization
+        locationRequestController.delegate = self
+        locationRequestController.present(onViewController: self)
+    }
+    
     /// STLocationRequest Delegate Methods
-    func locationRequestControllerDidChange(event: STLocationRequestEvent) {
+    func locationRequestControllerDidChange(event: STLocationRequestControllerEvent) {
         switch event {
-        case .LocationRequestAuthorized:
+        case .locationRequestAuthorized:
             print("The user accepted the use of location services")
             self.startUpdatingLocation()
             break
-        case .LocationRequestDenied:
+        case .locationRequestDenied:
             print("The user denied the use of location services")
             break
-        case .NotNowButtonTapped:
+        case .notNowButtonTapped:
             print("The Not now button was tapped")
             break
-        case .LocationRequestDidPresented:
+        case .didPresented:
             print("STLocationRequestController did presented")
             break
-        case .LocationRequestDidDisappear:
+        case .didDisappear:
             print("STLocationRequestController did disappear")
             break
         }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		065F009210989310C9BC44CC1B40FE03 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BBFA22F2513F6D9E5A0408FEB0B4B1 /* CoreText.framework */; };
 		0E0E8371EDEFB90405BC344A46CF7896 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896575222041CFAA2248A844428CC301 /* Foundation.framework */; };
-		0E409EC19ACC7A1FB623FD9DB3B7FB92 /* STLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359771E712B4F64BADCBBCAAB3D001D /* STLocationRequest.swift */; };
 		13A92373225688AB24C2523DB30DB4C0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855E998E127B27F858F8558DFEA6A08B /* MapKit.framework */; };
 		16D99D8DAD72477D4C889BF370237711 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019D5E0BDEF504896176BD168F1B8411 /* UIKit.framework */; };
 		1D0CF09649D2513CD0ECCA87A332CD5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896575222041CFAA2248A844428CC301 /* Foundation.framework */; };
@@ -18,6 +17,7 @@
 		274229A1674A239127089663DC2E5FA2 /* Pods-STLocationRequest_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC9F7B4A2561D8F2A925799877C69614 /* Pods-STLocationRequest_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B5CBE35BE20FDC99DEDF47ADB4D0530 /* STLocationRequest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11126353155F3A5D539E821BCC902506 /* STLocationRequest-dummy.m */; };
 		336C5FEC4B4BBF89B4DB514889FA78A7 /* Font-Awesome-Swift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 78F42D869238FDC52E512806D3542EF6 /* Font-Awesome-Swift.bundle */; };
+		3D46856D1D7DCEEB00880AFB /* STAwesomePlacesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D46856C1D7DCEEB00880AFB /* STAwesomePlacesFactory.swift */; };
 		422C7168824CA3A050060471BBAA8F8A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BBA95072C791B11185074CA43CF481A /* FontAwesome.ttf */; };
 		4499492C8C09823F116C475716B0654C /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A762782E2AF6946A363F199E9C1ED16 /* Font_Awesome_Swift.framework */; };
 		4DA9A631B8217C04FCEF731798E1323F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896575222041CFAA2248A844428CC301 /* Foundation.framework */; };
@@ -87,6 +87,7 @@
 		2DE2BFD202BCA411C762651BCCCB8B85 /* STLocationRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STLocationRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBB3B80B33D2509983FC5F9DE63D194 /* Pods-STLocationRequest_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Tests-resources.sh"; sourceTree = "<group>"; };
 		3A6CDF7CFABBCF59F55378F1FEB94906 /* Font-Awesome-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Font-Awesome-Swift.xcconfig"; sourceTree = "<group>"; };
+		3D46856C1D7DCEEB00880AFB /* STAwesomePlacesFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STAwesomePlacesFactory.swift; sourceTree = "<group>"; };
 		3E8738A93D2931CC21A0DEA336A71A5C /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		405731A06DAB11C754B484F829944CA5 /* STLocationRequest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = STLocationRequest.xcconfig; sourceTree = "<group>"; };
 		441E7027A0F57E162B28143B1716D499 /* StoryboardLocationRequest.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = StoryboardLocationRequest.storyboard; sourceTree = "<group>"; };
@@ -124,7 +125,6 @@
 		EDC394150EACBD34C04487DAF3561206 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFD2CD9F9624B3017F8B08209873347B /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
 		F2D799A27AFAC145609BF7B3B99544FE /* STRotatingCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STRotatingCamera.swift; sourceTree = "<group>"; };
-		F359771E712B4F64BADCBBCAAB3D001D /* STLocationRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequest.swift; sourceTree = "<group>"; };
 		F62369BC3987E13BE7C0512D0FBB0810 /* Pods-STLocationRequest_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-STLocationRequest_Tests.modulemap"; sourceTree = "<group>"; };
 		FC9F7B4A2561D8F2A925799877C69614 /* Pods-STLocationRequest_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-STLocationRequest_Example-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -283,9 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				EFD2CD9F9624B3017F8B08209873347B /* LFTPulseAnimation.swift */,
-				F359771E712B4F64BADCBBCAAB3D001D /* STLocationRequest.swift */,
 				C671C2623D434A27922D34ACC7714AA1 /* STLocationRequestController.swift */,
 				F2D799A27AFAC145609BF7B3B99544FE /* STRotatingCamera.swift */,
+				3D46856C1D7DCEEB00880AFB /* STAwesomePlacesFactory.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -611,8 +611,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D647120EAF1554736262C579D567EDCF /* LFTPulseAnimation.swift in Sources */,
+				3D46856D1D7DCEEB00880AFB /* STAwesomePlacesFactory.swift in Sources */,
 				2B5CBE35BE20FDC99DEDF47ADB4D0530 /* STLocationRequest-dummy.m in Sources */,
-				0E409EC19ACC7A1FB623FD9DB3B7FB92 /* STLocationRequest.swift in Sources */,
 				2613755EE97948F8AD930205C6DB2987 /* STLocationRequestController.swift in Sources */,
 				9756E2C30368B8BFAD3A788FC29C9450 /* STRotatingCamera.swift in Sources */,
 			);

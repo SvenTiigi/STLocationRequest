@@ -27,21 +27,23 @@ pod 'STLocationRequest'
 
 ## Usage
 
-To present the `STLocationRequest`-Controller 
+To present the `STLocationRequestController`
 
 ```swift
 import STLocationRequest
 
-class ViewController : UIViewController, STLocationRequestDelegate {
+class ViewController : UIViewController, STLocationRequestControllerDelegate {
 
-    func presentLocationRequest(){
-        let locationRequest = STLocationRequest()
-        locationRequest.titleText = "We need your location for some awesome features"
-        locationRequest.allowButtonTitle = "Alright"
-        locationRequest.notNowButtonTitle = "Not now"
-        locationRequest.authorizeType = .RequestWhenInUseAuthorization
-        locationRequest.delegate = self
-        locationRequest.presentLocationRequestController(onViewController: self)
+    func presentLocationRequestController(){
+        let locationRequestController = STLocationRequestController.getInstance()
+        locationRequestController.titleText = "We need your location for some awesome features"
+        locationRequestController.allowButtonTitle = "Alright"
+        locationRequestController.notNowButtonTitle = "Not now"
+        locationRequestController.mapViewAlphaValue = 0.9
+        locationRequestController.backgroundColor = UIColor.lightGrayColor()
+        locationRequestController.authorizeType = .RequestWhenInUseAuthorization
+        locationRequestController.delegate = self
+        locationRequestController.present(onViewController: self)
     }
     
 }
@@ -50,16 +52,16 @@ class ViewController : UIViewController, STLocationRequestDelegate {
 
 ## Customizing
 
-To perfectly match the design to your app, simply playaround with the parameters `mapViewAlphaValue` and `backgroundColor` to get your very own design.
+To perfectly match the design to your app, simply playaround with the parameters `mapViewAlpha` and `backgroundColor` to get your very own design.
 
 The alpha value for the MapView
 ```swift
-locationRequest.mapViewAlphaValue = 0.7
+locationRequestController.mapViewAlpha = 0.7
 ```
 
 The backgroundcolor for the view of the STLocationRequestController
 ```swift
-locationRequest.backgroundColor = UIColor.orangeColor()
+locationRequestController.backgroundColor = UIColor.orangeColor()
 ```
 
 <p align="center">
@@ -69,55 +71,55 @@ locationRequest.backgroundColor = UIColor.orangeColor()
 <img width=200 src="./Preview/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
 </p>
 
-Furthermore you can change the behavior of the `STLocationRequest`-Controller by changing these attributes on your purpose.
+Furthermore you can change the behavior of the `STLocationRequest-Controller` by changing these attributes on your purpose.
 
 Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
 ```swift
-locationRequest.pulseEffectEnabled = true
+locationRequestController.pulseEffectEnabled = true
 ```
 
 The color for the pulse effect behind the location symbol. Default value: white
 ```swift
-locationRequest.pulseEffectColor = UIColor.whiteColor()
+locationRequestController.pulseEffectColor = UIColor.whiteColor()
 ```
 
 Set the location symbol icon which will be displayed in the middle of the STLocationRequest-Controller. The devault value is FALocationArrow. You can browse at http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift for other icons but be aware to use a icon which is in the context of a location request.
 ```swift
-locationRequest.locationSymbolIcon = FAType.FALocationArrow
+locationRequestController.locationSymbolIcon = FAType.FALocationArrow
 ```
 
 The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
 ```swift
-locationRequest.locationSymbolColor = UIColor.whiteColor()
+locationRequestController.locationSymbolColor = UIColor.whiteColor()
 ```
 
 Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
 ```swift
-locationRequest.locationSymbolHidden = false
+locationRequestController.locationSymbolHidden = false
 ```
 
 Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
 ```swift
-locationRequest.timeTillPlaceSwitchesInSeconds = 15.0
+locationRequestController.timeTillPlaceSwitchesInSeconds = 15.0
 ```
 
 ## Delegate
 
-You can apply to the `STLocationRequestDelegate` to get notified if the user has authorized or denied the location services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented or did disappear.
+You can apply to the `STLocationRequestControllerDelegate` to get notified if the user has authorized or denied the location services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented or did disappear.
 
 ```swift
 
-func locationRequestControllerDidChange(event: STLocationRequestEvent) {
+func locationRequestControllerDidChange(event: STLocationRequestControllerEvent) {
     switch event {
-        case .LocationRequestAuthorized:
+        case .locationRequestAuthorized:
             break
-        case .LocationRequestDenied:
+        case .locationRequestDenied:
             break
-        case .NotNowButtonTapped:
+        case .notNowButtonTapped:
             break
-        case .LocationRequestDidPresented:
+        case .didPresented:
             break
-        case .LocationRequestDidDisappear:
+        case .didDisappear:
             break
     }
 }
@@ -128,13 +130,13 @@ func locationRequestControllerDidChange(event: STLocationRequestEvent) {
 
 Also don't forget to add the usage description key to your `Info.plist` for you selected authorization type.
 
-STLocationAuthorizeType.**RequestWhenInUseAuthorization**
+STLocationRequestControllerAuthorizeType.**RequestWhenInUseAuthorization**
 ```swift
 <key>NSLocationWhenInUseUsageDescription</key>
 <string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
 ```
 
-STLocationAuthorizeType.**RequestAlwaysAuthorization**
+STLocationRequestControllerAuthorizeType.**RequestAlwaysAuthorization**
 ```swift
 <key>NSLocationAlwaysUsageDescription</key>
 <string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
@@ -151,7 +153,7 @@ For more details check out the example application.
 
 ## iOS Simulator
 
-Please mind that the 3D Flyover-View will only work on a real iOS device (not in the Simulator) with at least iOS 9.0 installed. A Screenshot taken from an **iOS Simulator** running `STLocationRequest`-Controller.
+Please mind that the 3D Flyover-View will only work on a real iOS device (not in the Simulator) with at least iOS 9.0 installed. A Screenshot taken from an **iOS Simulator** running `STLocationRequestController`.
 
 <p align="center">
 <img src="./Preview/iOSSimulatorBehavior.jpg" alt="iOSSimulatorBehavior" title="iOSSimulatorBehavior" width=300>
@@ -160,40 +162,40 @@ Please mind that the 3D Flyover-View will only work on a real iOS device (not in
 
 ## Objective-C
 
-To present the `STLocationRequest`-Controller in an `Objective-C` project you can go like this.
+To present the `STLocationRequestController` in an `Objective-C` project you can go like this.
 
 ```objective-c
 #import "ViewController.h"
 @import STLocationRequest;
 
-@interface ViewController () <STLocationRequestDelegate>
+@interface ViewController () <STLocationRequestControllerDelegate>
 @end
 
 @implementation ViewController
 
--(void)presentLocationRequest{
-    STLocationRequest *locationRequest = [STLocationRequest new];
-    locationRequest.titleText = @"We need your location for some awesome features";
-    locationRequest.allowButtonTitle = @"Alright";
-    locationRequest.notNowButtonTitle = @"Not now";
-    locationRequest.mapViewAlphaValue = 0.9;
-    locationRequest.backgroundColor = [UIColor lightGrayColor];
-    locationRequest.authorizeType = STLocationAuthorizeTypeRequestWhenInUseAuthorization;
-    locationRequest.delegate = self;
-    [locationRequest presentLocationRequestControllerOnViewController:self];
+-(void)presentLocationRequestController{
+    STLocationRequestController *locationRequestController = [STLocationRequestController getInstance];
+    locationRequestController.titleText = @"We need your location for some awesome features";
+    locationRequestController.allowButtonTitle = @"Alright";
+    locationRequestController.notNowButtonTitle = @"Not now";
+    locationRequestController.mapViewAlpha = 0.9;
+    locationRequestController.backgroundColor = [UIColor lightGrayColor];
+    locationRequestController.authorizeType = STLocationRequestControllerAuthorizeTypeRequestWhenInUseAuthorization;
+    locationRequestController.delegate = self;
+    [locationRequestController presentOnViewController:self];
 }
 
--(void)locationRequestControllerDidChange:(enum STLocationRequestEvent)event{
+-(void)locationRequestControllerDidChange:(enum STLocationRequestControllerEvent)event{
     switch (event) {
-        case STLocationRequestEventLocationRequestAuthorized:
+        case STLocationRequestControllerEventlocationRequestAuthorized:
             break;
-        case STLocationRequestEventLocationRequestDenied:
+        case STLocationRequestControllerEventlocationRequestDenied:
             break;
-        case STLocationRequestEventNotNowButtonTapped:
+        case STLocationRequestControllerEventnotNowButtonTapped:
             break;
-        case STLocationRequestEventLocationRequestDidPresented:
+        case STLocationRequestControllerEventdidPresented:
             break;
-        case STLocationRequestEventLocationRequestDidDisappear:
+        case STLocationRequestControllerEventdidDisappear:
             break;
     }
 }
