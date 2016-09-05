@@ -39,8 +39,6 @@ class ViewController : UIViewController, STLocationRequestControllerDelegate {
         locationRequestController.titleText = "We need your location for some awesome features"
         locationRequestController.allowButtonTitle = "Alright"
         locationRequestController.notNowButtonTitle = "Not now"
-        locationRequestController.mapViewAlphaValue = 0.9
-        locationRequestController.backgroundColor = UIColor.lightGrayColor()
         locationRequestController.authorizeType = .RequestWhenInUseAuthorization
         locationRequestController.delegate = self
         locationRequestController.present(onViewController: self)
