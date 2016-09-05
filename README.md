@@ -69,7 +69,7 @@ locationRequestController.backgroundColor = UIColor.orangeColor()
 <img width=200 src="./Preview/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
 </p>
 
-Furthermore you can change the behavior of the `STLocationRequest-Controller` by changing these attributes on your purpose.
+Furthermore you can change the behavior of the `STLocationRequestController` by changing these attributes on your purpose.
 
 Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
 ```swift
