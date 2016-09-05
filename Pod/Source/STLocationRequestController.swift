@@ -286,27 +286,26 @@ import Font_Awesome_Swift
     public func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 		switch status {
 		case .AuthorizedWhenInUse:
-            self.delegate?.locationRequestControllerDidChange(.locationRequestAuthorized)
-            self.dismissViewControllerAnimated(true) {
-                self.delegate?.locationRequestControllerDidChange(.didDisappear)
-            }
+            self.fireEventAndDismissViewController(.locationRequestAuthorized)
 			break
 		case .AuthorizedAlways:
-            self.delegate?.locationRequestControllerDidChange(.locationRequestAuthorized)
-            self.dismissViewControllerAnimated(true) {
-                self.delegate?.locationRequestControllerDidChange(.didDisappear)
-            }
+            self.fireEventAndDismissViewController(.locationRequestAuthorized)
             break
 		case .Denied:
-            self.delegate?.locationRequestControllerDidChange(.locationRequestDenied)
-            self.dismissViewControllerAnimated(true) {
-                self.delegate?.locationRequestControllerDidChange(.didDisappear)
-            }
+            self.fireEventAndDismissViewController(.locationRequestDenied)
 			break
 		default:
 			break
 		}
 	}
+    
+    /// Fire STLocationRequestEvent and Dismiss ViewController
+    func fireEventAndDismissViewController(event : STLocationRequestControllerEvent){
+        self.delegate?.locationRequestControllerDidChange(event)
+        self.dismissViewControllerAnimated(true) {
+            self.delegate?.locationRequestControllerDidChange(.didDisappear)
+        }
+    }
 	
     /// MKMapView Delegate regionDidChangeAnimated
     public func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
@@ -369,10 +368,7 @@ import Font_Awesome_Swift
 	
     /// Not now button was touched dismiss Viewcontroller
 	@IBAction func notNowButtonTouched(sender: UIButton) {
-        self.delegate?.locationRequestControllerDidChange(.notNowButtonTapped)
-        self.dismissViewControllerAnimated(true) { 
-            self.delegate?.locationRequestControllerDidChange(.didDisappear)
-        }
+        self.fireEventAndDismissViewController(.notNowButtonTapped)
 	}
     
 }
