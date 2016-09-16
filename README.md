@@ -40,7 +40,7 @@ class ViewController : UIViewController, STLocationRequestControllerDelegate {
         locationRequestController.titleText = "We need your location for some awesome features"
         locationRequestController.allowButtonTitle = "Alright"
         locationRequestController.notNowButtonTitle = "Not now"
-        locationRequestController.authorizeType = .RequestWhenInUseAuthorization
+        locationRequestController.authorizeType = .requestWhenInUseAuthorization
         locationRequestController.delegate = self
         locationRequestController.present(onViewController: self)
     }
