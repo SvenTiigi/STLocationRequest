@@ -31,11 +31,11 @@ class STRotatingCamera: NSObject {
 		self.headingStep = 0
 	}
 	
-	func setMap(map: MKMapView) {
+	func setMap(_ map: MKMapView) {
 		self.mapView = map
 	}
 	
-	func startRotatingWithCoordinate(coordinate: CLLocationCoordinate2D, heading: CLLocationDirection, pitch: CGFloat, altitude: CLLocationDistance, headingStep: Double) {
+	func startRotatingWithCoordinate(_ coordinate: CLLocationCoordinate2D, heading: CLLocationDirection, pitch: CGFloat, altitude: CLLocationDistance, headingStep: Double) {
 		let camera = MKMapCamera()
 		camera.centerCoordinate = coordinate
 		camera.heading = heading
@@ -46,7 +46,7 @@ class STRotatingCamera: NSObject {
 		self.headingStep = headingStep
 	}
 	
-	func startRotatingWithCoordinate(coordinate : CLLocationCoordinate2D) {
+	func startRotatingWithCoordinate(_ coordinate : CLLocationCoordinate2D) {
 		self.startRotatingWithCoordinate(coordinate, heading: self.DEFAULT_HEADING, pitch: self.DEFAULT_PITCH, altitude: self.DEFAULT_ALTITUDE, headingStep: self.DEFAULT_HEADING_STEP)
 	}
 	
@@ -65,7 +65,7 @@ class STRotatingCamera: NSObject {
 	func continueRotating() {
 		if let camera = self.mapView.camera.copy() as? MKMapCamera {
 			camera.heading = fmod(camera.heading+self.headingStep, 360)
-			UIView.animateWithDuration(1.0, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
+			UIView.animate(withDuration: 1.0, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
 				self.mapView.camera = camera
 				}, completion: nil)
 		}

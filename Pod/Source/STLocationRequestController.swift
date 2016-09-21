@@ -23,8 +23,8 @@ import Font_Awesome_Swift
 
 /// STLocationRequestType Enum for decide which location request type should be used
 @objc public enum STLocationRequestControllerAuthorizeType : Int{
-    case RequestWhenInUseAuthorization
-    case RequestAlwaysAuthorization
+    case requestWhenInUseAuthorization
+    case requestAlwaysAuthorization
 }
 
 /// STLocationRequest Delegate
@@ -48,54 +48,57 @@ import Font_Awesome_Swift
         }
      }
      */
-    @objc func locationRequestControllerDidChange(event : STLocationRequestControllerEvent)
+    @objc func locationRequestControllerDidChange(_ event : STLocationRequestControllerEvent)
 }
 
 /// STLocationRequest is a UIViewController-Extension which is used to request the User-Location, at the very first time, in a simple and elegent way. It shows a beautiful 3D 360 degree Flyover-MapView which shows 14 random citys or landmarks.
-@objc public class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+@objc open class STLocationRequestController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     /*
      Public properties of STLocationRequestController
     */
     
     /// The title which will be presented at the top of the STLocationRequestController. Default-Value: "We need your location for some awesome features"
-    public var titleText = "We need your location for some awesome features"
+    open var titleText = "We need your location for some awesome features"
+
+    /// The title which will be presented at the top of the STLocationRequestController. Default-Value: UIFont.systemFontOfSize(25.0)
+    open var titleFont = UIFont.systemFont(ofSize: 25.0)
     
     /// The title for the allowButton which will trigger the requestWhenInUseAuthorization() Method on CLLocationManager. Default value is "Alright"
-    public var allowButtonTitle = "Alright"
+    open var allowButtonTitle = "Alright"
     
     /// The title for the notNowButton which will dismiss the STLocationRequestController. Default value is "Not now"
-    public var notNowButtonTitle = "Not now"
+    open var notNowButtonTitle = "Not now"
     
     /// The alpha value for the MapView which is used in combination with `backgroundViewColor` to match the STLocationRequestController with the design of your app. Default value is 1
-    public var mapViewAlpha : CGFloat = 1.0
+    open var mapViewAlpha : CGFloat = 1.0
     
     /// The backgroundcolor for the view of the STLocationRequestController which is used in combination with `mapViewAlphaValue` to match the STLocationRequestController with the design of your app. Default value is a white color.
-    public var backgroundColor = UIColor.whiteColor()
+    open var backgroundColor = UIColor.white
     
     /// Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
-    public var pulseEffectEnabled = true
+    open var pulseEffectEnabled = true
     
     /// The color for the pulse effect behind the location symbol. Default value: white
-    public var pulseEffectColor = UIColor.whiteColor()
+    open var pulseEffectColor = UIColor.white
     
     /// Set the location symbol icon which will be displayed in the middle of the location request screen. Default value: FAType.FALocationArrow. Which icons are available can be found on http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift.
-    public var locationSymbolIcon = FAType.FALocationArrow
+    open var locationSymbolIcon = FAType.faLocationArrow
     
     /// The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
-    public var locationSymbolColor = UIColor.whiteColor()
+    open var locationSymbolColor = UIColor.white
     
     /// Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
-    public var locationSymbolHidden = false
+    open var locationSymbolHidden = false
     
     /// Set the authorize Type for STLocationRequestController. Choose between: `RequestWhenInUseAuthorization` and `RequestAlwaysAuthorization`. Default value is `RequestWhenInUseAuthorization`
-    public var authorizeType = STLocationRequestControllerAuthorizeType.RequestWhenInUseAuthorization
+    open var authorizeType = STLocationRequestControllerAuthorizeType.requestWhenInUseAuthorization
     
     /// STLocationRequestDelegate which is used to handle events from the STLocationRequestController.
-    public var delegate : STLocationRequestControllerDelegate?
+    open var delegate : STLocationRequestControllerDelegate?
     
     /// Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
-    public var timeTillPlaceSwitchesInSeconds = 15.0
+    open var timeTillPlaceSwitchesInSeconds = 15.0
     
     /*
         Public Functions
@@ -108,6 +111,7 @@ import Font_Awesome_Swift
      ----
      let locationRequest = STLocationRequestController.getInstance()
      locationRequest.titleText = "We need your location for some awesome features"
+     locationRequest.titleFont = UIFont.systemFontOfSize(25.0)
      locationRequest.allowButtonTitle = "Alright"
      locationRequest.notNowButtonTitle = "Not now"
      locationRequest.mapViewAlphaValue = 0.9
@@ -122,15 +126,15 @@ import Font_Awesome_Swift
      More information can be found in the ReadMe file [Github](https://github.com/SvenTiigi/STLocationRequest/blob/master/README.md)
      
     */
-    public static func getInstance() -> STLocationRequestController{
+    open static func getInstance() -> STLocationRequestController{
         // Create the Bundle Path for Resources
-        let bundlePath = NSBundle(forClass: STLocationRequestController.self).pathForResource("STLocationRequest", ofType: "bundle")
+        let bundlePath = Bundle(for: STLocationRequestController.self).path(forResource: "STLocationRequest", ofType: "bundle")
         
         // Get the Storyboard File
-        let stb = UIStoryboard(name: "StoryboardLocationRequest", bundle:NSBundle(path: bundlePath!))
+        let stb = UIStoryboard(name: "StoryboardLocationRequest", bundle:Bundle(path: bundlePath!))
         
         // Instantiate the ViewController by Identifer as STLocationRequestController
-        let locationRequestController = stb.instantiateViewControllerWithIdentifier("locationRequestController") as! STLocationRequestController
+        let locationRequestController = stb.instantiateViewController(withIdentifier: "locationRequestController") as! STLocationRequestController
         
         // Set the loadedFromStoryboard attribute to true
         locationRequestController.loadedFromStoryboard = true
@@ -149,9 +153,9 @@ import Font_Awesome_Swift
      - parameters:
      - viewController: The `UIViewController` which will be used to present the STLocationRequestController modally.
      */
-    public func present(onViewController viewController : UIViewController){
+    open func present(onViewController viewController : UIViewController){
         if loadedFromStoryboard {
-            viewController.presentViewController(self, animated: true) {
+            viewController.present(self, animated: true) {
                 self.delegate?.locationRequestControllerDidChange(.didPresented)
             }
         }else{
@@ -179,46 +183,48 @@ import Font_Awesome_Swift
 	@IBOutlet weak var locationSymbolLabel: UILabel!
     
 	/// CitryCoordinate array
-	private var places = STAwesomePlacesFactory.getAwesomePlaces()
+	fileprivate var places = STAwesomePlacesFactory.getAwesomePlaces()
 	
 	/// Array to store random integer values
-    private var randomNumbers: [Int] = []
+    fileprivate var randomNumbers: [Int] = []
 	
 	/// Initialize STRotatingCamera
-	private var rotatingCamera = STRotatingCamera()
+	fileprivate var rotatingCamera = STRotatingCamera()
 	
 	/// CLLocationManager
-	private var locationManager = CLLocationManager()
+	fileprivate var locationManager = CLLocationManager()
     
     /// PulseEffect
-	private var pulseEffect = LFTPulseAnimation(radius: 0, position: CGPointMake(0,0))
+	fileprivate var pulseEffect = LFTPulseAnimation(radius: 0, position: CGPoint(x: 0,y: 0))
     
     /// Variable for NSTimer
-    private var timer : NSTimer?
+    fileprivate var timer : Timer?
     
     /// Variable to check if getInstance was called
-    private var loadedFromStoryboard = false
+    fileprivate var loadedFromStoryboard = false
     
     /// viewDidLoad Function
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
 		super.viewDidLoad()
         // Set the text for the description label
         self.descriptionLabel.text = self.titleText
+        // Set the font for the description label
+        self.descriptionLabel.font = self.titleFont
         // Set the title for the allow button
-        self.allowButton.setTitle(allowButtonTitle, forState: UIControlState.Normal)
+        self.allowButton.setTitle(allowButtonTitle, for: UIControlState())
         // Set the title for the not now button
-        self.notNowButton.setTitle(notNowButtonTitle, forState: UIControlState.Normal)
+        self.notNowButton.setTitle(notNowButtonTitle, for: UIControlState())
         // Setting the alpha value for MKMapView
         self.mapView.alpha = self.mapViewAlpha
         // Setting the backgroundColor for the UIView of STLocationRequestController
         self.view.backgroundColor = self.backgroundColor
         // Set the settings for MKMapView and check if SatelliteFlyover is available
         if #available(iOS 9.0, *) {
-            self.mapView.mapType = .SatelliteFlyover
+            self.mapView.mapType = .satelliteFlyover
             self.mapView.showsCompass = false
             self.mapView.showsScale = false
         } else {
-            self.mapView.mapType = .Satellite
+            self.mapView.mapType = .satellite
         }
 		// Set the Delegate of the locationManager
 		self.locationManager.delegate = self
@@ -241,19 +247,19 @@ import Font_Awesome_Swift
 		// Start the flyover Magic
 		self.changeRandomFlyOverCity()
 		// Start the timer for changing location even more magic here :)
-		self.timer = NSTimer.scheduledTimerWithTimeInterval(self.timeTillPlaceSwitchesInSeconds, target: self, selector: #selector(STLocationRequestController.changeRandomFlyOverCity), userInfo: nil, repeats: true)
+		self.timer = Timer.scheduledTimer(timeInterval: self.timeTillPlaceSwitchesInSeconds, target: self, selector: #selector(STLocationRequestController.changeRandomFlyOverCity), userInfo: nil, repeats: true)
 	}
     
     /// Adding the pulse effect under the Location-Symbol in the middle of the STLocationRequest Screen
-    private func addPulseEffect(){
+    fileprivate func addPulseEffect(){
         // Setting the Pulse Effect
         self.pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:180, position:self.view.center)
-        self.pulseEffect.backgroundColor = self.pulseEffectColor.CGColor
+        self.pulseEffect.backgroundColor = self.pulseEffectColor.cgColor
         self.view.layer.insertSublayer(pulseEffect, below: self.locationSymbolLabel.layer)
     }
     
     /// viewDidDisappear
-    override public func viewDidDisappear(animated: Bool) {
+    override open func viewDidDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
         // invalidate the timer and release it.
         guard let timerUnwrapped = self.timer else{
@@ -264,16 +270,16 @@ import Font_Awesome_Swift
 	}
 	
     /// If Device is going landscape hide the location symbol and the pulse layer
-	override public func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-		if UIDevice.currentDevice().orientation.isLandscape.boolValue {
-			UIView.animateWithDuration(0.5, animations: { () -> Void in
+	override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+		if UIDevice.current.orientation.isLandscape {
+			UIView.animate(withDuration: 0.5, animations: { () -> Void in
 				self.locationSymbolLabel.alpha = 1
 				self.locationSymbolLabel.alpha = 0
 			})
 			
 			self.pulseEffect.setPulseRadius(0)
 		} else {
-			UIView.animateWithDuration(0.5, animations: { () -> Void in
+			UIView.animate(withDuration: 0.5, animations: { () -> Void in
 				self.locationSymbolLabel.alpha = 0
 				self.locationSymbolLabel.alpha = 1
 			})
@@ -283,15 +289,15 @@ import Font_Awesome_Swift
 	}
     
     /// CLLocationManager Delegate if the User allowed oder denied the location request
-    public func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    open func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		switch status {
-		case .AuthorizedWhenInUse:
+		case .authorizedWhenInUse:
             self.fireEventAndDismissViewController(.locationRequestAuthorized)
 			break
-		case .AuthorizedAlways:
+		case .authorizedAlways:
             self.fireEventAndDismissViewController(.locationRequestAuthorized)
             break
-		case .Denied:
+		case .denied:
             self.fireEventAndDismissViewController(.locationRequestDenied)
 			break
 		default:
@@ -300,37 +306,37 @@ import Font_Awesome_Swift
 	}
     
     /// Fire STLocationRequestEvent and Dismiss ViewController
-    func fireEventAndDismissViewController(event : STLocationRequestControllerEvent){
+    func fireEventAndDismissViewController(_ event : STLocationRequestControllerEvent){
         self.delegate?.locationRequestControllerDidChange(event)
-        self.dismissViewControllerAnimated(true) {
+        self.dismiss(animated: true) {
             self.delegate?.locationRequestControllerDidChange(.didDisappear)
         }
     }
 	
     /// MKMapView Delegate regionDidChangeAnimated
-    public func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    open func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 		if (self.rotatingCamera.isStopped() == true) {
 			self.rotatingCamera.continueRotating()
 		}
 	}
 
     /// Set a custom style for a given UIButton
-    func setCustomButtonStyle(button: UIButton) {
+    func setCustomButtonStyle(_ button: UIButton) {
 		button.layer.borderWidth = 1.0
-		button.layer.borderColor = UIColor.whiteColor().CGColor
+		button.layer.borderColor = UIColor.white.cgColor
 		button.layer.cornerRadius = 5.0
 		button.layer.masksToBounds = true
-		button.setTitleColor(UIColor.clearColor().colorWithAlphaComponent(0.5), forState: UIControlState.Highlighted)
-		button.setBackgroundImage(getImageWithColor(UIColor.whiteColor(), size: button.bounds.size), forState: UIControlState.Highlighted)
+		button.setTitleColor(UIColor.clear.withAlphaComponent(0.5), for: UIControlState.highlighted)
+		button.setBackgroundImage(getImageWithColor(UIColor.white, size: button.bounds.size), for: UIControlState.highlighted)
 	}
 	
     /// Return a UIImage with a given UIColor and CGSize
-    func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
-		let rect = CGRectMake(0, 0, size.width, size.height)
+    func getImageWithColor(_ color: UIColor, size: CGSize) -> UIImage {
+		let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
 		UIGraphicsBeginImageContextWithOptions(size, false, 0)
 		color.setFill()
 		UIRectFill(rect)
-		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
 		UIGraphicsEndImageContext()
 		return image
 	}
@@ -339,27 +345,27 @@ import Font_Awesome_Swift
 	func changeRandomFlyOverCity() {
 		let generateRandomNumber = randomSequenceGenerator(0, max: self.places.count-1)
         let randomNumber = generateRandomNumber()
-		UIView.animateWithDuration(0.5) { () -> Void in
+		UIView.animate(withDuration: 0.5, animations: { () -> Void in
 			self.rotatingCamera.stopRotating()
 			self.mapView.region = MKCoordinateRegionMakeWithDistance(self.places[randomNumber], 1000, 1000)
 			self.rotatingCamera.startRotatingWithCoordinate(self.places[randomNumber], heading: 45, pitch: 45, altitude: 500, headingStep: 10)
-		}
+		}) 
 	}
     
     /// Get a random Index from an given array without repeating an index
-    func randomSequenceGenerator(min: Int, max: Int) -> () -> Int {
+    func randomSequenceGenerator(_ min: Int, max: Int) -> () -> Int {
         return {
             if self.randomNumbers.count == 0 {
                 self.randomNumbers = Array(min...max)
             }
             let index = Int(arc4random_uniform(UInt32(self.randomNumbers.count)))
-            return self.randomNumbers.removeAtIndex(index)
+            return self.randomNumbers.remove(at: index)
         }
     }
 	
     /// Allow button was touched request authorization by AuthorizeType
-	@IBAction func allowButtonTouched(sender: UIButton) {
-        if self.authorizeType == .RequestAlwaysAuthorization {
+	@IBAction func allowButtonTouched(_ sender: UIButton) {
+        if self.authorizeType == .requestAlwaysAuthorization {
             self.locationManager.requestAlwaysAuthorization()
         }else{
             self.locationManager.requestWhenInUseAuthorization()
@@ -367,7 +373,7 @@ import Font_Awesome_Swift
 	}
 	
     /// Not now button was touched dismiss Viewcontroller
-	@IBAction func notNowButtonTouched(sender: UIButton) {
+	@IBAction func notNowButtonTouched(_ sender: UIButton) {
         self.fireEventAndDismissViewController(.notNowButtonTapped)
 	}
     
