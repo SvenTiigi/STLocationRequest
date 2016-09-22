@@ -14,8 +14,8 @@ class LFTPulseAnimation: CALayer {
 	var fromValueForRadius:     Float = 0.0
 	var fromValueForAlpha:      Float = 0.45
 	var keyTimeForHalfOpacity:  Float = 0.2
-	var animationDuration:      NSTimeInterval = 3.0
-	var pulseInterval:          NSTimeInterval = 0.0
+	var animationDuration:      TimeInterval = 3.0
+	var pulseInterval:          TimeInterval = 0.0
 	var useTimingFunction:      Bool = true
 	var animationGroup:         CAAnimationGroup = CAAnimationGroup()
 	var repetitions:            Float = Float.infinity
@@ -23,26 +23,26 @@ class LFTPulseAnimation: CALayer {
 	// Need to implement that, because otherwise it can't find
 	// the constructor init(layer:AnyObject!)
 	// Doesn't seem to look in the super class
-	override init(layer: AnyObject) {
+	override init(layer: Any) {
 		super.init(layer: layer)
 	}
 	
 	init(repeatCount: Float=Float.infinity, radius: CGFloat, position: CGPoint) {
 		super.init()
-		self.contentsScale = UIScreen.mainScreen().scale
+		self.contentsScale = UIScreen.main.scale
 		self.opacity = 0.0
-		self.backgroundColor = UIColor.blueColor().CGColor
+		self.backgroundColor = UIColor.blue.cgColor
 		self.radius = radius;
 		self.repetitions = repeatCount;
 		self.position = position
 		
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+		DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.background).async(execute: {
 			self.setupAnimationGroup()
 			self.setPulseRadius(self.radius)
 			
 			if (self.pulseInterval != Double.infinity) {
-				dispatch_async(dispatch_get_main_queue(), {
-					self.addAnimation(self.animationGroup, forKey: "pulse")
+				DispatchQueue.main.async(execute: {
+					self.add(self.animationGroup, forKey: "pulse")
 				})
 			}
 		})
@@ -52,7 +52,7 @@ class LFTPulseAnimation: CALayer {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	func setPulseRadius(radius: CGFloat) {
+	func setPulseRadius(_ radius: CGFloat) {
 		self.radius = radius
 		let tempPos = self.position
 		let diameter = self.radius * 2
@@ -66,7 +66,7 @@ class LFTPulseAnimation: CALayer {
 		self.animationGroup = CAAnimationGroup()
 		self.animationGroup.duration = self.animationDuration + self.pulseInterval
 		self.animationGroup.repeatCount = self.repetitions
-		self.animationGroup.removedOnCompletion = false
+		self.animationGroup.isRemovedOnCompletion = false
 		
 		if self.useTimingFunction {
 			let defaultCurve = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
@@ -78,8 +78,8 @@ class LFTPulseAnimation: CALayer {
 	
 	func createScaleAnimation() -> CABasicAnimation {
 		let scaleAnimation = CABasicAnimation(keyPath: "transform.scale.xy")
-		scaleAnimation.fromValue = NSNumber(float: self.fromValueForRadius)
-		scaleAnimation.toValue = NSNumber(float: 1.0)
+		scaleAnimation.fromValue = NSNumber(value: self.fromValueForRadius as Float)
+		scaleAnimation.toValue = NSNumber(value: 1.0 as Float)
 		scaleAnimation.duration = self.animationDuration
 		
 		return scaleAnimation
@@ -89,8 +89,8 @@ class LFTPulseAnimation: CALayer {
 		let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
 		opacityAnimation.duration = self.animationDuration
 		opacityAnimation.values = [self.fromValueForAlpha, 0.8, 0]
-		opacityAnimation.keyTimes = [0, self.keyTimeForHalfOpacity, 1]
-		opacityAnimation.removedOnCompletion = false
+        opacityAnimation.keyTimes = [0, NSNumber(value: self.keyTimeForHalfOpacity), 1]
+		opacityAnimation.isRemovedOnCompletion = false
 		
 		return opacityAnimation
 	}	

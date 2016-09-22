@@ -28,13 +28,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
     }
     
     /// requestLocationButtonTouched Method
-    @IBAction func requestLocationButtonTouched(sender: UIButton) {
+    @IBAction func requestLocationButtonTouched(_ sender: UIButton) {
         if CLLocationManager.locationServicesEnabled() {
-            if CLLocationManager.authorizationStatus() == .Denied {
+            if CLLocationManager.authorizationStatus() == .denied {
                 // Location Services are Denied
                 print("Location Services are denied")
             } else {
-                if CLLocationManager.authorizationStatus() == .NotDetermined{
+                if CLLocationManager.authorizationStatus() == .notDetermined{
                     // The user has never been asked about his location show the locationRequest Screen
                     // Just play around with the setMapViewAlphaValue and setBackgroundViewColor parameters, to match with your design of your app
                     // Also you can initialize an STLocationRequest Object and set all attributes
@@ -58,14 +58,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
         locationRequestController.allowButtonTitle = "Alright"
         locationRequestController.notNowButtonTitle = "Not now"
         locationRequestController.mapViewAlpha = 0.9
-        locationRequestController.backgroundColor = UIColor.lightGrayColor()
-        locationRequestController.authorizeType = .RequestWhenInUseAuthorization
+        locationRequestController.backgroundColor = UIColor.lightGray
+        locationRequestController.authorizeType = .requestWhenInUseAuthorization
         locationRequestController.delegate = self
         locationRequestController.present(onViewController: self)
     }
     
     /// STLocationRequest Delegate Methods
-    func locationRequestControllerDidChange(event: STLocationRequestControllerEvent) {
+    func locationRequestControllerDidChange(_ event: STLocationRequestControllerEvent) {
         switch event {
         case .locationRequestAuthorized:
             print("The user accepted the use of location services")
@@ -92,12 +92,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
     }
     
     /// CLLocationManagerDelegate DidFailWithError Methods
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error. The Location couldn't be found. \(error)")
     }
     
     /// CLLocationManagerDelegate didUpdateLocations Methods
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.locationManager.stopUpdatingLocation()
         print("didUpdateLocations UserLocation: \(locations.last)")
     }
