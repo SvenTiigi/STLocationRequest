@@ -35,11 +35,9 @@ class LFTPulseAnimation: CALayer {
 		self.radius = radius;
 		self.repetitions = repeatCount;
 		self.position = position
-		
         DispatchQueue.global(qos: .background).async {
             self.setupAnimationGroup()
             self.setPulseRadius(self.radius)
-            
             if (self.pulseInterval != Double.infinity) {
                 DispatchQueue.main.async(execute: {
                     self.add(self.animationGroup, forKey: "pulse")
