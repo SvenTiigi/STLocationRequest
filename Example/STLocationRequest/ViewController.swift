@@ -16,11 +16,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
     @IBOutlet weak var requestLocationButton: UIButton!
     
     /// Initialize CLLocationManager
-    var locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Intialize the locationManager
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest

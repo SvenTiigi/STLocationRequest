@@ -6,11 +6,11 @@ public extension UIBarButtonItem {
     /**
      To set an icon, use i.e. `barName.FAIcon = FAType.FAGithub`
      */
-    func setFAIcon(_ icon: FAType, iconSize: CGFloat) {
+    func setFAIcon(icon: FAType, iconSize: CGFloat) {
         FontLoader.loadFontIfNeeded()
         let font = UIFont(name: FAStruct.FontName, size: iconSize)
         assert(font != nil, FAStruct.ErrorAnnounce)
-        setTitleTextAttributes([NSFontAttributeName: font!], for: UIControlState())
+        setTitleTextAttributes([NSFontAttributeName: font!], for: .normal)
         title = icon.text
     }
     
@@ -23,7 +23,7 @@ public extension UIBarButtonItem {
             FontLoader.loadFontIfNeeded()
             let font = UIFont(name: FAStruct.FontName, size: 23)
             assert(font != nil,FAStruct.ErrorAnnounce)
-            setTitleTextAttributes([NSFontAttributeName: font!], for: UIControlState())
+            setTitleTextAttributes([NSFontAttributeName: font!], for: .normal)
             title = newValue?.text
         }
         get {
@@ -37,7 +37,7 @@ public extension UIBarButtonItem {
         FontLoader.loadFontIfNeeded()
         let font = UIFont(name: FAStruct.FontName, size: size)
         assert(font != nil, FAStruct.ErrorAnnounce)
-        setTitleTextAttributes([NSFontAttributeName: font!], for: UIControlState())
+        setTitleTextAttributes([NSFontAttributeName: font!], for: .normal)
         
         var text = prefixText
         if let iconText = icon?.text {
@@ -53,7 +53,7 @@ public extension UIButton {
     /**
      To set an icon, use i.e. `buttonName.setFAIcon(FAType.FAGithub, forState: .Normal)`
      */
-    func setFAIcon(_ icon: FAType, forState state: UIControlState) {
+    func setFAIcon(icon: FAType, forState state: UIControlState) {
         FontLoader.loadFontIfNeeded()
         guard let titleLabel = titleLabel else { return }
         setAttributedTitle(nil, for: state)
@@ -67,8 +67,8 @@ public extension UIButton {
     /**
      To set an icon, use i.e. `buttonName.setFAIcon(FAType.FAGithub, iconSize: 35, forState: .Normal)`
      */
-    func setFAIcon(_ icon: FAType, iconSize: CGFloat, forState state: UIControlState) {
-        setFAIcon(icon, forState: state)
+    func setFAIcon(icon: FAType, iconSize: CGFloat, forState state: UIControlState) {
+        setFAIcon(icon: icon, forState: state)
         guard let fontName = titleLabel?.font.fontName else { return }
         titleLabel?.font = UIFont(name: fontName, size: iconSize)
     }
@@ -78,7 +78,7 @@ public extension UIButton {
         setTitle(nil, for: state)
         FontLoader.loadFontIfNeeded()
         guard let titleLabel = titleLabel else { return }
-        let attributedText = attributedTitle(for: UIControlState()) ?? NSAttributedString()
+        let attributedText = attributedTitle(for: .normal) ?? NSAttributedString()
         let  startFont =  attributedText.length == 0 ? nil : attributedText.attribute(NSFontAttributeName, at: 0, effectiveRange: nil) as? UIFont
         let endFont = attributedText.length == 0 ? nil : attributedText.attribute(NSFontAttributeName, at: attributedText.length - 1, effectiveRange: nil) as? UIFont
         var textFont = titleLabel.font
@@ -87,7 +87,7 @@ public extension UIButton {
         } else if let f = endFont , f.fontName != FAStruct.FontName  {
             textFont = f
         }
-        let textAttribute = [NSFontAttributeName:textFont]
+        let textAttribute = [NSFontAttributeName:textFont!]
         let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: textAttribute)
         
         if let iconText = icon?.text {
@@ -104,7 +104,7 @@ public extension UIButton {
     }
     
     
-    func setFATitleColor(_ color: UIColor, forState state: UIControlState = UIControlState()) {
+    func setFATitleColor(color: UIColor, forState state: UIControlState = .normal) {
         FontLoader.loadFontIfNeeded()
  
         let attributedString = NSMutableAttributedString(attributedString: attributedTitle(for: state) ?? NSAttributedString())
@@ -139,13 +139,13 @@ public extension UILabel {
     /**
      To set an icon, use i.e. `labelName.setFAIcon(FAType.FAGithub, iconSize: 35)`
      */
-    func setFAIcon(_ icon: FAType, iconSize: CGFloat) {
+    func setFAIcon(icon: FAType, iconSize: CGFloat) {
         FAIcon = icon
         font = UIFont(name: font.fontName, size: iconSize)
     }
     
     
-    func setFAColor(_ color: UIColor) {
+    func setFAColor(color: UIColor) {
         FontLoader.loadFontIfNeeded()
         let attributedString = NSMutableAttributedString(attributedString: attributedText ?? NSAttributedString())
         attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: NSMakeRange(0, attributedText!.length))
@@ -166,7 +166,7 @@ public extension UILabel {
         } else if let f = endFont , f.fontName != FAStruct.FontName  {
             textFont = f
         }
-        let textAttribute = [NSFontAttributeName : textFont]
+        let textAttribute = [NSFontAttributeName : textFont!]
         let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: textAttribute)
         
         if let iconText = icon?.text {
@@ -191,16 +191,16 @@ public extension UIImageView {
     /**
      Create UIImage from FAType
      */
-    public func setFAIconWithName(_ icon: FAType, textColor: UIColor, backgroundColor: UIColor = UIColor.clear) {
+    public func setFAIconWithName(icon: FAType, textColor: UIColor, backgroundColor: UIColor = UIColor.clear, size: CGSize? = nil) {
         FontLoader.loadFontIfNeeded()
-        self.image = UIImage(icon: icon, size: frame.size, textColor: textColor, backgroundColor: backgroundColor)
+        self.image = UIImage(icon: icon, size: size ?? frame.size, textColor: textColor, backgroundColor: backgroundColor)
     }
 }
 
 
 public extension UITabBarItem {
     
-    public func setFAIcon(_ icon: FAType) {
+    public func setFAIcon(icon: FAType) {
         FontLoader.loadFontIfNeeded()
         image = UIImage(icon: icon, size: CGSize(width: 30, height: 30))
     }
@@ -209,11 +209,11 @@ public extension UITabBarItem {
 
 public extension UISegmentedControl {
     
-    public func setFAIcon(_ icon: FAType, forSegmentAtIndex segment: Int) {
+    public func setFAIcon(icon: FAType, forSegmentAtIndex segment: Int) {
         FontLoader.loadFontIfNeeded()
         let font = UIFont(name: FAStruct.FontName, size: 23)
         assert(font != nil, FAStruct.ErrorAnnounce)
-        setTitleTextAttributes([NSFontAttributeName: font!], for: UIControlState())
+        setTitleTextAttributes([NSFontAttributeName: font!], for: .normal)
         setTitle(icon.text, forSegmentAt: segment)
     }
 }
@@ -234,11 +234,12 @@ public extension UIImage {
         
         let attributedString = NSAttributedString(string: icon.text!, attributes: attributes)
         UIGraphicsBeginImageContextWithOptions(size, false , 0.0)
-        attributedString.draw(in: CGRect(x: 0, y: (size.height - fontSize) / 2, width: size.width, height: fontSize))
+        attributedString.draw(in: CGRect(x: 0, y: (size.height - fontSize) * 0.5, width: size.width, height: fontSize))
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         if let image = image {
             self.init(cgImage: image.cgImage!, scale: image.scale, orientation: image.imageOrientation)
+//            self(cgImage: image.cgImage!, scale: image.scale, orientation: image.imageOrientation)
         } else {
             self.init()
         }
@@ -248,13 +249,13 @@ public extension UIImage {
 
 public extension UISlider {
     
-    func setFAMaximumValueImage(_ icon: FAType, customSize: CGSize? = nil) {
-        maximumValueImage = UIImage(icon: icon, size: customSize ?? CGSize(width: 25, height: 25))
+    func setFAMaximumValueImage(icon: FAType, customSize: CGSize? = nil) {
+        maximumValueImage = UIImage(icon: icon, size: customSize ?? CGSize(width: 25,height: 25))
     }
     
     
-    func setFAMinimumValueImage(_ icon: FAType, customSize: CGSize? = nil) {
-        minimumValueImage = UIImage(icon: icon, size: customSize ?? CGSize(width: 25, height: 25))
+    func setFAMinimumValueImage(icon: FAType, customSize: CGSize? = nil) {
+        minimumValueImage = UIImage(icon: icon, size: customSize ?? CGSize(width: 25,height: 25))
     }
 }
 
@@ -285,40 +286,32 @@ private struct FAStruct {
 
 private class FontLoader {
     
-    private static var __once: () = {
-        let bundle = Bundle(for: FontLoader.self)
-        var fontURL:URL?
-        let identifier = bundle.bundleIdentifier
-        
-        if identifier?.hasPrefix("org.cocoapods") == true {
-            
-            fontURL = bundle.url(forResource: FAStruct.FontName, withExtension: "ttf", subdirectory: "Font-Awesome-Swift.bundle")
-        } else {
-            
-            fontURL = bundle.url(forResource: FAStruct.FontName, withExtension: "ttf")
-        }
-        let data = try! Data(contentsOf: fontURL!)
-        
-        let provider = CGDataProvider(data: data as CFData)
-        let font = CGFont(provider!)
-        
-        var error: Unmanaged<CFError>?
-        if !CTFontManagerRegisterGraphicsFont(font, &error) {
-            
-            let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
-            let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
-            NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
-        }
-    }()
-    
-    struct Static {
-        static var onceToken : Int = 0
-    }
-    
     static func loadFontIfNeeded() {
         if (UIFont.fontNames(forFamilyName: FAStruct.FontName).count == 0) {
             
-            _ = FontLoader.__once
+                let bundle = Bundle(for: FontLoader.self)
+                var fontURL: URL!
+                let identifier = bundle.bundleIdentifier
+                
+                if identifier?.hasPrefix("org.cocoapods") == true {
+                    
+                    fontURL = bundle.url(forResource: FAStruct.FontName, withExtension: "ttf", subdirectory: "Font-Awesome-Swift.bundle")
+                } else {
+                    
+                    fontURL = bundle.url(forResource: FAStruct.FontName, withExtension: "ttf")
+                }
+                let data = try! Data(contentsOf: fontURL as URL)
+                let provider = CGDataProvider(data: data as CFData)
+                let font = CGFont(provider!)
+                
+                var error: Unmanaged<CFError>?
+                if !CTFontManagerRegisterGraphicsFont(font, &error) {
+                    
+                    let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
+                    let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
+                    NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+                }
+
         }
     }
 }
@@ -340,7 +333,7 @@ public enum FAType: Int {
         return FAIcons[rawValue]
     }
     
-	case faGlass, faMusic, faSearch, faEnvelopeO, faHeart, faStar, faStarO, faUser, faFilm, faThLarge, faTh, faThList, faCheck, faTimes, faRemove, faClose, faSearchPlus, faSearchMinus, faPowerOff, faSignal, faCog, faGear, faTrashO, faHome, faFileO, faClockO, faRoad, faDownload, faArrowCircleODown, faArrowCircleOUp, faInbox, faPlayCircleO, faRepeat, faRotateRight, faRefresh, faListAlt, faLock, faFlag, faHeadphones, faVolumeOff, faVolumeDown, faVolumeUp, faQrcode, faBarcode, faTag, faTags, faBook, faBookmark, faPrint, faCamera, faFont, faBold, faItalic, faTextHeight, faTextWidth, faAlignLeft, faAlignCenter, faAlignRight, faAlignJustify, faList, faOutdent, faDedent, faIndent, faVideoCamera, faPictureO, faPhoto, faImage, faPencil, faMapMarker, faAdjust, faTint, faPencilSquareO, faEdit, faShareSquareO, faCheckSquareO, faArrows, faStepBackward, faFastBackward, faBackward, faPlay, faPause, faStop, faForward, faFastForward, faStepForward, faEject, faChevronLeft, faChevronRight, faPlusCircle, faMinusCircle, faTimesCircle, faCheckCircle, faQuestionCircle, faInfoCircle, faCrosshairs, faTimesCircleO, faCheckCircleO, faBan, faArrowLeft, faArrowRight, faArrowUp, faArrowDown, faShare, faMailForward, faExpand, faCompress, faPlus, faMinus, faAsterisk, faExclamationCircle, faGift, faLeaf, faFire, faEye, faEyeSlash, faExclamationTriangle, faWarning, faPlane, faCalendar, faRandom, faComment, faMagnet, faChevronUp, faChevronDown, faRetweet, faShoppingCart, faFolder, faFolderOpen, faArrowsV, faArrowsH, faBarChart, faBarChartO, faTwitterSquare, faFacebookSquare, faCameraRetro, faKey, faCogs, faGears, faComments, faThumbsOUp, faThumbsODown, faStarHalf, faHeartO, faSignOut, faLinkedinSquare, faThumbTack, faExternalLink, faSignIn, faTrophy, faGithubSquare, faUpload, faLemonO, faPhone, faSquareO, faBookmarkO, faPhoneSquare, faTwitter, faFacebook, faFacebookF, faGithub, faUnlock, faCreditCard, faRss, faFeed, faHddO, faBullhorn, faBell, faCertificate, faHandORight, faHandOLeft, faHandOUp, faHandODown, faArrowCircleLeft, faArrowCircleRight, faArrowCircleUp, faArrowCircleDown, faGlobe, faWrench, faTasks, faFilter, faBriefcase, faArrowsAlt, faUsers, faGroup, faLink, faChain, faCloud, faFlask, faScissors, faCut, faFilesO, faCopy, faPaperclip, faFloppyO, faSave, faSquare, faBars, faNavicon, faReorder, faListUl, faListOl, faStrikethrough, faUnderline, faTable, faMagic, faTruck, faPinterest, faPinterestSquare, faGooglePlusSquare, faGooglePlus, faMoney, faCaretDown, faCaretUp, faCaretLeft, faCaretRight, faColumns, faSort, faUnsorted, faSortDesc, faSortDown, faSortAsc, faSortUp, faEnvelope, faLinkedin, faUndo, faRotateLeft, faGavel, faLegal, faTachometer, faDashboard, faCommentO, faCommentsO, faBolt, faFlash, faSitemap, faUmbrella, faClipboard, faPaste, faLightbulbO, faExchange, faCloudDownload, faCloudUpload, faUserMd, faStethoscope, faSuitcase, faBellO, faCoffee, faCutlery, faFileTextO, faBuildingO, faHospitalO, faAmbulance, faMedkit, faFighterJet, faBeer, fahSquare, faPlusSquare, faAngleDoubleLeft, faAngleDoubleRight, faAngleDoubleUp, faAngleDoubleDown, faAngleLeft, faAngleRight, faAngleUp, faAngleDown, faDesktop, faLaptop, faTablet, faMobile, faMobilePhone, faCircleO, faQuoteLeft, faQuoteRight, faSpinner, faCircle, faReply, faMailReply, faGithubAlt, faFolderO, faFolderOpenO, faSmileO, faFrownO, faMehO, faGamepad, faKeyboardO, faFlagO, faFlagCheckered, faTerminal, faCode, faReplyAll, faMailReplyAll, faStarHalfO, faStarHalfEmpty, faStarHalfFull, faLocationArrow, faCrop, faCodeFork, faChainBroken, faUnlink, faQuestion, faInfo, faExclamation, faSuperscript, faSubscript, faEraser, faPuzzlePiece, faMicrophone, faMicrophoneSlash, faShield, faCalendarO, faFireExtinguisher, faRocket, faMaxcdn, faChevronCircleLeft, faChevronCircleRight, faChevronCircleUp, faChevronCircleDown, faHtml5, faCss3, faAnchor, faUnlockAlt, faBullseye, faEllipsisH, faEllipsisV, faRssSquare, faPlayCircle, faTicket, faMinusSquare, faMinusSquareO, faLevelUp, faLevelDown, faCheckSquare, faPencilSquare, faExternalLinkSquare, faShareSquare, faCompass, faCaretSquareODown, faToggleDown, faCaretSquareOUp, faToggleUp, faCaretSquareORight, faToggleRight, faEur, faEuro, faGbp, faUsd, faDollar, faInr, faRupee, faJpy, faCny, faRmb, faYen, faRub, faRuble, faRouble, faKrw, faWon, faBtc, faBitcoin, faFile, faFileText, faSortAlphaAsc, faSortAlphaDesc, faSortAmountAsc, faSortAmountDesc, faSortNumericAsc, faSortNumericDesc, faThumbsUp, faThumbsDown, faYoutubeSquare, faYoutube, faXing, faXingSquare, faYoutubePlay, faDropbox, faStackOverflow, faInstagram, faFlickr, faAdn, faBitbucket, faBitbucketSquare, faTumblr, faTumblrSquare, faLongArrowDown, faLongArrowUp, faLongArrowLeft, faLongArrowRight, faApple, faWindows, faAndroid, faLinux, faDribbble, faSkype, faFoursquare, faTrello, faFemale, faMale, faGratipay, faGittip, faSunO, faMoonO, faArchive, faBug, faVk, faWeibo, faRenren, faPagelines, faStackExchange, faArrowCircleORight, faArrowCircleOLeft, faCaretSquareOLeft, faToggleLeft, faDotCircleO, faWheelchair, faVimeoSquare, faTry, faTurkishLira, faPlusSquareO, faSpaceShuttle, faSlack, faEnvelopeSquare, faWordpress, faOpenid, faUniversity, faInstitution, faBank, faGraduationCap, faMortarBoard, faYahoo, faGoogle, faReddit, faRedditSquare, faStumbleuponCircle, faStumbleupon, faDelicious, faDigg, faPiedPiperPp, faPiedPiperAlt, faDrupal, faJoomla, faLanguage, faFax, faBuilding, faChild, faPaw, faSpoon, faCube, faCubes, faBehance, faBehanceSquare, faSteam, faSteamSquare, faRecycle, faCar, faAutomobile, faTaxi, faCab, faTree, faSpotify, faDeviantart, faSoundcloud, faDatabase, faFilePdfO, faFileWordO, faFileExcelO, faFilePowerpointO, faFileImageO, faFilePhotoO, faFilePictureO, faFileArchiveO, faFileZipO, faFileAudioO, faFileSoundO, faFileVideoO, faFileMovieO, faFileCodeO, faVine, faCodepen, faJsfiddle, faLifeRing, faLifeBouy, faLifeBuoy, faLifeSaver, faSupport, faCircleONotch, faRebel, faRa, faResistance, faEmpire, faGe, faGitSquare, faGit, faHackerNews, fayCombinatorSquare, faYcSquare, faTencentWeibo, faQq, faWeixin, faWechat, faPaperPlane, faSend, faPaperPlaneO, faSendO, faHistory, faCircleThin, faHeader, faParagraph, faSliders, faShareAlt, faShareAltSquare, faBomb, faFutbolO, faSoccerBallO, faTty, faBinoculars, faPlug, faSlideshare, faTwitch, faYelp, faNewspaperO, faWifi, faCalculator, faPaypal, faGoogleWallet, faCcVisa, faCcMastercard, faCcDiscover, faCcAmex, faCcPaypal, faCcStripe, faBellSlash, faBellSlashO, faTrash, faCopyright, faAt, faEyedropper, faPaintBrush, faBirthdayCake, faAreaChart, faPieChart, faLineChart, faLastfm, faLastfmSquare, faToggleOff, faToggleOn, faBicycle, faBus, faIoxhost, faAngellist, faCc, faIls, faShekel, faSheqel, faMeanpath, faBuysellads, faConnectdevelop, faDashcube, faForumbee, faLeanpub, faSellsy, faShirtsinbulk, faSimplybuilt, faSkyatlas, faCartPlus, faCartArrowDown, faDiamond, faShip, faUserSecret, faMotorcycle, faStreetView, faHeartbeat, faVenus, faMars, faMercury, faTransgender, faIntersex, faTransgenderAlt, faVenusDouble, faMarsDouble, faVenusMars, faMarsStroke, faMarsStrokeV, faMarsStrokeH, faNeuter, faGenderless, faFacebookOfficial, faPinterestP, faWhatsapp, faServer, faUserPlus, faUserTimes, faBed, faHotel, faViacoin, faTrain, faSubway, faMedium, fayCombinator, faYc, faOptinMonster, faOpencart, faExpeditedssl, faBatteryFull, faBattery4, faBatteryThreeQuarters, faBattery3, faBatteryHalf, faBattery2, faBatteryQuarter, faBattery1, faBatteryEmpty, faBattery0, faMousePointer, faiCursor, faObjectGroup, faObjectUngroup, faStickyNote, faStickyNoteO, faCcJcb, faCcDinersClub, faClone, faBalanceScale, faHourglassO, faHourglassStart, faHourglass1, faHourglassHalf, faHourglass2, faHourglassEnd, faHourglass3, faHourglass, faHandRockO, faHandGrabO, faHandPaperO, faHandStopO, faHandScissorsO, faHandLizardO, faHandSpockO, faHandPointerO, faHandPeaceO, faTrademark, faRegistered, faCreativeCommons, faGg, faGgCircle, faTripadvisor, faOdnoklassniki, faOdnoklassnikiSquare, faGetPocket, faWikipediaW, faSafari, faChrome, faFirefox, faOpera, faInternetExplorer, faTelevision, faTv, faContao, fa500px, faAmazon, faCalendarPlusO, faCalendarMinusO, faCalendarTimesO, faCalendarCheckO, faIndustry, faMapPin, faMapSigns, faMapO, faMap, faCommenting, faCommentingO, faHouzz, faVimeo, faBlackTie, faFonticons, faRedditAlien, faEdge, faCreditCardAlt, faCodiepie, faModx, faFortAwesome, faUsb, faProductHunt, faMixcloud, faScribd, faPauseCircle, faPauseCircleO, faStopCircle, faStopCircleO, faShoppingBag, faShoppingBasket, faHashtag, faBluetooth, faBluetoothB, faPercent, faGitlab, faWpbeginner, faWpforms, faEnvira, faUniversalAccess, faWheelchairAlt, faQuestionCircleO, faBlind, faAudioDescription, faVolumeControlPhone, faBraille, faAssistiveListeningSystems, faAmericanSignLanguageInterpreting, faAslInterpreting, faDeaf, faDeafness, faHardOfHearing, faGlide, faGlideG, faSignLanguage, faSigning, faLowVision, faViadeo, faViadeoSquare, faSnapchat, faSnapchatGhost, faSnapchatSquare, faPiedPiper, faFirstOrder, faYoast, faThemeisle, faGooglePlusOfficial, faGooglePlusCircle, faFontAwesome, faFa
+	case FAGlass, FAMusic, FASearch, FAEnvelopeO, FAHeart, FAStar, FAStarO, FAUser, FAFilm, FAThLarge, FATh, FAThList, FACheck, FATimes, FARemove, FAClose, FASearchPlus, FASearchMinus, FAPowerOff, FASignal, FACog, FAGear, FATrashO, FAHome, FAFileO, FAClockO, FARoad, FADownload, FAArrowCircleODown, FAArrowCircleOUp, FAInbox, FAPlayCircleO, FARepeat, FARotateRight, FARefresh, FAListAlt, FALock, FAFlag, FAHeadphones, FAVolumeOff, FAVolumeDown, FAVolumeUp, FAQrcode, FABarcode, FATag, FATags, FABook, FABookmark, FAPrint, FACamera, FAFont, FABold, FAItalic, FATextHeight, FATextWidth, FAAlignLeft, FAAlignCenter, FAAlignRight, FAAlignJustify, FAList, FAOutdent, FADedent, FAIndent, FAVideoCamera, FAPictureO, FAPhoto, FAImage, FAPencil, FAMapMarker, FAAdjust, FATint, FAPencilSquareO, FAEdit, FAShareSquareO, FACheckSquareO, FAArrows, FAStepBackward, FAFastBackward, FABackward, FAPlay, FAPause, FAStop, FAForward, FAFastForward, FAStepForward, FAEject, FAChevronLeft, FAChevronRight, FAPlusCircle, FAMinusCircle, FATimesCircle, FACheckCircle, FAQuestionCircle, FAInfoCircle, FACrosshairs, FATimesCircleO, FACheckCircleO, FABan, FAArrowLeft, FAArrowRight, FAArrowUp, FAArrowDown, FAShare, FAMailForward, FAExpand, FACompress, FAPlus, FAMinus, FAAsterisk, FAExclamationCircle, FAGift, FALeaf, FAFire, FAEye, FAEyeSlash, FAExclamationTriangle, FAWarning, FAPlane, FACalendar, FARandom, FAComment, FAMagnet, FAChevronUp, FAChevronDown, FARetweet, FAShoppingCart, FAFolder, FAFolderOpen, FAArrowsV, FAArrowsH, FABarChart, FABarChartO, FATwitterSquare, FAFacebookSquare, FACameraRetro, FAKey, FACogs, FAGears, FAComments, FAThumbsOUp, FAThumbsODown, FAStarHalf, FAHeartO, FASignOut, FALinkedinSquare, FAThumbTack, FAExternalLink, FASignIn, FATrophy, FAGithubSquare, FAUpload, FALemonO, FAPhone, FASquareO, FABookmarkO, FAPhoneSquare, FATwitter, FAFacebook, FAFacebookF, FAGithub, FAUnlock, FACreditCard, FARss, FAFeed, FAHddO, FABullhorn, FABell, FACertificate, FAHandORight, FAHandOLeft, FAHandOUp, FAHandODown, FAArrowCircleLeft, FAArrowCircleRight, FAArrowCircleUp, FAArrowCircleDown, FAGlobe, FAWrench, FATasks, FAFilter, FABriefcase, FAArrowsAlt, FAUsers, FAGroup, FALink, FAChain, FACloud, FAFlask, FAScissors, FACut, FAFilesO, FACopy, FAPaperclip, FAFloppyO, FASave, FASquare, FABars, FANavicon, FAReorder, FAListUl, FAListOl, FAStrikethrough, FAUnderline, FATable, FAMagic, FATruck, FAPinterest, FAPinterestSquare, FAGooglePlusSquare, FAGooglePlus, FAMoney, FACaretDown, FACaretUp, FACaretLeft, FACaretRight, FAColumns, FASort, FAUnsorted, FASortDesc, FASortDown, FASortAsc, FASortUp, FAEnvelope, FALinkedin, FAUndo, FARotateLeft, FAGavel, FALegal, FATachometer, FADashboard, FACommentO, FACommentsO, FABolt, FAFlash, FASitemap, FAUmbrella, FAClipboard, FAPaste, FALightbulbO, FAExchange, FACloudDownload, FACloudUpload, FAUserMd, FAStethoscope, FASuitcase, FABellO, FACoffee, FACutlery, FAFileTextO, FABuildingO, FAHospitalO, FAAmbulance, FAMedkit, FAFighterJet, FABeer, FAHSquare, FAPlusSquare, FAAngleDoubleLeft, FAAngleDoubleRight, FAAngleDoubleUp, FAAngleDoubleDown, FAAngleLeft, FAAngleRight, FAAngleUp, FAAngleDown, FADesktop, FALaptop, FATablet, FAMobile, FAMobilePhone, FACircleO, FAQuoteLeft, FAQuoteRight, FASpinner, FACircle, FAReply, FAMailReply, FAGithubAlt, FAFolderO, FAFolderOpenO, FASmileO, FAFrownO, FAMehO, FAGamepad, FAKeyboardO, FAFlagO, FAFlagCheckered, FATerminal, FACode, FAReplyAll, FAMailReplyAll, FAStarHalfO, FAStarHalfEmpty, FAStarHalfFull, FALocationArrow, FACrop, FACodeFork, FAChainBroken, FAUnlink, FAQuestion, FAInfo, FAExclamation, FASuperscript, FASubscript, FAEraser, FAPuzzlePiece, FAMicrophone, FAMicrophoneSlash, FAShield, FACalendarO, FAFireExtinguisher, FARocket, FAMaxcdn, FAChevronCircleLeft, FAChevronCircleRight, FAChevronCircleUp, FAChevronCircleDown, FAHtml5, FACss3, FAAnchor, FAUnlockAlt, FABullseye, FAEllipsisH, FAEllipsisV, FARssSquare, FAPlayCircle, FATicket, FAMinusSquare, FAMinusSquareO, FALevelUp, FALevelDown, FACheckSquare, FAPencilSquare, FAExternalLinkSquare, FAShareSquare, FACompass, FACaretSquareODown, FAToggleDown, FACaretSquareOUp, FAToggleUp, FACaretSquareORight, FAToggleRight, FAEur, FAEuro, FAGbp, FAUsd, FADollar, FAInr, FARupee, FAJpy, FACny, FARmb, FAYen, FARub, FARuble, FARouble, FAKrw, FAWon, FABtc, FABitcoin, FAFile, FAFileText, FASortAlphaAsc, FASortAlphaDesc, FASortAmountAsc, FASortAmountDesc, FASortNumericAsc, FASortNumericDesc, FAThumbsUp, FAThumbsDown, FAYoutubeSquare, FAYoutube, FAXing, FAXingSquare, FAYoutubePlay, FADropbox, FAStackOverflow, FAInstagram, FAFlickr, FAAdn, FABitbucket, FABitbucketSquare, FATumblr, FATumblrSquare, FALongArrowDown, FALongArrowUp, FALongArrowLeft, FALongArrowRight, FAApple, FAWindows, FAAndroid, FALinux, FADribbble, FASkype, FAFoursquare, FATrello, FAFemale, FAMale, FAGratipay, FAGittip, FASunO, FAMoonO, FAArchive, FABug, FAVk, FAWeibo, FARenren, FAPagelines, FAStackExchange, FAArrowCircleORight, FAArrowCircleOLeft, FACaretSquareOLeft, FAToggleLeft, FADotCircleO, FAWheelchair, FAVimeoSquare, FATry, FATurkishLira, FAPlusSquareO, FASpaceShuttle, FASlack, FAEnvelopeSquare, FAWordpress, FAOpenid, FAUniversity, FAInstitution, FABank, FAGraduationCap, FAMortarBoard, FAYahoo, FAGoogle, FAReddit, FARedditSquare, FAStumbleuponCircle, FAStumbleupon, FADelicious, FADigg, FAPiedPiperPp, FAPiedPiperAlt, FADrupal, FAJoomla, FALanguage, FAFax, FABuilding, FAChild, FAPaw, FASpoon, FACube, FACubes, FABehance, FABehanceSquare, FASteam, FASteamSquare, FARecycle, FACar, FAAutomobile, FATaxi, FACab, FATree, FASpotify, FADeviantart, FASoundcloud, FADatabase, FAFilePdfO, FAFileWordO, FAFileExcelO, FAFilePowerpointO, FAFileImageO, FAFilePhotoO, FAFilePictureO, FAFileArchiveO, FAFileZipO, FAFileAudioO, FAFileSoundO, FAFileVideoO, FAFileMovieO, FAFileCodeO, FAVine, FACodepen, FAJsfiddle, FALifeRing, FALifeBouy, FALifeBuoy, FALifeSaver, FASupport, FACircleONotch, FARebel, FARa, FAResistance, FAEmpire, FAGe, FAGitSquare, FAGit, FAHackerNews, FAYCombinatorSquare, FAYcSquare, FATencentWeibo, FAQq, FAWeixin, FAWechat, FAPaperPlane, FASend, FAPaperPlaneO, FASendO, FAHistory, FACircleThin, FAHeader, FAParagraph, FASliders, FAShareAlt, FAShareAltSquare, FABomb, FAFutbolO, FASoccerBallO, FATty, FABinoculars, FAPlug, FASlideshare, FATwitch, FAYelp, FANewspaperO, FAWifi, FACalculator, FAPaypal, FAGoogleWallet, FACcVisa, FACcMastercard, FACcDiscover, FACcAmex, FACcPaypal, FACcStripe, FABellSlash, FABellSlashO, FATrash, FACopyright, FAAt, FAEyedropper, FAPaintBrush, FABirthdayCake, FAAreaChart, FAPieChart, FALineChart, FALastfm, FALastfmSquare, FAToggleOff, FAToggleOn, FABicycle, FABus, FAIoxhost, FAAngellist, FACc, FAIls, FAShekel, FASheqel, FAMeanpath, FABuysellads, FAConnectdevelop, FADashcube, FAForumbee, FALeanpub, FASellsy, FAShirtsinbulk, FASimplybuilt, FASkyatlas, FACartPlus, FACartArrowDown, FADiamond, FAShip, FAUserSecret, FAMotorcycle, FAStreetView, FAHeartbeat, FAVenus, FAMars, FAMercury, FATransgender, FAIntersex, FATransgenderAlt, FAVenusDouble, FAMarsDouble, FAVenusMars, FAMarsStroke, FAMarsStrokeV, FAMarsStrokeH, FANeuter, FAGenderless, FAFacebookOfficial, FAPinterestP, FAWhatsapp, FAServer, FAUserPlus, FAUserTimes, FABed, FAHotel, FAViacoin, FATrain, FASubway, FAMedium, FAYCombinator, FAYc, FAOptinMonster, FAOpencart, FAExpeditedssl, FABatteryFull, FABattery4, FABatteryThreeQuarters, FABattery3, FABatteryHalf, FABattery2, FABatteryQuarter, FABattery1, FABatteryEmpty, FABattery0, FAMousePointer, FAICursor, FAObjectGroup, FAObjectUngroup, FAStickyNote, FAStickyNoteO, FACcJcb, FACcDinersClub, FAClone, FABalanceScale, FAHourglassO, FAHourglassStart, FAHourglass1, FAHourglassHalf, FAHourglass2, FAHourglassEnd, FAHourglass3, FAHourglass, FAHandRockO, FAHandGrabO, FAHandPaperO, FAHandStopO, FAHandScissorsO, FAHandLizardO, FAHandSpockO, FAHandPointerO, FAHandPeaceO, FATrademark, FARegistered, FACreativeCommons, FAGg, FAGgCircle, FATripadvisor, FAOdnoklassniki, FAOdnoklassnikiSquare, FAGetPocket, FAWikipediaW, FASafari, FAChrome, FAFirefox, FAOpera, FAInternetExplorer, FATelevision, FATv, FAContao, FA500px, FAAmazon, FACalendarPlusO, FACalendarMinusO, FACalendarTimesO, FACalendarCheckO, FAIndustry, FAMapPin, FAMapSigns, FAMapO, FAMap, FACommenting, FACommentingO, FAHouzz, FAVimeo, FABlackTie, FAFonticons, FARedditAlien, FAEdge, FACreditCardAlt, FACodiepie, FAModx, FAFortAwesome, FAUsb, FAProductHunt, FAMixcloud, FAScribd, FAPauseCircle, FAPauseCircleO, FAStopCircle, FAStopCircleO, FAShoppingBag, FAShoppingBasket, FAHashtag, FABluetooth, FABluetoothB, FAPercent, FAGitlab, FAWpbeginner, FAWpforms, FAEnvira, FAUniversalAccess, FAWheelchairAlt, FAQuestionCircleO, FABlind, FAAudioDescription, FAVolumeControlPhone, FABraille, FAAssistiveListeningSystems, FAAmericanSignLanguageInterpreting, FAAslInterpreting, FADeaf, FADeafness, FAHardOfHearing, FAGlide, FAGlideG, FASignLanguage, FASigning, FALowVision, FAViadeo, FAViadeoSquare, FASnapchat, FASnapchatGhost, FASnapchatSquare, FAPiedPiper, FAFirstOrder, FAYoast, FAThemeisle, FAGooglePlusOfficial, FAGooglePlusCircle, FAFontAwesome, FAFa
 	
 }
 

@@ -83,7 +83,7 @@ import Font_Awesome_Swift
     open var pulseEffectColor = UIColor.white
     
     /// Set the location symbol icon which will be displayed in the middle of the location request screen. Default value: FAType.FALocationArrow. Which icons are available can be found on http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift.
-    open var locationSymbolIcon = FAType.faLocationArrow
+    open var locationSymbolIcon = FAType.FALocationArrow
     
     /// The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
     open var locationSymbolColor = UIColor.white
@@ -230,7 +230,7 @@ import Font_Awesome_Swift
 		self.locationManager.delegate = self
 		// Set the location-symbol using fontAwesom
         if !locationSymbolHidden {
-            self.locationSymbolLabel.setFAIcon(locationSymbolIcon, iconSize: 150)
+            self.locationSymbolLabel.setFAIcon(icon: locationSymbolIcon, iconSize: 150)
             self.locationSymbolLabel.textColor = locationSymbolColor
         }else{
             self.locationSymbolLabel.text = ""

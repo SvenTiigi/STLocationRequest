@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -18,8 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wla-WH-Ofj">
-                                <frame key="frameInset" minX="129" minY="302" width="343" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wla-WH-Ofj">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="8kZ-qh-Hgf"/>
                                     <constraint firstAttribute="width" constant="343" id="NoC-4f-WaE"/>
@@ -31,8 +30,7 @@
                                     <action selector="requestLocationButtonTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yzA-77-ll0"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="locationRequestLogo" translatesAutoresizingMaskIntoConstraints="NO" id="4Ps-jN-ozD">
-                                <frame key="frameInset" minX="188" minY="58" width="224" height="161"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationRequestLogo" translatesAutoresizingMaskIntoConstraints="NO" id="4Ps-jN-ozD">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="224" id="58n-Ud-xyw"/>
                                 </constraints>
@@ -57,6 +55,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="locationRequestLogo" width="341" height="341"/>
+        <image name="locationRequestLogo" width="512" height="512"/>
     </resources>
 </document>

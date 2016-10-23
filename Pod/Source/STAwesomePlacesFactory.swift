@@ -15,7 +15,7 @@ class STAwesomePlacesFactory {
     /**
      Return an array of CLLocationCoordiante2D with awesome places which will be shown on the STLocationRequestController
     */
-    static func getAwesomePlaces() -> [CLLocationCoordinate2D]{
+    class func getAwesomePlaces() -> [CLLocationCoordinate2D]{
         var places: [CLLocationCoordinate2D] = []
         let parisEiffelTower = CLLocationCoordinate2DMake(48.85815,2.29452);
         let newYorkStatueOfLiberty = CLLocationCoordinate2DMake(40.689249, -74.044500);
