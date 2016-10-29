@@ -102,6 +102,12 @@ Set the in the interval for switching the shown places in seconds. Default value
 locationRequestController.timeTillPlaceSwitchesInSeconds = 15.0
 ```
 
+Fill the optional value `placesFilter` if you wish to specify which places should be shown. Default value is "nil" which means all places will be shown
+```swift
+// Only San Francisco Golden Gate Bridge and the Colosseum in Rome will be shown
+locationRequestController.placesFilter = [.sanFranciscoGoldenGateBridge, .romeColosseum]
+```
+
 ## Delegate
 
 You can apply to the `STLocationRequestControllerDelegate` to get notified if the user has authorized or denied the location services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented or did disappear.
@@ -149,6 +155,29 @@ This text will be shown in the default iOS location request dialog, which will s
 </p>
 
 For more details check out the example application.
+
+## STLocationRequestController presenting recommendation
+
+The recommended way to present `STLocationRequestController` is the following way, which is also been implemented in the example application.
+
+```swift
+@IBAction func requestLocationButtonTouched(_ sender: UIButton) {
+    if CLLocationManager.locationServicesEnabled() {
+        if CLLocationManager.authorizationStatus() == .denied {
+            // Location Services are denied
+        } else {
+            if CLLocationManager.authorizationStatus() == .notDetermined{
+                // Present the STLocationRequestController
+                self.presentLocationRequestController()
+            } else {
+                // The user has already allowed your app to use location services. Start updating location
+            }
+        }
+    } else {
+        // Location Services are disabled
+    }
+}
+```
 
 ## iOS Simulator
 

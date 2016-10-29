@@ -30,7 +30,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
     @IBAction func requestLocationButtonTouched(_ sender: UIButton) {
         if CLLocationManager.locationServicesEnabled() {
             if CLLocationManager.authorizationStatus() == .denied {
-                // Location Services are Denied
+                // Location Services are denied
                 print("Location Services are denied")
             } else {
                 if CLLocationManager.authorizationStatus() == .notDetermined{
