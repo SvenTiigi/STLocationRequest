@@ -102,7 +102,7 @@ Set the in the interval for switching the shown places in seconds. Default value
 locationRequestController.timeTillPlaceSwitchesInSeconds = 15.0
 ```
 
-Fill the optional value `placesFilter` if you wish to specify which places should be shown. Default value is "nil" which means all places will be shown
+Fill the optional value placesFilter if you wish to specify which places should be shown. Default value is "nil" which means all places will be shown
 ```swift
 // Only San Francisco Golden Gate Bridge and the Colosseum in Rome will be shown
 locationRequestController.placesFilter = [.sanFranciscoGoldenGateBridge, .romeColosseum]
