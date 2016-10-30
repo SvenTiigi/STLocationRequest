@@ -170,7 +170,6 @@ import Font_Awesome_Swift
      - Parameter viewController: The `UIViewController` which will be used to present the STLocationRequestController modally.
      */
     open func present(onViewController viewController : UIViewController) {
-        STLocationRequestController.getInstance()
         if loadedFromStoryboard {
             viewController.present(self, animated: true) {
                 self.delegate?.locationRequestControllerDidChange(.didPresented)

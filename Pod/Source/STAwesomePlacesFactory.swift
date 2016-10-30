@@ -55,7 +55,7 @@ struct STAwesomePlacesFactory {
         // Initialize the CLLocationCoordinate2D Array
         var places: [CLLocationCoordinate2D] = []
         // Iterate through all STAwesomePlaces Enums
-        for awesomePlace in iterateEnum(STAwesomePlace) {
+        for awesomePlace in iterateEnum(STAwesomePlace.self) {
             // Check if the placesFilter is nil
             if let placesFilter = filter {
                 // The placesFilter is set. Check if the placesFilter contains the current STAwesomePlace Enum
