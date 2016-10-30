@@ -265,6 +265,7 @@ To present the `STLocationRequestController` in an `Objective-C` project you can
 `STLocationRequestController` is using following libraries.
 
 + [Font-Awesome-Swift](https://github.com/Vaberer/Font-Awesome-Swift)
++ [SwiftPulse](https://github.com/ctews/SwiftPulse)
 
 ## Author
 
