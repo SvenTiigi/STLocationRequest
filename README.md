@@ -229,10 +229,18 @@ To present the `STLocationRequestController` in an `Objective-C` project you can
 }
 
 ```
+## Credits
+`STLocationRequestController` is using following libraries.
+
++ [Font-Awesome-Swift](https://github.com/Vaberer/Font-Awesome-Swift)
 
 ## Author
 
-Sven Tiigi (http://sven.tiigi.de)
+<p align="center">
+<img style="border-radius: 50%;" width=300 src="http://sven.tiigi.de/assets/about_me.jpg" alt="Sven Tiigi" title="Sven Tiigi"><br>
+Sven Tiigi<br>
+http://sven.tiigi.de
+</p>
 
 ## License
 
