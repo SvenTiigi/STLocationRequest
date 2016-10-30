@@ -52,15 +52,17 @@ class ViewController : UIViewController, STLocationRequestControllerDelegate {
 
 To perfectly match the design to your app, simply playaround with the parameters `mapViewAlpha` and `backgroundColor` to get your very own design.
 
-The alpha value for the MapView
+#### MapView alpha value
 ```swift
 locationRequestController.mapViewAlpha = 0.7
 ```
+> The alpha value for the MapView
 
-The backgroundcolor for the view of the STLocationRequestController
+#### BackgroundColor
 ```swift
 locationRequestController.backgroundColor = UIColor.orangeColor()
 ```
+> The backgroundcolor for the view of the STLocationRequestController
 
 <p align="center">
 <img width=200 src="./Preview/STLocationRequest_Purple.jpg" alt="STLocationRequest" title="STLocationRequest">
@@ -71,41 +73,72 @@ locationRequestController.backgroundColor = UIColor.orangeColor()
 
 Furthermore you can change the behavior of the `STLocationRequestController` by changing these attributes on your purpose.
 
-Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
+#### TitleText
 ```swift
-locationRequestController.pulseEffectEnabled = true
+locationRequestController.titleText = "We need your location for some extraordinary features"
 ```
+> The title which will be presented at the top of the STLocationRequestController. Default-Value: "We need your location for some awesome features"
 
-The color for the pulse effect behind the location symbol. Default value: white
+#### TitleFont
+```swift
+locationRequestController.titleFont = UIFont.systemFont(ofSize: 14.0)
+```
+> The title which will be presented at the top of the STLocationRequestController. Default-Value: UIFont.systemFontOfSize(25.0)
+
+#### AllowButtonTitle
+````swift
+locationRequestController.allowButtonTitle = "Yes of course"
+```
+> The title for the allowButton which will trigger the requestWhenInUseAuthorization() or requestAlwaysAuthorization() Method on CLLocationManager. Default value is "Alright"
+
+#### NotNowButtonTitle
+```swift
+locationRequestController.notNowButtonTitle = "Nope"
+```
+> The title for the notNowButton which will dismiss the STLocationRequestController. Default value is "Not now"
+
+#### isPulseEffectEnabled
+```swift
+locationRequestController.isPulseEffectEnabled = true
+```
+> Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
+
+#### PulseEffectColor
 ```swift
 locationRequestController.pulseEffectColor = UIColor.whiteColor()
 ```
+> The color for the pulse effect behind the location symbol. Default value: white
 
-Set the location symbol icon which will be displayed in the middle of the STLocationRequest-Controller. The devault value is FALocationArrow. You can browse at http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift for other icons but be aware to use a icon which is in the context of a location request.
+#### LocationSymbolIcon
 ```swift
 locationRequestController.locationSymbolIcon = FAType.FALocationArrow
 ```
+> Set the location symbol icon which will be displayed in the middle of the STLocationRequest-Controller. The devault value is FALocationArrow. You can browse at http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift for other icons but be aware to use a icon which is in the context of a location request.
 
-The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
+#### LocationSymbolColor
 ```swift
 locationRequestController.locationSymbolColor = UIColor.whiteColor()
 ```
+> The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
 
-Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
+#### isLocationSymbolHidden
 ```swift
-locationRequestController.locationSymbolHidden = false
+locationRequestController.isLocationSymbolHidden = false
 ```
+> Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
 
-Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
+#### TimeTillPlaceSwitchesInSeconds
 ```swift
 locationRequestController.timeTillPlaceSwitchesInSeconds = 15.0
 ```
+> Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
 
-Fill the optional value placesFilter if you wish to specify which places should be shown. Default value is "nil" which means all places will be shown
+#### PlacesFilter
 ```swift
 // Only San Francisco Golden Gate Bridge and the Colosseum in Rome will be shown
 locationRequestController.placesFilter = [.sanFranciscoGoldenGateBridge, .romeColosseum]
 ```
+> Fill the optional value placesFilter if you wish to specify which places should be shown. Default value is "nil" which means all places will be shown
 
 ## Delegate
 
