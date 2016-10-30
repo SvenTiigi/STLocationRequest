@@ -73,6 +73,30 @@ locationRequestController.backgroundColor = UIColor.orangeColor()
 
 Furthermore you can change the behavior of the `STLocationRequestController` by changing these attributes on your purpose.
 
+#### TitleText
+```swift
+locationRequestController.titleText = "We need your location for some extraordinary features"
+```
+> The title which will be presented at the top of the STLocationRequestController. Default-Value: "We need your location for some awesome features"
+
+#### TitleFont
+```swift
+locationRequestController.titleFont = UIFont.systemFont(ofSize: 14.0)
+```
+> The title which will be presented at the top of the STLocationRequestController. Default-Value: UIFont.systemFontOfSize(25.0)
+
+#### AllowButtonTitle
+````swift
+locationRequestController.allowButtonTitle = "Yes of course"
+```
+> The title for the allowButton which will trigger the requestWhenInUseAuthorization() or requestAlwaysAuthorization() Method on CLLocationManager. Default value is "Alright"
+
+#### NotNowButtonTitle
+```swift
+locationRequestController.notNowButtonTitle = "Nope"
+```
+> The title for the notNowButton which will dismiss the STLocationRequestController. Default value is "Not now"
+
 #### isPulseEffectEnabled
 ```swift
 locationRequestController.isPulseEffectEnabled = true
