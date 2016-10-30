@@ -60,7 +60,7 @@ locationRequestController.mapViewAlpha = 0.7
 
 #### BackgroundColor
 ```swift
-locationRequestController.backgroundColor = UIColor.orangeColor()
+locationRequestController.backgroundColor = UIColor.orange
 ```
 > The backgroundcolor for the view of the STLocationRequestController
 
