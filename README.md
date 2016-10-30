@@ -237,7 +237,7 @@ To present the `STLocationRequestController` in an `Objective-C` project you can
 ## Author
 
 <p align="center">
-<img width=200 src="./Preview/svenTiigi.png" alt="Sven Tiigi" title="Sven Tiigi"><br>
+<img width=200 src="./Preview/svenTiigi.png" alt="Sven Tiigi" title="Sven Tiigi"><br><br>
 Sven Tiigi<br>
 http://sven.tiigi.de
 </p>
