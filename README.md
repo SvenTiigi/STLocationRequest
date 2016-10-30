@@ -105,7 +105,7 @@ locationRequestController.isPulseEffectEnabled = true
 
 #### PulseEffectColor
 ```swift
-locationRequestController.pulseEffectColor = UIColor.whiteColor()
+locationRequestController.pulseEffectColor = UIColor.white
 ```
 > The color for the pulse effect behind the location symbol. Default value: white
 
@@ -117,7 +117,7 @@ locationRequestController.locationSymbolIcon = FAType.FALocationArrow
 
 #### LocationSymbolColor
 ```swift
-locationRequestController.locationSymbolColor = UIColor.whiteColor()
+locationRequestController.locationSymbolColor = UIColor.white
 ```
 > The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
 
@@ -265,6 +265,7 @@ To present the `STLocationRequestController` in an `Objective-C` project you can
 `STLocationRequestController` is using following libraries.
 
 + [Font-Awesome-Swift](https://github.com/Vaberer/Font-Awesome-Swift)
++ [SwiftPulse](https://github.com/ctews/SwiftPulse)
 
 ## Author
 
