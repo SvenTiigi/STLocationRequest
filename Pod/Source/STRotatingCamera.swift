@@ -4,7 +4,7 @@
 //
 //  Created by Sven Tiigi on 03.12.15.
 //
-// inspired by https://github.com/fernandospr/FSRotatingCamera
+// Swift clone of: https://github.com/fernandospr/FSRotatingCamera
 
 import UIKit
 import MapKit
