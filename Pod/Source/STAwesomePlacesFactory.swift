@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-/// Enumeration of coordinates from awesome places
+/// Enumeration of coordinates from awesome places (Value = "LAT_LONG")
 public enum STAwesomePlace : String {
     // MARK: USA
     case newYorkStatueOfLiberty = "40.689249_-74.044500"
@@ -20,6 +20,8 @@ public enum STAwesomePlace : String {
     case miamiBeach = "25.791007_-80.148082"
     case lagunaBeach = "33.543361_-117.792315"
     case griffithObservatory = "34.118536_-118.300446"
+    case luxorResortLasVegas = "36.095511_-115.176072"
+    case appleHeadquarter = "37.332100_-122.029642"
     // MARK: Germany
     case berlinBrandenburgerGate = "52.516275_13.377704"
     case hamburgTownHall = "53.550416_9.992527"
@@ -27,8 +29,10 @@ public enum STAwesomePlace : String {
     case munichCurch = "48.138631_11.573625"
     case neuschwansteinCastle = "47.557574_10.749800"
     case hamburgElbPhilharmonic = "53.541227_9.984075"
+    case muensterCastle = "51.963691_7.611546"
     // MARK: Italy
     case romeColosseum = "41.89021_12.492231"
+    case piazzaDiTrevi = "41.900865_12.483345"
     // MARK: Spain
     case sagradaFamiliaSpain = "41.404024_2.174370"
     // MARK: England
@@ -38,7 +42,6 @@ public enum STAwesomePlace : String {
     case sydneyOperaHouse = "-33.857197_151.215140"
     // MARK: France
     case parisEiffelTower = "48.85815_2.29452"
-    case leMontSaintMichel = "48.636063_-1.511457"
 }
 
 /// STAwesomePlacesFactory generates Coordinates from awesome Places
