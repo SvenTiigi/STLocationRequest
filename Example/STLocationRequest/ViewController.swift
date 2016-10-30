@@ -10,13 +10,20 @@ import UIKit
 import CoreLocation
 import STLocationRequest
 
+/// Example application ViewController to present the STLocationRequestController
 class ViewController: UIViewController, CLLocationManagerDelegate, STLocationRequestControllerDelegate {
+    
+    // MARK: - IBOutlets
     
     /// Storyboard IBOutlet for the Request Location Button
     @IBOutlet weak var requestLocationButton: UIButton!
     
+    // MARK: - Private properties
+    
     /// Initialize CLLocationManager
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
+    
+    // MARK: - View-Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +32,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.distanceFilter=kCLDistanceFilterNone
     }
+    
+    // MARK: - IBActions
     
     /// requestLocationButtonTouched Method
     @IBAction func requestLocationButtonTouched(_ sender: UIButton) {
@@ -50,6 +59,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
         }
     }
     
+    // MARK: - Present STLocationRequestController
+    
     /// Initialize and present STLocationRequestController
     func presentLocationRequestController(){
         let locationRequestController = STLocationRequestController.getInstance()
@@ -62,6 +73,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
         locationRequestController.delegate = self
         locationRequestController.present(onViewController: self)
     }
+    
+    // MARK: - STLocationRequestControllerDelegate
     
     /// STLocationRequest Delegate Methods
     func locationRequestControllerDidChange(_ event: STLocationRequestControllerEvent) {
@@ -85,10 +98,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
         }
     }
     
+    // MARK: - Updating user location
+    
     /// Start updating user location
     func startUpdatingLocation(){
         self.locationManager.startUpdatingLocation()
     }
+    
+    // MARK: - CLLocationManagerDelegate
     
     /// CLLocationManagerDelegate DidFailWithError Methods
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

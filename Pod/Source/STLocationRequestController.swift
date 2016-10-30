@@ -15,31 +15,39 @@ import Font_Awesome_Swift
 // MARK: - STLocationRequestControllerEvent
 
 /// STLocationRequestEvent Enum for events in the delegate Method locationRequestControllerDidChange
-@objc public enum STLocationRequestControllerEvent : Int{
+@objc public enum STLocationRequestControllerEvent : Int {
+    /// The user authorized the location request
     case locationRequestAuthorized
+    /// The user denied the location request
     case locationRequestDenied
+    /// The user tapped the "Not now"-Button
     case notNowButtonTapped
+    /// The STLocationRequestController did presented
     case didPresented
+    /// The STLocationRequestController did disappear
     case didDisappear
 }
 
 // MARK: - STLocationRequestControllerAuthorizeType
 
 /// STLocationRequestType Enum for decide which location request type should be used
-@objc public enum STLocationRequestControllerAuthorizeType : Int{
+@objc public enum STLocationRequestControllerAuthorizeType : Int {
+    /// Location-Request when in use authorization
     case requestWhenInUseAuthorization
+    /// Location-Request always authorization
     case requestAlwaysAuthorization
 }
 
 // MARK: - STLocationRequestControllerDelegate
 
 /// STLocationRequest Delegate
-@objc public protocol STLocationRequestControllerDelegate{
+@objc public protocol STLocationRequestControllerDelegate {
     /**
      STLocationRequestControllerDelegate which is used to handle events from the STLocationRequestController.
      - Parameter event: Enum which contains the event of STLocationRequestControllerEvent
      Example usage:
      ----
+     ````
      func locationRequestControllerDidChange(event: STLocationRequestControllerEvent) {
      switch event {
         case .locationRequestAuthorized:
@@ -54,6 +62,7 @@ import Font_Awesome_Swift
             break
         }
      }
+     ````
      */
     @objc func locationRequestControllerDidChange(_ event : STLocationRequestControllerEvent)
 }
@@ -117,24 +126,22 @@ import Font_Awesome_Swift
      
      Example usage:
      ----
+     ````
      let locationRequest = STLocationRequestController.getInstance()
      locationRequest.titleText = "We need your location for some awesome features"
-     locationRequest.titleFont = UIFont.systemFontOfSize(25.0)
      locationRequest.allowButtonTitle = "Alright"
      locationRequest.notNowButtonTitle = "Not now"
-     locationRequest.mapViewAlphaValue = 0.9
-     locationRequest.backgroundViewColor = UIColor.lightGrayColor()
      locationRequest.delegate = self
-     locationRequest.authorizeType = .RequestWhenInUseAuthorization
+     locationRequest.authorizeType = .requestWhenInUseAuthorization
      locationRequest.presentLocationRequestController(onViewController: self)
-     
+     ````
      More Information
-     --------------
+     ----
      
-     More information can be found in the ReadMe file [Github](https://github.com/SvenTiigi/STLocationRequest/blob/master/README.md)
+     More information can be found in the ReadMe file on [Github](https://github.com/SvenTiigi/STLocationRequest/blob/master/README.md)
      
     */
-    open static func getInstance() -> STLocationRequestController{
+    open static func getInstance() -> STLocationRequestController {
         // Create the Bundle Path for Resources
         guard let bundlePath = Bundle(for: STLocationRequestController.self).path(forResource: "STLocationRequest", ofType: "bundle") else {
             print("STLocationRequestController_ERROR☝️: The bundle path which is used to identifiy the custom Storyboard cant't be loaded")
@@ -162,7 +169,8 @@ import Font_Awesome_Swift
      
      - Parameter viewController: The `UIViewController` which will be used to present the STLocationRequestController modally.
      */
-    open func present(onViewController viewController : UIViewController){
+    open func present(onViewController viewController : UIViewController) {
+        STLocationRequestController.getInstance()
         if loadedFromStoryboard {
             viewController.present(self, animated: true) {
                 self.delegate?.locationRequestControllerDidChange(.didPresented)
@@ -172,7 +180,7 @@ import Font_Awesome_Swift
         }
     }
     
-    // MARK: - Private properties
+    // MARK: - IBOutlets
     
     /// IBOutlet connection allow location services button
 	@IBOutlet weak var allowButton: UIButton!
@@ -188,6 +196,8 @@ import Font_Awesome_Swift
     
     /// IBOutlet connection location symbol
 	@IBOutlet weak var locationSymbolLabel: UILabel!
+    
+    // MARK: - Private properties
     
 	/// CitryCoordinate array
 	fileprivate var places = [CLLocationCoordinate2D]()
@@ -261,7 +271,7 @@ import Font_Awesome_Swift
 	}
     
     /// Adding the pulse effect under the Location-Symbol in the middle of the STLocationRequest Screen
-    fileprivate func addPulseEffect(){
+    fileprivate func addPulseEffect() {
         // Setting the Pulse Effect
         self.pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:180, position:self.view.center)
         self.pulseEffect.backgroundColor = self.pulseEffectColor.cgColor
@@ -325,7 +335,7 @@ import Font_Awesome_Swift
 	}
     
     /// Fire STLocationRequestEvent and Dismiss ViewController
-    fileprivate func fireEventAndDismissViewController(_ event : STLocationRequestControllerEvent){
+    fileprivate func fireEventAndDismissViewController(_ event : STLocationRequestControllerEvent) {
         self.delegate?.locationRequestControllerDidChange(event)
         self.dismiss(animated: true) {
             self.delegate?.locationRequestControllerDidChange(.didDisappear)
