@@ -80,7 +80,7 @@ import Font_Awesome_Swift
     /// The title which will be presented at the top of the STLocationRequestController. Default-Value: UIFont.systemFontOfSize(25.0)
     open var titleFont = UIFont.systemFont(ofSize: 25.0)
     
-    /// The title for the allowButton which will trigger the requestWhenInUseAuthorization() Method on CLLocationManager. Default value is "Alright"
+    /// The title for the allowButton which will trigger the requestWhenInUseAuthorization() or requestAlwaysAuthorization() Method on CLLocationManager. Default value is "Alright"
     open var allowButtonTitle = "Alright"
     
     /// The title for the notNowButton which will dismiss the STLocationRequestController. Default value is "Not now"
@@ -93,7 +93,7 @@ import Font_Awesome_Swift
     open var backgroundColor = UIColor.white
     
     /// Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
-    open var pulseEffectEnabled = true
+    open var isPulseEffectEnabled = true
     
     /// The color for the pulse effect behind the location symbol. Default value: white
     open var pulseEffectColor = UIColor.white
@@ -105,7 +105,7 @@ import Font_Awesome_Swift
     open var locationSymbolColor = UIColor.white
     
     /// Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
-    open var locationSymbolHidden = false
+    open var isLocationSymbolHidden = false
     
     /// Set the authorize Type for STLocationRequestController. Choose between: `RequestWhenInUseAuthorization` and `RequestAlwaysAuthorization`. Default value is `RequestWhenInUseAuthorization`
     open var authorizeType = STLocationRequestControllerAuthorizeType.requestWhenInUseAuthorization
@@ -249,7 +249,7 @@ import Font_Awesome_Swift
 		// Set the Delegate of the locationManager
 		self.locationManager.delegate = self
 		// Set the location-symbol using fontAwesom
-        if !locationSymbolHidden {
+        if !self.isLocationSymbolHidden {
             self.locationSymbolLabel.setFAIcon(icon: locationSymbolIcon, iconSize: 150)
             self.locationSymbolLabel.textColor = locationSymbolColor
         }else{
@@ -259,7 +259,7 @@ import Font_Awesome_Swift
 		self.setCustomButtonStyle(self.allowButton)
 		self.setCustomButtonStyle(self.notNowButton)
         // Add the Pulse-Effect under the Location-Symbol
-        if self.pulseEffectEnabled {
+        if self.isPulseEffectEnabled {
             self.addPulseEffect()
         }
 		// Create a rotating camera object and pass a mapView
