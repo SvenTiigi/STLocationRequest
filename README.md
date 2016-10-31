@@ -97,6 +97,12 @@ locationRequestController.notNowButtonTitle = "Nope"
 ```
 > The title for the notNowButton which will dismiss the STLocationRequestController. Default value is "Not now"
 
+#### Location-Request Authorization-Type
+```swift
+locationRequestController.authorizeType = .requestWhenInUseAuthorization
+```
+> Set the location request authorize Type for STLocationRequestController. Choose between: .requestWhenInUseAuthorization and .requestAlwaysAuthorization. Default value is .requestWhenInUseAuthorization
+
 #### isPulseEffectEnabled
 ```swift
 locationRequestController.isPulseEffectEnabled = true
@@ -167,13 +173,13 @@ func locationRequestControllerDidChange(event: STLocationRequestControllerEvent)
 
 Also don't forget to add the usage description key to your `Info.plist` for you selected authorization type.
 
-STLocationRequestControllerAuthorizeType.**RequestWhenInUseAuthorization**
+STLocationRequestControllerAuthorizeType.**requestWhenInUseAuthorization**
 ```swift
 <key>NSLocationWhenInUseUsageDescription</key>
 <string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
 ```
 
-STLocationRequestControllerAuthorizeType.**RequestAlwaysAuthorization**
+STLocationRequestControllerAuthorizeType.**requestAlwaysAuthorization**
 ```swift
 <key>NSLocationAlwaysUsageDescription</key>
 <string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
