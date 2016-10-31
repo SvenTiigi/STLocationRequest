@@ -107,7 +107,7 @@ import Font_Awesome_Swift
     /// Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
     open var isLocationSymbolHidden = false
     
-    /// Set the authorize Type for STLocationRequestController. Choose between: `RequestWhenInUseAuthorization` and `RequestAlwaysAuthorization`. Default value is `RequestWhenInUseAuthorization`
+    /// Set the authorize Type for STLocationRequestController. Choose between: `.requestWhenInUseAuthorization` and `.requestAlwaysAuthorization`. Default value is `.requestWhenInUseAuthorization`
     open var authorizeType = STLocationRequestControllerAuthorizeType.requestWhenInUseAuthorization
     
     /// STLocationRequestDelegate which is used to handle events from the STLocationRequestController.
