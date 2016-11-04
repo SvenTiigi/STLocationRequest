@@ -27,8 +27,6 @@ pod 'STLocationRequest'
 
 ## Usage
 
-To present the `STLocationRequestController`
-
 ```swift
 import STLocationRequest
 
@@ -47,6 +45,7 @@ class ViewController : UIViewController, STLocationRequestControllerDelegate {
 }
 
 ```
+Please keep in mind that the 3D-SatelliteFlyover only works on a real iOS Device ([Read more](#ios-simulator)).
 
 ## Customizing
 
