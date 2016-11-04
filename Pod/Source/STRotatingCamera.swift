@@ -70,4 +70,5 @@ class STRotatingCamera: NSObject {
 				}, completion: nil)
 		}
 	}
+
 }
