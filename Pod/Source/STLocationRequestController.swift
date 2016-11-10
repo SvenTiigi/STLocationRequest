@@ -217,6 +217,9 @@ import Font_Awesome_Swift
     /// PulseEffect
 	fileprivate var pulseEffect = LFTPulseAnimation(radius: 0, position: CGPoint(x: 0,y: 0))
     
+    /// PulseEffect Radius
+    fileprivate var pulseRadius : CGFloat = 180.0
+    
     /// Variable for Timer that is changing the current place
     fileprivate var placeChangeTimer : Timer?
     
@@ -280,7 +283,7 @@ import Font_Awesome_Swift
     /// Adding the pulse effect under the Location-Symbol in the middle of the STLocationRequest Screen
     fileprivate func addPulseEffect() {
         // Setting the Pulse Effect
-        self.pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:180, position:self.view.center)
+        self.pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:self.pulseRadius, position:self.view.center)
         self.pulseEffect.backgroundColor = self.pulseEffectColor.cgColor
         self.view.layer.insertSublayer(self.pulseEffect, below: self.locationSymbolLabel.layer)
     }
@@ -324,7 +327,7 @@ import Font_Awesome_Swift
 				self.locationSymbolLabel.alpha = 0
 				self.locationSymbolLabel.alpha = 1
 			})
-			self.pulseEffect.setPulseRadius(180)
+			self.pulseEffect.setPulseRadius(self.pulseRadius)
 		}
 	}
     
@@ -343,6 +346,8 @@ import Font_Awesome_Swift
             self.fireEventAndDismissViewController(.locationRequestDenied)
 			break
 		default:
+            print("STLocationRequestController_WARNING☝️: For CLAuthorizationStatus: \(status) is no logic configured")
+            self.fireEventAndDismissViewController(.locationRequestDenied)
 			break
 		}
 	}
@@ -435,16 +440,22 @@ import Font_Awesome_Swift
         }
     }
     
-    // MARK: - IBActions
+    // MARK: - IBActions Allow & NotNow UIButtons
 	
 	/// Allow button was touched request authorization by AuthorizeType
 	///
 	/// - Parameter sender: UIButton
 	@IBAction func allowButtonTouched(_ sender: UIButton) {
-        if self.authorizeType == .requestAlwaysAuthorization {
+        switch self.authorizeType {
+        case .requestAlwaysAuthorization:
             self.locationManager.requestAlwaysAuthorization()
-        }else{
+            break
+        case .requestWhenInUseAuthorization:
             self.locationManager.requestWhenInUseAuthorization()
+            break
+        default:
+            print("STLocationRequestController_WARNING☝️: Invalid STLocationRequestControllerAuthorizeType: \(self.authorizeType)")
+            break
         }
 	}
 
