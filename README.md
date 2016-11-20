@@ -265,7 +265,7 @@ An example usage of `STLocationRequestController` in an `Objective-C` project.
 
 ```
 ## Credits
-`STLocationRequestController` is using following libraries.
+`STLocationRequest` is using following libraries.
 
 + [Font-Awesome-Swift](https://github.com/Vaberer/Font-Awesome-Swift)
 + [SwiftPulse](https://github.com/ctews/SwiftPulse)
