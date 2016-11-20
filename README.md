@@ -70,8 +70,6 @@ locationRequestController.backgroundColor = UIColor.orange
 <img width=200 src="./Preview/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
 </p>
 
-Furthermore you can change the behavior of the `STLocationRequestController` by changing these attributes on your purpose.
-
 #### TitleText
 ```swift
 locationRequestController.titleText = "We need your location for some extraordinary features"
