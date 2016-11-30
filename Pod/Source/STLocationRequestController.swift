@@ -75,46 +75,46 @@ import Font_Awesome_Swift
     // MARK: - (API) Public properties
     
     /// The title which will be presented at the top of the STLocationRequestController. Default-Value: "We need your location for some awesome features"
-    open var titleText = "We need your location for some awesome features"
+    open var titleText : String = "We need your location for some awesome features"
 
     /// The title which will be presented at the top of the STLocationRequestController. Default-Value: UIFont.systemFontOfSize(25.0)
-    open var titleFont = UIFont.systemFont(ofSize: 25.0)
+    open var titleFont : UIFont = .systemFont(ofSize: 25.0)
     
     /// The title for the allowButton which will trigger the requestWhenInUseAuthorization() or requestAlwaysAuthorization() Method on CLLocationManager. Default value is "Alright"
-    open var allowButtonTitle = "Alright"
+    open var allowButtonTitle : String = "Alright"
     
     /// The title for the notNowButton which will dismiss the STLocationRequestController. Default value is "Not now"
-    open var notNowButtonTitle = "Not now"
+    open var notNowButtonTitle : String = "Not now"
     
     /// The alpha value for the MapView which is used in combination with `backgroundViewColor` to match the STLocationRequestController with the design of your app. Default value is 1
     open var mapViewAlpha : CGFloat = 1.0
     
     /// The backgroundcolor for the view of the STLocationRequestController which is used in combination with `mapViewAlphaValue` to match the STLocationRequestController with the design of your app. Default value is a white color.
-    open var backgroundColor = UIColor.white
+    open var backgroundColor : UIColor = .white
     
     /// Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
-    open var isPulseEffectEnabled = true
+    open var isPulseEffectEnabled : Bool = true
     
     /// The color for the pulse effect behind the location symbol. Default value: white
-    open var pulseEffectColor = UIColor.white
+    open var pulseEffectColor : UIColor = .white
     
     /// Set the location symbol icon which will be displayed in the middle of the location request screen. Default value: FAType.FALocationArrow. Which icons are available can be found on http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift.
-    open var locationSymbolIcon = FAType.FALocationArrow
+    open var locationSymbolIcon : FAType = .FALocationArrow
     
     /// The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
-    open var locationSymbolColor = UIColor.white
+    open var locationSymbolColor : UIColor = .white
     
     /// Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
-    open var isLocationSymbolHidden = false
+    open var isLocationSymbolHidden : Bool = false
     
     /// Set the authorize Type for STLocationRequestController. Choose between: `.requestWhenInUseAuthorization` and `.requestAlwaysAuthorization`. Default value is `.requestWhenInUseAuthorization`
-    open var authorizeType = STLocationRequestControllerAuthorizeType.requestWhenInUseAuthorization
+    open var authorizeType : STLocationRequestControllerAuthorizeType = .requestWhenInUseAuthorization
     
     /// STLocationRequestDelegate which is used to handle events from the STLocationRequestController.
     open var delegate : STLocationRequestControllerDelegate?
     
     /// Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
-    open var timeTillPlaceSwitchesInSeconds = 15.0
+    open var timeTillPlaceSwitchesInSeconds : TimeInterval = 15.0
     
     /// Fill the optional value `placesFilter` if you wish to specify which places should be shown. Default value is "nil" which means all places will be shown
     open var placesFilter : [STAwesomePlace]?
