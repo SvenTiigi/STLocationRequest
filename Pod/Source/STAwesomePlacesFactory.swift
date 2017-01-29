@@ -45,13 +45,13 @@ public enum STAwesomePlace : String {
 }
 
 /// STAwesomePlacesFactory generates Coordinates from awesome Places
-struct STAwesomePlacesFactory {
+public struct STAwesomePlacesFactory {
     
     /// Return an array of CLLocationCoordiante2D with awesome places
     ///
     /// - Parameter filter: An array of STAwesomePlaces Enums which only should be added to the return array. If the parameter is nil all places will be added to the return array.
     /// - Returns: CLLocationCoordinate2D Array of awesome places
-    static func getAwesomePlaces(withPlacesFilter filter : [STAwesomePlace]?) -> [CLLocationCoordinate2D]{
+    public static func getAwesomePlaces(withPlacesFilter filter: [STAwesomePlace]?) -> [CLLocationCoordinate2D]{
         // Initialize the CLLocationCoordinate2D Array
         var places: [CLLocationCoordinate2D] = []
         // Iterate through all STAwesomePlaces Enums
@@ -81,7 +81,7 @@ struct STAwesomePlacesFactory {
     ///
     /// - Parameter awesomePlace: STAwesomePlace Enum
     /// - Returns: CLLocationCoordinate2D of STAwesomePlace Enum
-    private static func getCoordinate(fromAwesomePlace awesomePlace : STAwesomePlace) -> CLLocationCoordinate2D? {
+    fileprivate static func getCoordinate(fromAwesomePlace awesomePlace: STAwesomePlace) -> CLLocationCoordinate2D? {
         let awesomePlaceCoordinatesText = awesomePlace.rawValue.components(separatedBy: "_")
         guard let latitudeText = awesomePlaceCoordinatesText.first, let longitudeText = awesomePlaceCoordinatesText.last else {
             return nil
@@ -96,7 +96,7 @@ struct STAwesomePlacesFactory {
     ///
     /// - Parameter _: Enumeration
     /// - Returns: Iterator for the enumeration
-    private static func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
+    fileprivate static func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
         var i = 0
         return AnyIterator {
             let next = withUnsafePointer(to: &i) {

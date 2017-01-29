@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
         'STLocationRequest' => ['Pod/Assets/*.png']
     }
     s.frameworks = 'UIKit', 'MapKit'
-    s.dependency 'Font-Awesome-Swift', '~> 1.5.2'
+    s.dependency 'Font-Awesome-Swift', '~> 1.5.3'
     s.resource_bundles = {
         'STLocationRequest' => ['Pod/Assets/*.storyboard']
     }
