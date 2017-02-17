@@ -11,17 +11,17 @@ import CoreLocation
 import STLocationRequest
 
 /// Example application ViewController to present the STLocationRequestController
-class ViewController: UIViewController, CLLocationManagerDelegate, STLocationRequestControllerDelegate {
+class ViewController: UIViewController {
     
     // MARK: - IBOutlets
     
     /// Storyboard IBOutlet for the Request Location Button
     @IBOutlet weak var requestLocationButton: UIButton!
     
-    // MARK: - Private properties
+    // MARK: - Properties
     
     /// Initialize CLLocationManager
-    private let locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     
     // MARK: - View-Lifecycle
     
@@ -30,7 +30,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
         // Intialize the locationManager
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.distanceFilter=kCLDistanceFilterNone
+        self.locationManager.distanceFilter = kCLDistanceFilterNone
     }
     
     // MARK: - IBActions
@@ -50,7 +50,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
                     self.presentLocationRequestController()
                 } else {
                     // The user has already allowed your app to use location services
-                    self.startUpdatingLocation()
+                    self.locationManager.startUpdatingLocation()
                 }
             }
         } else {
@@ -73,15 +73,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
         locationRequestController.delegate = self
         locationRequestController.present(onViewController: self)
     }
-    
-    // MARK: - STLocationRequestControllerDelegate
+
+}
+
+// MARK: - STLocationRequestControllerDelegate
+
+extension ViewController: STLocationRequestControllerDelegate {
     
     /// STLocationRequest Delegate Methods
     func locationRequestControllerDidChange(_ event: STLocationRequestControllerEvent) {
         switch event {
         case .locationRequestAuthorized:
             print("The user accepted the use of location services")
-            self.startUpdatingLocation()
+            self.locationManager.startUpdatingLocation()
             break
         case .locationRequestDenied:
             print("The user denied the use of location services")
@@ -98,14 +102,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, STLocationReq
         }
     }
     
-    // MARK: - Updating user location
-    
-    /// Start updating user location
-    func startUpdatingLocation(){
-        self.locationManager.startUpdatingLocation()
-    }
-    
-    // MARK: - CLLocationManagerDelegate
+}
+
+// MARK: - CLLocationManagerDelegate
+
+extension ViewController: CLLocationManagerDelegate {
     
     /// CLLocationManagerDelegate DidFailWithError Methods
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

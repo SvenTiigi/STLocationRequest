@@ -461,8 +461,13 @@ extension STLocationRequestController: CLLocationManagerDelegate {
         case .denied:
             self.fireEventAndDismissViewController(forEvent: .locationRequestDenied)
             break
+        case .restricted:
+            self.fireEventAndDismissViewController(forEvent: .locationRequestDenied)
+            break;
+        case .notDetermined:
+            break;
         default:
-            print("STLocationRequestController_WARNING☝️: For CLAuthorizationStatus: \(status) is no logic configured")
+            print("STLocationRequestController_WARNING☝️: For CLAuthorizationStatus: \(status.rawValue) is no logic configured")
             self.fireEventAndDismissViewController(forEvent: .locationRequestDenied)
             break
         }
