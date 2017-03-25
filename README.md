@@ -83,7 +83,7 @@ locationRequestController.titleFont = UIFont.systemFont(ofSize: 14.0)
 > The title which will be presented at the top of the STLocationRequestController. Default-Value: UIFont.systemFontOfSize(25.0)
 
 #### AllowButtonTitle
-````swift
+```swift
 locationRequestController.allowButtonTitle = "Yes of course"
 ```
 > The title for the allowButton which will trigger the requestWhenInUseAuthorization() or requestAlwaysAuthorization() Method on CLLocationManager. Default value is "Alright"
