@@ -84,27 +84,27 @@
 		1A036C9BC4D4D534F00E8A29DD0F3833 /* Pods-STLocationRequest_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		1BA9D09E405F25D5437F26C1316C62A1 /* STRotatingCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STRotatingCamera.swift; sourceTree = "<group>"; };
 		28EEAFFFBB51EE535A1452E5CE690D37 /* STLocationRequest-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STLocationRequest-prefix.pch"; sourceTree = "<group>"; };
-		2DE2BFD202BCA411C762651BCCCB8B85 /* STLocationRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = STLocationRequest.framework; path = STLocationRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DE2BFD202BCA411C762651BCCCB8B85 /* STLocationRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STLocationRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBB3B80B33D2509983FC5F9DE63D194 /* Pods-STLocationRequest_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Tests-resources.sh"; sourceTree = "<group>"; };
 		3A6CDF7CFABBCF59F55378F1FEB94906 /* Font-Awesome-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Font-Awesome-Swift.xcconfig"; sourceTree = "<group>"; };
-		3E8738A93D2931CC21A0DEA336A71A5C /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_STLocationRequest_Tests.framework; path = "Pods-STLocationRequest_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E8738A93D2931CC21A0DEA336A71A5C /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		405731A06DAB11C754B484F829944CA5 /* STLocationRequest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = STLocationRequest.xcconfig; sourceTree = "<group>"; };
 		4376B0BB632D3D568716527DDBC90169 /* STAwesomePlacesFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STAwesomePlacesFactory.swift; sourceTree = "<group>"; };
-		441E7027A0F57E162B28143B1716D499 /* StoryboardLocationRequest.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; path = StoryboardLocationRequest.storyboard; sourceTree = "<group>"; };
+		441E7027A0F57E162B28143B1716D499 /* StoryboardLocationRequest.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = StoryboardLocationRequest.storyboard; sourceTree = "<group>"; };
 		45CC48C44F5F2FB8FCDE7C3E2F36D07B /* STLocationRequest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STLocationRequest-umbrella.h"; sourceTree = "<group>"; };
 		4C0D3E9BFCD52127254DD23421C004BB /* Font-Awesome-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Font-Awesome-Swift-dummy.m"; sourceTree = "<group>"; };
 		567F270CE635360444DCC4D950D54AEB /* Pods-STLocationRequest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A762782E2AF6946A363F199E9C1ED16 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB31B9D53D5A468A371333513362DC7 /* Pods-STLocationRequest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Example.release.xcconfig"; sourceTree = "<group>"; };
-		5BBA95072C791B11185074CA43CF481A /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome.ttf; path = Source/FontAwesome.ttf; sourceTree = "<group>"; };
+		5BBA95072C791B11185074CA43CF481A /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FontAwesome.ttf; path = Source/FontAwesome.ttf; sourceTree = "<group>"; };
 		63B73F4F412383A6B49EB0DF5B7FB2E7 /* FAIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FAIcon.swift; path = Source/FAIcon.swift; sourceTree = "<group>"; };
-		78F42D869238FDC52E512806D3542EF6 /* Font-Awesome-Swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Font-Awesome-Swift.bundle"; path = "Font-Awesome-Swift.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78F42D869238FDC52E512806D3542EF6 /* Font-Awesome-Swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Font-Awesome-Swift.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAE46878AB22724C5925B746402116D /* Pods-STLocationRequest_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Example-frameworks.sh"; sourceTree = "<group>"; };
 		82AEECD9273DDD6F9515C76A8B223706 /* Pods-STLocationRequest_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STLocationRequest_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8A49E397D86B4643525158A60885884C /* Font-Awesome-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Font-Awesome-Swift.modulemap"; sourceTree = "<group>"; };
-		8B4EFA015F91F46504411F4C3660563C /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Font_Awesome_Swift.framework; path = "Font-Awesome-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A49E397D86B4643525158A60885884C /* Font-Awesome-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Font-Awesome-Swift.modulemap"; sourceTree = "<group>"; };
+		8B4EFA015F91F46504411F4C3660563C /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7640DD7A9A9E92A62421412D77EA15 /* Pods-STLocationRequest_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-STLocationRequest_Tests-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DB07B8D81D51A9AB1DF1EF09C2453B1 /* Pods-STLocationRequest_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STLocationRequest_Example-dummy.m"; sourceTree = "<group>"; };
 		A2195F2B0D286598F61B13D48E12C6FB /* Font-Awesome-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-umbrella.h"; sourceTree = "<group>"; };
 		A803F92E0A0EDB40F14447DF156D7C71 /* Pods-STLocationRequest_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STLocationRequest_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -113,18 +113,18 @@
 		B481CDFBD188EFDE73373BD1B07CDF58 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		B729DE296D47D5B659DA496BD4DEA28D /* Pods-STLocationRequest_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BD843A4A0638F2AB53687EB47FF80726 /* Pods-STLocationRequest_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-STLocationRequest_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		BDB39784257EF861146C6163E36D6553 /* STLocationRequest.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = STLocationRequest.bundle; path = STLocationRequest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		C54865557E37556976969B2E65BECA6D /* Pods-STLocationRequest_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-STLocationRequest_Example.modulemap"; sourceTree = "<group>"; };
+		BDB39784257EF861146C6163E36D6553 /* STLocationRequest.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STLocationRequest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		C54865557E37556976969B2E65BECA6D /* Pods-STLocationRequest_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-STLocationRequest_Example.modulemap"; sourceTree = "<group>"; };
 		CEB2567492844772850B4A022170DACC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		D1C49C0FE323E9C7BDC4773084BDA77D /* Pods_STLocationRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_STLocationRequest_Example.framework; path = "Pods-STLocationRequest_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1C49C0FE323E9C7BDC4773084BDA77D /* Pods_STLocationRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB0237494728DE51437074524BB5CC71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		E0196283BE01CA1E288CF3679EE089F4 /* Font-Awesome-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-prefix.pch"; sourceTree = "<group>"; };
 		E1F7B7A10A9AAE50087DFF77D5473077 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E386E93EB3C4905D0CA60B10909E7171 /* Pods-STLocationRequest_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STLocationRequest_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E80F42A01623826A6D2FFC3B2FABA14D /* STLocationRequest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = STLocationRequest.modulemap; sourceTree = "<group>"; };
+		E80F42A01623826A6D2FFC3B2FABA14D /* STLocationRequest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = STLocationRequest.modulemap; sourceTree = "<group>"; };
 		EDC394150EACBD34C04487DAF3561206 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F23F4CBBDF9BD17231EAD45B7E0C67AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		F62369BC3987E13BE7C0512D0FBB0810 /* Pods-STLocationRequest_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-STLocationRequest_Tests.modulemap"; sourceTree = "<group>"; };
+		F62369BC3987E13BE7C0512D0FBB0810 /* Pods-STLocationRequest_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-STLocationRequest_Tests.modulemap"; sourceTree = "<group>"; };
 		F7B83A758700E71F7817B4D925936D75 /* STLocationRequestController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestController.swift; sourceTree = "<group>"; };
 		FC9F7B4A2561D8F2A925799877C69614 /* Pods-STLocationRequest_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-STLocationRequest_Example-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,7 +239,6 @@
 			children = (
 				63FDC5F66DA3939530C8D69100A0E631 /* Source */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -269,7 +268,6 @@
 				F7B83A758700E71F7817B4D925936D75 /* STLocationRequestController.swift */,
 				1BA9D09E405F25D5437F26C1316C62A1 /* STRotatingCamera.swift */,
 			);
-			name = Source;
 			path = Source;
 			sourceTree = "<group>";
 		};
@@ -286,7 +284,6 @@
 			children = (
 				A7C7658794374A4C5F383FA463AB5DEF /* Assets */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -315,7 +312,6 @@
 			children = (
 				441E7027A0F57E162B28143B1716D499 /* StoryboardLocationRequest.storyboard */,
 			);
-			name = Assets;
 			path = Assets;
 			sourceTree = "<group>";
 		};
@@ -362,7 +358,6 @@
 				68182AB9BD32CC0CD57ED766F4AC6818 /* Resources */,
 				39B63D6DBA32489B37DBEB6BEF61F8FF /* Support Files */,
 			);
-			name = "Font-Awesome-Swift";
 			path = "Font-Awesome-Swift";
 			sourceTree = "<group>";
 		};
@@ -552,6 +547,20 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					15072FDF87CD25173EC383F5D6CED57D = {
+						LastSwiftMigration = 0820;
+					};
+					93DFFE2BE2BF000178F7F28098B4A55B = {
+						LastSwiftMigration = 0820;
+					};
+					BB405A7AD15CE55CD4E1A5971C33327E = {
+						LastSwiftMigration = 0820;
+					};
+					F081CC55322BD4EAB4F0F0CDE6E9DF86 = {
+						LastSwiftMigration = 0820;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -727,6 +736,7 @@
 				PRODUCT_NAME = Pods_STLocationRequest_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -763,6 +773,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -870,6 +881,7 @@
 				PRODUCT_NAME = STLocationRequest;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -981,6 +993,7 @@
 				PRODUCT_NAME = Pods_STLocationRequest_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1016,6 +1029,7 @@
 				PRODUCT_NAME = Pods_STLocationRequest_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1034,6 +1048,7 @@
 				PRODUCT_NAME = STLocationRequest;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};

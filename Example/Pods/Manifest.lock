@@ -1,6 +1,6 @@
 PODS:
   - Font-Awesome-Swift (1.6.1)
-  - STLocationRequest (1.3.3):
+  - STLocationRequest (1.3.4):
     - Font-Awesome-Swift (~> 1.6.1)
 
 DEPENDENCIES:
@@ -12,7 +12,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Font-Awesome-Swift: 70ab020f6749d7048bb49807c3e78b702d78afca
-  STLocationRequest: a3ee124127797f3cd37d4077ae3e8843cf4390bc
+  STLocationRequest: 31a7b7982de3a4682791f09e7bcff17040de434d
 
 PODFILE CHECKSUM: 276f4371772a3591644ab2524011d9d3e68f6758
 

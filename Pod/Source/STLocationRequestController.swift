@@ -70,54 +70,54 @@ import Font_Awesome_Swift
 // MARK: - STLocationRequestController
 
 /// STLocationRequest is a UIViewController-Extension which is used to request the User-Location, at the very first time, in a simple and elegent way. It shows a beautiful 3D 360 degree Flyover-MapView which shows 14 random citys or landmarks.
-@objc public class STLocationRequestController: UIViewController {
+@objc open class STLocationRequestController: UIViewController {
 
     // MARK: - (API) Public properties
     
     /// The title which will be presented at the top of the STLocationRequestController. Default-Value: "We need your location for some awesome features"
-    public var titleText: String = "We need your location for some awesome features"
+    open var titleText: String = "We need your location for some awesome features"
 
     /// The title which will be presented at the top of the STLocationRequestController. Default-Value: UIFont.systemFontOfSize(25.0)
-    public var titleFont: UIFont = .systemFont(ofSize: 25.0)
+    open var titleFont: UIFont = .systemFont(ofSize: 25.0)
     
     /// The title for the allowButton which will trigger the requestWhenInUseAuthorization() or requestAlwaysAuthorization() Method on CLLocationManager. Default value is "Alright"
-    public var allowButtonTitle: String = "Alright"
+    open var allowButtonTitle: String = "Alright"
     
     /// The title for the notNowButton which will dismiss the STLocationRequestController. Default value is "Not now"
-    public var notNowButtonTitle: String = "Not now"
+    open var notNowButtonTitle: String = "Not now"
     
     /// The alpha value for the MapView which is used in combination with `backgroundViewColor` to match the STLocationRequestController with the design of your app. Default value is 1
-    public var mapViewAlpha: CGFloat = 1.0
+    open var mapViewAlpha: CGFloat = 1.0
     
     /// The backgroundcolor for the view of the STLocationRequestController which is used in combination with `mapViewAlphaValue` to match the STLocationRequestController with the design of your app. Default value is a white color.
-    public var backgroundColor: UIColor = .white
+    open var backgroundColor: UIColor = .white
     
     /// Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
-    public var isPulseEffectEnabled: Bool = true
+    open var isPulseEffectEnabled: Bool = true
     
     /// The color for the pulse effect behind the location symbol. Default value: white
-    public var pulseEffectColor: UIColor = .white
+    open var pulseEffectColor: UIColor = .white
     
     /// Set the location symbol icon which will be displayed in the middle of the location request screen. Default value: FAType.FALocationArrow. Which icons are available can be found on http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift.
-    public var locationSymbolIcon: FAType = .FALocationArrow
+    open var locationSymbolIcon: FAType = .FALocationArrow
     
     /// The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
-    public var locationSymbolColor: UIColor = .white
+    open var locationSymbolColor: UIColor = .white
     
     /// Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
-    public var isLocationSymbolHidden: Bool = false
+    open var isLocationSymbolHidden: Bool = false
     
     /// Set the authorize Type for STLocationRequestController. Choose between: `.requestWhenInUseAuthorization` and `.requestAlwaysAuthorization`. Default value is `.requestWhenInUseAuthorization`
-    public var authorizeType: STLocationRequestControllerAuthorizeType = .requestWhenInUseAuthorization
+    open var authorizeType: STLocationRequestControllerAuthorizeType = .requestWhenInUseAuthorization
     
     /// STLocationRequestDelegate which is used to handle events from the STLocationRequestController.
-    public var delegate: STLocationRequestControllerDelegate?
+    open var delegate: STLocationRequestControllerDelegate?
     
     /// Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
-    public var timeTillPlaceSwitchesInSeconds: TimeInterval = 15.0
+    open var timeTillPlaceSwitchesInSeconds: TimeInterval = 15.0
     
     /// Fill the optional value `placesFilter` if you wish to specify which places should be shown. Default value is "nil" which means all places will be shown
-    public var placesFilter: [STAwesomePlace]?
+    open var placesFilter: [STAwesomePlace]?
     
     // MARK: - Public functions
     
@@ -141,7 +141,7 @@ import Font_Awesome_Swift
      More information can be found in the ReadMe file on [Github](https://github.com/SvenTiigi/STLocationRequest/blob/master/README.md)
      
     */
-    public static func getInstance() -> STLocationRequestController {
+    open static func getInstance() -> STLocationRequestController {
         // Create the Bundle Path for Resources
         guard let bundlePath = Bundle(for: STLocationRequestController.self).path(forResource: "STLocationRequest", ofType: "bundle") else {
             print("STLocationRequestController_ERROR☝️: The bundle path which is used to identifiy the custom Storyboard cant't be loaded")
@@ -169,7 +169,7 @@ import Font_Awesome_Swift
      
      - Parameter viewController: The `UIViewController` which will be used to present the STLocationRequestController modally.
      */
-    public func present(onViewController viewController: UIViewController, completion: (() -> Void)? = nil) {
+    open func present(onViewController viewController: UIViewController, completion: (() -> Void)? = nil) {
         // Check if STLocationRequestController was loaded via "STLocationRequestController.getInstance()"
         if self.isLoadedFromInstance {
             // The STLocationRequestController is correctly initialized. Present the STLocationRequestController
@@ -233,7 +233,7 @@ import Font_Awesome_Swift
     // MARK: - ViewDidLoad main initializing
     
     /// viewDidLoad Function
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
 		super.viewDidLoad()
         // Set the text for the description label
         self.descriptionLabel.text = self.titleText
@@ -294,7 +294,7 @@ import Font_Awesome_Swift
     // MARK: - PlaceChangeTimer invalidation
     
     /// viewDidDisappear
-    override public func viewDidDisappear(_ animated: Bool) {
+    override open func viewDidDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
         self.destroyPlaceChangeTimer()
 	}
@@ -316,7 +316,7 @@ import Font_Awesome_Swift
     // MARK: - Orientation changed
 	
     /// If Device is going landscape hide the location symbol and the pulse layer
-	override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+	override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 		if UIDevice.current.orientation.isLandscape {
             // The device orientation is landscape. Hide the locationSymbolLabel
 			UIView.animate(withDuration: 0.5, animations: { () -> Void in
