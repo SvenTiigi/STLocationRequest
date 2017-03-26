@@ -31,7 +31,7 @@ pod 'STLocationRequest'
 ```swift
 import STLocationRequest
 
-class ViewController : UIViewController, STLocationRequestControllerDelegate {
+class ViewController: UIViewController, STLocationRequestControllerDelegate {
 
     func presentLocationRequestController(){
         let locationRequestController = STLocationRequestController.getInstance()
