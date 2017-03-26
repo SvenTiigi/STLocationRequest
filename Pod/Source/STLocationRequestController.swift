@@ -172,6 +172,10 @@ import Font_Awesome_Swift
     open func present(onViewController viewController: UIViewController, completion: (() -> Void)? = nil) {
         // Check if STLocationRequestController was loaded via "STLocationRequestController.getInstance()"
         if self.isLoadedFromInstance {
+            // Check if app is running on iOS Simulator
+            #if (arch(i386) || arch(x86_64)) && os(iOS)
+                print("STLocationRequestController_WARNING☝️: Please keep in mind that the 3D-SatelliteFlyover only works on a real iOS Device and not on the iOS Simulator. Read more here -> https://github.com/SvenTiigi/STLocationRequest#ios-simulator")
+            #endif
             // The STLocationRequestController is correctly initialized. Present the STLocationRequestController
             viewController.present(self, animated: true) {
                 // After presenting the STLocationRequestController inform the delegate
@@ -430,9 +434,6 @@ import Font_Awesome_Swift
         case .requestWhenInUseAuthorization:
             self.locationManager.requestWhenInUseAuthorization()
             break
-        default:
-            print("STLocationRequestController_WARNING☝️: Invalid STLocationRequestControllerAuthorizeType: \(self.authorizeType)")
-            break
         }
 	}
 
@@ -466,10 +467,6 @@ extension STLocationRequestController: CLLocationManagerDelegate {
             break;
         case .notDetermined:
             break;
-        default:
-            print("STLocationRequestController_WARNING☝️: For CLAuthorizationStatus: \(status.rawValue) is no logic configured")
-            self.fireEventAndDismissViewController(forEvent: .locationRequestDenied)
-            break
         }
     }
     
