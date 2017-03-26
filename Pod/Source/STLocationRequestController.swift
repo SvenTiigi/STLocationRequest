@@ -203,7 +203,7 @@ import Font_Awesome_Swift
      */
     public func addPlace(coordinate place: CLLocationCoordinate2D) {
         // Check if customPlaces is already initialized
-        guard let customPlaces = self.customPlaces else {
+        guard var customPlaces = self.customPlaces else {
             // customPlaces is nil. Initialize it
             self.customPlaces = [CLLocationCoordinate2D]()
             // Append the place
@@ -211,7 +211,7 @@ import Font_Awesome_Swift
             return
         }
         // customPlaces is already initialized append it
-        self.customPlaces?.append(place)
+        customPlaces.append(place)
     }
     
     /**
