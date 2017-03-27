@@ -117,7 +117,7 @@ locationRequestController.pulseEffectColor = UIColor.white
 ```swift
 locationRequestController.locationSymbolIcon = FAType.FALocationArrow
 ```
-> Set the location symbol icon which will be displayed in the middle of the STLocationRequest-Controller. The devault value is FALocationArrow. You can browse at http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift for other icons but be aware to use a icon which is in the context of a location request.
+> Set the location symbol icon which will be displayed in the middle of the STLocationRequest-Controller. The default value is FALocationArrow. You can browse at http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift for other icons but be aware to use a icon which is in the context of a location request.
 
 #### LocationSymbolColor
 ```swift
