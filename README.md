@@ -167,6 +167,25 @@ func locationRequestControllerDidChange(event: STLocationRequestControllerEvent)
 
 ```
 
+## Custom 3D Flyover Places
+An example of adding a custom 3D flyover place to the `STLocationRequestController`.
+
+```swift
+// Add a place via latitude and longitude
+locationRequestController.addPlace(latitude: 51.960665, longitude: 7.626135)
+
+// Or add a place via CLLocationCoordinate2D
+let myCoordinate = CLLocationCoordinate2DMake(51.960665, 7.626135)
+locationRequestController.addPlace(coordinate: myCoordinate)
+```
+> Please keep in mind to verify that your custom location is available in 3D flyover mode. To verify you can check your place on the Apple Maps App by tapping on the 3D-Button.
+
+If you wish to show only your custom 3D flyover places you can simply set the `placesFilter`.
+```swift
+// Only your custom places will be shown
+locationRequestController.placesFilter = [.customPlaces]
+```
+
 ## Info.plist
 
 Also don't forget to add the usage description key to your `Info.plist` for you selected authorization type.
@@ -197,7 +216,7 @@ For more details check out the example application.
 The recommended way to present `STLocationRequestController` is the following way, which is also been implemented in the example application.
 
 ```swift
-@IBAction func requestLocationButtonTouched(_ sender: UIButton) {
+func checkLocationServicePermission() {
     if CLLocationManager.locationServicesEnabled() {
         if CLLocationManager.authorizationStatus() == .denied {
             // Location Services are denied
