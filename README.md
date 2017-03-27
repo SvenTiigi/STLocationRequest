@@ -209,8 +209,6 @@ This text will be shown in the default iOS location request dialog, which will s
 
 </p>
 
-For more details check out the example application.
-
 ## Presenting-Recommendation
 
 The recommended way to present `STLocationRequestController` is the following way, which is also been implemented in the example application.
