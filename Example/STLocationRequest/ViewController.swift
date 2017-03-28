@@ -116,7 +116,7 @@ extension ViewController: CLLocationManagerDelegate {
     /// CLLocationManagerDelegate didUpdateLocations Methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.locationManager.stopUpdatingLocation()
-        print("didUpdateLocations UserLocation: \(locations.last)")
+        print("didUpdateLocations UserLocation: \(String(describing: locations.last))")
     }
     
 }
