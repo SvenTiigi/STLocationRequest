@@ -1,5 +1,5 @@
 <p align="center">
-<img width=300 src="./Preview/STLocationRequest_AppIcon.jpg" alt="STLocationRequestAppIcon" title="STLocationRequestAppIcon">
+<img width=300 src="./Assets/STLocationRequest_AppIcon.jpg" alt="STLocationRequestAppIcon" title="STLocationRequestAppIcon">
 </p>
 
 # STLocationRequest
@@ -13,7 +13,7 @@ STLocationRequest is a simple and elegant way to request the user location at th
 
 <p align="center">
 <br>
-<img src="./Preview/STLocationRequest.gif" alt="STLocationRequest" title="STLocationRequest">
+<img src="./Assets/STLocationRequest.gif" alt="STLocationRequest" title="STLocationRequest">
 
 </p>
 
@@ -65,10 +65,10 @@ locationRequestController.backgroundColor = UIColor.orange
 > The backgroundcolor for the view of the STLocationRequestController
 
 <p align="center">
-<img width=200 src="./Preview/STLocationRequest_Purple.jpg" alt="STLocationRequest" title="STLocationRequest">
-<img width=200 src="./Preview/STLocationRequest_Green.jpg" alt="STLocationRequest" title="STLocationRequest">
-<img width=200 src="./Preview/STLocationRequest_Orange.jpg" alt="STLocationRequest" title="STLocationRequest">
-<img width=200 src="./Preview/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
+<img width=200 src="./Assets/STLocationRequest_Purple.jpg" alt="STLocationRequest" title="STLocationRequest">
+<img width=200 src="./Assets/STLocationRequest_Green.jpg" alt="STLocationRequest" title="STLocationRequest">
+<img width=200 src="./Assets/STLocationRequest_Orange.jpg" alt="STLocationRequest" title="STLocationRequest">
+<img width=200 src="./Assets/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
 </p>
 
 #### TitleText
@@ -205,7 +205,7 @@ STLocationRequestControllerAuthorizeType.**requestAlwaysAuthorization**
 This text will be shown in the default iOS location request dialog, which will show up when the user tapped the allow button.
 
 <p align="center">
-<img src="./Preview/iOSLocationRequestDialog.png" alt="iOSRequestDialog" title="iOSRequestDialog" width=300>
+<img src="./Assets/iOSLocationRequestDialog.png" alt="iOSRequestDialog" title="iOSRequestDialog" width=300>
 
 </p>
 
@@ -237,7 +237,7 @@ func checkLocationServicePermission() {
 Please mind that the 3D Flyover-View will only work on a real iOS device (not in the Simulator) with at least iOS 9.0 installed ([Apple Developer API Reference](https://developer.apple.com/reference/mapkit/mkmaptype/1452553-satelliteflyover)). A Screenshot taken from an **iOS Simulator** running `STLocationRequestController`.
 
 <p align="center">
-<img src="./Preview/iOSSimulatorBehavior.jpg" alt="iOSSimulatorBehavior" title="iOSSimulatorBehavior" width=300>
+<img src="./Assets/iOSSimulatorBehavior.jpg" alt="iOSSimulatorBehavior" title="iOSSimulatorBehavior" width=300>
 
 </p>
 
@@ -291,7 +291,7 @@ An example usage of `STLocationRequestController` in an `Objective-C` project.
 ## Author
 
 <p align="center">
-<img width=200 src="./Preview/svenTiigi.png" alt="Sven Tiigi" title="Sven Tiigi"><br><br>
+<img width=200 src="./Assets/svenTiigi.png" alt="Sven Tiigi" title="Sven Tiigi"><br><br>
 Sven Tiigi<br>
 http://sven.tiigi.de
 </p>
