@@ -5,13 +5,7 @@ Follow me: [@vaberer](https://twitter.com/vaberer)
 
 I like &#9733;. Do not forget to &#9733; this super convenient library.
 
-#There is also a very popular [Google Design Material Icons](https://github.com/Vaberer/Google-Material-Design-Icons-Swift) library which you will love!
-
-
-##Added ```UISegmentedControl``` & ```UITabbarItem``` & ```UISlider``` & ```UIStepper``` & ```UITextField``` support!
-
-
-###Updated to Font Awesome 4.7 - Added 41 new icons!
+## Added ```UISegmentedControl``` & ```UITabbarItem``` & ```UISlider``` & ```UIStepper``` & ```UITextField``` support!
 
 
 Font Awesome swift library for iOS. No image icons any more. Using Font Awesome Swift library is very easy to use. Look at the demo app which shows all icons and their names or just visit [FontAwesome](http://fortawesome.github.io/Font-Awesome/icons/).
@@ -45,7 +39,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Font-Awesome-Swift', '~> 1.6.1'
+pod 'Font-Awesome-Swift', '~> 1.6.4'
 ```
 
 Then, run the following command:
@@ -75,10 +69,7 @@ Super easy way how to add an icon.
 
 
 ### UIImage
-
-
 For Stacked images, please refer [Stacked Icons](http://fontawesome.io/examples/#stacked)
-
 ```Swift
     UIImage.init(icon: .FATwitter, size: CGSize(width: 35, height: 35))
     
@@ -115,11 +106,11 @@ For Stacked images, please refer [Stacked Icons](http://fontawesome.io/examples/
 
     labelName.setFAText(prefixText: "follow me on ", icon: .FATwitter, postfixText: ". Thanks!", size: 25)
 
-    // bigger icon:
+    // Bigger icon:
     labelName.setFAText(prefixText: "follow me on  ", icon: .FATwitter, postfixText: ". Thanks!", size: 25, iconSize: 30)
 
     labelName.setFAColor(.red)
-
+    
 ```
 
 
@@ -127,16 +118,17 @@ For Stacked images, please refer [Stacked Icons](http://fontawesome.io/examples/
 ```Swift
     buttonName.setFAIcon(icon: .FAGithub, forState: .normal)
 
-    // set an icon size
+    // Set icon size
     buttonName.setFAIcon(icon: .FAGithub, iconSize: 35, forState: .normal)
 
     buttonName.setFAText(prefixText: "follow me on ", icon: .FATwitter, postfixText: ". Thanks!", size: 25, forState: .normal)
 
-    // bigger icon
+    // Bigger icon
     buttonName.setFAText(prefixText: "follow me on ", icon: .FATwitter, postfixText: ". Thanks!", size: 25, forState: .normal, iconSize: 30)
 
-    // change a color:
+    // Change color:
     buttonName.setFATitleColor(color: .red, forState: .normal))
+    
 ```
 
 
@@ -157,30 +149,28 @@ For Stacked images, please refer [Stacked Icons](http://fontawesome.io/examples/
 
 ### UITextField
 ```Swift
-
-    //Right View Icon
+    // Right View Icon
     textfield.setRightViewFAIcon(icon: .FASearch, rightViewMode: .always, textColor: .red, backgroundColor: .clear, size: nil)
 
-    //Left View Icon
+    // Left View Icon
     textfield.setLeftViewFAIcon(icon: .FAPlus, leftViewMode: .always, textColor: .red, backgroundColor: .clear, size: nil)
-
 
 ```
 
 
 ### UISegmentedControl
 ```Swift
-
   segmentedControl.setFAIcon(icon: .FATwitter, forSegmentAtIndex: 0)
+  
 ```
 
 
 ### UIStepper
 ```Swift
-
     stepper.setFABackgroundImage(icon: .FAGithub, forState: .normal)
     stepper.setFAIncrementImage(icon: .FABellO, forState: .normal)
     stepper.setFADecrementImage(icon: .FABellSlashO, forState: .normal)
+    
 
 ```
 
@@ -200,20 +190,22 @@ For Stacked images, please refer [Stacked Icons](http://fontawesome.io/examples/
 
 ### UISlider
 ```Swift
-  // change minimum or maximum value image
+  // Change minimum or maximum value image
   slider.setFAMinimumValueImage(icon: .FABellSlashO)
   slider.setFAMaximumValueImage(icon: .FABellO)
 
   // change minimum or maximum value image with a specific size
   slider.setFAMinimumValueImage(icon: .FABellSlashO, customSize:  CGSize(width: 35, height: 35))
   slider.setFAMaximumValueImage(icon: .FABellO, customSize:  CGSize(width: 35, height: 35))
+  
 ```
 
 
 ### UIViewController
 ```Swift
-  // change navigation title
+  // Change navigation title
   FATitle = .FATwitter
+  
 ```
 
 
@@ -223,7 +215,7 @@ Patrik Vaberer, patrik@toptal.com
 
 - [LinkedIn](https://sk.linkedin.com/in/vaberer)
 - [@vaberer](https://twitter.com/vaberer)
-- [Blog](http://vaberer.me)
+- [Blog](http://vaberer.com)
 
 ### Licence
 

@@ -7,32 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0539DB6BC98A610D06F744C7BCE357DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23F4CBBDF9BD17231EAD45B7E0C67AE /* Foundation.framework */; };
-		05F33B4B13BC0DCE6EE7518267C0F46B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B481CDFBD188EFDE73373BD1B07CDF58 /* CoreText.framework */; };
+		0827DE33AE3282F7C5C41E1EB77669AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E09E366CEE441D33312B49D9A779EE /* UIKit.framework */; };
+		0C2446C2E70236373DC7699AB915C0EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9FD3953D1F0671F1ECD3558EE6901F /* Foundation.framework */; };
 		163F03BBC54EA6DA0C7AAB68785BA523 /* STLocationRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B83A758700E71F7817B4D925936D75 /* STLocationRequestController.swift */; };
-		1B6C59674CD21D8C2E10A3EA7D904E46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23F4CBBDF9BD17231EAD45B7E0C67AE /* Foundation.framework */; };
+		1E0C505D8AB647D7B00278A455332D8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9FD3953D1F0671F1ECD3558EE6901F /* Foundation.framework */; };
 		207D725533423D55A24FA53494476090 /* FAIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B73F4F412383A6B49EB0DF5B7FB2E7 /* FAIcon.swift */; };
-		22BE5290495280E91CE0383A41055975 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0237494728DE51437074524BB5CC71 /* UIKit.framework */; };
-		2BF115CB201E1A96E4ECF16D9B386017 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0237494728DE51437074524BB5CC71 /* UIKit.framework */; };
-		3C407E1D0DCB5C512FF27B6D488355A4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB2567492844772850B4A022170DACC /* MapKit.framework */; };
 		3C68D667C97A1233410429C89FCD9488 /* STLocationRequest.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BDB39784257EF861146C6163E36D6553 /* STLocationRequest.bundle */; };
 		4D53124F624100911DAF62F9A0CEEEE9 /* LFTPulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04775E969F9EC835BFC1EE07EE49E8E3 /* LFTPulseAnimation.swift */; };
 		4FC12ED2CCCD4005215D68FA01FC0A6B /* Pods-STLocationRequest_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC9F7B4A2561D8F2A925799877C69614 /* Pods-STLocationRequest_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53EA5FA1225C6C12EF17639D5F500CA5 /* Pods-STLocationRequest_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A803F92E0A0EDB40F14447DF156D7C71 /* Pods-STLocationRequest_Tests-dummy.m */; };
-		5833DC67A1CE223F294610F715C2E743 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23F4CBBDF9BD17231EAD45B7E0C67AE /* Foundation.framework */; };
 		627F74CD11463000F8B7DE90C4944C20 /* STAwesomePlacesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4376B0BB632D3D568716527DDBC90169 /* STAwesomePlacesFactory.swift */; };
+		6A746EA71818C395EF4E7377B29E7449 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9FD3953D1F0671F1ECD3558EE6901F /* Foundation.framework */; };
 		6DC032C780756F8F4550CA9E9FCDD474 /* STRotatingCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D09E405F25D5437F26C1316C62A1 /* STRotatingCamera.swift */; };
 		862F6576D6B64D137E1F6E464F9A906E /* Font-Awesome-Swift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 78F42D869238FDC52E512806D3542EF6 /* Font-Awesome-Swift.bundle */; };
 		8C426510D0CED87E64914A32E45F89AF /* STLocationRequest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11126353155F3A5D539E821BCC902506 /* STLocationRequest-dummy.m */; };
 		94572F4D566239C6605E3D9DDB9FB6CA /* STLocationRequest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45CC48C44F5F2FB8FCDE7C3E2F36D07B /* STLocationRequest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94AD925604BA6F2EAFE9BA9810C92959 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23F4CBBDF9BD17231EAD45B7E0C67AE /* Foundation.framework */; };
+		96F868C8592A6C170D3CF9739BE4BA0F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1587BEF9C07CF45994D067ED3FD4BEC9 /* MapKit.framework */; };
 		A4742149453AD46E590B715335CECF22 /* Font-Awesome-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A2195F2B0D286598F61B13D48E12C6FB /* Font-Awesome-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC24B7BFE64B154BB0EDB1E294D4D9DC /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BBA95072C791B11185074CA43CF481A /* FontAwesome.ttf */; };
 		B59A76A42D925508F16043F17A85E339 /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A762782E2AF6946A363F199E9C1ED16 /* Font_Awesome_Swift.framework */; };
 		BC204EF2A5C5BA131C608C54C147A637 /* Pods-STLocationRequest_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C7640DD7A9A9E92A62421412D77EA15 /* Pods-STLocationRequest_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E34D573DF4F9F22F8CF9EB49BBFA6D2E /* StoryboardLocationRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441E7027A0F57E162B28143B1716D499 /* StoryboardLocationRequest.storyboard */; };
+		C75CC8CBC694A472DE8E18ADD6091BEB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E558FD4A29EF21605767E09CA0EF592 /* CoreText.framework */; };
+		C7672BF4BEB08D9493D971EDAD8AA87B /* StoryboardLocationRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425450D926D9F574EF00963F76BAAB41 /* StoryboardLocationRequest.storyboard */; };
 		E7E94390A1CF40ED6C3C620B0BE8B0A0 /* Font-Awesome-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0D3E9BFCD52127254DD23421C004BB /* Font-Awesome-Swift-dummy.m */; };
 		F35ACFEDBDAABB401D05D125F0E5CACB /* Pods-STLocationRequest_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB07B8D81D51A9AB1DF1EF09C2453B1 /* Pods-STLocationRequest_Example-dummy.m */; };
+		FB857890457AB7E609E8CE2996A33557 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9FD3953D1F0671F1ECD3558EE6901F /* Foundation.framework */; };
+		FC820D264394336576FE3EACB8C1E377 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E09E366CEE441D33312B49D9A779EE /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,51 +80,51 @@
 		11126353155F3A5D539E821BCC902506 /* STLocationRequest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "STLocationRequest-dummy.m"; sourceTree = "<group>"; };
 		114C7C9F5FCF9070EFC1C1C4BE9CF112 /* ResourceBundle-Font-Awesome-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Font-Awesome-Swift-Info.plist"; sourceTree = "<group>"; };
 		11A490F4A78E9F13168A8676796A8134 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1587BEF9C07CF45994D067ED3FD4BEC9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		170AB8D1828669D87E44F873BE1760D8 /* Pods-STLocationRequest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1A036C9BC4D4D534F00E8A29DD0F3833 /* Pods-STLocationRequest_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		1BA9D09E405F25D5437F26C1316C62A1 /* STRotatingCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STRotatingCamera.swift; sourceTree = "<group>"; };
 		28EEAFFFBB51EE535A1452E5CE690D37 /* STLocationRequest-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STLocationRequest-prefix.pch"; sourceTree = "<group>"; };
-		2DE2BFD202BCA411C762651BCCCB8B85 /* STLocationRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STLocationRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DE2BFD202BCA411C762651BCCCB8B85 /* STLocationRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = STLocationRequest.framework; path = STLocationRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBB3B80B33D2509983FC5F9DE63D194 /* Pods-STLocationRequest_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Tests-resources.sh"; sourceTree = "<group>"; };
+		36E09E366CEE441D33312B49D9A779EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		3A6CDF7CFABBCF59F55378F1FEB94906 /* Font-Awesome-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Font-Awesome-Swift.xcconfig"; sourceTree = "<group>"; };
-		3E8738A93D2931CC21A0DEA336A71A5C /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E8738A93D2931CC21A0DEA336A71A5C /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_STLocationRequest_Tests.framework; path = "Pods-STLocationRequest_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		405731A06DAB11C754B484F829944CA5 /* STLocationRequest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = STLocationRequest.xcconfig; sourceTree = "<group>"; };
+		425450D926D9F574EF00963F76BAAB41 /* StoryboardLocationRequest.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = StoryboardLocationRequest.storyboard; sourceTree = "<group>"; };
 		4376B0BB632D3D568716527DDBC90169 /* STAwesomePlacesFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STAwesomePlacesFactory.swift; sourceTree = "<group>"; };
-		441E7027A0F57E162B28143B1716D499 /* StoryboardLocationRequest.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = StoryboardLocationRequest.storyboard; sourceTree = "<group>"; };
 		45CC48C44F5F2FB8FCDE7C3E2F36D07B /* STLocationRequest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STLocationRequest-umbrella.h"; sourceTree = "<group>"; };
 		4C0D3E9BFCD52127254DD23421C004BB /* Font-Awesome-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Font-Awesome-Swift-dummy.m"; sourceTree = "<group>"; };
+		4E558FD4A29EF21605767E09CA0EF592 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		567F270CE635360444DCC4D950D54AEB /* Pods-STLocationRequest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A762782E2AF6946A363F199E9C1ED16 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB31B9D53D5A468A371333513362DC7 /* Pods-STLocationRequest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Example.release.xcconfig"; sourceTree = "<group>"; };
-		5BBA95072C791B11185074CA43CF481A /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FontAwesome.ttf; path = Source/FontAwesome.ttf; sourceTree = "<group>"; };
+		5BBA95072C791B11185074CA43CF481A /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome.ttf; path = Source/FontAwesome.ttf; sourceTree = "<group>"; };
 		63B73F4F412383A6B49EB0DF5B7FB2E7 /* FAIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FAIcon.swift; path = Source/FAIcon.swift; sourceTree = "<group>"; };
-		78F42D869238FDC52E512806D3542EF6 /* Font-Awesome-Swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Font-Awesome-Swift.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78F42D869238FDC52E512806D3542EF6 /* Font-Awesome-Swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Font-Awesome-Swift.bundle"; path = "Font-Awesome-Swift.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAE46878AB22724C5925B746402116D /* Pods-STLocationRequest_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Example-frameworks.sh"; sourceTree = "<group>"; };
 		82AEECD9273DDD6F9515C76A8B223706 /* Pods-STLocationRequest_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STLocationRequest_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8A49E397D86B4643525158A60885884C /* Font-Awesome-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Font-Awesome-Swift.modulemap"; sourceTree = "<group>"; };
-		8B4EFA015F91F46504411F4C3660563C /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A49E397D86B4643525158A60885884C /* Font-Awesome-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Font-Awesome-Swift.modulemap"; sourceTree = "<group>"; };
+		8B4EFA015F91F46504411F4C3660563C /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Font_Awesome_Swift.framework; path = "Font-Awesome-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7640DD7A9A9E92A62421412D77EA15 /* Pods-STLocationRequest_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-STLocationRequest_Tests-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DB07B8D81D51A9AB1DF1EF09C2453B1 /* Pods-STLocationRequest_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STLocationRequest_Example-dummy.m"; sourceTree = "<group>"; };
 		A2195F2B0D286598F61B13D48E12C6FB /* Font-Awesome-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-umbrella.h"; sourceTree = "<group>"; };
 		A803F92E0A0EDB40F14447DF156D7C71 /* Pods-STLocationRequest_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STLocationRequest_Tests-dummy.m"; sourceTree = "<group>"; };
 		AF4A2F21AF09FB65B5C8DB36133521CE /* ResourceBundle-STLocationRequest-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-STLocationRequest-Info.plist"; sourceTree = "<group>"; };
 		B009831887B540AC42FD872AE30C36D4 /* Pods-STLocationRequest_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-STLocationRequest_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		B481CDFBD188EFDE73373BD1B07CDF58 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		B729DE296D47D5B659DA496BD4DEA28D /* Pods-STLocationRequest_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BD843A4A0638F2AB53687EB47FF80726 /* Pods-STLocationRequest_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-STLocationRequest_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		BDB39784257EF861146C6163E36D6553 /* STLocationRequest.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STLocationRequest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		C54865557E37556976969B2E65BECA6D /* Pods-STLocationRequest_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-STLocationRequest_Example.modulemap"; sourceTree = "<group>"; };
-		CEB2567492844772850B4A022170DACC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		D1C49C0FE323E9C7BDC4773084BDA77D /* Pods_STLocationRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB0237494728DE51437074524BB5CC71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BDB39784257EF861146C6163E36D6553 /* STLocationRequest.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = STLocationRequest.bundle; path = STLocationRequest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		C54865557E37556976969B2E65BECA6D /* Pods-STLocationRequest_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-STLocationRequest_Example.modulemap"; sourceTree = "<group>"; };
+		D1C49C0FE323E9C7BDC4773084BDA77D /* Pods_STLocationRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_STLocationRequest_Example.framework; path = "Pods-STLocationRequest_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0196283BE01CA1E288CF3679EE089F4 /* Font-Awesome-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-prefix.pch"; sourceTree = "<group>"; };
 		E1F7B7A10A9AAE50087DFF77D5473077 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E386E93EB3C4905D0CA60B10909E7171 /* Pods-STLocationRequest_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STLocationRequest_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E80F42A01623826A6D2FFC3B2FABA14D /* STLocationRequest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = STLocationRequest.modulemap; sourceTree = "<group>"; };
+		E80F42A01623826A6D2FFC3B2FABA14D /* STLocationRequest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = STLocationRequest.modulemap; sourceTree = "<group>"; };
+		ED9FD3953D1F0671F1ECD3558EE6901F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EDC394150EACBD34C04487DAF3561206 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F23F4CBBDF9BD17231EAD45B7E0C67AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		F62369BC3987E13BE7C0512D0FBB0810 /* Pods-STLocationRequest_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-STLocationRequest_Tests.modulemap"; sourceTree = "<group>"; };
+		F62369BC3987E13BE7C0512D0FBB0810 /* Pods-STLocationRequest_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-STLocationRequest_Tests.modulemap"; sourceTree = "<group>"; };
 		F7B83A758700E71F7817B4D925936D75 /* STLocationRequestController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestController.swift; sourceTree = "<group>"; };
 		FC9F7B4A2561D8F2A925799877C69614 /* Pods-STLocationRequest_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-STLocationRequest_Example-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B6C59674CD21D8C2E10A3EA7D904E46 /* Foundation.framework in Frameworks */,
+				6A746EA71818C395EF4E7377B29E7449 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5833DC67A1CE223F294610F715C2E743 /* Foundation.framework in Frameworks */,
+				FB857890457AB7E609E8CE2996A33557 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B59A76A42D925508F16043F17A85E339 /* Font_Awesome_Swift.framework in Frameworks */,
-				0539DB6BC98A610D06F744C7BCE357DB /* Foundation.framework in Frameworks */,
-				3C407E1D0DCB5C512FF27B6D488355A4 /* MapKit.framework in Frameworks */,
-				22BE5290495280E91CE0383A41055975 /* UIKit.framework in Frameworks */,
+				0C2446C2E70236373DC7699AB915C0EE /* Foundation.framework in Frameworks */,
+				96F868C8592A6C170D3CF9739BE4BA0F /* MapKit.framework in Frameworks */,
+				0827DE33AE3282F7C5C41E1EB77669AD /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,9 +175,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05F33B4B13BC0DCE6EE7518267C0F46B /* CoreText.framework in Frameworks */,
-				94AD925604BA6F2EAFE9BA9810C92959 /* Foundation.framework in Frameworks */,
-				2BF115CB201E1A96E4ECF16D9B386017 /* UIKit.framework in Frameworks */,
+				C75CC8CBC694A472DE8E18ADD6091BEB /* CoreText.framework in Frameworks */,
+				1E0C505D8AB647D7B00278A455332D8C /* Foundation.framework in Frameworks */,
+				FC820D264394336576FE3EACB8C1E377 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +191,15 @@
 				62F255B88FFF9774C53ED839E303C039 /* Pods-STLocationRequest_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		18632D22589A969B590E908206B3198A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				425450D926D9F574EF00963F76BAAB41 /* StoryboardLocationRequest.storyboard */,
+			);
+			name = Assets;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		259BBAE1B09DDFF1BE1930D492A85114 /* Support Files */ = {
@@ -239,6 +248,7 @@
 			children = (
 				63FDC5F66DA3939530C8D69100A0E631 /* Source */,
 			);
+			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -268,6 +278,7 @@
 				F7B83A758700E71F7817B4D925936D75 /* STLocationRequestController.swift */,
 				1BA9D09E405F25D5437F26C1316C62A1 /* STRotatingCamera.swift */,
 			);
+			name = Source;
 			path = Source;
 			sourceTree = "<group>";
 		};
@@ -282,8 +293,9 @@
 		6B162D70CE8D761282EB92C78057C65E /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				A7C7658794374A4C5F383FA463AB5DEF /* Assets */,
+				18632D22589A969B590E908206B3198A /* Assets */,
 			);
+			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -293,6 +305,17 @@
 				6B162D70CE8D761282EB92C78057C65E /* Pod */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		7A276D1D9B1669966F9E8EA37308EF72 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				4E558FD4A29EF21605767E09CA0EF592 /* CoreText.framework */,
+				ED9FD3953D1F0671F1ECD3558EE6901F /* Foundation.framework */,
+				1587BEF9C07CF45994D067ED3FD4BEC9 /* MapKit.framework */,
+				36E09E366CEE441D33312B49D9A779EE /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -307,25 +330,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		A7C7658794374A4C5F383FA463AB5DEF /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				441E7027A0F57E162B28143B1716D499 /* StoryboardLocationRequest.storyboard */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		A90FB152F8353B96B50AFD6BAB4DFFE8 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				B481CDFBD188EFDE73373BD1B07CDF58 /* CoreText.framework */,
-				F23F4CBBDF9BD17231EAD45B7E0C67AE /* Foundation.framework */,
-				CEB2567492844772850B4A022170DACC /* MapKit.framework */,
-				DB0237494728DE51437074524BB5CC71 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		BBA696C0579EB6763410B8894DEDE0D6 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,7 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				5A762782E2AF6946A363F199E9C1ED16 /* Font_Awesome_Swift.framework */,
-				A90FB152F8353B96B50AFD6BAB4DFFE8 /* iOS */,
+				7A276D1D9B1669966F9E8EA37308EF72 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -358,6 +362,7 @@
 				68182AB9BD32CC0CD57ED766F4AC6818 /* Resources */,
 				39B63D6DBA32489B37DBEB6BEF61F8FF /* Support Files */,
 			);
+			name = "Font-Awesome-Swift";
 			path = "Font-Awesome-Swift";
 			sourceTree = "<group>";
 		};
@@ -456,7 +461,7 @@
 			buildPhases = (
 				068BE3718DF1CF453877567ACDE709F4 /* Sources */,
 				B82A8E17F11FAAC4636A9A1D8BD267AA /* Frameworks */,
-				3409F06E6213566406277AA090065612 /* Resources */,
+				5A87471ABF94B08B485A06CEA501B857 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -545,22 +550,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					15072FDF87CD25173EC383F5D6CED57D = {
-						LastSwiftMigration = 0820;
-					};
-					93DFFE2BE2BF000178F7F28098B4A55B = {
-						LastSwiftMigration = 0820;
-					};
-					BB405A7AD15CE55CD4E1A5971C33327E = {
-						LastSwiftMigration = 0820;
-					};
-					F081CC55322BD4EAB4F0F0CDE6E9DF86 = {
-						LastSwiftMigration = 0820;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -585,11 +576,11 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3409F06E6213566406277AA090065612 /* Resources */ = {
+		5A87471ABF94B08B485A06CEA501B857 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E34D573DF4F9F22F8CF9EB49BBFA6D2E /* StoryboardLocationRequest.storyboard in Resources */,
+				C7672BF4BEB08D9493D971EDAD8AA87B /* StoryboardLocationRequest.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,10 +698,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		399561B07DFE81CED2ED9082FCA44A5A /* Release */ = {
+		035C78B66ED906FAFCF78DB52F58FE54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BB31B9D53D5A468A371333513362DC7 /* Pods-STLocationRequest_Example.release.xcconfig */;
+			baseConfigurationReference = 170AB8D1828669D87E44F873BE1760D8 /* Pods-STLocationRequest_Tests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -722,20 +714,53 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-STLocationRequest_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-STLocationRequest_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_STLocationRequest_Example;
+				PRODUCT_NAME = Pods_STLocationRequest_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		26E8A578CC3F7030F20251A1B947175D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 405731A06DAB11C754B484F829944CA5 /* STLocationRequest.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/STLocationRequest/STLocationRequest-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/STLocationRequest/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/STLocationRequest/STLocationRequest.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = STLocationRequest;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -743,10 +768,59 @@
 			};
 			name = Release;
 		};
-		706742F741A4A7BF9033E6783C545CA0 /* Debug */ = {
+		345CC476DF4A7516DBD2220CF5035FF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4372E76D81BA6F824DD34D1D75CB67E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B729DE296D47D5B659DA496BD4DEA28D /* Pods-STLocationRequest_Example.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -772,6 +846,7 @@
 				PRODUCT_NAME = Pods_STLocationRequest_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -780,43 +855,48 @@
 			};
 			name = Debug;
 		};
-		79E265C52866C507B5175DBBCCB1A290 /* Release */ = {
+		6479EADF20763CFEADFAA53E385FF17D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 405731A06DAB11C754B484F829944CA5 /* STLocationRequest.xcconfig */;
+			baseConfigurationReference = 567F270CE635360444DCC4D950D54AEB /* Pods-STLocationRequest_Tests.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/STLocationRequest/STLocationRequest-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/STLocationRequest/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-STLocationRequest_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/STLocationRequest/STLocationRequest.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = STLocationRequest;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_STLocationRequest_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
+		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -824,10 +904,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
@@ -849,6 +932,44 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		73C33638D2081C9E6B2127CE7EB21C40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BB31B9D53D5A468A371333513362DC7 /* Pods-STLocationRequest_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-STLocationRequest_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-STLocationRequest_Example/Pods-STLocationRequest_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_STLocationRequest_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -881,65 +1002,21 @@
 				PRODUCT_NAME = STLocationRequest;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
-		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		AAE4B714984E1DE3070F5A17B4945C27 /* Debug */ = {
+		D054C4C6C5CAB2C650649485BA6BDF08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A6CDF7CFABBCF59F55378F1FEB94906 /* Font-Awesome-Swift.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -952,47 +1029,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Font-Awesome-Swift/Font-Awesome-Swift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Font_Awesome_Swift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C750AADD97B5D8AFE25219FD009524E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 170AB8D1828669D87E44F873BE1760D8 /* Pods-STLocationRequest_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-STLocationRequest_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_STLocationRequest_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1000,10 +1041,11 @@
 			};
 			name = Release;
 		};
-		E12615A33A4A07A7A9563FB51DFC7970 /* Debug */ = {
+		D546593B43FCFB57D1AFDAAEC1B64FCE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 567F270CE635360444DCC4D950D54AEB /* Pods-STLocationRequest_Tests.debug.xcconfig */;
+			baseConfigurationReference = 405731A06DAB11C754B484F829944CA5 /* STLocationRequest.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1015,20 +1057,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-STLocationRequest_Tests/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/STLocationRequest/STLocationRequest-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/STLocationRequest/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-STLocationRequest_Tests/Pods-STLocationRequest_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/STLocationRequest/STLocationRequest.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_STLocationRequest_Tests;
+				PRODUCT_NAME = STLocationRequest;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1048,7 +1088,6 @@
 				PRODUCT_NAME = STLocationRequest;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -1071,15 +1110,16 @@
 			};
 			name = Release;
 		};
-		EBC842B877A9A93E281CA742403BE7F7 /* Release */ = {
+		EBD78CDDD121D984233354B41016713B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A6CDF7CFABBCF59F55378F1FEB94906 /* Font-Awesome-Swift.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1092,42 +1132,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Font-Awesome-Swift/Font-Awesome-Swift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Font_Awesome_Swift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F859D5D2364359B266AADDFF20548C60 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 405731A06DAB11C754B484F829944CA5 /* STLocationRequest.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/STLocationRequest/STLocationRequest-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/STLocationRequest/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/STLocationRequest/STLocationRequest.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = STLocationRequest;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1142,8 +1151,8 @@
 		187E1F7A2A4CAF1E37E7D79981661215 /* Build configuration list for PBXNativeTarget "Pods-STLocationRequest_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E12615A33A4A07A7A9563FB51DFC7970 /* Debug */,
-				C750AADD97B5D8AFE25219FD009524E8 /* Release */,
+				6479EADF20763CFEADFAA53E385FF17D /* Debug */,
+				035C78B66ED906FAFCF78DB52F58FE54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1151,8 +1160,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
-				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+				345CC476DF4A7516DBD2220CF5035FF3 /* Debug */,
+				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1169,8 +1178,8 @@
 		81BCEDC316BC10690D9FDB56769830AA /* Build configuration list for PBXNativeTarget "Pods-STLocationRequest_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				706742F741A4A7BF9033E6783C545CA0 /* Debug */,
-				399561B07DFE81CED2ED9082FCA44A5A /* Release */,
+				4372E76D81BA6F824DD34D1D75CB67E3 /* Debug */,
+				73C33638D2081C9E6B2127CE7EB21C40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1178,8 +1187,8 @@
 		931CC5A5644DD72D6D3B230D2D21C6F3 /* Build configuration list for PBXNativeTarget "STLocationRequest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F859D5D2364359B266AADDFF20548C60 /* Debug */,
-				79E265C52866C507B5175DBBCCB1A290 /* Release */,
+				D546593B43FCFB57D1AFDAAEC1B64FCE /* Debug */,
+				26E8A578CC3F7030F20251A1B947175D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1187,8 +1196,8 @@
 		C44699AC6ECDFB00A9014C5FB5C7E1E8 /* Build configuration list for PBXNativeTarget "Font-Awesome-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AAE4B714984E1DE3070F5A17B4945C27 /* Debug */,
-				EBC842B877A9A93E281CA742403BE7F7 /* Release */,
+				EBD78CDDD121D984233354B41016713B /* Debug */,
+				D054C4C6C5CAB2C650649485BA6BDF08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
