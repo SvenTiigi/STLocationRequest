@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,10 +25,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wla-WH-Ofj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" image="locationRequestLogo" translatesAutoresizingMaskIntoConstraints="NO" id="4Ps-jN-ozD">
+                                <rect key="frame" x="76" y="88" width="224" height="224"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="8kZ-qh-Hgf"/>
-                                    <constraint firstAttribute="width" constant="343" id="NoC-4f-WaE"/>
+                                    <constraint firstAttribute="width" constant="224" id="58n-Ud-xyw"/>
+                                    <constraint firstAttribute="width" secondItem="4Ps-jN-ozD" secondAttribute="height" multiplier="1:1" id="vD5-qJ-Rn2"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wla-WH-Ofj">
+                                <rect key="frame" x="16" y="342" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8kZ-qh-Hgf"/>
                                 </constraints>
                                 <state key="normal" title="Present STLocationRequestController">
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -30,19 +44,16 @@
                                     <action selector="requestLocationButtonTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yzA-77-ll0"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationRequestLogo" translatesAutoresizingMaskIntoConstraints="NO" id="4Ps-jN-ozD">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="224" id="58n-Ud-xyw"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4Ps-jN-ozD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="38" id="62B-AW-p8q"/>
-                            <constraint firstItem="4Ps-jN-ozD" firstAttribute="centerX" secondItem="Wla-WH-Ofj" secondAttribute="centerX" id="GDf-fK-LIN"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Wla-WH-Ofj" secondAttribute="bottom" constant="266" id="ext-Ql-bkM"/>
+                            <constraint firstItem="4Ps-jN-ozD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="firstBaseline" constant="50" id="62B-AW-p8q"/>
+                            <constraint firstItem="4Ps-jN-ozD" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" multiplier="0.6" id="7uv-fL-T65"/>
+                            <constraint firstItem="Wla-WH-Ofj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="9Xw-fl-b7i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wla-WH-Ofj" secondAttribute="trailing" id="AJP-0v-F6T"/>
+                            <constraint firstAttribute="baseline" relation="greaterThanOrEqual" secondItem="Wla-WH-Ofj" secondAttribute="bottom" constant="20" id="ext-Ql-bkM"/>
                             <constraint firstItem="4Ps-jN-ozD" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="qmG-pS-SYC"/>
-                            <constraint firstItem="Wla-WH-Ofj" firstAttribute="top" secondItem="4Ps-jN-ozD" secondAttribute="bottom" constant="83" id="sNH-cR-Lau"/>
+                            <constraint firstItem="Wla-WH-Ofj" firstAttribute="top" secondItem="4Ps-jN-ozD" secondAttribute="bottom" constant="30" id="sNH-cR-Lau"/>
                         </constraints>
                     </view>
                     <connections>
