@@ -288,14 +288,6 @@ An example usage of `STLocationRequestController` in an `Objective-C` project.
 + [Font-Awesome-Swift](https://github.com/Vaberer/Font-Awesome-Swift)
 + [SwiftPulse](https://github.com/ctews/SwiftPulse)
 
-## Author
-
-<p align="center">
-<img width=200 src="./Assets/svenTiigi.png" alt="Sven Tiigi" title="Sven Tiigi"><br><br>
-Sven Tiigi<br>
-http://sven.tiigi.de
-</p>
-
 ## License
 
 ```
