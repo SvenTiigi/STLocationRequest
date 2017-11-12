@@ -28,7 +28,7 @@
   ],
   "dependencies": {
     "Font-Awesome-Swift": [
-      "~> 1.6.4"
+
     ]
   }
 }
