@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     
     /// Initialize and present STLocationRequestController
     func presentLocationRequestController(){
-        let locationRequestController = STLocationRequestController.getInstance()
+        let locationRequestController = STLocationRequestController()
         locationRequestController.titleText = "We need your location for some awesome features"
         locationRequestController.allowButtonTitle = "Alright"
         locationRequestController.notNowButtonTitle = "Not now"
