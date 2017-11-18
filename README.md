@@ -290,6 +290,14 @@ func checkLocationServicePermission() {
     }
 }
 ```
+Or you use the convience static function on `STLocationRequestController` which evaluates if an presenting should be performed.
+
+```swift
+if STLocationRequestController.shouldPresentLocationRequestController() {
+    // Location Services are enabled and authorizationStatus is notDetermined
+    // Ready to present STLocationRequestController
+}
+```
 
 ## iOS Simulator
 
