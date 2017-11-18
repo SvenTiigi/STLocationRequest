@@ -91,6 +91,11 @@ import Font_Awesome_Swift
     /// The onChange closure
     public var onChange: ((STLocationRequestControllerEvent) -> Void)?
     
+    /// The preferredStatusBarStyle light value
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: Private properties
     
     /// The Allow-Button
