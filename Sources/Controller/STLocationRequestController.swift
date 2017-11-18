@@ -15,7 +15,7 @@ import Font_Awesome_Swift
     STLocationRequest is a UIViewController-Extension which is used to request the User-Location, at the very first time, in a simple and elegent way.
     It shows a beautiful 3D 360 degree Flyover-MapView which shows 14 random citys or landmarks.
  */
-public class STLocationRequestController: UIViewController {
+@objcMembers public class STLocationRequestController: UIViewController {
 
     // MARK: Public properties
     

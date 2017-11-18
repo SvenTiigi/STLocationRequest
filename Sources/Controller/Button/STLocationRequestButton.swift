@@ -7,8 +7,18 @@
 
 import UIKit
 
+/// Custom UIButton for STLocationRequestController
 public class STLocationRequestButton: UIButton {
     
+    // MARK: Initializer
+    
+    /// Convenience initializer to instantiate a STLocationRequest button
+    ///
+    /// - Parameters:
+    ///   - title: The title
+    ///   - font: The font
+    ///   - target: The target
+    ///   - action: The action
     public convenience init(title: String, font: UIFont, target: Any?, action: Selector) {
         self.init(type: .custom)
         self.setTitle(title, for: .normal)
@@ -25,13 +35,24 @@ public class STLocationRequestButton: UIButton {
         self.setTitleColor(UIColor.clear.withAlphaComponent(0.5), for: UIControlState.highlighted)
     }
     
+    // MARK: ViewLifecycle
+    
     public override func layoutSubviews() {
         super.layoutSubviews()
+        // Check if current background image is nil
         if self.currentBackgroundImage == nil {
-            self.setBackgroundImage(self.getImageWithColor(UIColor.white, size: self.bounds.size), for: UIControlState.highlighted)
+            // Set the backgroundimage
+            self.setBackgroundImage(
+                self.getImageWithColor(
+                    UIColor.white,
+                    size: self.bounds.size
+                ),
+                for: UIControlState.highlighted
+            )
         }
-        
     }
+    
+    // MARK: Helper functions
     
     /// Return a UIImage with a given UIColor and CGSize
     ///

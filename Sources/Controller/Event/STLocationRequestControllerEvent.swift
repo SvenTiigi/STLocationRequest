@@ -8,7 +8,7 @@
 import Foundation
 
 /// STLocationRequestEvent Enum for events in the delegate Method locationRequestControllerDidChange
-public enum STLocationRequestControllerEvent: Int {
+@objc public enum STLocationRequestControllerEvent: Int {
     /// The user authorized the location request
     case locationRequestAuthorized
     /// The user denied the location request
