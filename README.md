@@ -257,7 +257,7 @@ An example usage of `STLocationRequestController` in an `Objective-C` project.
 @implementation ViewController
 
 -(void)presentLocationRequestController{
-    STLocationRequestController *locationRequestController = [STLocationRequestController getInstance];
+    STLocationRequestController *locationRequestController = [STLocationRequestController new];
     locationRequestController.titleText = @"We need your location for some awesome features";
     locationRequestController.allowButtonTitle = @"Alright";
     locationRequestController.notNowButtonTitle = @"Not now";
