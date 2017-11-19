@@ -12,7 +12,7 @@
 <br/>
 
 ## Description
-STLocationRequest is a simple and elegant way to request the user location at the very first time written in Swift. The `STLocationRequestController` shows a beautiful 3D 360 degree Flyover-MapView with over 25 cities and landmarks.
+STLocationRequest is a simple and elegant way to request the users location services at the very first time written in Swift. The `STLocationRequestController` shows a beautiful 3D 360 degree Flyover MapView with over 25 cities and landmarks.
 
 <br/><br/>
 
