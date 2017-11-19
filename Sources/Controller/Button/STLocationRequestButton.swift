@@ -10,6 +10,11 @@ import UIKit
 /// Custom UIButton for STLocationRequestController
 public class STLocationRequestButton: UIButton {
     
+    // MARK: Properties
+    
+    /// The highlighted background color
+    private var highlightedBackgroundColor: UIColor = .white
+    
     // MARK: Initializer
     
     /// Convenience initializer to instantiate a STLocationRequest button
@@ -19,8 +24,9 @@ public class STLocationRequestButton: UIButton {
     ///   - font: The font
     ///   - target: The target
     ///   - action: The action
-    public convenience init(title: String, font: UIFont, target: Any?, action: Selector) {
+    public convenience init(title: String, font: UIFont, highlightedBackgroundColor: UIColor, highlightedTitleColor: UIColor,  target: Any?, action: Selector) {
         self.init(type: .custom)
+        self.highlightedBackgroundColor = highlightedBackgroundColor
         self.setTitle(title, for: .normal)
         self.titleLabel?.font = font
         self.titleLabel?.numberOfLines = 0
@@ -32,7 +38,7 @@ public class STLocationRequestButton: UIButton {
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.cornerRadius = 5.0
         self.layer.masksToBounds = true
-        self.setTitleColor(UIColor.clear.withAlphaComponent(0.5), for: UIControlState.highlighted)
+        self.setTitleColor(highlightedTitleColor, for: UIControlState.highlighted)
     }
     
     // MARK: ViewLifecycle
@@ -44,7 +50,7 @@ public class STLocationRequestButton: UIButton {
             // Set the backgroundimage
             self.setBackgroundImage(
                 self.getImageWithColor(
-                    UIColor.white,
+                    self.highlightedBackgroundColor,
                     size: self.bounds.size
                 ),
                 for: UIControlState.highlighted

@@ -31,11 +31,23 @@ import Font_Awesome_Swift
     /// The allowButton font. Default value is `systemFont(ofSize: 21)`
     public var allowButtonFont: UIFont = .systemFont(ofSize: 21)
     
+    /// The background color when allow button is highlighted. Default value is `white`
+    public var allowButtonHighlightedBackgroundColor: UIColor = .white
+    
+    /// The highlighted allow button title color. Default value is `UIColor.clear.withAlphaComponent(0.5)`
+    public var allowButtonHighlightedTitleColor: UIColor = UIColor.clear.withAlphaComponent(0.5)
+    
     /// The title for the notNowButton which will dismiss the STLocationRequestController. Default value is "Not now"
     public var notNowButtonTitle: String = "Not now"
     
     /// The notNowButton font. Default value is `systemFont(ofSize: 21)`
     public var notNowButtonFont: UIFont = .systemFont(ofSize: 21)
+    
+    /// The background color when not now button is highlighted. Default value is `white`
+    public var notNowButtonHighlightedBackgroundColor: UIColor = .white
+    
+    /// The highlighted not now button title color. Default value is `UIColor.clear.withAlphaComponent(0.5)`
+    public var notNowButtonHighlightedTitleColor: UIColor = UIColor.clear.withAlphaComponent(0.5)
     
     /// The alpha value for the MapView which is used in combination with `backgroundViewColor` to match the STLocationRequestController with the design of your app. Default value is 1
     public var mapViewAlpha: CGFloat = 1.0
@@ -103,6 +115,8 @@ import Font_Awesome_Swift
         let button = STLocationRequestButton(
             title: self.allowButtonTitle,
             font: self.allowButtonFont,
+            highlightedBackgroundColor: self.allowButtonHighlightedBackgroundColor,
+            highlightedTitleColor: self.allowButtonHighlightedTitleColor,
             target: self,
             action: #selector(allowButtonTouched)
         )
@@ -114,6 +128,8 @@ import Font_Awesome_Swift
         let button = STLocationRequestButton(
             title: self.notNowButtonTitle,
             font: self.notNowButtonFont,
+            highlightedBackgroundColor: self.notNowButtonHighlightedBackgroundColor,
+            highlightedTitleColor: self.notNowButtonHighlightedTitleColor,
             target: self,
             action: #selector(notNowButtonTouched)
         )
