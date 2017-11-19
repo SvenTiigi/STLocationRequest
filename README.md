@@ -48,8 +48,7 @@ class ViewController: UIViewController, STLocationRequestControllerDelegate {
 > Please keep in mind that the 3D-SatelliteFlyover only works on a real iOS Device ([Read more](#ios-simulator)).
 
 ## Customizing
-
-To perfectly match the design to your app, simply playaround with the parameters `mapViewAlpha` and `backgroundColor` to get your very own design.
+The following properties allow you to customize the behaviour and appearance of the `STLocationRequestController`.
 
 #### mapViewAlpha
 ```swift
@@ -62,6 +61,8 @@ locationRequestController.mapViewAlpha = 0.7
 locationRequestController.backgroundColor = .orange
 ```
 > The backgroundcolor for the view of the STLocationRequestController. Default value is white
+
+To perfectly match the design of the `STLocationRequestController` to your iOS app, simply playaround with the parameters `mapViewAlpha` and `backgroundColor` to get your very own design.
 
 <p align="center">
 <img width=200 src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/STLocationRequest_Purple.jpg" alt="STLocationRequest" title="STLocationRequest">
