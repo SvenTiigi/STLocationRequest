@@ -300,6 +300,7 @@ Or you use the convience static function on `STLocationRequestController` which 
 if STLocationRequestController.shouldPresentLocationRequestController() {
     // Location Services are enabled and authorizationStatus is notDetermined
     // Ready to present STLocationRequestController
+    self.presentLocationRequestController()
 }
 ```
 
