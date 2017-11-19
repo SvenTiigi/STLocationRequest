@@ -9,9 +9,11 @@
 
 <img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/STLocationRequest.gif" alt="ImagePicker Icon" align="right" width="60%" />
 
+<br/>
 ## Description
 STLocationRequest is a simple and elegant way to request the user location at the very first time written in Swift. It shows a beautiful 3D 360 degree Flyover-MapView with over 25 cities and landmarks.
 
+<br/>
 ## Installation
 
 STLocationRequest is available through [CocoaPods](http://cocoapods.org). To install
