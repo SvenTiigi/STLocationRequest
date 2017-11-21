@@ -12,7 +12,7 @@
 [![Contact](https://img.shields.io/badge/contact-@SvenTiigi-blue.svg?style=flat)](https://twitter.com/SvenTiigi/)
 
 ## Description
-STLocationRequest is a simple and elegant way to request the users location services at the very first time written in Swift. The `STLocationRequestController` shows a beautiful 3D 360 degree Flyover MapView with over 25 cities and landmarks.
+STLocationRequest is a simple and elegant way to request the users location services at the very first time written in Swift. The `STLocationRequestController` shows a beautiful 3D 360° Flyover MapView with over 25 cities and landmarks.
 
 ## Installation
 
@@ -43,11 +43,10 @@ class ViewController: UIViewController, STLocationRequestControllerDelegate {
 }
 
 ```
-> Please keep in mind that the 3D-SatelliteFlyover only works on a real iOS Device ([Read more](#ios-simulator)).
+> Please keep in mind that the 3D SatelliteFlyover only works on a real iOS Device ([Read more](#ios-simulator)).
 
 ## Customizing
-
-To perfectly match the design to your app, simply playaround with the parameters `mapViewAlpha` and `backgroundColor` to get your very own design.
+The following properties allow you to customize the behaviour and appearance of the `STLocationRequestController`.
 
 #### mapViewAlpha
 ```swift
@@ -60,6 +59,8 @@ locationRequestController.mapViewAlpha = 0.7
 locationRequestController.backgroundColor = .orange
 ```
 > The backgroundcolor for the view of the STLocationRequestController. Default value is white
+
+To perfectly match the design of the `STLocationRequestController` to your iOS app, simply playaround with the parameters `mapViewAlpha` and `backgroundColor` to get your very own design.
 
 <p align="center">
 <img width=200 src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/STLocationRequest_Purple.jpg" alt="STLocationRequest" title="STLocationRequest">
@@ -297,7 +298,7 @@ if STLocationRequestController.shouldPresentLocationRequestController() {
 
 ## iOS Simulator
 
-Please mind that the 3D Flyover-View will only work on a real iOS device (not in the Simulator) with at least iOS 9.0 installed ([Apple Developer API Reference](https://developer.apple.com/reference/mapkit/mkmaptype/1452553-satelliteflyover)). A Screenshot taken from an **iOS Simulator** running `STLocationRequestController`.
+Please mind that the 3D Flyover-View will only work on a real iOS device with at least iOS 9.0 installed ([Apple Developer API Reference](https://developer.apple.com/reference/mapkit/mkmaptype/1452553-satelliteflyover)). A Screenshot taken from an **iOS Simulator** running a `STLocationRequestController` visualizes the iOS Simulator behaviour.
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/iOSSimulatorBehavior.jpg" alt="iOSSimulatorBehavior" title="iOSSimulatorBehavior" width=300>
