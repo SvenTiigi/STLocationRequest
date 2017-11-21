@@ -1,7 +1,3 @@
-<p align="center">
-<img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/STLocationRequest.gif" alt="STLocationRequest" width="75%"/>
-</p>
-
 # STLocationRequest
 
 [![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
@@ -11,8 +7,11 @@
 [![Platform](https://img.shields.io/cocoapods/p/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
 [![Contact](https://img.shields.io/badge/contact-@SvenTiigi-blue.svg?style=flat)](https://twitter.com/SvenTiigi/)
 
-## Description
 STLocationRequest is a simple and elegant way to request the users location services at the very first time written in Swift. The `STLocationRequestController` shows a beautiful 3D 360° Flyover MapView with over 25 cities and landmarks.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/STLocationRequest.gif" alt="STLocationRequest" width="80%"/>
+</p>
 
 ## Installation
 
