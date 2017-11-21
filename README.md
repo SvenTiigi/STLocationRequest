@@ -1,4 +1,9 @@
-# STLocationRequest
+<br/>
+<div>
+  <img style="vertical-align:middle" src=".assets/STLocationRequestAppLogo.png" width=100>
+  <h1 style="display:inline">&nbsp; STLocationRequest</h1>
+</div>
+<br/>
 
 [![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Version](https://img.shields.io/cocoapods/v/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
