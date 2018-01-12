@@ -278,25 +278,44 @@ import SnapKit
                 make.top.equalTo(self.view).offset(15)
             }
             make.centerX.equalTo(self.view)
-            make.width.equalTo(self.view)
+            if #available(iOS 11.0, *) {
+                make.width.equalTo(self.view.safeAreaLayoutGuide.snp.width)
+            } else {
+                make.width.equalTo(self.view)
+            }
             make.height.equalTo(150)
         }
         // NotNowButton
         self.notNowButton.snp.makeConstraints { (make) in
-            make.left.right.equalTo(self.view).offset(15).inset(15)
+            if #available(iOS 11.0, *) {
+                make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left).offset(15)
+                make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right).inset(15)
+            } else {
+                make.left.right.equalTo(self.view).offset(15).inset(15)
+            }
             make.height.equalTo(60)
             make.bottom.equalTo(self.view).inset(30)
         }
         // AllowButton
         self.allowButton.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.notNowButton.snp.top).offset(-10)
-            make.left.right.equalTo(self.view).offset(15).inset(15)
+            if #available(iOS 11.0, *) {
+                make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left).offset(15)
+                make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right).inset(15)
+            } else {
+                 make.left.right.equalTo(self.view).offset(15).inset(15)
+            }
             make.height.equalTo(60)
         }
         // LocationSymbolLabel
         self.locationSymbolLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(10)
-            make.left.right.equalTo(self.view)
+            if #available(iOS 11.0, *) {
+                make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left)
+                make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right)
+            } else {
+                make.left.right.equalTo(self.view)
+            }
             make.centerY.centerX.equalTo(self.view)
             make.bottom.equalTo(self.allowButton.snp.top).offset(-10)
         }
