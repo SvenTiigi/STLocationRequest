@@ -10,11 +10,10 @@ import UIKit
 import CoreLocation
 import MapKit
 import Font_Awesome_Swift
+import SnapKit
 
-/**
-    STLocationRequest is a UIViewController-Extension which is used to request the User-Location, at the very first time, in a simple and elegent way.
-    It shows a beautiful 3D 360 degree Flyover-MapView which shows 14 random citys or landmarks.
- */
+/// STLocationRequest is a UIViewController-Extension which is used to request the User-Location, at the very first time, in a simple and elegent way.
+/// It shows a beautiful 3D 360 degree Flyover-MapView which shows 14 random citys or landmarks.
 @objcMembers public class STLocationRequestController: UIViewController {
 
     // MARK: Public properties
@@ -230,6 +229,8 @@ import Font_Awesome_Swift
         self.view.addSubview(self.locationSymbolLabel)
         self.view.addSubview(self.allowButton)
         self.view.addSubview(self.notNowButton)
+        // Layout subview
+        self.layoutSubviews()
         // Add layers
         self.view.layer.insertSublayer(self.pulseEffect, below: self.locationSymbolLabel.layer)
         // Start rotating
@@ -263,46 +264,42 @@ import Font_Awesome_Swift
     
     // MARK: Layout
 	
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        // Layout mapView
-        self.mapView.frame = self.view.frame
-        // Define constants
-        let padding: CGFloat = 15.0
-        let buttonHeight: CGFloat = 60.0
-        // Layout descriptionLabel
-        self.titleLabel.frame = CGRect(
-            x: padding,
-            y: padding * 2,
-            width: self.view.frame.size.width - padding * 2,
-            height: 150
-        )
-        // Layout notNowButton
-        self.notNowButton.frame = CGRect(
-            x: padding,
-            y: self.view.frame.size.height - padding * 2 - buttonHeight,
-            width: self.view.frame.size.width-padding * 2,
-            height: buttonHeight
-        )
-        // Layout allowButton
-        self.allowButton.frame = CGRect(
-            x: padding,
-            y: self.view.frame.size.height - buttonHeight * 2 - padding * 2.5,
-            width: self.view.frame.size.width - padding * 2,
-            height: buttonHeight
-        )
-        // Layout locationSymbolLabel
-        let locationSymbolHeight = self.view.frame.size.height
-            - self.titleLabel.frame.size.height
-            - self.allowButton.frame.size.height
-            - self.notNowButton.frame.size.height
-            - padding * 6.5
-        self.locationSymbolLabel.frame = CGRect(
-            x: 0,
-            y: self.view.center.y - locationSymbolHeight / 2,
-            width: self.view.frame.size.width,
-            height: locationSymbolHeight
-        )
+    /// Layout Subview
+    private func layoutSubviews() {
+        // MapView
+        self.mapView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.view)
+        }
+        // TitleLabel
+        self.titleLabel.snp.makeConstraints { (make) in
+            if #available(iOS 11.0, *) {
+                make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(15)
+            } else {
+                make.top.equalTo(self.view).offset(15)
+            }
+            make.centerX.equalTo(self.view)
+            make.width.equalTo(self.view)
+            make.height.equalTo(150)
+        }
+        // NotNowButton
+        self.notNowButton.snp.makeConstraints { (make) in
+            make.left.right.equalTo(self.view).offset(15).inset(15)
+            make.height.equalTo(60)
+            make.bottom.equalTo(self.view).inset(30)
+        }
+        // AllowButton
+        self.allowButton.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self.notNowButton.snp.top).offset(-10)
+            make.left.right.equalTo(self.view).offset(15).inset(15)
+            make.height.equalTo(60)
+        }
+        // LocationSymbolLabel
+        self.locationSymbolLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(10)
+            make.left.right.equalTo(self.view)
+            make.centerY.centerX.equalTo(self.view)
+            make.bottom.equalTo(self.allowButton.snp.top).offset(-10)
+        }
     }
     
 	override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

@@ -1,7 +1,9 @@
 PODS:
-  - Font-Awesome-Swift (1.7.1)
+  - Font-Awesome-Swift (1.7.2)
+  - SnapKit (4.0.0)
   - STLocationRequest (2.0.0):
     - Font-Awesome-Swift
+    - SnapKit (~> 4.0.0)
 
 DEPENDENCIES:
   - STLocationRequest (from `../`)
@@ -11,8 +13,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Font-Awesome-Swift: 5d950362121533489b2f6ac42e0e29db37fd970e
-  STLocationRequest: 14158bdc2993ef86903060f4d4bfe89392827405
+  Font-Awesome-Swift: 83ab9db365379ee6025167cec67bdc5d3226a811
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  STLocationRequest: 0d7c9153e57331c0951c49de64ca9bde6971b0aa
 
 PODFILE CHECKSUM: 276f4371772a3591644ab2524011d9d3e68f6758
 
