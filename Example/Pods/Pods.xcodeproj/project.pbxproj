@@ -21,6 +21,7 @@
 		2D77FABA60C878E32199D05AE782CE5A /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498A1E60FFA6EBD98781A1AACBF20D6A /* Font_Awesome_Swift.framework */; };
 		35885AB991D3E2039F465B2D094E26A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3026B12591A6F8DAAC538059357709B /* UIKit.framework */; };
 		3608308139E033DC38CAB0A0A34ACD7E /* STLocationRequestControllerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEDE2319EA96CE5793E74181F9ACD57 /* STLocationRequestControllerEvent.swift */; };
+		3DA26C9E200BB45500229100 /* STLocationRequestControllerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA26C9D200BB45500229100 /* STLocationRequestControllerConfiguration.swift */; };
 		3DC28DBB3BD94DF124B1FD327751E89A /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A9FBD775F2AF203FCC768968D82EEC /* ConstraintItem.swift */; };
 		3DD636E68A35FECD21851769982D3B0B /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D161CD339D94BFF4F8072C887C3F4B3B /* ConstraintLayoutSupportDSL.swift */; };
 		3E77E6D93E1DD899A9E00EBCEC8F1D47 /* STLocationRequestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A905BDC81F9B9F7211A5138A2368F /* STLocationRequestButton.swift */; };
@@ -145,6 +146,7 @@
 		383B64248117CFABFF9C5A9CDCCBD231 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		3A97E9B660F2CEF7FA1550D6C03D1E7A /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		3B89B260EB821BE505DB3BD5E07A6434 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
+		3DA26C9D200BB45500229100 /* STLocationRequestControllerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLocationRequestControllerConfiguration.swift; sourceTree = "<group>"; };
 		3F808F4F0AD0A09C5F47E11A95A5546B /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
 		404C59177CCF311BA329DC750885155D /* Font-Awesome-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-prefix.pch"; sourceTree = "<group>"; };
 		40E42CEE988E798D10A5FB2C03A4AB1B /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				D66594F0884F6BE8756B4A99913D97F2 /* STLocationRequestController.swift */,
+				3DA26C9C200BB44600229100 /* Configuration */,
 				4340EF130C1B8026BA8F6D5630E0330A /* Authorization */,
 				87AA2366DC228D92EB68223E527FADAB /* Button */,
 				B5AABD5FAAFC760368BC1736C0BE33A8 /* Delegate */,
@@ -357,6 +360,14 @@
 				E08C74405F3C1A49AA919F091A8D46BA /* Support Files */,
 			);
 			path = SnapKit;
+			sourceTree = "<group>";
+		};
+		3DA26C9C200BB44600229100 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3DA26C9D200BB45500229100 /* STLocationRequestControllerConfiguration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		4340EF130C1B8026BA8F6D5630E0330A /* Authorization */ = {
@@ -830,6 +841,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DA26C9E200BB45500229100 /* STLocationRequestControllerConfiguration.swift in Sources */,
 				CA7582FDA7A240D22188F18561D0EB7B /* LFTPulseAnimation.swift in Sources */,
 				029FE0345F6F2DC2561EBC107B1E1F61 /* STLocationRequest-dummy.m in Sources */,
 				3E77E6D93E1DD899A9E00EBCEC8F1D47 /* STLocationRequestButton.swift in Sources */,
