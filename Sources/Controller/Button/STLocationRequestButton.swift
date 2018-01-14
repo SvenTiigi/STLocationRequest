@@ -8,7 +8,7 @@
 import UIKit
 
 /// Custom UIButton for STLocationRequestController
-public class STLocationRequestButton: UIButton {
+class STLocationRequestButton: UIButton {
     
     // MARK: Properties
     
@@ -24,7 +24,7 @@ public class STLocationRequestButton: UIButton {
     ///   - font: The font
     ///   - target: The target
     ///   - action: The action
-    public convenience init(title: String, font: UIFont, highlightedBackgroundColor: UIColor, highlightedTitleColor: UIColor,  target: Any?, action: Selector) {
+    convenience init(title: String, font: UIFont, highlightedBackgroundColor: UIColor, highlightedTitleColor: UIColor,  target: Any?, action: Selector) {
         self.init(type: .custom)
         self.highlightedBackgroundColor = highlightedBackgroundColor
         self.setTitle(title, for: .normal)
@@ -43,7 +43,7 @@ public class STLocationRequestButton: UIButton {
     
     // MARK: ViewLifecycle
     
-    public override func layoutSubviews() {
+    override func layoutSubviews() {
         super.layoutSubviews()
         // Check if current background image is nil
         if self.currentBackgroundImage == nil {
