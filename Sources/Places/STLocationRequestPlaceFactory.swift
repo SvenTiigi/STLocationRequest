@@ -9,13 +9,13 @@ import Foundation
 import CoreLocation
 
 /// STAwesomePlacesFactory generates Coordinates from awesome Places
-public struct STLocationRequestPlaceFactory {
+struct STLocationRequestPlaceFactory {
     
     /// Return an array of CLLocationCoordiante2D with awesome places
     ///
     /// - Parameter filter: An array of STAwesomePlaces Enums which only should be added to the return array. If the parameter is nil all places will be added to the return array.
     /// - Returns: CLLocationCoordinate2D Array of awesome places
-    public static func getPlaces(withPlacesFilter filter: [STLocationRequestPlace]?, andCustomPlaces customPlaces: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D]{
+    static func getPlaces(withPlacesFilter filter: [STLocationRequestPlace]?, andCustomPlaces customPlaces: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D]{
         // Initialize the CLLocationCoordinate2D Array
         var places: [CLLocationCoordinate2D] = []
         // Iterate through all STAwesomePlaces Enums
