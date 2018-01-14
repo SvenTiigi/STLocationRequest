@@ -92,6 +92,9 @@ public extension STLocationRequestController {
         /// Fill the optional value `placesFilter` if you wish to specify which places should be shown. Default value is "nil" which means all places will be shown
         public var placesFilter: [STLocationRequestPlace]?
         
+        /// The custom Coordinates array
+        public var customPlaces: [CLLocationCoordinate2D] = []
+        
         /// Default initializer
         public init() {}
         

@@ -113,14 +113,8 @@ import SnapKit
     lazy private var places: [CLLocationCoordinate2D] = {
         return STLocationRequestPlaceFactory.getPlaces(
             withPlacesFilter: self.configuration.placesFilter,
-            andCustomPlaces: self.customPlaces
+            andCustomPlaces: self.configuration.customPlaces
         )
-    }()
-    
-    /// CustomPlaces Array, which can be append via addPlace() function
-    lazy private var customPlaces: [CLLocationCoordinate2D] = {
-        let places: [CLLocationCoordinate2D] = []
-        return places
     }()
     
     /// Array to store random integer values
@@ -374,35 +368,6 @@ public extension STLocationRequestController {
             // Inform the delegate, that the STLocationRequestController is disappeared
             self.controllerUpdate(event: .didDisappear)
         }
-    }
-    
-    /**
-     Add your custom location via CLLocationCoordinate2D to the STLocationRequestController.
-     If you wish that STLocationRequestController should show only your customPlaces,
-     set the placesFilter to .customPlaces
-     
-     SatelliteFlyover:
-     ----
-     Please keep in mind to check if your location is available in 3D-Flyover mode.
-     To check just go to Apple Maps App and search your location and tap on the 3D-Button
-     */
-    func addPlace(coordinate place: CLLocationCoordinate2D) {
-        self.customPlaces.append(place)
-    }
-    
-    /**
-     Add your custom location via latitude and longitude to the STLocationRequestController.
-     If you wish that STLocationRequestController should show only your customPlaces,
-     set the placesFilter to .customPlaces
-     
-     SatelliteFlyover:
-     ----
-     Please keep in mind to check if your location is available in 3D-Flyover mode.
-     To check just go to Apple Maps App and search your location and tap on the 3D-Button
-     */
-    func addPlace(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-        self.addPlace(coordinate: coordinate)
     }
     
 }
