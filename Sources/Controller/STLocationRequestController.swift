@@ -321,7 +321,19 @@ import SnapKit
         }
     }
     
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Recenter pulseEffect Layer
+        self.pulseEffect.position = self.view.center
+    }
+    
 	override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        // Check if current Device is not phone type
+        if UIDevice.current.userInterfaceIdiom != .phone {
+            // Return out of function
+            return
+        }
+        // Check orientation
 		if UIDevice.current.orientation.isLandscape {
             // The device orientation is landscape. Hide the locationSymbolLabel
 			UIView.animate(withDuration: 0.5, animations: { () -> Void in
@@ -354,7 +366,7 @@ public extension STLocationRequestController {
      let locationRequest = STLocationRequestController()
      ````
      */
-    @available(*, deprecated, message: "getInstance() is no longer available. Instantiate a STLocationRequestController()")
+    @available(*, deprecated, message: "getInstance() is no longer available. Use default initialization instead")
     static func getInstance() -> STLocationRequestController {
         return STLocationRequestController()
     }
