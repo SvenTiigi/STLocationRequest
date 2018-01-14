@@ -244,13 +244,13 @@ locationRequestController.placesFilter = [.customPlaces]
 
 Also don't forget to add the usage description key to your `Info.plist` for you selected authorization type.
 
-STLocationRequestControllerAuthorizeType.**requestWhenInUseAuthorization**
+STLocationRequestControllerAuthorization.**requestWhenInUseAuthorization**
 ```swift
 <key>NSLocationWhenInUseUsageDescription</key>
 <string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
 ```
 
-STLocationRequestControllerAuthorizeType.**requestAlwaysAuthorization**
+STLocationRequestControllerAuthorization.**requestAlwaysAuthorization**
 ```swift
 <key>NSLocationAlwaysUsageDescription</key>
 <string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
@@ -324,7 +324,7 @@ An example usage of `STLocationRequestController` in an `Objective-C` project.
     locationRequestController.notNowButtonTitle = @"Not now";
     locationRequestController.mapViewAlpha = 0.9;
     locationRequestController.backgroundColor = [UIColor lightGrayColor];
-    locationRequestController.authorizeType = STLocationRequestControllerAuthorizeTypeRequestWhenInUseAuthorization;
+    locationRequestController.authorizeType = STLocationRequestControllerAuthorizationRequestWhenInUseAuthorization;
     locationRequestController.delegate = self;
     [locationRequestController presentOnViewController:self];
 }
