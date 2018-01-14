@@ -63,46 +63,41 @@ class ViewController: UIViewController {
     
     /// Initialize and present STLocationRequestController
     func presentLocationRequestController(){
-        var configuration = STLocationRequestController.Configuration()
-        configuration.titleText = "We need your location for some awesome features"
-        configuration.allowButtonTitle = "Alright"
-        configuration.notNowButtonTitle = "Not now"
-        configuration.mapViewAlpha = 0.9
-        configuration.backgroundColor = UIColor.lightGray
-        configuration.authorizeType = .requestWhenInUseAuthorization
-        let locationRequestController = STLocationRequestController(configuration: configuration)
-        locationRequestController.delegate = self
-        locationRequestController.present(onViewController: self)
-    }
-
-}
-
-// MARK: - STLocationRequestControllerDelegate
-
-extension ViewController: STLocationRequestControllerDelegate {
-    
-    /// STLocationRequest Delegate Methods
-    func locationRequestControllerDidChange(_ event: STLocationRequestController.Event) {
-        switch event {
-        case .locationRequestAuthorized:
-            print("The user accepted the use of location services")
-            self.locationManager.startUpdatingLocation()
-            break
-        case .locationRequestDenied:
-            print("The user denied the use of location services")
-            break
-        case .notNowButtonTapped:
-            print("The Not now button was tapped")
-            break
-        case .didPresented:
-            print("STLocationRequestController did presented")
-            break
-        case .didDisappear:
-            print("STLocationRequestController did disappear")
-            break
+        // Initialize STLocationRequestController with Configuration
+        let locationRequestController = STLocationRequestController { (config) in
+            config.titleText = "We need your location for some awesome features"
+            config.allowButtonTitle = "Alright"
+            config.notNowButtonTitle = "Not now"
+            config.mapViewAlpha = 0.9
+            config.backgroundColor = UIColor.lightGray
+            config.authorizeType = .requestWhenInUseAuthorization
         }
+        // Set onChange
+        locationRequestController.onChange = { (event) in
+            switch event {
+            case .locationRequestAuthorized:
+                print("The user accepted the use of location services")
+                self.locationManager.startUpdatingLocation()
+                break
+            case .locationRequestDenied:
+                print("The user denied the use of location services")
+                break
+            case .notNowButtonTapped:
+                print("The Not now button was tapped")
+                break
+            case .didPresented:
+                print("STLocationRequestController did presented")
+                break
+            case .didDisappear:
+                print("STLocationRequestController did disappear")
+                break
+            }
+        }
+        // Present STLocationRequestController
+        locationRequestController.present(onViewController: self)
+        
     }
-    
+
 }
 
 // MARK: - CLLocationManagerDelegate
