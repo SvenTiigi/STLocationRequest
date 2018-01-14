@@ -357,6 +357,10 @@ public extension STLocationRequestController {
         viewController.present(self, animated: true) {
             // After presenting the STLocationRequestController inform the delegate
             self.delegate?.locationRequestControllerDidChange(.didPresented)
+            // Invoke onChange
+            if let onChange = self.onChange {
+                onChange(.didPresented)
+            }
             // Unwrap completion
             guard let completion = completion else {
                 // No completion available return out of function
