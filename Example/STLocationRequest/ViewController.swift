@@ -63,13 +63,14 @@ class ViewController: UIViewController {
     
     /// Initialize and present STLocationRequestController
     func presentLocationRequestController(){
-        let locationRequestController = STLocationRequestController()
-        locationRequestController.titleText = "We need your location for some awesome features"
-        locationRequestController.allowButtonTitle = "Alright"
-        locationRequestController.notNowButtonTitle = "Not now"
-        locationRequestController.mapViewAlpha = 0.9
-        locationRequestController.backgroundColor = UIColor.lightGray
-        locationRequestController.authorizeType = .requestWhenInUseAuthorization
+        var configuration = STLocationRequestController.Configuration()
+        configuration.titleText = "We need your location for some awesome features"
+        configuration.allowButtonTitle = "Alright"
+        configuration.notNowButtonTitle = "Not now"
+        configuration.mapViewAlpha = 0.9
+        configuration.backgroundColor = UIColor.lightGray
+        configuration.authorizeType = .requestWhenInUseAuthorization
+        let locationRequestController = STLocationRequestController(configuration: configuration)
         locationRequestController.delegate = self
         locationRequestController.present(onViewController: self)
     }
@@ -81,7 +82,7 @@ class ViewController: UIViewController {
 extension ViewController: STLocationRequestControllerDelegate {
     
     /// STLocationRequest Delegate Methods
-    func locationRequestControllerDidChange(_ event: STLocationRequestControllerEvent) {
+    func locationRequestControllerDidChange(_ event: STLocationRequestController.Event) {
         switch event {
         case .locationRequestAuthorized:
             print("The user accepted the use of location services")
