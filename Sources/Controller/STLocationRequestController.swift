@@ -7,103 +7,30 @@
 //
 
 import UIKit
-import CoreLocation
 import MapKit
-import Font_Awesome_Swift
 import SnapKit
 
 /// STLocationRequest is a UIViewController-Extension which is used to request the User-Location, at the very first time, in a simple and elegent way.
 /// It shows a beautiful 3D 360 degree Flyover-MapView which shows 14 random citys or landmarks.
 @objcMembers public class STLocationRequestController: UIViewController {
-
-    // MARK: Public properties
     
-    /// The title which will be presented at the top of the STLocationRequestController. Default-Value: "We need your location for some awesome features"
-    public var titleText: String = "We need your location for some awesome features"
-
-    /// The title which will be presented at the top of the STLocationRequestController. Default-Value: UIFont.systemFontOfSize(25.0)
-    public var titleFont: UIFont = .systemFont(ofSize: 25.0)
+    // MARK: Public Properties
     
-    /// The title for the allowButton which will trigger the requestWhenInUseAuthorization() or requestAlwaysAuthorization() Method on CLLocationManager. Default value is "Alright"
-    public var allowButtonTitle: String = "Alright"
+    /// OnChange Typealias
+    public typealias OnChange = (Event) -> Void
     
-    /// The allowButton font. Default value is `systemFont(ofSize: 21)`
-    public var allowButtonFont: UIFont = .systemFont(ofSize: 21)
-    
-    /// The background color when allow button is highlighted. Default value is `white`
-    public var allowButtonHighlightedBackgroundColor: UIColor = .white
-    
-    /// The highlighted allow button title color. Default value is `UIColor.clear.withAlphaComponent(0.5)`
-    public var allowButtonHighlightedTitleColor: UIColor = UIColor.clear.withAlphaComponent(0.5)
-    
-    /// The title for the notNowButton which will dismiss the STLocationRequestController. Default value is "Not now"
-    public var notNowButtonTitle: String = "Not now"
-    
-    /// The notNowButton font. Default value is `systemFont(ofSize: 21)`
-    public var notNowButtonFont: UIFont = .systemFont(ofSize: 21)
-    
-    /// The background color when not now button is highlighted. Default value is `white`
-    public var notNowButtonHighlightedBackgroundColor: UIColor = .white
-    
-    /// The highlighted not now button title color. Default value is `UIColor.clear.withAlphaComponent(0.5)`
-    public var notNowButtonHighlightedTitleColor: UIColor = UIColor.clear.withAlphaComponent(0.5)
-    
-    /// The alpha value for the MapView which is used in combination with `backgroundViewColor` to match the STLocationRequestController with the design of your app. Default value is 1
-    public var mapViewAlpha: CGFloat = 1.0
-    
-    /// The MapView camera altitude. Default value is `600`
-    public var mapViewCameraAltitude: CLLocationDistance = 600
-    
-    /// The MapView camera pitch. Default value is `45`
-    public var mapViewCameraPitch: CGFloat = 45
-    
-    /// The MapView camera heading step. Default value is `20`
-    public var mapViewCameraHeadingStep: Double = 20
-    
-    /// The MapView camera animation duration. Default value is `4`
-    public var mapViewCameraRotationAnimationDuration: Double = 4
-    
-    /// The backgroundcolor for the view of the STLocationRequestController which is used in combination with `mapViewAlphaValue` to match the STLocationRequestController with the design of your app. Default value is a white color.
-    public var backgroundColor: UIColor = .white
-    
-    /// Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
-    public var isPulseEffectEnabled: Bool = true
-    
-    /// The color for the pulse effect behind the location symbol. Default value: white
-    public var pulseEffectColor: UIColor = .white
-    
-    /// The pulse effect radius. Default value is `180`
-    public var pulseEffectRadius: CGFloat = 180.0
-    
-    /// Set the location symbol icon which will be displayed in the middle of the location request screen. Default value: FAType.FALocationArrow. Which icons are available can be found on http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift.
-    public var locationSymbolIcon: FAType = .FALocationArrow
-    
-    /// The location symbol size. Default value is `150`
-    public var locationSymbolSize: CGFloat = 150
-    
-    /// The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
-    public var locationSymbolColor: UIColor = .white
-    
-    /// Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
-    public var isLocationSymbolHidden: Bool = false
-    
-    /// Set the authorize Type for STLocationRequestController. Choose between: `.requestWhenInUseAuthorization` and `.requestAlwaysAuthorization`. Default value is `.requestWhenInUseAuthorization`
-    public var authorizeType: STLocationRequestControllerAuthorizeType = .requestWhenInUseAuthorization
+    /// The configuration
+    public var configuration: Configuration
     
     /// STLocationRequestDelegate which is used to handle events from the STLocationRequestController.
-    public var delegate: STLocationRequestControllerDelegate?
+    public weak var delegate: STLocationRequestControllerDelegate?
     
-    /// Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
-    public var timeTillPlaceSwitchesInSeconds: TimeInterval = 15.0
-    
-    /// Fill the optional value `placesFilter` if you wish to specify which places should be shown. Default value is "nil" which means all places will be shown
-    public var placesFilter: [STLocationRequestPlace]?
-    
-    /// The onChange closure
-    public var onChange: ((STLocationRequestControllerEvent) -> Void)?
+    /// The onChange closure to be notified if an STLocationRequestController.Event occured
+    public var onChange: OnChange?
     
     /// The preferredStatusBarStyle light value
     public override var preferredStatusBarStyle: UIStatusBarStyle {
+        // Use LightContent
         return .lightContent
     }
     
@@ -112,10 +39,10 @@ import SnapKit
     /// The Allow-Button
     lazy private var allowButton: UIButton = {
         let button = STLocationRequestButton(
-            title: self.allowButtonTitle,
-            font: self.allowButtonFont,
-            highlightedBackgroundColor: self.allowButtonHighlightedBackgroundColor,
-            highlightedTitleColor: self.allowButtonHighlightedTitleColor,
+            title: self.configuration.allowButtonTitle,
+            font: self.configuration.allowButtonFont,
+            highlightedBackgroundColor: self.configuration.allowButtonHighlightedBackgroundColor,
+            highlightedTitleColor: self.configuration.allowButtonHighlightedTitleColor,
             target: self,
             action: #selector(allowButtonTouched)
         )
@@ -125,10 +52,10 @@ import SnapKit
     /// The Not-Now-Button
     lazy private var notNowButton: UIButton = {
         let button = STLocationRequestButton(
-            title: self.notNowButtonTitle,
-            font: self.notNowButtonFont,
-            highlightedBackgroundColor: self.notNowButtonHighlightedBackgroundColor,
-            highlightedTitleColor: self.notNowButtonHighlightedTitleColor,
+            title: self.configuration.notNowButtonTitle,
+            font: self.configuration.notNowButtonFont,
+            highlightedBackgroundColor: self.configuration.notNowButtonHighlightedBackgroundColor,
+            highlightedTitleColor: self.configuration.notNowButtonHighlightedTitleColor,
             target: self,
             action: #selector(notNowButtonTouched)
         )
@@ -141,16 +68,16 @@ import SnapKit
         mapView.mapType = .satelliteFlyover
         mapView.showsCompass = false
         mapView.showsScale = false
-        mapView.alpha = self.mapViewAlpha
+        mapView.alpha = self.configuration.mapViewAlpha
         return mapView
     }()
     
     /// TitleLabel
     lazy private var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = self.titleText
+        label.text = self.configuration.titleText
         label.textAlignment = .center
-        label.font = self.titleFont
+        label.font = self.configuration.titleFont
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textColor = .white
@@ -163,25 +90,29 @@ import SnapKit
     /// Location Symbol Label
     lazy private var locationSymbolLabel: UILabel = {
         let label = UILabel()
-        label.isHidden = self.isLocationSymbolHidden
-        label.setFAIcon(icon: self.locationSymbolIcon, iconSize: self.locationSymbolSize)
-        label.textColor = self.locationSymbolColor
+        label.isHidden = self.configuration.isLocationSymbolHidden
+        label.setFAIcon(icon: self.configuration.locationSymbolIcon, iconSize: self.configuration.locationSymbolSize)
+        label.textColor = self.configuration.locationSymbolColor
         label.textAlignment = .center
         return label
     }()
     
     /// The pulse effect
     lazy private var pulseEffect: LFTPulseAnimation = {
-        let pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:self.pulseEffectRadius, position:self.view.center)
-        pulseEffect.backgroundColor = self.pulseEffectColor.cgColor
-        pulseEffect.isHidden = !self.isPulseEffectEnabled
+        let pulseEffect = LFTPulseAnimation(
+            repeatCount: Float.infinity,
+            radius:self.configuration.pulseEffectRadius,
+            position:self.view.center
+        )
+        pulseEffect.backgroundColor = self.configuration.pulseEffectColor.cgColor
+        pulseEffect.isHidden = !self.configuration.isPulseEffectEnabled
         return pulseEffect
     }()
     
-	/// Places Coordinate array
+    /// Places Coordinate array
     lazy private var places: [CLLocationCoordinate2D] = {
         return STLocationRequestPlaceFactory.getPlaces(
-            withPlacesFilter: self.placesFilter,
+            withPlacesFilter: self.configuration.placesFilter,
             andCustomPlaces: self.customPlaces
         )
     }()
@@ -191,14 +122,14 @@ import SnapKit
         let places: [CLLocationCoordinate2D] = []
         return places
     }()
-	
-	/// Array to store random integer values
+    
+    /// Array to store random integer values
     lazy private var randomNumbers: [Int] = {
         let numbers: [Int] = []
         return numbers
     }()
-	
-	/// CLLocationManager
+    
+    /// CLLocationManager
     lazy private var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -207,9 +138,9 @@ import SnapKit
     
     /// The MapCamera
     lazy private var mapCamera: MKMapCamera = {
-       let camera = MKMapCamera()
-        camera.altitude = self.mapViewCameraAltitude
-        camera.pitch = self.mapViewCameraPitch
+        let camera = MKMapCamera()
+        camera.altitude = self.configuration.mapViewCameraAltitude
+        camera.pitch = self.configuration.mapViewCameraPitch
         camera.heading = 0
         return camera
     }()
@@ -217,12 +148,55 @@ import SnapKit
     /// The place change timer
     private var placeChangeTimer: Timer?
     
+    // MARK: Initializers
+    
+    /// Default initializer with Configuration object
+    ///
+    /// - Parameter configuration: The configuration
+    public init(configuration: Configuration) {
+        // Set configuration
+        self.configuration = configuration
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    /// Convenience initializer with Configuration Closure
+    ///
+    /// - Parameter configuration: The Configuration Closure
+    public convenience init(configuration: (inout Configuration) -> Void) {
+        // Initialize Configuration
+        var config = Configuration()
+        // Perform Configuration
+        configuration(&config)
+        // Init with config
+        self.init(configuration: config)
+    }
+    
+    /// Convenience Initializer with basic information
+    ///
+    /// - Parameters:
+    ///   - title: The title that should be displayed at the top
+    ///   - allowButtonTitle: The allow button title
+    ///   - notNowButtonTitle: The not not button title
+    ///   - onChange: The optional onChange closure
+    public convenience init(title: String, allowButtonTitle: String, notNowButtonTitle: String, onChange: OnChange? = nil) {
+        var configuration = Configuration()
+        configuration.titleText = title
+        configuration.allowButtonTitle = allowButtonTitle
+        configuration.notNowButtonTitle = notNowButtonTitle
+        self.init(configuration: configuration)
+        self.onChange = onChange
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: ViewLifecycle
     
     override public func viewDidLoad() {
-		super.viewDidLoad()
+        super.viewDidLoad()
         // Setting the backgroundColor for the UIView of STLocationRequestController
-        self.view.backgroundColor = self.backgroundColor
+        self.view.backgroundColor = self.configuration.backgroundColor
         // Add subviews
         self.view.addSubview(self.mapView)
         self.view.addSubview(self.titleLabel)
@@ -235,25 +209,25 @@ import SnapKit
         self.view.layer.insertSublayer(self.pulseEffect, below: self.locationSymbolLabel.layer)
         // Start rotating
         self.rotateMapCamera()
-		// Start showing awesome places
-		self.changeAwesomePlace(timer: nil)
-		// Start the timer for changing location
+        // Start showing awesome places
+        self.changeAwesomePlace(timer: nil)
+        // Start the timer for changing location
         self.placeChangeTimer = Timer.scheduledTimer(
-            timeInterval: self.timeTillPlaceSwitchesInSeconds,
+            timeInterval: self.configuration.timeTillPlaceSwitchesInSeconds,
             target: self,
             selector: #selector(changeAwesomePlace(timer:)),
             userInfo: nil,
             repeats: true
         )
-	}
-
+    }
+    
     override public func viewDidDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
+        super.viewWillDisappear(animated)
         // Invalidate timer
         self.placeChangeTimer?.invalidate()
         // Clear timer
         self.placeChangeTimer = nil
-	}
+    }
     
     deinit {
         // Invalidate timer
@@ -263,7 +237,7 @@ import SnapKit
     }
     
     // MARK: Layout
-	
+    
     /// Layout Subview
     private func layoutSubviews() {
         // MapView
@@ -303,7 +277,7 @@ import SnapKit
                 make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left).offset(15)
                 make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right).inset(15)
             } else {
-                 make.left.right.equalTo(self.view).offset(15).inset(15)
+                make.left.right.equalTo(self.view).offset(15).inset(15)
             }
             make.height.equalTo(60)
         }
@@ -327,49 +301,35 @@ import SnapKit
         self.pulseEffect.position = self.view.center
     }
     
-	override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         // Check if current Device is not phone type
         if UIDevice.current.userInterfaceIdiom != .phone {
             // Return out of function
             return
         }
         // Check orientation
-		if UIDevice.current.orientation.isLandscape {
+        if UIDevice.current.orientation.isLandscape {
             // The device orientation is landscape. Hide the locationSymbolLabel
-			UIView.animate(withDuration: 0.5, animations: { () -> Void in
-				self.locationSymbolLabel.alpha = 1
-				self.locationSymbolLabel.alpha = 0
-			})
-			self.pulseEffect.setPulseRadius(0)
-		} else {
+            UIView.animate(withDuration: 0.5, animations: { () -> Void in
+                self.locationSymbolLabel.alpha = 1
+                self.locationSymbolLabel.alpha = 0
+            })
+            self.pulseEffect.setPulseRadius(0)
+        } else {
             // The device orientation is portrait. Show the locationSymbolLabel
-			UIView.animate(withDuration: 0.5, animations: { () -> Void in
-				self.locationSymbolLabel.alpha = 0
-				self.locationSymbolLabel.alpha = 1
-			})
-			self.pulseEffect.setPulseRadius(self.pulseEffectRadius)
-		}
-	}
+            UIView.animate(withDuration: 0.5, animations: { () -> Void in
+                self.locationSymbolLabel.alpha = 0
+                self.locationSymbolLabel.alpha = 1
+            })
+            self.pulseEffect.setPulseRadius(self.configuration.pulseEffectRadius)
+        }
+    }
     
 }
 
 // MARK: Public functions
 
 public extension STLocationRequestController {
-    
-    /**
-     Function is deprecated. Please instantiate an object of STLocationRequestController.
-     
-     Example:
-     ----
-     ````
-     let locationRequest = STLocationRequestController()
-     ````
-     */
-    @available(*, deprecated, message: "getInstance() is no longer available. Use default initialization instead")
-    static func getInstance() -> STLocationRequestController {
-        return STLocationRequestController()
-    }
     
     /// Static function to retrieve an boolean if you should show the STLocationRequestController
     /// by evaluating if locationServices are enabled and authorizationStatus is notDetermined
@@ -463,8 +423,8 @@ private extension STLocationRequestController {
         // Set mapView region for place coordinate
         self.mapView.region = MKCoordinateRegionMakeWithDistance(
             placeCoordinate,
-            self.mapViewCameraAltitude,
-            self.mapViewCameraAltitude
+            self.configuration.mapViewCameraAltitude,
+            self.configuration.mapViewCameraAltitude
         )
         // Set center coordinate for mapCamera by setting place coordinate
         self.mapCamera.centerCoordinate = placeCoordinate
@@ -477,9 +437,9 @@ private extension STLocationRequestController {
     /// Rotate the MapView camera
     func rotateMapCamera() {
         // Increase heading by heading step for mapCamera
-        self.mapCamera.heading = fmod(self.mapCamera.heading + self.mapViewCameraHeadingStep, 360)
+        self.mapCamera.heading = fmod(self.mapCamera.heading + self.configuration.mapViewCameraHeadingStep, 360)
         // Animate MapView camera change
-        UIView.animate(withDuration: self.mapViewCameraRotationAnimationDuration, delay: 0, options: [.curveLinear, .beginFromCurrentState], animations: {
+        UIView.animate(withDuration: self.configuration.mapViewCameraRotationAnimationDuration, delay: 0, options: [.curveLinear, .beginFromCurrentState], animations: {
             // Set mapView camera
             self.mapView.camera = self.mapCamera
         }) { (finished: Bool) in
@@ -516,7 +476,7 @@ private extension STLocationRequestController {
     /// Invokes the onChange clousre and informs the delegate
     ///
     /// - Parameter event: The ControllerEvent
-    func controllerUpdate(event: STLocationRequestControllerEvent) {
+    func controllerUpdate(event: Event) {
         // Check if an onChange closure is available
         if let onChange = self.onChange {
             // Call onChange with current event
@@ -531,7 +491,7 @@ private extension STLocationRequestController {
     /// Allow button was touched request authorization by AuthorizeType
     @objc func allowButtonTouched() {
         // Switch on authorite type
-        switch self.authorizeType {
+        switch self.configuration.authorizeType {
         case .requestAlwaysAuthorization:
             // Request always
             self.locationManager.requestAlwaysAuthorization()

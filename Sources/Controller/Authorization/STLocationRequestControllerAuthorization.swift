@@ -7,10 +7,14 @@
 
 import Foundation
 
-/// Enum to decide which location request type should be used
-@objc public enum STLocationRequestControllerAuthorizeType: Int {
-    /// Location-Request when in use authorization
-    case requestWhenInUseAuthorization
-    /// Location-Request always authorization
-    case requestAlwaysAuthorization
+public extension STLocationRequestController {
+    
+    /// Enum to decide which location request type should be used
+    @objc enum Authorization: Int {
+        /// Location-Request when in use authorization
+        case requestWhenInUseAuthorization
+        /// Location-Request always authorization
+        case requestAlwaysAuthorization
+    }
+
 }
