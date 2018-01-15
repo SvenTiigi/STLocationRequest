@@ -31,7 +31,7 @@ pod 'STLocationRequest'
 import STLocationRequest
 
 // Initialize STLocationRequestController with Configuration
-let locationRequestController = STLocationRequestController { (config) in
+let locationRequestController = STLocationRequestController { (config: STLocationRequestController.Configuration) in
     config.titleText = "We need your location for some awesome features"
     config.allowButtonTitle = "Alright"
     config.notNowButtonTitle = "Not now"
@@ -46,149 +46,9 @@ locationRequestController.present(onViewController: self)
 > Please keep in mind that the 3D SatelliteFlyover only works on a real iOS Device ([Read more](#ios-simulator)).
 
 ## Configuration
+The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. For more details check out the [STLocationRequestController.Configuration]()
+
 The following properties allow you to customize the behaviour and appearance of the `STLocationRequestController`. The following properties are available on the `STLocationRequestController.Configuration`.
-
-#### mapViewAlpha
-```swift
-config.mapViewAlpha = 0.7
-```
-> The alpha value for the MapView. Default value is 1.0
-
-#### backgroundColor
-```swift
-config.backgroundColor = .orange
-```
-> The backgroundcolor for the view of the STLocationRequestController. Default value is white
-
-To perfectly match the design of the `STLocationRequestController` to your iOS app, simply playaround with the parameters `mapViewAlpha` and `backgroundColor` to get your very own design.
-
-<p align="center">
-<img width=200 src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/STLocationRequest_Purple.jpg" alt="STLocationRequest" title="STLocationRequest">
-<img width=200 src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/STLocationRequest_Green.jpg" alt="STLocationRequest" title="STLocationRequest">
-<img width=200 src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/STLocationRequest_Orange.jpg" alt="STLocationRequest" title="STLocationRequest">
-<img width=200 src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/STLocationRequest_Red.jpg" alt="STLocationRequest" title="STLocationRequest">
-</p>
-
-#### titleText
-```swift
-config.titleText = "We need your location for some extraordinary features"
-```
-> The title which will be presented at the top of the STLocationRequestController. Default-Value: "We need your location for some awesome features"
-
-#### titleFont
-```swift
-config.titleFont = .systemFont(ofSize: 25.0)
-```
-> The title font. Default-Value: UIFont.systemFontOfSize(25.0)
-
-#### allowButtonTitle
-```swift
-config.allowButtonTitle = "Yes of course"
-```
-> The title for the allowButton which will trigger the requestWhenInUseAuthorization() or requestAlwaysAuthorization() Method on CLLocationManager. Default value is "Alright"
-
-#### allowButtonFont
-```swift
-config.allowButtonFont = .systemFont(ofSize: 21.0)
-```
-> The allow button font. Default-Value: UIFont.systemFontOfSize(21.0)
-
-#### notNowButtonTitle
-```swift
-config.notNowButtonTitle = "Nope"
-```
-> The title for the notNowButton which will dismiss the STLocationRequestController. Default value is "Not now"
-
-#### notNowButtonFont
-```swift
-config.notNowButtonFont = .systemFont(ofSize: 21.0)
-```
-> The not now button font. Default-Value: UIFont.systemFontOfSize(21.0)
-
-#### mapViewCameraAltitude
-```swift
-config.mapViewCameraAltitude = 600
-```
-> The altitude for the mapview camera. Default-Value: 600
-
-#### mapViewCameraPitch
-```swift
-config.mapViewCameraPitch = 45
-```
-> The pitch for the mapview camera. Default-Value: 45
-
-#### mapViewCameraHeadingStep
-```swift
-config.mapViewCameraHeadingStep = 20
-```
-> The heading step for the mapview camera. Default-Value: 20
-
-#### mapViewCameraRotatinAnimationDuration
-```swift
-config.mapViewCameraRotationAnimationDuration = 4
-```
-> The mapview camera rotation animation duration. Default-Value: 4
-
-#### authorizeType
-```swift
-config.authorizeType = .requestWhenInUseAuthorization
-```
-> Set the location request authorize Type for STLocationRequestController. Choose between: .requestWhenInUseAuthorization and .requestAlwaysAuthorization. Default value is .requestWhenInUseAuthorization
-
-#### isPulseEffectEnabled
-```swift
-config.isPulseEffectEnabled = true
-```
-> Defines if the pulse Effect which will displayed under the location symbol should be enabled or disabled. Default Value: true
-
-#### pulseEffectColor
-```swift
-config.pulseEffectColor = .white
-```
-> The color for the pulse effect behind the location symbol. Default value: white
-
-#### pulseEffectRadius
-```swift
-config.pulseEffectRadius = 180
-```
-> The radius of the pulse effect. Default value: 180
-
-#### locationSymbolIcon
-```swift
-config.locationSymbolIcon = .FALocationArrow
-```
-> Set the location symbol icon which will be displayed in the middle of the STLocationRequest-Controller. The default value is FALocationArrow. You can browse at http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift for other icons but be aware to use a icon which is in the context of a location request.
-
-#### locationSymbolSize
-```swift
-config.locationSymbolSize = 150
-```
-> The size of the location symbol which will be presented in the middle of the location request screen. Default value: 150
-
-#### locationSymbolColor
-```swift
-config.locationSymbolColor = .white
-```
-> The color of the location symbol which will be presented in the middle of the location request screen. Default value: white
-
-#### isLocationSymbolHidden
-```swift
-config.isLocationSymbolHidden = false
-```
-> Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
-
-#### timeTillPlaceSwitchesInSeconds
-```swift
-config.timeTillPlaceSwitchesInSeconds = 15.0
-```
-> Set the in the interval for switching the shown places in seconds. Default value is 15 seconds
-
-#### placesFilter
-```swift
-// Only San Francisco Golden Gate Bridge and the Colosseum in Rome will be shown
-config.placesFilter = [.sanFranciscoGoldenGateBridge, .romeColosseum]
-```
-> Fill the optional value placesFilter if you wish to specify which places should be shown. Default value is "nil" which means all places will be shown
 
 ## Delegate
 
@@ -213,7 +73,7 @@ func locationRequestControllerDidChange(event: STLocationRequestControllerEvent)
 
 ```
 
-Or you can use the `onChange` closure property to get notified if an `STLocationRequestControllerEvent` occured.
+Or you can use the `onChange` closure property to get notified when a `STLocationRequestController.Event` occured.
 
 ```swift
 locationRequestController.onChange = { (event: STLocationRequestController.Event) in
@@ -230,23 +90,6 @@ locationRequestController.onChange = { (event: STLocationRequestController.Event
             break
     }
 }
-```
-
-## Custom 3D Flyover Places
-An example of adding a custom 3D flyover place to the `STLocationRequestController`.
-
-```swift
-// Set the custom places coordinates array
-let customAwesomePlace = CLLocationCoordinate2DMake(51.960665, 7.626135)
-config.customPlaces = [customAwesomePlace]
-```
-> Please keep in mind to verify that your custom location is available in 3D flyover mode. To verify you can check your place on the Apple Maps App by tapping on the 3D-Button.
-
-If you wish to show only your custom 3D flyover places you can simply set the `placesFilter`.
-
-```swift
-// Only your custom places will be shown
-config.placesFilter = [.customPlaces]
 ```
 
 ## Info.plist
@@ -277,27 +120,7 @@ This text will be shown in the default iOS location request dialog, which will s
 The recommended way to present `STLocationRequestController` is the following way, which is also been implemented in the example application.
 
 ```swift
-func checkLocationServicePermission() {
-    if CLLocationManager.locationServicesEnabled() {
-        if CLLocationManager.authorizationStatus() == .denied {
-            // Location Services are denied
-        } else {
-            if CLLocationManager.authorizationStatus() == .notDetermined{
-                // Present the STLocationRequestController
-                self.presentLocationRequestController()
-            } else {
-                // The user has already allowed your app to use location services. Start updating location
-            }
-        }
-    } else {
-        // Location Services are disabled
-    }
-}
-```
-Or you use the convience static function on `STLocationRequestController` which evaluates if an presenting should be performed.
-
-```swift
-if STLocationRequestController.shouldPresentLocationRequestController() {
+if STLocationRequestController.shouldPresentLocationRequestController {
     // Location Services are enabled and authorizationStatus is notDetermined
     // Ready to present STLocationRequestController
     self.presentLocationRequestController()
