@@ -30,20 +30,16 @@ pod 'STLocationRequest'
 ```swift
 import STLocationRequest
 
-class ViewController: UIViewController, STLocationRequestControllerDelegate {
-
-    func presentLocationRequestController(){
-        let locationRequestController = STLocationRequestController()
-        locationRequestController.titleText = "We need your location for some awesome features"
-        locationRequestController.allowButtonTitle = "Alright"
-        locationRequestController.notNowButtonTitle = "Not now"
-        locationRequestController.authorizeType = .requestWhenInUseAuthorization
-        locationRequestController.delegate = self
-        locationRequestController.present(onViewController: self)
-    }
-    
+// Initialize STLocationRequestController with Configuration
+let locationRequestController = STLocationRequestController { (config) in
+    config.titleText = "We need your location for some awesome features"
+    config.allowButtonTitle = "Alright"
+    config.notNowButtonTitle = "Not now"
+    config.mapViewAlpha = 0.9
+    config.backgroundColor = UIColor.lightGray
+    config.authorizeType = .requestWhenInUseAuthorization
 }
-
+locationRequestController.present(onViewController: self)
 ```
 > Please keep in mind that the 3D SatelliteFlyover only works on a real iOS Device ([Read more](#ios-simulator)).
 
