@@ -39,6 +39,8 @@ let locationRequestController = STLocationRequestController { (config) in
     config.backgroundColor = UIColor.lightGray
     config.authorizeType = .requestWhenInUseAuthorization
 }
+
+// Present STLocationRequestController
 locationRequestController.present(onViewController: self)
 ```
 > Please keep in mind that the 3D SatelliteFlyover only works on a real iOS Device ([Read more](#ios-simulator)).
