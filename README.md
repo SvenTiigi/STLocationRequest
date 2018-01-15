@@ -46,7 +46,7 @@ locationRequestController.present(onViewController: self)
 > Please keep in mind that the 3D SatelliteFlyover only works on a real iOS Device ([Read more](#ios-simulator)).
 
 ## Configuration
-The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. For more details check out the [STLocationRequestController.Configuration]()
+The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. More details can be found [here]()
 
 ## Events
 To get notified on `STLocationRequestController.Event`, such as if the user has authorized or denied the location services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented or did disappear, you can use the `onChange` property.
@@ -68,7 +68,7 @@ locationRequestController.onChange = { (event: STLocationRequestController.Event
 }
 ```
 
-Or conform tp the `STLocationRequestControllerDelegate`.
+If you like `Delegates` more than `Closures` you can simply set the `STLocationRequestControllerDelegate`.
 
 ```swift
 
