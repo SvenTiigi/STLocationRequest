@@ -37,25 +37,8 @@ class ViewController: UIViewController {
     
     /// requestLocationButtonTouched Method
     @IBAction func requestLocationButtonTouched(_ sender: UIButton) {
-        if CLLocationManager.locationServicesEnabled() {
-            if CLLocationManager.authorizationStatus() == .denied {
-                // Location Services are denied
-                print("Location Services are denied")
-            } else {
-                if CLLocationManager.authorizationStatus() == .notDetermined{
-                    // The user has never been asked about his location show the locationRequest Screen
-                    // Just play around with the setMapViewAlphaValue and setBackgroundViewColor parameters, to match with your design of your app
-                    // Also you can initialize an STLocationRequest Object and set all attributes
-                    // and at the end call presentLocationRequestController
-                    self.presentLocationRequestController()
-                } else {
-                    // The user has already allowed your app to use location services
-                    self.locationManager.startUpdatingLocation()
-                }
-            }
-        } else {
-            // Location Services are disabled
-            print("Location Services are disabled")
+        if STLocationRequestController.shouldPresentLocationRequestController {
+            self.presentLocationRequestController()
         }
     }
     
@@ -73,29 +56,30 @@ class ViewController: UIViewController {
             config.authorizeType = .requestWhenInUseAuthorization
         }
         // Set onChange
-        locationRequestController.onChange = { (event) in
-            switch event {
-            case .locationRequestAuthorized:
-                print("The user accepted the use of location services")
-                self.locationManager.startUpdatingLocation()
-                break
-            case .locationRequestDenied:
-                print("The user denied the use of location services")
-                break
-            case .notNowButtonTapped:
-                print("The Not now button was tapped")
-                break
-            case .didPresented:
-                print("STLocationRequestController did presented")
-                break
-            case .didDisappear:
-                print("STLocationRequestController did disappear")
-                break
-            }
-        }
+        locationRequestController.onChange = self.locationRequestControllerOnChange
         // Present STLocationRequestController
         locationRequestController.present(onViewController: self)
-        
+    }
+    
+    func locationRequestControllerOnChange(event: STLocationRequestController.Event) {
+        switch event {
+        case .locationRequestAuthorized:
+            print("The user accepted the use of location services")
+            self.locationManager.startUpdatingLocation()
+            break
+        case .locationRequestDenied:
+            print("The user denied the use of location services")
+            break
+        case .notNowButtonTapped:
+            print("The Not now button was tapped")
+            break
+        case .didPresented:
+            print("STLocationRequestController did presented")
+            break
+        case .didDisappear:
+            print("STLocationRequestController did disappear")
+            break
+        }
     }
 
 }

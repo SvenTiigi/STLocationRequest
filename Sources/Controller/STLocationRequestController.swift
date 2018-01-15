@@ -14,6 +14,13 @@ import SnapKit
 /// It shows a beautiful 3D 360 degree Flyover-MapView which shows 14 random citys or landmarks.
 @objcMembers public class STLocationRequestController: UIViewController {
     
+    // MARK: Static Properties
+    
+    /// Evaluates if locationServices are enabled and authorizationStatus is notDetermined
+    public static var shouldPresentLocationRequestController: Bool {
+        return CLLocationManager.locationServicesEnabled() && CLLocationManager.authorizationStatus() == .notDetermined
+    }
+    
     // MARK: Public Properties
     
     /// OnChange Typealias
@@ -324,14 +331,6 @@ import SnapKit
 // MARK: Public functions
 
 public extension STLocationRequestController {
-    
-    /// Static function to retrieve an boolean if you should show the STLocationRequestController
-    /// by evaluating if locationServices are enabled and authorizationStatus is notDetermined
-    ///
-    /// - Returns: Boolean if you should present the STLocationRequestController
-    static func shouldPresentLocationRequestController() -> Bool {
-        return CLLocationManager.locationServicesEnabled() && CLLocationManager.authorizationStatus() == .notDetermined
-    }
     
     /**
      Present the STLocationRequestController modally on a given UIViewController
