@@ -48,32 +48,8 @@ locationRequestController.present(onViewController: self)
 ## Configuration
 The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. For more details check out the [STLocationRequestController.Configuration]()
 
-The following properties allow you to customize the behaviour and appearance of the `STLocationRequestController`. The following properties are available on the `STLocationRequestController.Configuration`.
-
-## Delegate
-
-You can apply to the `STLocationRequestControllerDelegate` to get notified if the user has authorized or denied the location services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented or did disappear.
-
-```swift
-
-func locationRequestControllerDidChange(event: STLocationRequestControllerEvent) {
-    switch event {
-        case .locationRequestAuthorized:
-            break
-        case .locationRequestDenied:
-            break
-        case .notNowButtonTapped:
-            break
-        case .didPresented:
-            break
-        case .didDisappear:
-            break
-    }
-}
-
-```
-
-Or you can use the `onChange` closure property to get notified when a `STLocationRequestController.Event` occured.
+## Events
+To get notified on `STLocationRequestController.Event`, such as if the user has authorized or denied the location services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented or did disappear, you can use the `onChange` property.
 
 ```swift
 locationRequestController.onChange = { (event: STLocationRequestController.Event) in
@@ -89,6 +65,44 @@ locationRequestController.onChange = { (event: STLocationRequestController.Event
         case .didDisappear:
             break
     }
+}
+```
+
+Or conform tp the `STLocationRequestControllerDelegate`.
+
+```swift
+
+class ViewController: UIViewController, STLocationRequestControllerDelegate {
+
+    var locationRequestController: STLocationRequestController?
+
+    func presentLocationRequestController(){
+        let config = STLocationRequestController.Configuration()
+        let locationRequestController = STLocationRequestController(configuration: config)
+        locationRequestController.delegate = self
+        self.locationRequestController = locationRequestController
+        self.locationRequestController?.present(onViewController: self)
+    }
+    
+}
+
+extension ViewController: STLocationRequestControllerDelegate {
+
+    func locationRequestControllerDidChange(event: STLocationRequestControllerEvent) {
+        switch event {
+        case .locationRequestAuthorized:
+            break
+        case .locationRequestDenied:
+            break
+        case .notNowButtonTapped:
+            break
+        case .didPresented:
+            break
+        case .didDisappear:
+            break
+        }
+    }
+    
 }
 ```
 
