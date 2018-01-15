@@ -73,7 +73,6 @@ If you like `Delegates` more than `Closures` you can simply set the `STLocationR
 ```swift
 
 class ViewController: UIViewController, STLocationRequestControllerDelegate {
-
     var locationRequestController: STLocationRequestController?
 
     func presentLocationRequestController(){
@@ -83,11 +82,11 @@ class ViewController: UIViewController, STLocationRequestControllerDelegate {
         self.locationRequestController = locationRequestController
         self.locationRequestController?.present(onViewController: self)
     }
-    
 }
 
-extension ViewController: STLocationRequestControllerDelegate {
+// MARK: STLocationRequestControllerDelegate
 
+extension ViewController: STLocationRequestControllerDelegate {
     func locationRequestControllerDidChange(event: STLocationRequestControllerEvent) {
         switch event {
         case .locationRequestAuthorized:
@@ -101,8 +100,7 @@ extension ViewController: STLocationRequestControllerDelegate {
         case .didDisappear:
             break
         }
-    }
-    
+    } 
 }
 ```
 
