@@ -18,7 +18,8 @@ import SnapKit
     
     /// Evaluates if locationServices are enabled and authorizationStatus is notDetermined
     public static var shouldPresentLocationRequestController: Bool {
-        return CLLocationManager.locationServicesEnabled() && CLLocationManager.authorizationStatus() == .notDetermined
+        return CLLocationManager.locationServicesEnabled()
+            && CLLocationManager.authorizationStatus() == .notDetermined
     }
     
     // MARK: Public Properties
@@ -171,23 +172,7 @@ import SnapKit
         // Init with config
         self.init(configuration: config)
     }
-    
-    /// Convenience Initializer with basic information
-    ///
-    /// - Parameters:
-    ///   - title: The title that should be displayed at the top
-    ///   - allowButtonTitle: The allow button title
-    ///   - notNowButtonTitle: The not not button title
-    ///   - onChange: The optional onChange closure
-    public convenience init(title: String, allowButtonTitle: String, notNowButtonTitle: String, onChange: OnChange? = nil) {
-        var configuration = Configuration()
-        configuration.titleText = title
-        configuration.allowButtonTitle = allowButtonTitle
-        configuration.notNowButtonTitle = notNowButtonTitle
-        self.init(configuration: configuration)
-        self.onChange = onChange
-    }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -224,17 +209,13 @@ import SnapKit
     
     override public func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        // Invalidate timer
-        self.placeChangeTimer?.invalidate()
-        // Clear timer
-        self.placeChangeTimer = nil
+        // Destroy Timer
+        self.destroyTimer()
     }
     
     deinit {
-        // Invalidate timer
-        self.placeChangeTimer?.invalidate()
-        // Clear timer
-        self.placeChangeTimer = nil
+        // Destroy Timer
+        self.destroyTimer()
     }
     
     // MARK: Layout
@@ -328,19 +309,16 @@ import SnapKit
     
 }
 
-// MARK: Public functions
+// MARK: Present/Dismiss functions
 
 public extension STLocationRequestController {
     
-    /**
-     Present the STLocationRequestController modally on a given UIViewController
-     
-     iOS Simulator:
-     ----
-     Please mind that the 3D Flyover-View will only work on a **real** iOS Device **not** in the Simulator with at least iOS 9.0 installed
-     
-     - Parameter viewController: The `UIViewController` which will be used to present the STLocationRequestController modally.
-     */
+    /// Present the STLocationRequestController modally on a given UIViewController.
+    /// Please keep in mind that the 3D Flyover-View will only work on a **real** iOS Device **not** in the Simulator.
+    ///
+    /// - Parameters:
+    ///   - viewController: The `UIViewController` which will be used to present the STLocationRequestController modally.
+    ///   - completion: When the STLocationRequestController has been presented
     func present(onViewController viewController: UIViewController, completion: (() -> Void)? = nil) {
         // Check if app is running on iOS Simulator
         #if (arch(i386) || arch(x86_64)) && os(iOS)
@@ -371,7 +349,35 @@ public extension STLocationRequestController {
     
 }
 
-// MARK: Private functions
+// MARK: Private helper functions
+
+private extension STLocationRequestController {
+    
+    /// Destroy the PlaceChangeTimer
+    func destroyTimer() {
+        // Invalidate timer
+        self.placeChangeTimer?.invalidate()
+        // Clear timer
+        self.placeChangeTimer = nil
+    }
+    
+    /// Controller update to an specific event.
+    /// Invokes the onChange clousre and informs the delegate
+    ///
+    /// - Parameter event: The ControllerEvent
+    func controllerUpdate(event: Event) {
+        // Check if an onChange closure is available
+        if let onChange = self.onChange {
+            // Call onChange with current event
+            onChange(event)
+        }
+        // Invoke delegate for current event
+        self.delegate?.locationRequestControllerDidChange(event)
+    }
+    
+}
+
+// MARK: Change/Rotate MapView Place
 
 private extension STLocationRequestController {
     
@@ -436,21 +442,11 @@ private extension STLocationRequestController {
         }
     }
     
-    /// Controller update to an specific event.
-    /// Invokes the onChange clousre and informs the delegate
-    ///
-    /// - Parameter event: The ControllerEvent
-    func controllerUpdate(event: Event) {
-        // Check if an onChange closure is available
-        if let onChange = self.onChange {
-            // Call onChange with current event
-            onChange(event)
-        }
-        // Invoke delegate for current event
-        self.delegate?.locationRequestControllerDidChange(event)
-    }
-    
-    // MARK: - Button Actions
+}
+
+// MARK: Button Action Handler
+
+private extension STLocationRequestController {
     
     /// Allow button was touched request authorization by AuthorizeType
     @objc func allowButtonTouched() {
