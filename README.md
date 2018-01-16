@@ -30,8 +30,8 @@ pod 'STLocationRequest'
 ```swift
 import STLocationRequest
 
-// Initialize STLocationRequestController with Configuration
-let locationRequestController = STLocationRequestController { (config: STLocationRequestController.Configuration) in
+// Initialize STLocationRequestController with STLocationRequestController.Configuration
+let locationRequestController = STLocationRequestController { (config) in
     config.titleText = "We need your location for some awesome features"
     config.allowButtonTitle = "Alright"
     config.notNowButtonTitle = "Not now"
@@ -68,22 +68,9 @@ locationRequestController.onChange = { (event: STLocationRequestController.Event
 }
 ```
 
-If you like `Delegates` more than `Closures` you can simply set the `STLocationRequestControllerDelegate`.
+Or you conform to the `STLocationRequestControllerDelegate` and set the set `locationRequestController.delegate = self`
 
 ```swift
-
-class ViewController: UIViewController, STLocationRequestControllerDelegate {
-    var locationRequestController: STLocationRequestController?
-
-    func presentLocationRequestController(){
-        let config = STLocationRequestController.Configuration()
-        let locationRequestController = STLocationRequestController(configuration: config)
-        locationRequestController.delegate = self
-        self.locationRequestController = locationRequestController
-        self.locationRequestController?.present(onViewController: self)
-    }
-}
-
 // MARK: STLocationRequestControllerDelegate
 
 extension ViewController: STLocationRequestControllerDelegate {
