@@ -68,7 +68,7 @@ locationRequestController.onChange = { (event: STLocationRequestController.Event
 }
 ```
 
-Or you conform to the `STLocationRequestControllerDelegate` and set the set `locationRequestController.delegate = self`
+Or you conform to the `STLocationRequestControllerDelegate` and set your `ViewController` as the delegate on the `STLocationRequestController` (`locationRequestController.delegate = self`).
 
 ```swift
 // MARK: STLocationRequestControllerDelegate
