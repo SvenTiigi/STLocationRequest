@@ -1,5 +1,5 @@
 //
-//  STLocationRequestControllerEvent.swift
+//  STLocationRequestController+Event.swift
 //  STLocationRequest
 //
 //  Created by Sven Tiigi on 18.11.17.

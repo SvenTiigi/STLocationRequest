@@ -89,8 +89,7 @@ import SnapKit
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textColor = .white
-        // TODO: DisbaledControltext as shadowColor
-        label.shadowColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
+        label.shadowColor = UIColor(red: 108/255, green: 108/255, blue: 108/255, alpha: 1)
         label.shadowOffset = CGSize(width: 0, height: 1)
         return label
     }()
@@ -193,8 +192,6 @@ import SnapKit
         self.layoutSubviews()
         // Add layers
         self.view.layer.insertSublayer(self.pulseEffect, below: self.locationSymbolLabel.layer)
-        // Start rotating
-        self.rotateMapCamera()
         // Start showing awesome places
         self.changeAwesomePlace(timer: nil)
         // Start the timer for changing location
@@ -233,13 +230,11 @@ import SnapKit
             } else {
                 make.top.equalTo(self.view).offset(15)
             }
-            make.centerX.equalTo(self.view)
             if #available(iOS 11.0, *) {
                 make.width.equalTo(self.view.safeAreaLayoutGuide.snp.width)
             } else {
                 make.width.equalTo(self.view)
             }
-            make.height.equalTo(150)
         }
         // NotNowButton
         self.notNowButton.snp.makeConstraints { (make) in

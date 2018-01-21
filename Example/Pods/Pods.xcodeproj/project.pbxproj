@@ -20,8 +20,8 @@
 		24214CD0290AE23469CF5C82F7947626 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71542F361D3FA73C1920542B58B290AA /* ConstraintMaker.swift */; };
 		2D77FABA60C878E32199D05AE782CE5A /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498A1E60FFA6EBD98781A1AACBF20D6A /* Font_Awesome_Swift.framework */; };
 		35885AB991D3E2039F465B2D094E26A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3026B12591A6F8DAAC538059357709B /* UIKit.framework */; };
-		3608308139E033DC38CAB0A0A34ACD7E /* STLocationRequestControllerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEDE2319EA96CE5793E74181F9ACD57 /* STLocationRequestControllerEvent.swift */; };
-		3DA26C9E200BB45500229100 /* STLocationRequestControllerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA26C9D200BB45500229100 /* STLocationRequestControllerConfiguration.swift */; };
+		3608308139E033DC38CAB0A0A34ACD7E /* STLocationRequestController+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEDE2319EA96CE5793E74181F9ACD57 /* STLocationRequestController+Event.swift */; };
+		3DA26C9E200BB45500229100 /* STLocationRequestController+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA26C9D200BB45500229100 /* STLocationRequestController+Configuration.swift */; };
 		3DC28DBB3BD94DF124B1FD327751E89A /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A9FBD775F2AF203FCC768968D82EEC /* ConstraintItem.swift */; };
 		3DD636E68A35FECD21851769982D3B0B /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D161CD339D94BFF4F8072C887C3F4B3B /* ConstraintLayoutSupportDSL.swift */; };
 		3E77E6D93E1DD899A9E00EBCEC8F1D47 /* STLocationRequestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A905BDC81F9B9F7211A5138A2368F /* STLocationRequestButton.swift */; };
@@ -47,7 +47,7 @@
 		89DA66D756E5F2CA55A95996855CD60A /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE4C7D92681A1591E19C5DF9ECDDE90 /* ConstraintDescription.swift */; };
 		8C34910F5E599F2AE7F94580FA0A57F5 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A751A5A93464D8763DAEA02807D218 /* ConstraintView.swift */; };
 		90F73944899F8ED591E628572AA3EADA /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8043840780B0C9C6E79FD96050A72408 /* Typealiases.swift */; };
-		93B9D340304E3B0ECBF2E81B32D179ED /* STLocationRequestControllerAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C5C73DB47C23C4315B11A41084260 /* STLocationRequestControllerAuthorization.swift */; };
+		93B9D340304E3B0ECBF2E81B32D179ED /* STLocationRequestController+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C5C73DB47C23C4315B11A41084260 /* STLocationRequestController+Authorization.swift */; };
 		991F9A179D5D64EB8B83C1333C7E95D0 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0165F719C1D6ABB515D5D56F77DE32 /* ConstraintLayoutGuide.swift */; };
 		9D25A9E586B3C3E3A9A2017943960C41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C75E9EC5FFFFC15C662C33655853C0 /* Foundation.framework */; };
 		9F808F43547A9BA10DF2C482B7EBE894 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36EE73071565D8E020D829D500AC3B8 /* ConstraintLayoutGuide+Extensions.swift */; };
@@ -128,7 +128,7 @@
 		11FE43F5B9AC6CC7F7337F338B9C49C0 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
 		170AB8D1828669D87E44F873BE1760D8 /* Pods-STLocationRequest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1A036C9BC4D4D534F00E8A29DD0F3833 /* Pods-STLocationRequest_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		1BEDE2319EA96CE5793E74181F9ACD57 /* STLocationRequestControllerEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestControllerEvent.swift; sourceTree = "<group>"; };
+		1BEDE2319EA96CE5793E74181F9ACD57 /* STLocationRequestController+Event.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Event.swift"; sourceTree = "<group>"; };
 		1D3FC03FACE55BDD8007115562861EA4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E0165F719C1D6ABB515D5D56F77DE32 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		1E60D0BAC8222F278DC08883A04A5D65 /* Font-Awesome-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Font-Awesome-Swift.modulemap"; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		383B64248117CFABFF9C5A9CDCCBD231 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		3A97E9B660F2CEF7FA1550D6C03D1E7A /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		3B89B260EB821BE505DB3BD5E07A6434 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
-		3DA26C9D200BB45500229100 /* STLocationRequestControllerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLocationRequestControllerConfiguration.swift; sourceTree = "<group>"; };
+		3DA26C9D200BB45500229100 /* STLocationRequestController+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Configuration.swift"; sourceTree = "<group>"; };
 		3F808F4F0AD0A09C5F47E11A95A5546B /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
 		404C59177CCF311BA329DC750885155D /* Font-Awesome-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-prefix.pch"; sourceTree = "<group>"; };
 		40E42CEE988E798D10A5FB2C03A4AB1B /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 		5DE2F1FFD92FC3DC5D4993F00D78D75E /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		5F44CC1C30754F1A71437414F08145E8 /* STLocationRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STLocationRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6124D8F0E920E48FC5EDB39189763F29 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
-		633C5C73DB47C23C4315B11A41084260 /* STLocationRequestControllerAuthorization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestControllerAuthorization.swift; sourceTree = "<group>"; };
+		633C5C73DB47C23C4315B11A41084260 /* STLocationRequestController+Authorization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Authorization.swift"; sourceTree = "<group>"; };
 		6A1D305733799CF522AD6034319B13F7 /* STLocationRequest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = STLocationRequest.xcconfig; sourceTree = "<group>"; };
 		6FFCDCABEA32D048A781FB6180A991EA /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
 		71542F361D3FA73C1920542B58B290AA /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
@@ -365,7 +365,7 @@
 		3DA26C9C200BB44600229100 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				3DA26C9D200BB45500229100 /* STLocationRequestControllerConfiguration.swift */,
+				3DA26C9D200BB45500229100 /* STLocationRequestController+Configuration.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -373,7 +373,7 @@
 		4340EF130C1B8026BA8F6D5630E0330A /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				633C5C73DB47C23C4315B11A41084260 /* STLocationRequestControllerAuthorization.swift */,
+				633C5C73DB47C23C4315B11A41084260 /* STLocationRequestController+Authorization.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -509,7 +509,7 @@
 		C3A07DC4D54A86EDCEBE45934BAB8E8F /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				1BEDE2319EA96CE5793E74181F9ACD57 /* STLocationRequestControllerEvent.swift */,
+				1BEDE2319EA96CE5793E74181F9ACD57 /* STLocationRequestController+Event.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -841,14 +841,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DA26C9E200BB45500229100 /* STLocationRequestControllerConfiguration.swift in Sources */,
+				3DA26C9E200BB45500229100 /* STLocationRequestController+Configuration.swift in Sources */,
 				CA7582FDA7A240D22188F18561D0EB7B /* LFTPulseAnimation.swift in Sources */,
 				029FE0345F6F2DC2561EBC107B1E1F61 /* STLocationRequest-dummy.m in Sources */,
 				3E77E6D93E1DD899A9E00EBCEC8F1D47 /* STLocationRequestButton.swift in Sources */,
 				1FC199A9DACB7D1890F90B5906554A63 /* STLocationRequestController.swift in Sources */,
-				93B9D340304E3B0ECBF2E81B32D179ED /* STLocationRequestControllerAuthorization.swift in Sources */,
+				93B9D340304E3B0ECBF2E81B32D179ED /* STLocationRequestController+Authorization.swift in Sources */,
 				0D980F0B85ED9F234B6FE2CED07AF6D5 /* STLocationRequestControllerDelegate.swift in Sources */,
-				3608308139E033DC38CAB0A0A34ACD7E /* STLocationRequestControllerEvent.swift in Sources */,
+				3608308139E033DC38CAB0A0A34ACD7E /* STLocationRequestController+Event.swift in Sources */,
 				122C5A005313D57154E864D499C0A6A7 /* STLocationRequestPlace.swift in Sources */,
 				B397D56DA93662ED7C98B52C8F1FE203 /* STLocationRequestPlaceFactory.swift in Sources */,
 			);

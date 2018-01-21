@@ -1,5 +1,5 @@
 //
-//  STLocationRequestControllerAuthorization.swift
+//  STLocationRequestController+Authorization.swift
 //  STLocationRequest
 //
 //  Created by Sven Tiigi on 18.11.17.
