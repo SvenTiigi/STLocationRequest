@@ -8,45 +8,51 @@
 import Foundation
 import CoreLocation
 
-public enum STLocationRequestPlace {
-    // MARK: USA
-    case newYorkStatueOfLiberty
-    case newYork
-    case sanFranciscoGoldenGateBridge
-    case centralParkNY
-    case googlePlex
-    case miamiBeach
-    case lagunaBeach
-    case griffithObservatory
-    case luxorResortLasVegas
-    case appleHeadquarter
-    // MARK: Germany
-    case berlinBrandenburgerGate
-    case hamburgTownHall
-    case cologneCathedral
-    case munichCurch
-    case neuschwansteinCastle
-    case hamburgElbPhilharmonic
-    case muensterCastle
-    // MARK: Italy
-    case romeColosseum
-    case piazzaDiTrevi
-    // MARK: Spain
-    case sagradaFamiliaSpain
-    // MARK: England
-    case londonBigBen
-    case londonEye
-    // MARK: Australia
-    case sydneyOperaHouse
-    // MARK: France
-    case parisEiffelTower
-    // MARK: Custom Places
-    case customPlaces
+public extension STLocationRequestController {
+    
+    /// The STLocationRequestController.Place
+    enum Place {
+        // MARK: USA
+        case newYorkStatueOfLiberty
+        case newYork
+        case sanFranciscoGoldenGateBridge
+        case centralParkNY
+        case googlePlex
+        case miamiBeach
+        case lagunaBeach
+        case griffithObservatory
+        case luxorResortLasVegas
+        case appleHeadquarter
+        // MARK: Germany
+        case berlinBrandenburgerGate
+        case hamburgTownHall
+        case cologneCathedral
+        case munichCurch
+        case neuschwansteinCastle
+        case hamburgElbPhilharmonic
+        case muensterCastle
+        // MARK: Italy
+        case romeColosseum
+        case piazzaDiTrevi
+        // MARK: Spain
+        case sagradaFamiliaSpain
+        // MARK: England
+        case londonBigBen
+        case londonEye
+        // MARK: Australia
+        case sydneyOperaHouse
+        // MARK: France
+        case parisEiffelTower
+        // MARK: Custom Places
+        case customPlaces
+    }
+
 }
+
 
 // MARK: RawRepresentable
 
-extension STLocationRequestPlace: RawRepresentable {
+extension STLocationRequestController.Place: RawRepresentable {
     
     /// Associated type RawValue as CLLocationCoordinate2D
     public typealias RawValue = CLLocationCoordinate2D
@@ -118,14 +124,52 @@ extension STLocationRequestPlace: RawRepresentable {
     
 }
 
-// MARK: Iterator
+// MARK: Retrieve Places
 
-extension STLocationRequestPlace {
+public extension STLocationRequestController.Place {
+    
+    /// Return an array of CLLocationCoordiante2D with awesome places
+    ///
+    /// - Parameter filter: An array of STAwesomePlaces Enums which only should be added to the return array. If the parameter is nil all places will be added to the return array.
+    /// - Returns: CLLocationCoordinate2D Array of awesome places
+    static func getPlaces(withPlacesFilter filter: [STLocationRequestController.Place]?, andCustomPlaces customPlaces: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D]{
+        // Initialize the CLLocationCoordinate2D Array
+        var places: [CLLocationCoordinate2D] = []
+        // Iterate through all STAwesomePlaces Enums
+        for place in STLocationRequestController.Place.iterate() {
+            // If the current iteration is customPlaces continue
+            if place == .customPlaces {
+                continue
+            }
+            // Check if the placesFilter is available and place is not covered by filter
+            if let placesFilter = filter, !placesFilter.contains(place) {
+                // Continue as place shouldn't be used
+                continue
+            } else {
+                // Append coordinate from place
+                places.append(place.rawValue)
+            }
+        }
+        // Check if a filter is set and if true check if customPlaces should be shown
+        if let filter = filter {
+            if !filter.contains(.customPlaces) {
+                return places
+            }
+        }
+        // Check if customPlaces are available
+        guard customPlaces.count > 0 else {
+            return places
+        }
+        // Append contents of customPlaces
+        places.append(contentsOf: customPlaces)
+        // Return the places array
+        return places
+    }
     
     /// Private helper function to iterate all values of an enum
     ///
     /// - Returns: Iterator for the enumeration
-    public static func iterate() -> AnyIterator<STLocationRequestPlace> {
+    private static func iterate() -> AnyIterator<STLocationRequestController.Place> {
         var i = 0
         return AnyIterator {
             let next = withUnsafePointer(to: &i) {

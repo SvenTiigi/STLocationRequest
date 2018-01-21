@@ -118,7 +118,7 @@ import SnapKit
     
     /// Places Coordinate array
     lazy private var places: [CLLocationCoordinate2D] = {
-        return STLocationRequestPlaceFactory.getPlaces(
+        return Place.getPlaces(
             withPlacesFilter: self.configuration.placesFilter,
             andCustomPlaces: self.configuration.customPlaces
         )
@@ -315,10 +315,6 @@ public extension STLocationRequestController {
     ///   - viewController: The `UIViewController` which will be used to present the STLocationRequestController modally.
     ///   - completion: When the STLocationRequestController has been presented
     func present(onViewController viewController: UIViewController, completion: (() -> Void)? = nil) {
-        // Check if app is running on iOS Simulator
-        #if (arch(i386) || arch(x86_64)) && os(iOS)
-            print("STLocationRequestController_WARNING☝️: Please keep in mind that the 3D-SatelliteFlyover only works on a real iOS Device and not on the iOS Simulator. Read more here -> https://github.com/SvenTiigi/STLocationRequest#ios-simulator")
-        #endif
         // The STLocationRequestController is correctly initialized. Present the STLocationRequestController
         viewController.present(self, animated: true) {
             // Invoke controller update
