@@ -2,10 +2,10 @@
 
 [![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Version](https://img.shields.io/cocoapods/v/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
-[![Downloads](https://img.shields.io/cocoapods/dt/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
 [![License](https://img.shields.io/cocoapods/l/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
 [![Platform](https://img.shields.io/cocoapods/p/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
-[![Contact](https://img.shields.io/badge/contact-@SvenTiigi-blue.svg?style=flat)](https://twitter.com/SvenTiigi/)
+[![Downloads](https://img.shields.io/cocoapods/dt/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
+[![Twitter](https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat)](https://twitter.com/SvenTiigi/)
 
 <img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/STLocationRequest.gif" alt="ImagePicker Icon" align="right" width="60%" />
 
