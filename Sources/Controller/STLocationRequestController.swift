@@ -318,7 +318,7 @@ public extension STLocationRequestController {
         // The STLocationRequestController is correctly initialized. Present the STLocationRequestController
         viewController.present(self, animated: true) {
             // Invoke controller update
-            self.controllerUpdate(event: .didPresented)
+            self.emit(event: .didPresented)
             // Unwrap completion
             guard let completion = completion else {
                 // No completion available return out of function
@@ -334,7 +334,7 @@ public extension STLocationRequestController {
         // Dismiss the STLocationRequestController
         self.dismiss(animated: true) {
             // Inform the delegate, that the STLocationRequestController is disappeared
-            self.controllerUpdate(event: .didDisappear)
+            self.emit(event: .didDisappear)
         }
     }
     
@@ -352,11 +352,10 @@ private extension STLocationRequestController {
         self.placeChangeTimer = nil
     }
     
-    /// Controller update to an specific event.
-    /// Invokes the onChange clousre and informs the delegate
+    /// Emit an STLocationRequestController.Event
     ///
-    /// - Parameter event: The ControllerEvent
-    func controllerUpdate(event: Event) {
+    /// - Parameter event: The Event
+    func emit(event: Event) {
         // Check if an onChange closure is available
         if let onChange = self.onChange {
             // Call onChange with current event
@@ -457,7 +456,7 @@ private extension STLocationRequestController {
     /// Not now button was touched dismiss Viewcontroller
     @objc func notNowButtonTouched() {
         // Update the Controller
-        self.controllerUpdate(event: .notNowButtonTapped)
+        self.emit(event: .notNowButtonTapped)
         // Dismiss Controller
         self.dismiss()
     }
@@ -469,27 +468,35 @@ private extension STLocationRequestController {
 extension STLocationRequestController: CLLocationManagerDelegate {
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // Check the authorization state from CLLocationManager
+        // Declare Event
+        let event: Event?
+        // Switch on authorization state from CLLocationManager
         switch status {
         case .authorizedWhenInUse:
-            self.controllerUpdate(event: .locationRequestAuthorized)
-            self.dismiss()
+            event = .locationRequestAuthorized
             break
         case .authorizedAlways:
-            self.controllerUpdate(event: .locationRequestAuthorized)
-            self.dismiss()
+            event = .locationRequestAuthorized
             break
         case .denied:
-            self.controllerUpdate(event: .locationRequestDenied)
-            self.dismiss()
+            event = .locationRequestDenied
             break
         case .restricted:
-            self.controllerUpdate(event: .locationRequestDenied)
-            self.dismiss()
+            event = .locationRequestDenied
             break;
         case .notDetermined:
+            event = nil
             break;
         }
+        // Check if Event is available
+        guard let emitEvent = event else {
+            // Return out of function no event to emit
+            return
+        }
+        // Emit Event
+        self.emit(event: emitEvent)
+        // Dismiss
+        self.dismiss()
     }
     
 }
