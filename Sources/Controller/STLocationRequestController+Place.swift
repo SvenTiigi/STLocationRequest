@@ -132,13 +132,15 @@ public extension STLocationRequestController.Place {
     ///
     /// - Parameter filter: An array of STAwesomePlaces Enums which only should be added to the return array. If the parameter is nil all places will be added to the return array.
     /// - Returns: CLLocationCoordinate2D Array of awesome places
-    static func getPlaces(withPlacesFilter filter: [STLocationRequestController.Place]?, andCustomPlaces customPlaces: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D]{
+    static func getPlaces(withPlacesFilter filter: [STLocationRequestController.Place]?,
+                          andCustomPlaces customPlaces: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D]{
         // Initialize the CLLocationCoordinate2D Array
         var places: [CLLocationCoordinate2D] = []
         // Iterate through all STAwesomePlaces Enums
         for place in STLocationRequestController.Place.iterate() {
-            // If the current iteration is customPlaces continue
+            // If the current iteration is customPlaces
             if place == .customPlaces {
+                // Continue with next place
                 continue
             }
             // Check if the placesFilter is available and place is not covered by filter

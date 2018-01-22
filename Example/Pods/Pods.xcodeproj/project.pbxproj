@@ -21,10 +21,10 @@
 		2D77FABA60C878E32199D05AE782CE5A /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498A1E60FFA6EBD98781A1AACBF20D6A /* Font_Awesome_Swift.framework */; };
 		35885AB991D3E2039F465B2D094E26A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3026B12591A6F8DAAC538059357709B /* UIKit.framework */; };
 		3608308139E033DC38CAB0A0A34ACD7E /* STLocationRequestController+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEDE2319EA96CE5793E74181F9ACD57 /* STLocationRequestController+Event.swift */; };
+		3D5EDE622015EA0F00BED932 /* STLocationRequestController+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EDE612015EA0F00BED932 /* STLocationRequestController+Button.swift */; };
 		3DA26C9E200BB45500229100 /* STLocationRequestController+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA26C9D200BB45500229100 /* STLocationRequestController+Configuration.swift */; };
 		3DC28DBB3BD94DF124B1FD327751E89A /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A9FBD775F2AF203FCC768968D82EEC /* ConstraintItem.swift */; };
 		3DD636E68A35FECD21851769982D3B0B /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D161CD339D94BFF4F8072C887C3F4B3B /* ConstraintLayoutSupportDSL.swift */; };
-		3E77E6D93E1DD899A9E00EBCEC8F1D47 /* STLocationRequestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A905BDC81F9B9F7211A5138A2368F /* STLocationRequestButton.swift */; };
 		480637063C7BB4F89F35E21D9025B9AB /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F77EFA4684DEE779A1AAC96EDB5D8BE4 /* SnapKit-dummy.m */; };
 		4AE59189D47C24D919AB081EC97D4582 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E65BEFF504B550B9516EDCE5FE2FB03 /* UILayoutSupport+Extensions.swift */; };
 		4C409C398D4DEC943F1A1D4CB408CB0F /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B64248117CFABFF9C5A9CDCCBD231 /* ConstraintLayoutGuideDSL.swift */; };
@@ -145,6 +145,7 @@
 		383B64248117CFABFF9C5A9CDCCBD231 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		3A97E9B660F2CEF7FA1550D6C03D1E7A /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		3B89B260EB821BE505DB3BD5E07A6434 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
+		3D5EDE612015EA0F00BED932 /* STLocationRequestController+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Button.swift"; sourceTree = "<group>"; };
 		3DA26C9D200BB45500229100 /* STLocationRequestController+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Configuration.swift"; sourceTree = "<group>"; };
 		3F808F4F0AD0A09C5F47E11A95A5546B /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
 		404C59177CCF311BA329DC750885155D /* Font-Awesome-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-prefix.pch"; sourceTree = "<group>"; };
@@ -167,7 +168,6 @@
 		7DAE46878AB22724C5925B746402116D /* Pods-STLocationRequest_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Example-frameworks.sh"; sourceTree = "<group>"; };
 		7E143E8F703E7E78C99E3BACD0168610 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8043840780B0C9C6E79FD96050A72408 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
-		808A905BDC81F9B9F7211A5138A2368F /* STLocationRequestButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestButton.swift; sourceTree = "<group>"; };
 		82AEECD9273DDD6F9515C76A8B223706 /* Pods-STLocationRequest_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STLocationRequest_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		83B506A1E554176555E628449BE9CAAB /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
 		8913E8319159789C4E6F74B64912AF38 /* STLocationRequest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "STLocationRequest-dummy.m"; sourceTree = "<group>"; };
@@ -276,16 +276,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0ACD91D90915FD8F2B51682C846CDAB9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3F808F4F0AD0A09C5F47E11A95A5546B /* LFTPulseAnimation.swift */,
-				808A905BDC81F9B9F7211A5138A2368F /* STLocationRequestButton.swift */,
-			);
-			name = View;
-			path = Sources/View;
-			sourceTree = "<group>";
-		};
 		101D9451CCF00ADD2E606F18CE659FA5 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,11 +289,11 @@
 			isa = PBXGroup;
 			children = (
 				D66594F0884F6BE8756B4A99913D97F2 /* STLocationRequestController.swift */,
+				3D5EDE612015EA0F00BED932 /* STLocationRequestController+Button.swift */,
 				3DA26C9D200BB45500229100 /* STLocationRequestController+Configuration.swift */,
 				8F5549E77B7BC4E502AABF7C423C4630 /* STLocationRequestController+Place.swift */,
 				633C5C73DB47C23C4315B11A41084260 /* STLocationRequestController+Authorization.swift */,
 				1BEDE2319EA96CE5793E74181F9ACD57 /* STLocationRequestController+Event.swift */,
-				0A2821AB58372438FADB986721E7C8C8 /* STLocationRequestControllerDelegate.swift */,
 			);
 			name = Controller;
 			path = Sources/Controller;
@@ -349,6 +339,24 @@
 				E08C74405F3C1A49AA919F091A8D46BA /* Support Files */,
 			);
 			path = SnapKit;
+			sourceTree = "<group>";
+		};
+		3D5EDE632015EAD000BED932 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				0A2821AB58372438FADB986721E7C8C8 /* STLocationRequestControllerDelegate.swift */,
+			);
+			name = Delegate;
+			path = Sources/Delegate;
+			sourceTree = "<group>";
+		};
+		3D5EDE642015EAD000BED932 /* PulseAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				3F808F4F0AD0A09C5F47E11A95A5546B /* LFTPulseAnimation.swift */,
+			);
+			name = PulseAnimation;
+			path = Sources/PulseAnimation;
 			sourceTree = "<group>";
 		};
 		4C35D23BADFCD1F26D0FBC5B71645BAD /* iOS */ = {
@@ -455,7 +463,8 @@
 			isa = PBXGroup;
 			children = (
 				1C5825D1295B8D12C80E8B5CD5EE75C8 /* Controller */,
-				0ACD91D90915FD8F2B51682C846CDAB9 /* View */,
+				3D5EDE632015EAD000BED932 /* Delegate */,
+				3D5EDE642015EAD000BED932 /* PulseAnimation */,
 				68D4DF0558D4CCE9D048912D5A555380 /* Support Files */,
 			);
 			name = STLocationRequest;
@@ -792,8 +801,8 @@
 				3DA26C9E200BB45500229100 /* STLocationRequestController+Configuration.swift in Sources */,
 				CA7582FDA7A240D22188F18561D0EB7B /* LFTPulseAnimation.swift in Sources */,
 				029FE0345F6F2DC2561EBC107B1E1F61 /* STLocationRequest-dummy.m in Sources */,
-				3E77E6D93E1DD899A9E00EBCEC8F1D47 /* STLocationRequestButton.swift in Sources */,
 				1FC199A9DACB7D1890F90B5906554A63 /* STLocationRequestController.swift in Sources */,
+				3D5EDE622015EA0F00BED932 /* STLocationRequestController+Button.swift in Sources */,
 				93B9D340304E3B0ECBF2E81B32D179ED /* STLocationRequestController+Authorization.swift in Sources */,
 				0D980F0B85ED9F234B6FE2CED07AF6D5 /* STLocationRequestControllerDelegate.swift in Sources */,
 				3608308139E033DC38CAB0A0A34ACD7E /* STLocationRequestController+Event.swift in Sources */,

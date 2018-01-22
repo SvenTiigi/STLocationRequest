@@ -5,7 +5,7 @@
 //  Created by Sven Tiigi on 14.01.18.
 //
 
-import Foundation
+import UIKit
 import CoreLocation
 import Font_Awesome_Swift
 

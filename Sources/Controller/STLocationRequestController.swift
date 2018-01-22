@@ -45,8 +45,8 @@ import SnapKit
     // MARK: Private properties
     
     /// The Allow-Button
-    lazy private var allowButton: UIButton = {
-        let button = STLocationRequestButton(
+    lazy private var allowButton: Button = {
+        let button = Button(
             title: self.configuration.allowButtonTitle,
             font: self.configuration.allowButtonFont,
             highlightedBackgroundColor: self.configuration.allowButtonHighlightedBackgroundColor,
@@ -58,8 +58,8 @@ import SnapKit
     }()
     
     /// The Not-Now-Button
-    lazy private var notNowButton: UIButton = {
-        let button = STLocationRequestButton(
+    lazy private var notNowButton: Button = {
+        let button = Button(
             title: self.configuration.notNowButtonTitle,
             font: self.configuration.notNowButtonFont,
             highlightedBackgroundColor: self.configuration.notNowButtonHighlightedBackgroundColor,
