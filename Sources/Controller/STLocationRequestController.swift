@@ -1,9 +1,8 @@
 //
 //  STLocationRequestController.swift
-//  Pods
+//  STLocationRequest
 //
 //  Created by Sven Tiigi on 02.12.15.
-//
 //
 
 import UIKit
