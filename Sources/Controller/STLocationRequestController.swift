@@ -157,6 +157,7 @@ import SnapKit
     public init(configuration: Configuration) {
         // Set configuration
         self.configuration = configuration
+        // Init
         super.init(nibName: nil, bundle: nil)
     }
     
