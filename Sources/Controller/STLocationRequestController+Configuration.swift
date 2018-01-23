@@ -92,6 +92,9 @@ public extension STLocationRequestController {
         /// Defines if the location symbol which will be presented in the middle of the location request screen is hidden. Default value: false
         public var isLocationSymbolHidden = false
         
+        /// The StatusBarStyle. Default value: .lightContent
+        public var statusBarStyle: UIStatusBarStyle = .lightContent
+        
         /// Set the authorize Type for STLocationRequestController.
         /// Choose between: `.requestWhenInUseAuthorization` and `.requestAlwaysAuthorization`.
         /// Default value is `.requestWhenInUseAuthorization`

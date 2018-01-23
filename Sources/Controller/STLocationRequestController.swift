@@ -35,10 +35,9 @@ import SnapKit
     /// The onChange closure to be notified if an STLocationRequestController.Event occured
     public var onChange: OnChange?
     
-    /// The preferredStatusBarStyle light value
+    /// The preferredStatusBarStyle
     public override var preferredStatusBarStyle: UIStatusBarStyle {
-        // Use LightContent
-        return .lightContent
+        return self.configuration.statusBarStyle
     }
     
     // MARK: Private properties
@@ -143,6 +142,16 @@ import SnapKit
         camera.pitch = self.configuration.mapViewCameraPitch
         camera.heading = 0
         return camera
+    }()
+    
+    lazy private var rotatingMapCamera: RotatingMapCamera = {
+        return RotatingMapCamera(
+            mapView: self.mapView,
+            duration: self.configuration.mapViewCameraRotationAnimationDuration,
+            altitude: self.configuration.mapViewCameraAltitude,
+            pitch: self.configuration.mapViewCameraPitch,
+            headingStep: self.configuration.mapViewCameraHeadingStep
+        )
     }()
     
     /// The place change timer
@@ -333,6 +342,8 @@ public extension STLocationRequestController {
     func dismiss() {
         // Dismiss the STLocationRequestController
         self.dismiss(animated: true) {
+            // Stop Rotation
+            self.rotatingMapCamera.stop()
             // Inform the delegate, that the STLocationRequestController is disappeared
             self.emit(event: .didDisappear)
         }
@@ -378,42 +389,12 @@ private extension STLocationRequestController {
             // Return out of function as there is only one place to show
             return
         }
+        // Retrieve random index
+        let randomIndex = self.randomSequenceGenerator(0, max: self.places.count - 1)()
         // Retrieve random place coorindate
-        let placeCoordinate = self.getRandomPlaceCoordinate()
-        // Set mapView region for place coordinate
-        self.mapView.region = MKCoordinateRegionMakeWithDistance(
-            placeCoordinate,
-            self.configuration.mapViewCameraAltitude,
-            self.configuration.mapViewCameraAltitude
-        )
-        // Set center coordinate for mapCamera by setting place coordinate
-        self.mapCamera.centerCoordinate = placeCoordinate
-        // Set mapView camera
-        self.mapView.setCamera(self.mapCamera, animated: false)
-        // Invoke mapView rotation
-        self.rotateMapCamera()
-    }
-    
-    /// Rotate the MapView camera
-    func rotateMapCamera() {
-        // Increase heading by heading step for mapCamera
-        self.mapCamera.heading = fmod(self.mapCamera.heading + self.configuration.mapViewCameraHeadingStep, 360)
-        // Animate MapView camera change
-        UIView.animate(withDuration: self.configuration.mapViewCameraRotationAnimationDuration, delay: 0, options: [.curveLinear, .beginFromCurrentState], animations: {
-            // Set mapView camera
-            self.mapView.camera = self.mapCamera
-        }) { (finished: Bool) in
-            // Recursive invocation after completion
-            finished ? self.rotateMapCamera() : ()
-        }
-    }
-    
-    /// Retrieve a random place coordinate
-    ///
-    /// - Returns: CLLocationCoordinate2D
-    func getRandomPlaceCoordinate() -> CLLocationCoordinate2D {
-        let generateRandomNumber = self.randomSequenceGenerator(0, max: self.places.count-1)
-        return self.places[generateRandomNumber()]
+        let placeCoordinate = self.places[randomIndex]
+        // Start Rotating MapView Camera for place coordinate
+        self.rotatingMapCamera.start(lookingAt: placeCoordinate, animated: false)
     }
     
     /// Get a random Index from an given array without repeating an index

@@ -22,6 +22,7 @@
 		35885AB991D3E2039F465B2D094E26A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3026B12591A6F8DAAC538059357709B /* UIKit.framework */; };
 		3608308139E033DC38CAB0A0A34ACD7E /* STLocationRequestController+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEDE2319EA96CE5793E74181F9ACD57 /* STLocationRequestController+Event.swift */; };
 		3D5EDE622015EA0F00BED932 /* STLocationRequestController+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EDE612015EA0F00BED932 /* STLocationRequestController+Button.swift */; };
+		3D6FDE742017ED6C003F9947 /* RotatingMapCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6FDE732017ED6C003F9947 /* RotatingMapCamera.swift */; };
 		3DA26C9E200BB45500229100 /* STLocationRequestController+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA26C9D200BB45500229100 /* STLocationRequestController+Configuration.swift */; };
 		3DC28DBB3BD94DF124B1FD327751E89A /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A9FBD775F2AF203FCC768968D82EEC /* ConstraintItem.swift */; };
 		3DD636E68A35FECD21851769982D3B0B /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D161CD339D94BFF4F8072C887C3F4B3B /* ConstraintLayoutSupportDSL.swift */; };
@@ -146,6 +147,7 @@
 		3A97E9B660F2CEF7FA1550D6C03D1E7A /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		3B89B260EB821BE505DB3BD5E07A6434 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		3D5EDE612015EA0F00BED932 /* STLocationRequestController+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Button.swift"; sourceTree = "<group>"; };
+		3D6FDE732017ED6C003F9947 /* RotatingMapCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingMapCamera.swift; sourceTree = "<group>"; };
 		3DA26C9D200BB45500229100 /* STLocationRequestController+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Configuration.swift"; sourceTree = "<group>"; };
 		3F808F4F0AD0A09C5F47E11A95A5546B /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
 		404C59177CCF311BA329DC750885155D /* Font-Awesome-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Font-Awesome-Swift-prefix.pch"; sourceTree = "<group>"; };
@@ -359,6 +361,15 @@
 			path = Sources/PulseAnimation;
 			sourceTree = "<group>";
 		};
+		3D6FDE722017ED6C003F9947 /* RotatingMapCamera */ = {
+			isa = PBXGroup;
+			children = (
+				3D6FDE732017ED6C003F9947 /* RotatingMapCamera.swift */,
+			);
+			name = RotatingMapCamera;
+			path = Sources/RotatingMapCamera;
+			sourceTree = "<group>";
+		};
 		4C35D23BADFCD1F26D0FBC5B71645BAD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +475,7 @@
 			children = (
 				1C5825D1295B8D12C80E8B5CD5EE75C8 /* Controller */,
 				3D5EDE632015EAD000BED932 /* Delegate */,
+				3D6FDE722017ED6C003F9947 /* RotatingMapCamera */,
 				3D5EDE642015EAD000BED932 /* PulseAnimation */,
 				68D4DF0558D4CCE9D048912D5A555380 /* Support Files */,
 			);
@@ -806,6 +818,7 @@
 				93B9D340304E3B0ECBF2E81B32D179ED /* STLocationRequestController+Authorization.swift in Sources */,
 				0D980F0B85ED9F234B6FE2CED07AF6D5 /* STLocationRequestControllerDelegate.swift in Sources */,
 				3608308139E033DC38CAB0A0A34ACD7E /* STLocationRequestController+Event.swift in Sources */,
+				3D6FDE742017ED6C003F9947 /* RotatingMapCamera.swift in Sources */,
 				122C5A005313D57154E864D499C0A6A7 /* STLocationRequestController+Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
