@@ -193,13 +193,13 @@ import SnapKit
         self.layoutSubviews()
         // Add layers
         self.view.layer.insertSublayer(self.pulseEffect, below: self.locationSymbolLabel.layer)
-        // Start showing awesome places
-        self.changeAwesomePlace(timer: nil)
-        // Start the timer for changing location
+        // Initial change place
+        self.changePlace(timer: nil)
+        // Start the timer for changing the place
         self.placeChangeTimer = Timer.scheduledTimer(
             timeInterval: self.configuration.timeTillPlaceSwitchesInSeconds,
             target: self,
-            selector: #selector(changeAwesomePlace(timer:)),
+            selector: #selector(changePlace(timer:)),
             userInfo: nil,
             repeats: true
         )
@@ -374,8 +374,8 @@ private extension STLocationRequestController {
 
 private extension STLocationRequestController {
     
-    /// Change the current awesome place
-    @objc func changeAwesomePlace(timer: Timer?) {
+    /// Change the current place
+    @objc func changePlace(timer: Timer?) {
         // If the timer is not nil and there is only one place return the function
         if timer != nil && self.places.count == 1 {
             // Return out of function as there is only one place to show
