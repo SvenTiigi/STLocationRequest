@@ -207,13 +207,13 @@ import SnapKit
     
     override public func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        // Destroy Timer
-        self.destroyTimer()
+        // Perform CleanUp
+        self.cleanUp()
     }
     
     deinit {
-        // Destroy Timer
-        self.destroyTimer()
+        // Perform CleanUp
+        self.cleanUp()
     }
     
     // MARK: Layout
@@ -334,8 +334,6 @@ public extension STLocationRequestController {
     func dismiss() {
         // Dismiss the STLocationRequestController
         self.dismiss(animated: true) {
-            // Stop Rotation
-            self.rotatingMapCamera.stop()
             // Inform the delegate, that the STLocationRequestController is disappeared
             self.emit(event: .didDisappear)
         }
@@ -347,12 +345,14 @@ public extension STLocationRequestController {
 
 private extension STLocationRequestController {
     
-    /// Destroy the PlaceChangeTimer
-    func destroyTimer() {
+    /// Clean up the STLocationRequestController
+    func cleanUp() {
         // Invalidate timer
         self.placeChangeTimer?.invalidate()
         // Clear timer
         self.placeChangeTimer = nil
+        // Stop Rotation
+        self.rotatingMapCamera.stop()
     }
     
     /// Emit an STLocationRequestController.Event
