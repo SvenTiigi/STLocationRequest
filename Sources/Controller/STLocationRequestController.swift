@@ -27,7 +27,7 @@ import SnapKit
     public typealias OnChange = (Event) -> Void
     
     /// The configuration
-    public var configuration: Configuration
+    private var configuration: Configuration
     
     /// STLocationRequestDelegate which is used to handle events from the STLocationRequestController.
     public weak var delegate: STLocationRequestControllerDelegate?
