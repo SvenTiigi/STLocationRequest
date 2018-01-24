@@ -135,15 +135,7 @@ import SnapKit
         return locationManager
     }()
     
-    /// The MapCamera
-    lazy private var mapCamera: MKMapCamera = {
-        let camera = MKMapCamera()
-        camera.altitude = self.configuration.mapViewCameraAltitude
-        camera.pitch = self.configuration.mapViewCameraPitch
-        camera.heading = 0
-        return camera
-    }()
-    
+    /// The rotating map camera
     lazy private var rotatingMapCamera: RotatingMapCamera = {
         return RotatingMapCamera(
             mapView: self.mapView,
