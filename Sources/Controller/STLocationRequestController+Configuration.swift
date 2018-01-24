@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CoreLocation
+import MapKit
 import Font_Awesome_Swift
 
 public extension STLocationRequestController {
@@ -47,6 +47,9 @@ public extension STLocationRequestController {
         
         /// The highlighted not now button title color. Default value is `UIColor.clear.withAlphaComponent(0.5)`
         public var notNowButtonHighlightedTitleColor = UIColor.clear.withAlphaComponent(0.5)
+        
+        /// The MapView Type. Default value is: satelliteFlyover
+        public var mapViewType: MKMapType = .satelliteFlyover
         
         /// The alpha value for the MapView which is used in combination with `backgroundViewColor`
         /// to match the STLocationRequestController with the design of your app. Default value is 1

@@ -71,7 +71,7 @@ import SnapKit
     /// The MapView
     lazy private var mapView: MKMapView = {
         let mapView = MKMapView()
-        mapView.mapType = .satelliteFlyover
+        mapView.mapType = self.configuration.mapViewType
         mapView.showsCompass = false
         mapView.showsScale = false
         mapView.alpha = self.configuration.mapViewAlpha
