@@ -23,17 +23,8 @@ public class STLocationRequestController: UIViewController {
     
     // MARK: Public Properties
     
-    /// OnChange Typealias
-    public typealias OnChange = (Event) -> Void
-    
-    /// The configuration
-    private var configuration: Configuration
-    
-    /// STLocationRequestDelegate which is used to handle events from the STLocationRequestController.
-    public weak var delegate: STLocationRequestControllerDelegate?
-    
     /// The onChange closure to be notified if an STLocationRequestController.Event occured
-    public var onChange: OnChange?
+    public var onChange: ((Event) -> Void)?
     
     /// The preferredStatusBarStyle
     public override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -41,6 +32,9 @@ public class STLocationRequestController: UIViewController {
     }
     
     // MARK: Private properties
+    
+    /// The configuration
+    private var configuration: Configuration
     
     /// The Allow-Button
     lazy private var allowButton: Button = {
@@ -331,11 +325,18 @@ public extension STLocationRequestController {
     }
     
     /// Dismiss the STLocationRequestController
-    func dismiss() {
+    func dismiss(completion: (() -> Void)? = nil) {
         // Dismiss the STLocationRequestController
         self.dismiss(animated: true) {
             // Inform the delegate, that the STLocationRequestController is disappeared
             self.emit(event: .didDisappear)
+            // Unwrap completion
+            guard let completion = completion else {
+                // No completion available return out of function
+                return
+            }
+            // Call completion
+            completion()
         }
     }
     
@@ -361,11 +362,9 @@ private extension STLocationRequestController {
     func emit(event: Event) {
         // Check if an onChange closure is available
         if let onChange = self.onChange {
-            // Call onChange with current event
+            // Call onChange with given event
             onChange(event)
         }
-        // Invoke delegate for current event
-        self.delegate?.locationRequestControllerDidChange(event)
     }
     
 }

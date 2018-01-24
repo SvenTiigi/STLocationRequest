@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		029FE0345F6F2DC2561EBC107B1E1F61 /* STLocationRequest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8913E8319159789C4E6F74B64912AF38 /* STLocationRequest-dummy.m */; };
 		09BAEFE5B2CA41F12610AEAEA9EFD4E9 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64B4902FDCE9ED6195E2E74959BA26 /* ConstraintOffsetTarget.swift */; };
-		0D980F0B85ED9F234B6FE2CED07AF6D5 /* STLocationRequestControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2821AB58372438FADB986721E7C8C8 /* STLocationRequestControllerDelegate.swift */; };
 		10A089A93C7231F5B4917032464DC985 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B40A55447811AEE188991A9EE27B93 /* ConstraintInsets.swift */; };
 		122C5A005313D57154E864D499C0A6A7 /* STLocationRequestController+Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5549E77B7BC4E502AABF7C423C4630 /* STLocationRequestController+Place.swift */; };
 		1E0C505D8AB647D7B00278A455332D8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C75E9EC5FFFFC15C662C33655853C0 /* Foundation.framework */; };
@@ -124,7 +123,6 @@
 /* Begin PBXFileReference section */
 		0667CC407DBE458466E5C38C20453543 /* Pods-STLocationRequest_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Example-resources.sh"; sourceTree = "<group>"; };
 		098D796E839508D618255CC34856D9CD /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
-		0A2821AB58372438FADB986721E7C8C8 /* STLocationRequestControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = STLocationRequestControllerDelegate.swift; sourceTree = "<group>"; };
 		11FE43F5B9AC6CC7F7337F338B9C49C0 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
 		170AB8D1828669D87E44F873BE1760D8 /* Pods-STLocationRequest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STLocationRequest_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1A036C9BC4D4D534F00E8A29DD0F3833 /* Pods-STLocationRequest_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STLocationRequest_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -343,15 +341,6 @@
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
-		3D5EDE632015EAD000BED932 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				0A2821AB58372438FADB986721E7C8C8 /* STLocationRequestControllerDelegate.swift */,
-			);
-			name = Delegate;
-			path = Sources/Delegate;
-			sourceTree = "<group>";
-		};
 		3D5EDE642015EAD000BED932 /* PulseAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,7 +463,6 @@
 			isa = PBXGroup;
 			children = (
 				1C5825D1295B8D12C80E8B5CD5EE75C8 /* Controller */,
-				3D5EDE632015EAD000BED932 /* Delegate */,
 				3D6FDE722017ED6C003F9947 /* RotatingMapCamera */,
 				3D5EDE642015EAD000BED932 /* PulseAnimation */,
 				68D4DF0558D4CCE9D048912D5A555380 /* Support Files */,
@@ -816,7 +804,6 @@
 				1FC199A9DACB7D1890F90B5906554A63 /* STLocationRequestController.swift in Sources */,
 				3D5EDE622015EA0F00BED932 /* STLocationRequestController+Button.swift in Sources */,
 				93B9D340304E3B0ECBF2E81B32D179ED /* STLocationRequestController+Authorization.swift in Sources */,
-				0D980F0B85ED9F234B6FE2CED07AF6D5 /* STLocationRequestControllerDelegate.swift in Sources */,
 				3608308139E033DC38CAB0A0A34ACD7E /* STLocationRequestController+Event.swift in Sources */,
 				3D6FDE742017ED6C003F9947 /* RotatingMapCamera.swift in Sources */,
 				122C5A005313D57154E864D499C0A6A7 /* STLocationRequestController+Place.swift in Sources */,

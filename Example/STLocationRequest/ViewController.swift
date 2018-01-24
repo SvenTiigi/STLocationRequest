@@ -55,7 +55,7 @@ class ViewController: UIViewController {
             config.backgroundColor = UIColor.lightGray
             config.authorizeType = .requestWhenInUseAuthorization
         }
-        // Set onChange
+        // Get notified on STLocationRequestController.Events
         locationRequestController.onChange = self.locationRequestControllerOnChange
         // Present STLocationRequestController
         locationRequestController.present(onViewController: self)

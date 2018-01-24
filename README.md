@@ -40,6 +40,9 @@ let locationRequestController = STLocationRequestController { (config) in
     config.authorizeType = .requestWhenInUseAuthorization
 }
 
+// Get notified on STLocationRequestController.Events
+locationRequestController.onChange = self.locationRequestControllerOnChange
+
 // Present STLocationRequestController
 locationRequestController.present(onViewController: self)
 ```
