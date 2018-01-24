@@ -8,7 +8,7 @@
 import Foundation
 
 /// STLocationRequest Delegate
-@objc public protocol STLocationRequestControllerDelegate: class {
+public protocol STLocationRequestControllerDelegate: class {
     /**
      STLocationRequestControllerDelegate which is used to handle events from the STLocationRequestController.
      - Parameter event: Enum which contains the event of STLocationRequestControllerEvent
@@ -31,5 +31,5 @@ import Foundation
      }
      ````
      */
-    @objc func locationRequestControllerDidChange(_ event: STLocationRequestController.Event)
+    func locationRequestControllerDidChange(_ event: STLocationRequestController.Event)
 }

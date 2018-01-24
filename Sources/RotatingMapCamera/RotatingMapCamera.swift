@@ -8,7 +8,7 @@
 import MapKit
 
 /// The Rotating Camera
-public class RotatingMapCamera {
+class RotatingMapCamera {
     
     /// The MapView
     private weak var mapView: MKMapView?
@@ -23,10 +23,10 @@ public class RotatingMapCamera {
     }()
     
     /// The rotation duration
-    public var duration: Double
+    var duration: Double
     
     /// The altitude
-    public var altitude: CLLocationDistance {
+    var altitude: CLLocationDistance {
         didSet {
             // Set MapCamera altitude
             self.mapCamera.altitude = self.altitude
@@ -45,7 +45,7 @@ public class RotatingMapCamera {
     }
     
     /// The pitch
-    public var pitch: CGFloat {
+    var pitch: CGFloat {
         didSet {
             // Set MapCamera pitch
             self.mapCamera.pitch = self.pitch
@@ -53,10 +53,10 @@ public class RotatingMapCamera {
     }
     
     /// The headingStep
-    public var headingStep: Double
+    var headingStep: Double
     
     /// Is currently rotating
-    public var isRotating: Bool {
+    var isRotating: Bool {
         return self.coordinate != nil
     }
     
@@ -71,7 +71,7 @@ public class RotatingMapCamera {
     ///   - altitude: The altitude. Default value: 600.0
     ///   - pitch: The pitch. Default value: 45.0
     ///   - headingStep: The headingStep. Default value: 20.0
-    public init(mapView: MKMapView,
+    init(mapView: MKMapView,
                 duration: Double = 4.0,
                 altitude: CLLocationDistance = 600.0,
                 pitch: CGFloat = 45.0,
@@ -86,7 +86,7 @@ public class RotatingMapCamera {
     /// Start rotation with corrdinate
     ///
     /// - Parameter coordinate: The coordinate
-    public func start(lookingAt coordinate: CLLocationCoordinate2D, animated: Bool = true) {
+    func start(lookingAt coordinate: CLLocationCoordinate2D, animated: Bool = true) {
         // Set coordinate
         self.coordinate = coordinate
         // Set mapView region for place coordinate
@@ -106,7 +106,7 @@ public class RotatingMapCamera {
     }
     
     /// Stop rotation
-    public func stop() {
+    func stop() {
         // Clear coordinate
         self.coordinate = nil
     }

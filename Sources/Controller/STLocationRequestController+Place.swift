@@ -11,7 +11,7 @@ import CoreLocation
 public extension STLocationRequestController {
     
     /// The STLocationRequestController.Place
-    enum Place {
+    enum Place: Int {
         // MARK: USA
         case newYorkStatueOfLiberty
         case newYork
