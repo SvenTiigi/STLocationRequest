@@ -41,7 +41,7 @@ let locationRequestController = STLocationRequestController { (config) in
 }
 
 // Get notified on STLocationRequestController.Events
-locationRequestController.onChange = self.locationRequestControllerOnChange
+locationRequestController.onChange = { event in /* ... */ }
 
 // Present STLocationRequestController
 locationRequestController.present(onViewController: self)
@@ -51,7 +51,7 @@ locationRequestController.present(onViewController: self)
 ## Configuration
 The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. More details can be found [here]()
 
-## Events
+## OnChange
 To get notified on `STLocationRequestController.Event`, such as if the user has authorized or denied the location services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented or did disappear, you can use the `onChange` property.
 
 ```swift
@@ -68,29 +68,6 @@ locationRequestController.onChange = { (event: STLocationRequestController.Event
         case .didDisappear:
             break
     }
-}
-```
-
-Or you conform to the `STLocationRequestControllerDelegate` and set your `ViewController` as the delegate on the `STLocationRequestController` (`locationRequestController.delegate = self`).
-
-```swift
-// MARK: STLocationRequestControllerDelegate
-
-extension ViewController: STLocationRequestControllerDelegate {
-    func locationRequestControllerDidChange(event: STLocationRequestControllerEvent) {
-        switch event {
-        case .locationRequestAuthorized:
-            break
-        case .locationRequestDenied:
-            break
-        case .notNowButtonTapped:
-            break
-        case .didPresented:
-            break
-        case .didDisappear:
-            break
-        }
-    } 
 }
 ```
 
