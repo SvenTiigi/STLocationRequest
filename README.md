@@ -135,47 +135,6 @@ Please mind that the 3D Flyover-View will only work on a real iOS device with at
 
 </p>
 
-## Objective-C
-
-An example usage of `STLocationRequestController` in an `Objective-C` project.
-
-```objective-c
-#import "ViewController.h"
-@import STLocationRequest;
-
-@interface ViewController () <STLocationRequestControllerDelegate>
-@end
-
-@implementation ViewController
-
--(void)presentLocationRequestController{
-    STLocationRequestController *locationRequestController = [STLocationRequestController new];
-    locationRequestController.titleText = @"We need your location for some awesome features";
-    locationRequestController.allowButtonTitle = @"Alright";
-    locationRequestController.notNowButtonTitle = @"Not now";
-    locationRequestController.mapViewAlpha = 0.9;
-    locationRequestController.backgroundColor = [UIColor lightGrayColor];
-    locationRequestController.authorizeType = STLocationRequestControllerAuthorizationRequestWhenInUseAuthorization;
-    locationRequestController.delegate = self;
-    [locationRequestController presentOnViewController:self];
-}
-
--(void)locationRequestControllerDidChange:(enum STLocationRequestControllerEvent)event{
-    switch (event) {
-        case STLocationRequestControllerEventlocationRequestAuthorized:
-            break;
-        case STLocationRequestControllerEventlocationRequestDenied:
-            break;
-        case STLocationRequestControllerEventnotNowButtonTapped:
-            break;
-        case STLocationRequestControllerEventdidPresented:
-            break;
-        case STLocationRequestControllerEventdidDisappear:
-            break;
-    }
-}
-
-```
 ## Dependencies
 `STLocationRequest` is using following libraries.
 
@@ -187,7 +146,7 @@ An example usage of `STLocationRequestController` in an `Objective-C` project.
 
 ```
 STLocationRequest
-Copyright (c) 2015 Sven Tiigi <sven@tiigi.de>
+Copyright (c) 2018 Sven Tiigi <sven@tiigi.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
