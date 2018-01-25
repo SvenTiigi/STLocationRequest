@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 public extension STLocationRequestController {
     
@@ -21,6 +22,32 @@ public extension STLocationRequestController {
         case didPresented
         /// The STLocationRequestController did disappear
         case didDisappear
+    }
+    
+}
+
+// MARK: CLAuthorizationStatus toEvent() extension
+
+extension CLAuthorizationStatus {
+    
+    /// Convert CLAuthorizationStatus to a STLocationRequestController.Event
+    ///
+    /// - Returns: The optional event conversion
+    func toEvent() -> STLocationRequestController.Event? {
+        switch self {
+        case .authorizedWhenInUse:
+            return .locationRequestAuthorized
+        case .authorizedAlways:
+            return .locationRequestAuthorized
+        case .denied:
+            return .locationRequestDenied
+        case .restricted:
+            return .locationRequestDenied
+        case .notDetermined:
+            // Not determined shouldn't be triggered
+            // As we request location services
+            return nil
+        }
     }
     
 }

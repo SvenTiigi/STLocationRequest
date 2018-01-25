@@ -440,33 +440,13 @@ private extension STLocationRequestController {
 extension STLocationRequestController: CLLocationManagerDelegate {
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // Declare Event
-        let event: Event?
-        // Switch on authorization state from CLLocationManager
-        switch status {
-        case .authorizedWhenInUse:
-            event = .locationRequestAuthorized
-            break
-        case .authorizedAlways:
-            event = .locationRequestAuthorized
-            break
-        case .denied:
-            event = .locationRequestDenied
-            break
-        case .restricted:
-            event = .locationRequestDenied
-            break;
-        case .notDetermined:
-            event = nil
-            break;
-        }
         // Check if Event is available
-        guard let emitEvent = event else {
+        guard let event = status.toEvent() else {
             // Return out of function no event to emit
             return
         }
         // Emit Event
-        self.emit(event: emitEvent)
+        self.emit(event: event)
         // Dismiss
         self.dismiss()
     }
