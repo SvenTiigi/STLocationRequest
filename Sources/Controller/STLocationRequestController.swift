@@ -39,7 +39,7 @@ public class STLocationRequestController: UIViewController {
     
     /// The Allow-Button
     lazy private var allowButton: Button = {
-        let button = Button(
+        return Button(
             title: self.configuration.allowButtonTitle,
             font: self.configuration.allowButtonFont,
             highlightedBackgroundColor: self.configuration.allowButtonHighlightedBackgroundColor,
@@ -47,12 +47,11 @@ public class STLocationRequestController: UIViewController {
             target: self,
             action: #selector(allowButtonTouched)
         )
-        return button
     }()
     
     /// The Not-Now-Button
     lazy private var notNowButton: Button = {
-        let button = Button(
+        return Button(
             title: self.configuration.notNowButtonTitle,
             font: self.configuration.notNowButtonFont,
             highlightedBackgroundColor: self.configuration.notNowButtonHighlightedBackgroundColor,
@@ -60,7 +59,6 @@ public class STLocationRequestController: UIViewController {
             target: self,
             action: #selector(notNowButtonTouched)
         )
-        return button
     }()
     
     /// The MapView
@@ -119,8 +117,7 @@ public class STLocationRequestController: UIViewController {
     
     /// Array to store random integer values
     lazy private var randomNumbers: [Int] = {
-        let numbers: [Int] = []
-        return numbers
+        return [Int]()
     }()
     
     /// CLLocationManager
@@ -168,11 +165,14 @@ public class STLocationRequestController: UIViewController {
         self.init(configuration: config)
     }
 
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    /// This initializer is not supported and will return nil
+    /// Please use the configuration initializers
+    public required init?(coder aDecoder: NSCoder) {
+        // No support for initialization with NSCoder
+        return nil
     }
     
-    // MARK: ViewLifecycle
+    // MARK: View-Lifecycle
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -213,7 +213,7 @@ public class STLocationRequestController: UIViewController {
     
     // MARK: Layout
     
-    /// Layout Subview
+    /// Layout Subviews
     private func layoutSubviews() {
         // MapView
         self.mapView.snp.makeConstraints { (make) in
@@ -275,6 +275,7 @@ public class STLocationRequestController: UIViewController {
     }
     
     override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         // Check if current Device is not phone type
         if UIDevice.current.userInterfaceIdiom != .phone {
             // Return out of function
@@ -315,13 +316,8 @@ public extension STLocationRequestController {
         viewController.present(self, animated: true) {
             // Invoke controller update
             self.emit(event: .didPresented)
-            // Unwrap completion
-            guard let completion = completion else {
-                // No completion available return out of function
-                return
-            }
-            // Call completion
-            completion()
+            // Invoke completion
+            completion?()
         }
     }
     
@@ -331,13 +327,8 @@ public extension STLocationRequestController {
         self.dismiss(animated: true) {
             // Inform the delegate, that the STLocationRequestController is disappeared
             self.emit(event: .didDisappear)
-            // Unwrap completion
-            guard let completion = completion else {
-                // No completion available return out of function
-                return
-            }
-            // Call completion
-            completion()
+            // Invoke completion
+            completion?()
         }
     }
     
@@ -361,11 +352,8 @@ private extension STLocationRequestController {
     ///
     /// - Parameter event: The Event
     func emit(event: Event) {
-        // Check if an onChange closure is available
-        if let onChange = self.onChange {
-            // Call onChange with given event
-            onChange(event)
-        }
+        // Invoke onChange
+        self.onChange?(event)
     }
     
 }
