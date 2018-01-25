@@ -126,40 +126,38 @@ extension STLocationRequestController.Place: RawRepresentable {
 
 // MARK: Retrieve Places
 
-public extension STLocationRequestController.Place {
+extension STLocationRequestController.Place {
     
-    /// Return an array of CLLocationCoordiante2D with awesome places
+    /// Retrieve an array of CLLocationCoordiante2D for given Place filter and custom places
     ///
     /// - Parameter filter: An array of STAwesomePlaces Enums which only should be added to the return array. If the parameter is nil all places will be added to the return array.
     /// - Returns: CLLocationCoordinate2D Array of awesome places
     static func getPlaces(withPlacesFilter filter: [STLocationRequestController.Place]?,
                           andCustomPlaces customPlaces: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D]{
-        // Initialize the CLLocationCoordinate2D Array
-        var places: [CLLocationCoordinate2D] = []
-        // Iterate through all STAwesomePlaces Enums
-        for place in STLocationRequestController.Place.iterate() {
+        // Initialize Places by iterate Place enumeration with filter
+        var places = STLocationRequestController.Place.iterate().flatMap { (place) -> CLLocationCoordinate2D? in
             // If the current iteration is customPlaces
             if place == .customPlaces {
-                // Continue with next place
-                continue
+                return nil
             }
             // Check if the placesFilter is available and place is not covered by filter
-            if let placesFilter = filter, !placesFilter.contains(place) {
-                // Continue as place shouldn't be used
-                continue
+            if let filter = filter, !filter.contains(place) {
+                return nil
             } else {
-                // Append coordinate from place
-                places.append(place.rawValue)
+                return place.rawValue
             }
         }
-        // Check if a filter is set and if true check if customPlaces should be shown
+        // Check if a filter is set
         if let filter = filter {
+            // Check if no customPlaces are applied as filter
             if !filter.contains(.customPlaces) {
+                // Return initialized palces
                 return places
             }
         }
         // Check if customPlaces are available
         guard customPlaces.count > 0 else {
+            // Custom Places are available return places
             return places
         }
         // Append contents of customPlaces
@@ -172,13 +170,13 @@ public extension STLocationRequestController.Place {
     ///
     /// - Returns: Iterator for the enumeration
     private static func iterate() -> AnyIterator<STLocationRequestController.Place> {
-        var i = 0
+        var counter = 0
         return AnyIterator {
-            let next = withUnsafePointer(to: &i) {
+            let next = withUnsafePointer(to: &counter) {
                 $0.withMemoryRebound(to: self, capacity: 1) { $0.pointee }
             }
-            if next.hashValue != i { return nil }
-            i += 1
+            if next.hashValue != counter { return nil }
+            counter += 1
             return next
         }
     }
