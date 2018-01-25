@@ -23,7 +23,8 @@ public class STLocationRequestController: UIViewController {
     
     // MARK: Public Properties
     
-    /// The onChange closure to be notified if an STLocationRequestController.Event occured
+    /// The optional onChange closure to be notified
+    /// if an STLocationRequestController.Event occured
     public var onChange: ((Event) -> Void)?
     
     /// The preferredStatusBarStyle
