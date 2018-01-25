@@ -37,9 +37,7 @@ class ViewController: UIViewController {
     
     /// requestLocationButtonTouched Method
     @IBAction func requestLocationButtonTouched(_ sender: UIButton) {
-        if STLocationRequestController.shouldPresentLocationRequestController {
-            self.presentLocationRequestController()
-        }
+        self.presentLocationRequestController()
     }
     
     // MARK: - Present STLocationRequestController
