@@ -23,9 +23,9 @@ public class STLocationRequestController: UIViewController {
     
     // MARK: Public Properties
     
-    /// The optional onChange closure to be notified
+    /// The optional onEvent closure to be notified
     /// if an STLocationRequestController.Event occured
-    public var onChange: ((Event) -> Void)?
+    public var onEvent: ((Event) -> Void)?
     
     /// The preferredStatusBarStyle
     public override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -281,22 +281,15 @@ public class STLocationRequestController: UIViewController {
             // Return out of function
             return
         }
-        // Check orientation
-        if UIDevice.current.orientation.isLandscape {
-            // The device orientation is landscape. Hide the locationSymbolLabel
-            UIView.animate(withDuration: 0.5, animations: { () -> Void in
-                self.locationSymbolLabel.alpha = 1
-                self.locationSymbolLabel.alpha = 0
-            })
-            self.pulseEffect.setPulseRadius(0)
-        } else {
-            // The device orientation is portrait. Show the locationSymbolLabel
-            UIView.animate(withDuration: 0.5, animations: { () -> Void in
-                self.locationSymbolLabel.alpha = 0
-                self.locationSymbolLabel.alpha = 1
-            })
-            self.pulseEffect.setPulseRadius(self.configuration.pulseEffectRadius)
+        // Initialize isLandscape orientation
+        let isLandscape = UIDevice.current.orientation.isLandscape
+        // Perform animation fade-in/fade-out
+        UIView.animate(withDuration: 0.5) {
+            self.locationSymbolLabel.alpha = isLandscape ? 1 : 0
+            self.locationSymbolLabel.alpha = isLandscape ? 0 : 1
         }
+        // Set pulse radius
+        self.pulseEffect.setPulseRadius(isLandscape ? 0 : self.configuration.pulseEffectRadius)
     }
     
 }
@@ -353,7 +346,7 @@ private extension STLocationRequestController {
     /// - Parameter event: The Event
     func emit(event: Event) {
         // Invoke onChange
-        self.onChange?(event)
+        self.onEvent?(event)
     }
     
 }

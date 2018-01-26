@@ -54,7 +54,7 @@ class ViewController: UIViewController {
             config.authorizeType = .requestWhenInUseAuthorization
         }
         // Get notified on STLocationRequestController.Events
-        locationRequestController.onChange = self.locationRequestControllerOnChange
+        locationRequestController.onEvent = self.locationRequestControllerOnChange
         // Present STLocationRequestController
         locationRequestController.present(onViewController: self)
     }

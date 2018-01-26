@@ -41,7 +41,7 @@ let locationRequestController = STLocationRequestController { (config) in
 }
 
 // Get notified on STLocationRequestController.Events
-locationRequestController.onChange = { event in /* ... */ }
+locationRequestController.onEvent = { event in /* ... */ }
 
 // Present STLocationRequestController
 locationRequestController.present(onViewController: self)
