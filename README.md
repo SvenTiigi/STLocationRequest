@@ -41,7 +41,11 @@ let locationRequestController = STLocationRequestController { (config) in
 }
 
 // Get notified on STLocationRequestController.Events
-locationRequestController.onEvent = { event in /* ... */ }
+locationRequestController.onEvent = { event in
+    if case .locationRequestAuthorized = event {
+        // Location Request Authorized 🙌
+    }
+}
 
 // Present STLocationRequestController
 locationRequestController.present(onViewController: self)
