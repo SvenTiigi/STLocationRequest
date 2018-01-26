@@ -130,7 +130,7 @@ Please mind that the 3D Flyover-View will only work on a real iOS device with at
 
 ```
 STLocationRequest
-Copyright (c) 2018 Sven Tiigi <sven@tiigi.de>
+Copyright (c) 2018 Sven Tiigi <sven.tiigi@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
