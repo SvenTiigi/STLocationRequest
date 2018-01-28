@@ -92,13 +92,13 @@ In order to perform a location request you have to define a usage description in
 STLocationRequestController.Authorization.**requestWhenInUseAuthorization**
 ```swift
 <key>NSLocationWhenInUseUsageDescription</key>
-<string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
+<string>The usage description</string>
 ```
 
 STLocationRequestController.Authorization.**requestAlwaysAuthorization**
 ```swift
 <key>NSLocationAlwaysUsageDescription</key>
-<string>PUT IN YOUR LOCATION EXPLANATION TEXT</string>
+<string>The usage description</string>
 ```
 
 This text will be shown in the default iOS location request dialog, which will show up when the user tapped the allow button.
