@@ -20,18 +20,14 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     
-    /// Initialize CLLocationManager
-    let locationManager = CLLocationManager()
-    
-    // MARK: - View-Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Intialize the locationManager
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.distanceFilter = kCLDistanceFilterNone
-    }
+    /// The CLLocationManager
+    lazy private var locationManager: CLLocationManager = {
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        return locationManager
+    }()
     
     // MARK: - IBActions
     
@@ -40,12 +36,13 @@ class ViewController: UIViewController {
         self.presentLocationRequestController()
     }
     
-    // MARK: - Present STLocationRequestController
+    // MARK: - STLocationRequestController
     
     /// Initialize and present STLocationRequestController
     func presentLocationRequestController(){
         // Initialize STLocationRequestController with Configuration
         let locationRequestController = STLocationRequestController { (config) in
+            // Perform configuration
             config.titleText = "We need your location for some awesome features"
             config.allowButtonTitle = "Alright"
             config.notNowButtonTitle = "Not now"
@@ -59,6 +56,7 @@ class ViewController: UIViewController {
         locationRequestController.present(onViewController: self)
     }
     
+    /// STLocationRequestController onChange evaluation
     func locationRequestControllerOnChange(event: STLocationRequestController.Event) {
         switch event {
         case .locationRequestAuthorized:
