@@ -136,6 +136,9 @@ Please mind that the 3D Flyover-View will only work on a real iOS device with at
 + [SwiftPulse](https://github.com/ctews/SwiftPulse)
 + [SnapKit](https://github.com/SnapKit/SnapKit)
 
+# Contributing
+Contributions are very welcome 🙌 🤓
+
 ## License
 
 ```
