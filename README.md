@@ -53,10 +53,10 @@ locationRequestController.present(onViewController: self)
 > Please keep in mind that the 3D SatelliteFlyover only works on a real iOS Device ([Read more](#ios-simulator)).
 
 ## Configuration
-The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. More details can be found [here]()
+The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. There are plenty of options available 👨‍💻 More details can be found [here]()
 
 ## OnEvent
-To get notified on `STLocationRequestController.Event`, such as if the user has authorized or denied the location services, tapped the _Not-Now_ Button or if the `STLocationRequestController` did presented or did disappear, you can use the `onChange` property.
+The `onEvent` closure allows you to get notified if an `STLocationRequestController.Event` occured. For example to detect if the user has authorized or denied the location request or tapped the `Not Now` Button.
 
 ```swift
 locationRequestController.onEvent = { (event: STLocationRequestController.Event) in
@@ -75,9 +75,19 @@ locationRequestController.onEvent = { (event: STLocationRequestController.Event)
 }
 ```
 
+Or just simply pass a function 👌
+
+```swift
+locationRequestController.onEvent = onLocationRequestControllerEvent
+
+func onLocationRequestControllerEvent(_ event: STLocationRequestController.Event) {
+    // Evaluate the event
+}
+```
+
 ## Info.plist
 
-Also don't forget to add the usage description key to your `Info.plist` for you selected authorization type.
+In order to perform a location request you have to define a usage description in your `Info.plist` file.
 
 STLocationRequestController.Authorization.**requestWhenInUseAuthorization**
 ```swift
@@ -100,7 +110,7 @@ This text will be shown in the default iOS location request dialog, which will s
 
 ## Presenting-Recommendation
 
-The recommended way to present `STLocationRequestController` is the following way, which is also been implemented in the example application.
+The recommended way to present `STLocationRequestController` is the following way.
 
 ```swift
 if STLocationRequestController.shouldPresentLocationRequestController {
