@@ -40,7 +40,7 @@ extension STLocationRequestController {
             self.layer.borderColor = UIColor.white.cgColor
             self.layer.cornerRadius = 5.0
             self.layer.masksToBounds = true
-            self.setTitleColor(highlightedTitleColor, for: UIControlState.highlighted)
+            self.setTitleColor(highlightedTitleColor, for: .highlighted)
         }
         
         // MARK: ViewLifecycle
@@ -55,7 +55,7 @@ extension STLocationRequestController {
                         self.highlightedBackgroundColor,
                         size: self.bounds.size
                     ),
-                    for: UIControlState.highlighted
+                    for: .highlighted
                 )
             }
         }
