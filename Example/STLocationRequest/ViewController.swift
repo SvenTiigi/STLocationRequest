@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import SnapKit
+import SafariServices
 
 /// Example application ViewController to present the STLocationRequestController
 class ViewController: UIViewController {
@@ -60,6 +61,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Set title
         self.title = "STLocationRequest"
+        // Add NavigationItems
+        self.addNavigationItems()
         // Set background color
         self.view.backgroundColor = .white
         // Add subviews
@@ -104,11 +107,30 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: NavigationItems
+    
+    /// Add NavigationItems
+    func addNavigationItems() {
+        let githubBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "github"), style: .plain, target: self, action: #selector(githubBarButtonItemTouched(_:)))
+        self.navigationItem.rightBarButtonItem = githubBarButtonItem
+    }
+    
     // MARK: Button Action Target
     
-    /// requestLocationButtonTouched Method
+    /// PresentControllerButton touched handler
     @objc func presentControllerButtonTouched(_ sender: UIButton) {
         self.presentLocationRequestController()
+    }
+    
+    /// Github BarButtonItem touched handler
+    @objc func githubBarButtonItemTouched(_ sender: UIBarButtonItem) {
+        guard let url = URL(string: "https://github.com/SvenTiigi/STLocationRequest/blob/master/README.md") else {
+            print("Unable to construct Github Repo URL")
+            return
+        }
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.preferredControlTintColor = .main
+        self.present(safariViewController, animated: true)
     }
     
 }
