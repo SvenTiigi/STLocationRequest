@@ -1,6 +1,0 @@
-framework module STLocationRequest {
-  umbrella header "STLocationRequest-umbrella.h"
-
-  export *
-  module * { export * }
-}
