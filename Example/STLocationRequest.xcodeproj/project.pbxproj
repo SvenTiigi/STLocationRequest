@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2ED29FD706A93B8B02002593 /* Pods_STLocationRequest_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA039F9A294412FC70BAE8C3 /* Pods_STLocationRequest_Example.framework */; };
+		3DDF21D6201F228400C66D72 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF21D4201F228400C66D72 /* Launch Screen.storyboard */; };
+		3DDF21D8201F243F00C66D72 /* ViewController+STLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF21D7201F243F00C66D72 /* ViewController+STLocationRequest.swift */; };
+		3DDF21DA201F2D4B00C66D72 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF21D9201F2D4B00C66D72 /* UIImage+Gif.swift */; };
+		3DDF21DC201F2E3400C66D72 /* PreviewGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF21DB201F2E3400C66D72 /* PreviewGIF.gif */; };
+		3DDF21DF201F2FB000C66D72 /* UIColor+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF21DE201F2FB000C66D72 /* UIColor+Main.swift */; };
+		3DDF21E1201F323800C66D72 /* PresentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF21E0201F323800C66D72 /* PresentButton.swift */; };
 		3E08CCB7801D1840663F4E3F /* Pods_STLocationRequest_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD850A80BBEA9EBE2172087 /* Pods_STLocationRequest_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +33,12 @@
 
 /* Begin PBXFileReference section */
 		38A89EC53F120208244377BD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3DDF21D5201F228400C66D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3DDF21D7201F243F00C66D72 /* ViewController+STLocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+STLocationRequest.swift"; sourceTree = "<group>"; };
+		3DDF21D9201F2D4B00C66D72 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		3DDF21DB201F2E3400C66D72 /* PreviewGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = PreviewGIF.gif; sourceTree = "<group>"; };
+		3DDF21DE201F2FB000C66D72 /* UIColor+Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Main.swift"; sourceTree = "<group>"; };
+		3DDF21E0201F323800C66D72 /* PresentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentButton.swift; sourceTree = "<group>"; };
 		3FD850A80BBEA9EBE2172087 /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAA35BA35BF99B8CF978878 /* STLocationRequest.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = STLocationRequest.podspec; path = ../STLocationRequest.podspec; sourceTree = "<group>"; };
 		4CBEDACDEE720EB8E34CEEB1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -36,9 +46,7 @@
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* STLocationRequest_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STLocationRequest_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -80,6 +88,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3DDF21DD201F2F9300C66D72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF21DE201F2FB000C66D72 /* UIColor+Main.swift */,
+				3DDF21D9201F2D4B00C66D72 /* UIImage+Gif.swift */,
+				3DDF21E0201F323800C66D72 /* PresentButton.swift */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				3DDF21DB201F2E3400C66D72 /* PreviewGIF.gif */,
+				3DDF21D4201F228400C66D72 /* Launch Screen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -106,21 +127,12 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
+				3DDF21D7201F243F00C66D72 /* ViewController+STLocationRequest.swift */,
+				607FACD41AFB9204008FA782 /* Info.plist */,
+				3DDF21DD201F2F9300C66D72 /* Supporting Files */,
 			);
 			name = "Example for STLocationRequest";
 			path = STLocationRequest;
-			sourceTree = "<group>";
-		};
-		607FACD31AFB9204008FA782 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				607FACD41AFB9204008FA782 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACE81AFB9204008FA782 /* Tests */ = {
@@ -250,8 +262,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				3DDF21D6201F228400C66D72 /* Launch Screen.storyboard in Resources */,
+				3DDF21DC201F2E3400C66D72 /* PreviewGIF.gif in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +390,10 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				3DDF21DA201F2D4B00C66D72 /* UIImage+Gif.swift in Sources */,
+				3DDF21D8201F243F00C66D72 /* ViewController+STLocationRequest.swift in Sources */,
+				3DDF21DF201F2FB000C66D72 /* UIColor+Main.swift in Sources */,
+				3DDF21E1201F323800C66D72 /* PresentButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,20 +416,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
+		3DDF21D4201F228400C66D72 /* Launch Screen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
+				3DDF21D5201F228400C66D72 /* Base */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
-			);
-			name = LaunchScreen.xib;
+			name = "Launch Screen.storyboard";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

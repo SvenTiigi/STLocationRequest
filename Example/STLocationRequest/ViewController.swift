@@ -1,27 +1,47 @@
 //
 //  ViewController.swift
-//  STLocationRequest
+//  STLocationRequest_Example
 //
-//  Created by Sven Tiigi on 12/03/2015.
-//  Copyright (c) 2015 Sven Tiigi. All rights reserved.
+//  Created by Sven Tiigi on 02.12.15.
 //
 
 import UIKit
 import CoreLocation
-import STLocationRequest
+import SnapKit
 
 /// Example application ViewController to present the STLocationRequestController
 class ViewController: UIViewController {
     
-    // MARK: - IBOutlets
+    // MARK: Properties
     
-    /// Storyboard IBOutlet for the Request Location Button
-    @IBOutlet weak var requestLocationButton: UIButton!
+    /// The present controller button
+    lazy var presentControllerButton: UIButton = {
+        let button = PresentButton(title: "Present STLocationRequestController")
+        button.addTarget(self, action: #selector(presentControllerButtonTouched(_:)), for: .touchUpInside)
+        return button
+    }()
     
-    // MARK: - Properties
+    /// The simulator warning label
+    lazy var simulatorWarningLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Please keep in mind that the 3D flyover view will only work on a real iOS device ☝️"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.lineBreakMode = .byWordWrapping
+        label.textColor = .lightGray
+        return label
+    }()
+    
+    /// The image view
+    lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.loadGif(name: "PreviewGIF")
+        return imageView
+    }()
     
     /// The CLLocationManager
-    lazy private var locationManager: CLLocationManager = {
+    lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -29,58 +49,71 @@ class ViewController: UIViewController {
         return locationManager
     }()
     
-    // MARK: - IBActions
+    /// Computed Property if running on simulator
+    var isSimulator: Bool {
+        return TARGET_OS_SIMULATOR != 0
+    }
+    
+    // MARK: View-Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Set title
+        self.title = "STLocationRequest"
+        // Set background color
+        self.view.backgroundColor = .white
+        // Add subviews
+        self.view.addSubview(self.presentControllerButton)
+        // Check if running on simulator
+        if self.isSimulator {
+            self.view.addSubview(self.simulatorWarningLabel)
+        }
+        self.view.addSubview(self.imageView)
+        // Layout subviews
+        self.layoutSubviews()
+    }
+    
+    func layoutSubviews() {
+        // Check if running on simulator
+        if self.isSimulator {
+            // Layout simulator warning label
+            self.simulatorWarningLabel.snp.makeConstraints { (make) in
+                make.left.equalTo(self.view).offset(10)
+                make.right.equalTo(self.view).inset(10)
+                make.height.equalTo(60)
+                make.bottom.equalTo(self.view).inset(50)
+            }
+        }
+        // Layout PresentControllerButton
+        self.presentControllerButton.snp.makeConstraints { (make) in
+            make.left.equalTo(self.view).offset(20)
+            make.right.equalTo(self.view).inset(20)
+            make.height.equalTo(60)
+            if self.isSimulator {
+                make.bottom.equalTo(self.simulatorWarningLabel.snp.top).offset(-20)
+            } else {
+                make.bottom.equalTo(self.view).inset(70)
+            }
+        }
+        // Layout ImageView
+        self.imageView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view).offset(120)
+            make.left.equalTo(self.view).offset(20)
+            make.right.equalTo(self.view).inset(20)
+            make.bottom.equalTo(self.presentControllerButton.snp.top).offset(-10)
+        }
+    }
+    
+    // MARK: Button Action Target
     
     /// requestLocationButtonTouched Method
-    @IBAction func requestLocationButtonTouched(_ sender: UIButton) {
+    @objc func presentControllerButtonTouched(_ sender: UIButton) {
         self.presentLocationRequestController()
     }
     
-    // MARK: - STLocationRequestController
-    
-    /// Initialize and present STLocationRequestController
-    func presentLocationRequestController(){
-        // Initialize STLocationRequestController with Configuration
-        let locationRequestController = STLocationRequestController { config in
-            // Perform configuration
-            config.titleText = "We need your location for some awesome features"
-            config.allowButtonTitle = "Alright"
-            config.notNowButtonTitle = "Not now"
-            config.mapViewAlpha = 0.9
-            config.backgroundColor = UIColor.lightGray
-            config.authorizeType = .requestWhenInUseAuthorization
-        }
-        // Get notified on STLocationRequestController.Events
-        locationRequestController.onEvent = self.locationRequestControllerOnChange
-        // Present STLocationRequestController
-        locationRequestController.present(onViewController: self)
-    }
-    
-    /// STLocationRequestController onChange evaluation
-    func locationRequestControllerOnChange(event: STLocationRequestController.Event) {
-        switch event {
-        case .locationRequestAuthorized:
-            print("The user accepted the use of location services")
-            self.locationManager.startUpdatingLocation()
-            break
-        case .locationRequestDenied:
-            print("The user denied the use of location services")
-            break
-        case .notNowButtonTapped:
-            print("The Not now button was tapped")
-            break
-        case .didPresented:
-            print("STLocationRequestController did presented")
-            break
-        case .didDisappear:
-            print("STLocationRequestController did disappear")
-            break
-        }
-    }
-
 }
 
-// MARK: - CLLocationManagerDelegate
+// MARK: CLLocationManagerDelegate
 
 extension ViewController: CLLocationManagerDelegate {
     

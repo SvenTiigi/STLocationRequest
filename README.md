@@ -49,7 +49,7 @@ locationRequestController.onEvent = { event in
 // Present STLocationRequestController
 locationRequestController.present(onViewController: self)
 ```
-> Please keep in mind that the 3D SatelliteFlyover only works on a real iOS Device ([Read more](#ios-simulator)).
+> Please keep in mind that the 3D flyover view will only work on a real iOS device ([Read more](#ios-simulator)).
 
 ## Configuration
 The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. There are plenty of options available 👨‍💻 More details can be found [here]()
