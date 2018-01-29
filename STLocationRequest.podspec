@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
     s.requires_arc     = true
     s.source_files     = 'Sources/**/*'
     s.frameworks       = 'UIKit', 'MapKit'
-    s.dependency 'Font-Awesome-Swift'
+    s.dependency 'Font-Awesome-Swift', , '~> 1.7.2'
     s.dependency 'SnapKit', '~> 4.0.0'
 end

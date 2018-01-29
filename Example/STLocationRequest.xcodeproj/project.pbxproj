@@ -40,7 +40,7 @@
 		3DDF21DE201F2FB000C66D72 /* UIColor+Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Main.swift"; sourceTree = "<group>"; };
 		3DDF21E0201F323800C66D72 /* PresentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentButton.swift; sourceTree = "<group>"; };
 		3FD850A80BBEA9EBE2172087 /* Pods_STLocationRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STLocationRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BAA35BA35BF99B8CF978878 /* STLocationRequest.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = STLocationRequest.podspec; path = ../STLocationRequest.podspec; sourceTree = "<group>"; };
+		4BAA35BA35BF99B8CF978878 /* STLocationRequest.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = STLocationRequest.podspec; path = ../STLocationRequest.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4CBEDACDEE720EB8E34CEEB1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* STLocationRequest_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STLocationRequest_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
