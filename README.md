@@ -52,7 +52,7 @@ locationRequestController.present(onViewController: self)
 > Please keep in mind that the 3D flyover view will only work on a real iOS device ([Read more](#ios-simulator)).
 
 ## Configuration
-The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. There are plenty of options available 👨‍💻 More details can be found [here]()
+The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. There are plenty of options available 👨‍💻 More details can be found [here](https://github.com/SvenTiigi/STLocationRequest/blob/master/Sources/Controller/STLocationRequestController%2BConfiguration.swift)
 
 ## OnEvent
 The `onEvent` closure allows you to get notified if an `STLocationRequestController.Event` occured. For example to detect if the user has authorized or denied the location request or tapped the `Not Now` Button.
