@@ -30,7 +30,7 @@ pod 'STLocationRequest', '~> 3.0'
 import STLocationRequest
 
 // Initialize STLocationRequestController with STLocationRequestController.Configuration
-let locationRequestController = STLocationRequestController { (config) in
+let locationRequestController = STLocationRequestController { config in
     config.titleText = "We need your location for some awesome features"
     config.allowButtonTitle = "Alright"
     config.notNowButtonTitle = "Not now"

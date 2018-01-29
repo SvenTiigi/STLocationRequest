@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     /// Initialize and present STLocationRequestController
     func presentLocationRequestController(){
         // Initialize STLocationRequestController with Configuration
-        let locationRequestController = STLocationRequestController { (config) in
+        let locationRequestController = STLocationRequestController { config in
             // Perform configuration
             config.titleText = "We need your location for some awesome features"
             config.allowButtonTitle = "Alright"
