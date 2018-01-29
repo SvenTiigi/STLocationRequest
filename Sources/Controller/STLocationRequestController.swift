@@ -188,6 +188,8 @@ public class STLocationRequestController: UIViewController {
         self.layoutSubviews()
         // Add layers
         self.view.layer.insertSublayer(self.pulseEffect, below: self.locationSymbolLabel.layer)
+        // Check orientation
+        self.checkOrientation()
         // Initial change place
         self.changePlace(timer: nil)
         // Start the timer for changing the place
@@ -276,20 +278,7 @@ public class STLocationRequestController: UIViewController {
     
     override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        // Check if current Device is not phone type
-        if UIDevice.current.userInterfaceIdiom != .phone {
-            // Return out of function
-            return
-        }
-        // Initialize isLandscape orientation
-        let isLandscape = UIDevice.current.orientation.isLandscape
-        // Perform animation fade-in/fade-out
-        UIView.animate(withDuration: 0.5) {
-            self.locationSymbolLabel.alpha = isLandscape ? 1 : 0
-            self.locationSymbolLabel.alpha = isLandscape ? 0 : 1
-        }
-        // Set pulse radius
-        self.pulseEffect.setPulseRadius(isLandscape ? 0 : self.configuration.pulseEffectRadius)
+        self.checkOrientation()
     }
     
 }
@@ -347,6 +336,24 @@ private extension STLocationRequestController {
     func emit(event: Event) {
         // Invoke onChange
         self.onEvent?(event)
+    }
+    
+    /// Check device orientation
+    func checkOrientation() {
+        // Check if current Device is not phone type
+        if UIDevice.current.userInterfaceIdiom != .phone {
+            // Return out of function
+            return
+        }
+        // Initialize isLandscape orientation
+        let isLandscape = UIDevice.current.orientation.isLandscape
+        // Perform animation fade-in/fade-out
+        UIView.animate(withDuration: 0.5) {
+            self.locationSymbolLabel.alpha = isLandscape ? 1 : 0
+            self.locationSymbolLabel.alpha = isLandscape ? 0 : 1
+        }
+        // Set pulse radius
+        self.pulseEffect.setPulseRadius(isLandscape ? 0 : self.configuration.pulseEffectRadius)
     }
     
 }
