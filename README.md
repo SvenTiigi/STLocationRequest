@@ -100,12 +100,7 @@ STLocationRequestController.Authorization.**requestAlwaysAuthorization**
 <string>The usage description</string>
 ```
 
-This text will be shown in the default iOS location request dialog, which will show up when the user tapped the allow button.
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/master/.assets/iOSLocationRequestDialog.png" alt="iOSRequestDialog" title="iOSRequestDialog" width=300>
-
-</p>
+The usage description will be shown in the default iOS location request dialog, which will show up when the user tapped the allow button.
 
 ## Presenting-Recommendation
 
