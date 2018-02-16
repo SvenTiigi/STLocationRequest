@@ -1,5 +1,13 @@
 
-# Created by https://www.gitignore.io/api/macos,xcode,cocoapods
+# Created by https://www.gitignore.io/api/macos,xcode,carthage,cocoapods
+
+### Carthage ###
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+Carthage/Build
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -69,4 +77,4 @@ xcuserdata/
 /*.gcno
 
 
-# End of https://www.gitignore.io/api/macos,xcode,cocoapods
+# End of https://www.gitignore.io/api/macos,xcode,carthage,cocoapods
