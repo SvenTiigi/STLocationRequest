@@ -1,3 +1,9 @@
+<br/>
+<p align="center">
+    <img width="200" src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/carthage/.assets/STLocationRequestLogo.png">
+</p>
+<br/>
+
 # STLocationRequest
 
 [![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
