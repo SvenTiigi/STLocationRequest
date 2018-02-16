@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
     s.source           = { :git => "https://github.com/SvenTiigi/STLocationRequest.git", :tag => s.version.to_s }
     s.platform         = :ios, '9.0'
     s.requires_arc     = true
-    s.source_files     = 'Sources/**/*'
+    s.source_files     = 'STLocationRequest/**/*'
     s.frameworks       = 'UIKit', 'MapKit'
-    s.dependency 'FontAwesome.swift', '~> 1.3.2'
     s.dependency 'SnapKit', '~> 4.0.0'
+    s.dependency 'SwiftIconFont', '~> 2.7.3'
 end
