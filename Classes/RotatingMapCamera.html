@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RotatingMapCamera Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/RotatingMapCamera" class="dashAnchor"></a>
+    <a title="RotatingMapCamera Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">STLocationRequest Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/SvenTiigi/STLocationRequest"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">STLocationRequest Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RotatingMapCamera Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LFTPulseAnimation.html">LFTPulseAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RotatingMapCamera.html">RotatingMapCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/STLocationRequestController.html">STLocationRequestController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/STLocationRequestController/Button.html">– Button</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/STLocationRequestController/Configuration.html">– Configuration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/STLocationRequestController/Place.html">– Place</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/STLocationRequestController/Event.html">– Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/STLocationRequestController/Authorization.html">– Authorization</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/CLAuthorizationStatus.html">CLAuthorizationStatus</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RotatingMapCamera</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">RotatingMapCamera</span></code></pre>
+
+                </div>
+              </div>
+            <p>The Rotating Camera</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraC7mapView33_AF5CB77111C07FCF97F717A5EF8BA7AALLSo05MKMapG0CSgXwv"></a>
+                    <a name="//apple_ref/swift/Property/mapView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraC7mapView33_AF5CB77111C07FCF97F717A5EF8BA7AALLSo05MKMapG0CSgXwv">mapView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The MapView</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">mapView</span><span class="p">:</span> <span class="kt">MKMapView</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraC03mapE033_AF5CB77111C07FCF97F717A5EF8BA7AALLSo05MKMapE0Cv"></a>
+                    <a name="//apple_ref/swift/Property/mapCamera" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraC03mapE033_AF5CB77111C07FCF97F717A5EF8BA7AALLSo05MKMapE0Cv">mapCamera</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The MapView Camera</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">lazy</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">mapCamera</span><span class="p">:</span> <span class="kt">MKMapCamera</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraC8durationSdv"></a>
+                    <a name="//apple_ref/swift/Property/duration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraC8durationSdv">duration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The rotation duration</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraC8altitudeSdv"></a>
+                    <a name="//apple_ref/swift/Property/altitude" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraC8altitudeSdv">altitude</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The altitude</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">altitude</span><span class="p">:</span> <span class="kt">CLLocationDistance</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraC5pitch12CoreGraphics7CGFloatVv"></a>
+                    <a name="//apple_ref/swift/Property/pitch" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraC5pitch12CoreGraphics7CGFloatVv">pitch</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The pitch</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">pitch</span><span class="p">:</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraC11headingStepSdv"></a>
+                    <a name="//apple_ref/swift/Property/headingStep" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraC11headingStepSdv">headingStep</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The headingStep</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">headingStep</span><span class="p">:</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraC02isC0Sbv"></a>
+                    <a name="//apple_ref/swift/Property/isRotating" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraC02isC0Sbv">isRotating</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Is currently rotating</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isRotating</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraC10coordinate33_AF5CB77111C07FCF97F717A5EF8BA7AALLSC22CLLocationCoordinate2DVSgv"></a>
+                    <a name="//apple_ref/swift/Property/coordinate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraC10coordinate33_AF5CB77111C07FCF97F717A5EF8BA7AALLSC22CLLocationCoordinate2DVSgv">coordinate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current coordinate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">coordinate</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraCACSo9MKMapViewC03mapG0_Sd8durationSd8altitude12CoreGraphics7CGFloatV5pitchSd11headingSteptcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(mapView:duration:altitude:pitch:headingStep:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraCACSo9MKMapViewC03mapG0_Sd8durationSd8altitude12CoreGraphics7CGFloatV5pitchSd11headingSteptcfc">init(mapView:duration:altitude:pitch:headingStep:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Default Initializer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MKMapView</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">4.0</span><span class="p">,</span> <span class="nv">altitude</span><span class="p">:</span> <span class="kt">CLLocationDistance</span> <span class="o">=</span> <span class="mf">600.0</span><span class="p">,</span>
+     <span class="nv">pitch</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">45.0</span><span class="p">,</span> <span class="nv">headingStep</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">20.0</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The MapView reference</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>duration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The rotation duration. Default value: 4.0</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>altitude</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The altitude. Default value: 600.0</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>pitch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The pitch. Default value: 45.0</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headingStep</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headingStep. Default value: 20.0</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraC5startySC22CLLocationCoordinate2DV9lookingAt_Sb8animatedtF"></a>
+                    <a name="//apple_ref/swift/Method/start(lookingAt:animated:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraC5startySC22CLLocationCoordinate2DV9lookingAt_Sb8animatedtF">start(lookingAt:animated:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Start rotation with corrdinate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">start</span><span class="p">(</span><span class="n">lookingAt</span> <span class="nv">coordinate</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coordinate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The coordinate</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraC4stopyyF"></a>
+                    <a name="//apple_ref/swift/Method/stop()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraC4stopyyF">stop()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stop rotation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">stop</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest17RotatingMapCameraC6rotate33_AF5CB77111C07FCF97F717A5EF8BA7AALLySC22CLLocationCoordinate2DVF"></a>
+                    <a name="//apple_ref/swift/Method/rotate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest17RotatingMapCameraC6rotate33_AF5CB77111C07FCF97F717A5EF8BA7AALLySC22CLLocationCoordinate2DVF">rotate(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Rotate MapViewCamera</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">rotate</span><span class="p">(</span><span class="n">_</span> <span class="nv">coordinate</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>Copyright 2018 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

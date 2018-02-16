@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>STLocationRequest  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="STLocationRequest  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">STLocationRequest Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/SvenTiigi/STLocationRequest"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">STLocationRequest Reference</a>
+        <img id="carat" src="img/carat.png" />
+        STLocationRequest  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/LFTPulseAnimation.html">LFTPulseAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RotatingMapCamera.html">RotatingMapCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/STLocationRequestController.html">STLocationRequestController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/STLocationRequestController/Button.html">– Button</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/STLocationRequestController/Configuration.html">– Configuration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/STLocationRequestController/Place.html">– Place</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/STLocationRequestController/Event.html">– Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/STLocationRequestController/Authorization.html">– Authorization</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/CLAuthorizationStatus.html">CLAuthorizationStatus</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='stlocationrequest' class='heading'>STLocationRequest</h1>
+
+<p><a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0"></a>
+<a href="http://cocoapods.org/pods/STLocationRequest"><img src="https://img.shields.io/cocoapods/v/STLocationRequest.svg?style=flat" alt="Version"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
+<a href="http://cocoapods.org/pods/STLocationRequest"><img src="https://img.shields.io/cocoapods/l/STLocationRequest.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/STLocationRequest"><img src="https://img.shields.io/cocoapods/p/STLocationRequest.svg?style=flat" alt="Platform"></a>
+<a href="http://cocoapods.org/pods/STLocationRequest"><img src="https://img.shields.io/cocoapods/dt/STLocationRequest.svg?style=flat" alt="Downloads"></a>
+<a href="https://twitter.com/SvenTiigi/"><img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter"></a></p>
+
+<p><img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Demo GIF" align="right" width="60%" />
+<br/></p>
+<h2 id='description' class='heading'>Description</h2>
+
+<p>STLocationRequest is a simple and elegant way to request the users location services at the very first time written in Swift. The <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> shows a beautiful 3D 360° Flyover MapView with over 25 cities and landmarks.</p>
+
+<p><br/><br/></p>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p>STLocationRequest is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre class="highlight shell"><code>pod <span class="s1">'STLocationRequest'</span>
+</code></pre>
+<h3 id='carthage' class='heading'>Carthage</h3>
+
+<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.</p>
+
+<p>You can install Carthage with <a href="http://brew.sh/">Homebrew</a> using the following command:</p>
+<pre class="highlight shell"><code><span class="nv">$ </span>brew update
+<span class="nv">$ </span>brew <span class="nb">install </span>carthage
+</code></pre>
+
+<p>To integrate Alamofire into your Xcode project using Carthage, specify it in your <code>Cartfile</code>:</p>
+<pre class="highlight plaintext"><code>github "SvenTiigi/STLocationRequest"
+</code></pre>
+
+<p>Run <code>carthage update --platform iOS</code> to build the framework and drag the built <code>STLocationRequest.framework</code>, <code>SnapKit.framework</code> and <code>SwiftIconFont.framwork</code> into your Xcode project. </p>
+
+<p>On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework paths (for all Frameworks) as mentioned in <a href="https://github.com/Carthage/Carthage/blob/master/README.md">Carthage Getting started Step 4, 5 and 6</a></p>
+<h2 id='usage' class='heading'>Usage</h2>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">STLocationRequest</span>
+
+<span class="c1">// Initialize STLocationRequestController with STLocationRequestController.Configuration</span>
+<span class="k">let</span> <span class="nv">locationRequestController</span> <span class="o">=</span> <span class="kt">STLocationRequestController</span> <span class="p">{</span> <span class="p">(</span><span class="nv">config</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">STLocationRequestController</span><span class="o">.</span><span class="kt">Configuration</span><span class="p">)</span> <span class="k">in</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">titleText</span> <span class="o">=</span> <span class="s">"We need your location for some awesome features"</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">allowButtonTitle</span> <span class="o">=</span> <span class="s">"Alright"</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">notNowButtonTitle</span> <span class="o">=</span> <span class="s">"Not now"</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">mapViewAlpha</span> <span class="o">=</span> <span class="mf">0.9</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">lightGray</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">authorizeType</span> <span class="o">=</span> <span class="o">.</span><span class="n">requestWhenInUseAuthorization</span>
+<span class="p">}</span>
+
+<span class="c1">// Get notified on STLocationRequestController.Events</span>
+<span class="n">locationRequestController</span><span class="o">.</span><span class="n">onEvent</span> <span class="o">=</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="k">case</span> <span class="o">.</span><span class="n">locationRequestAuthorized</span> <span class="o">=</span> <span class="n">event</span> <span class="p">{</span>
+        <span class="c1">// Location Request Authorized 🙌</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Present STLocationRequestController</span>
+<span class="n">locationRequestController</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="nv">onViewController</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>Please keep in mind that the 3D flyover view will only work on a real iOS device (<a href="#ios-simulator">Read more</a>).</p>
+</blockquote>
+<h2 id='configuration' class='heading'>Configuration</h2>
+
+<p>The <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> can be customized via the the <code><a href="Classes/STLocationRequestController/Configuration.html">STLocationRequestController.Configuration</a></code> struct. There are plenty of options available 👨‍💻 More details can be found <a href="https://github.com/SvenTiigi/STLocationRequest/blob/master/Sources/Controller/STLocationRequestController%2BConfiguration.swift">here</a></p>
+<h2 id='onevent' class='heading'>OnEvent</h2>
+
+<p>The <code>onEvent</code> closure allows you to get notified if an <code><a href="Classes/STLocationRequestController/Event.html">STLocationRequestController.Event</a></code> occured. For example to detect if the user has authorized or denied the location request or tapped the <code>Not Now</code> Button.</p>
+<pre class="highlight swift"><code><span class="n">locationRequestController</span><span class="o">.</span><span class="n">onEvent</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt">STLocationRequestController</span><span class="o">.</span><span class="kt">Event</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">switch</span> <span class="n">event</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">locationRequestAuthorized</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">locationRequestDenied</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">notNowButtonTapped</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">didPresented</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">didDisappear</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Or just simply pass a function 👌</p>
+<pre class="highlight swift"><code><span class="n">locationRequestController</span><span class="o">.</span><span class="n">onEvent</span> <span class="o">=</span> <span class="n">onLocationRequestControllerEvent</span>
+
+<span class="kd">func</span> <span class="nf">onLocationRequestControllerEvent</span><span class="p">(</span><span class="n">_</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">STLocationRequestController</span><span class="o">.</span><span class="kt">Event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Evaluate the event</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='info-plist' class='heading'>Info.plist</h2>
+
+<p>In order to perform a location request you have to define a usage description in your <code>Info.plist</code> file.</p>
+
+<p>STLocationRequestController.Authorization.<strong>requestWhenInUseAuthorization</strong></p>
+<pre class="highlight swift"><code><span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="kt">NSLocationWhenInUseUsageDescription</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="kt">The</span> <span class="n">usage</span> <span class="n">description</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+</code></pre>
+
+<p>STLocationRequestController.Authorization.<strong>requestAlwaysAuthorization</strong></p>
+<pre class="highlight swift"><code><span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="kt">NSLocationAlwaysUsageDescription</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="kt">The</span> <span class="n">usage</span> <span class="n">description</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+</code></pre>
+
+<p>The usage description will be shown in the default iOS location request dialog, which will show up when the user tapped the allow button.</p>
+<h2 id='example-application' class='heading'>Example Application</h2>
+
+<p>In order to run the example Application you have to first generate the Frameworks via <code>Carthage</code>.</p>
+<pre class="highlight shell"><code>carthage update <span class="nt">--platform</span> iOS
+open STLocationRequest.xcodeproj
+</code></pre>
+<h2 id='presenting-recommendation' class='heading'>Presenting-Recommendation</h2>
+
+<p>The recommended way to present <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> is the following way.</p>
+<pre class="highlight swift"><code><span class="k">if</span> <span class="kt">STLocationRequestController</span><span class="o">.</span><span class="n">shouldPresentLocationRequestController</span> <span class="p">{</span>
+    <span class="c1">// Location Services are enabled and authorizationStatus is notDetermined</span>
+    <span class="c1">// Ready to present STLocationRequestController</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">presentLocationRequestController</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='ios-simulator' class='heading'>iOS Simulator</h2>
+
+<p>Please keep in mind that the 3D flyover view will only work on a real iOS device with at least iOS 9.0 installed (<a href="https://developer.apple.com/reference/mapkit/mkmaptype/1452553-satelliteflyover">Apple Developer API Reference</a>). A Screenshot taken from an <strong>iOS Simulator</strong> running a <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> visualizes the iOS Simulator behaviour.</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/iOSSimulatorBehavior.jpg" alt="iOSSimulatorBehavior" title="iOSSimulatorBehavior" width=300>
+</p>
+<h2 id='dependencies' class='heading'>Dependencies</h2>
+
+<p><code>STLocationRequest</code> is using following libraries.</p>
+
+<ul>
+<li><a href="https://github.com/0x73/SwiftIconFont">SwiftIconFont</a></li>
+<li><a href="https://github.com/ctews/SwiftPulse">SwiftPulse</a></li>
+<li><a href="https://github.com/SnapKit/SnapKit">SnapKit</a></li>
+</ul>
+<h1 id='contributing' class='heading'>Contributing</h1>
+
+<p>Contributions are very welcome 🙌 🤓</p>
+<h2 id='license' class='heading'>License</h2>
+<pre class="highlight plaintext"><code>STLocationRequest
+Copyright (c) 2018 Sven Tiigi &lt;sven.tiigi@gmail.com&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>Copyright 2018 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
