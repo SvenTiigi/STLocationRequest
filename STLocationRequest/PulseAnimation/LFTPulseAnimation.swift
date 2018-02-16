@@ -30,9 +30,9 @@ class LFTPulseAnimation: CALayer {
     /// Repetitions
 	var repetitions = Float.infinity
 	
-	// Need to implement that, because otherwise it can't find
-	// the constructor init(layer:AnyObject!)
-	// Doesn't seem to look in the super class
+	/// Need to implement that, because otherwise it can't find
+	/// the constructor init(layer:AnyObject!)
+	/// Doesn't seem to look in the super class
 	override init(layer: Any) {
 		super.init(layer: layer)
 	}

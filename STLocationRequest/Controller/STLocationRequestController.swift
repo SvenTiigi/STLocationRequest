@@ -174,6 +174,7 @@ public class STLocationRequestController: UIViewController {
     
     // MARK: View-Lifecycle
     
+    /// ViewDidLoad
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Setting the backgroundColor for the UIView of STLocationRequestController
@@ -202,12 +203,14 @@ public class STLocationRequestController: UIViewController {
         )
     }
     
+    /// ViewDidDisappear
     override public func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Perform CleanUp
         self.cleanUp()
     }
     
+    /// Deinit
     deinit {
         // Perform CleanUp
         self.cleanUp()
@@ -270,12 +273,14 @@ public class STLocationRequestController: UIViewController {
         }
     }
     
+    /// ViewDidLayoutSubviews
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         // Recenter pulseEffect Layer
         self.pulseEffect.position = self.view.center
     }
     
+    /// ViewWillTransition to size
     override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         self.checkOrientation()
@@ -426,6 +431,7 @@ private extension STLocationRequestController {
 
 extension STLocationRequestController: CLLocationManagerDelegate {
     
+    /// LocationManager didChangeAuthorizationStatus
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         // Check if Event is available
         guard let event = status.toEvent() else {

@@ -46,6 +46,7 @@ extension STLocationRequestController {
         
         // MARK: ViewLifecycle
         
+        /// LayoutSubviews
         override func layoutSubviews() {
             super.layoutSubviews()
             // Check if current background image is nil

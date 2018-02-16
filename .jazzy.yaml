@@ -1,0 +1,10 @@
+# STLocationRequest document generator jazzy settings
+
+copyright: Copyright 2018 Sven Tiigi
+author: Sven Tiigi
+github_url: https://github.com/SvenTiigi/STLocationRequest
+xcodebuild_arguments: [-target, STLocationRequest]
+module: STLocationRequest
+clean: true
+output: ./Documentation
+min_acl: private
