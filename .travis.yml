@@ -1,3 +1,15 @@
+branches:
+  only:
+    - master
+    - develop
+    - /^hotfix.*$/
+    - /^feature.*$/
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+
 osx_image: xcode9
 language: swift
 
@@ -6,5 +18,5 @@ before_install:
   - carthage update
 
 script:
-  - xcodebuild -project "STLocationRequest.xcodeproj" -scheme "STLocationRequest" -sdk "iphonesimulator" | xcpretty -c
+  - fastlane test
   - pod lib lint
