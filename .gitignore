@@ -25,6 +25,9 @@ Pods/
 # Icon must end with two \r
 Icon
 
+# Documentation
+docsets
+
 # Thumbnails
 ._*
 
