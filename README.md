@@ -23,7 +23,7 @@ STLocationRequest is a simple and elegant way to request the users location serv
 STLocationRequest is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```ruby
+```bash
 pod 'STLocationRequest'
 ```
 
@@ -44,7 +44,7 @@ To integrate Alamofire into your Xcode project using Carthage, specify it in you
 github "SvenTiigi/STLocationRequest"
 ```
 
-Run `carthage update` to build the framework and drag the built `STLocationRequest.framework`, `SnapKit.framework` and `SwiftIconFont.framwork` into your Xcode project. 
+Run `carthage update --platform iOS` to build the framework and drag the built `STLocationRequest.framework`, `SnapKit.framework` and `SwiftIconFont.framwork` into your Xcode project. 
 
 On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework paths (for all Frameworks) as mentioned in [Carthage Getting started Step 4, 5 and 6](https://github.com/Carthage/Carthage/blob/master/README.md)
 
@@ -125,6 +125,14 @@ STLocationRequestController.Authorization.**requestAlwaysAuthorization**
 ```
 
 The usage description will be shown in the default iOS location request dialog, which will show up when the user tapped the allow button.
+
+## Example Application
+In order to run the example Application you have to first generate the Frameworks via `Carthage`.
+
+```bash
+carthage update --platform iOS
+open STLocationRequest.xcodeproj
+```
 
 ## Presenting-Recommendation
 
