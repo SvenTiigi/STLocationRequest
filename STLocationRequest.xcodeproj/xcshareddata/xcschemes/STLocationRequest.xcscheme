@@ -20,6 +20,20 @@
                ReferencedContainer = "container:STLocationRequest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3D244C8B2036DF9A007BD2E7"
+               BuildableName = "STLocationRequestTests.xctest"
+               BlueprintName = "STLocationRequestTests"
+               ReferencedContainer = "container:STLocationRequest.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -29,7 +43,26 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3D244C8B2036DF9A007BD2E7"
+               BuildableName = "STLocationRequestTests.xctest"
+               BlueprintName = "STLocationRequestTests"
+               ReferencedContainer = "container:STLocationRequest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3D244C822036DF9A007BD2E7"
+            BuildableName = "STLocationRequest.framework"
+            BlueprintName = "STLocationRequest"
+            ReferencedContainer = "container:STLocationRequest.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
