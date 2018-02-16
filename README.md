@@ -54,7 +54,7 @@ On your application targets’ “Build Phases” settings tab, click the “+�
 import STLocationRequest
 
 // Initialize STLocationRequestController with STLocationRequestController.Configuration
-let locationRequestController = STLocationRequestController { config in
+let locationRequestController = STLocationRequestController { (config: inout STLocationRequestController.Configuration) in
     config.titleText = "We need your location for some awesome features"
     config.allowButtonTitle = "Alright"
     config.notNowButtonTitle = "Not now"
