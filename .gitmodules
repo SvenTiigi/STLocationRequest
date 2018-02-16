@@ -1,0 +1,6 @@
+[submodule "Carthage/Checkouts/SnapKit"]
+	path = Carthage/Checkouts/SnapKit
+	url = https://github.com/SnapKit/SnapKit.git
+[submodule "Carthage/Checkouts/SwiftIconFont"]
+	path = Carthage/Checkouts/SwiftIconFont
+	url = https://github.com/0x73/SwiftIconFont.git
