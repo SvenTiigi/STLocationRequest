@@ -21,8 +21,27 @@ STLocationRequest is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'STLocationRequest', '~> 3.0'
+pod 'STLocationRequest'
 ```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "SvenTiigi/STLocationRequest"
+```
+
+Run `carthage update` to build the framework and drag the built `STLocationRequest.framework` into your Xcode project.
 
 ## Usage
 
@@ -125,7 +144,7 @@ Please keep in mind that the 3D flyover view will only work on a real iOS device
 ## Dependencies
 `STLocationRequest` is using following libraries.
 
-+ [Font-Awesome-Swift](https://github.com/Vaberer/Font-Awesome-Swift)
++ [SwiftIconFont](https://github.com/0x73/SwiftIconFont)
 + [SwiftPulse](https://github.com/ctews/SwiftPulse)
 + [SnapKit](https://github.com/SnapKit/SnapKit)
 
