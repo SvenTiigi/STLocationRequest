@@ -156,7 +156,6 @@
 				3D244C862036DF9A007BD2E7 /* STLocationRequest.h */,
 				3D244C872036DF9A007BD2E7 /* Info.plist */,
 				3D244CB52036E01D007BD2E7 /* Controller */,
-				3D244CBC2036E01D007BD2E7 /* Delegate */,
 				3D244CB32036E01D007BD2E7 /* PulseAnimation */,
 				3D244CB12036E01D007BD2E7 /* RotatingMapCamera */,
 			);
@@ -199,13 +198,6 @@
 				3D244CBB2036E01D007BD2E7 /* STLocationRequestController+Configuration.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		3D244CBC2036E01D007BD2E7 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Delegate;
 			sourceTree = "<group>";
 		};
 		3D244CFC2036E091007BD2E7 /* STLocationRequestExample */ = {
