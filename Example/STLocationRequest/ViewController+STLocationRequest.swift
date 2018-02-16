@@ -14,6 +14,7 @@ extension ViewController {
     
     /// Present the STLocationRequestController
     func presentLocationRequestController(){
+        
         // Initialize STLocationRequestController with Configuration
         let locationRequestController = STLocationRequestController { config in
             // Perform configuration
@@ -26,30 +27,36 @@ extension ViewController {
         }
         
         // Listen on STLocationRequestController.Event's
-        locationRequestController.onEvent = { event in
-            print("Retrieved STLocationRequestController.Event: \(event)")
-            switch event {
-            case .locationRequestAuthorized:
-                print("The user accepted the use of location services")
-                self.locationManager.startUpdatingLocation()
-                break
-            case .locationRequestDenied:
-                print("The user denied the use of location services")
-                break
-            case .notNowButtonTapped:
-                print("The Not now button was tapped")
-                break
-            case .didPresented:
-                print("STLocationRequestController did presented")
-                break
-            case .didDisappear:
-                print("STLocationRequestController did disappear")
-                break
-            }
-        }
+        locationRequestController.onEvent = self.onEvent
         
         // Present STLocationRequestController
         locationRequestController.present(onViewController: self)
+        
+    }
+    
+    /// On STLocationRequestController.Event
+    ///
+    /// - Parameter event: The Event
+    private func onEvent(_ event: STLocationRequestController.Event) {
+        print("Retrieved STLocationRequestController.Event: \(event)")
+        switch event {
+        case .locationRequestAuthorized:
+            print("The user accepted the use of location services")
+            self.locationManager.startUpdatingLocation()
+            break
+        case .locationRequestDenied:
+            print("The user denied the use of location services")
+            break
+        case .notNowButtonTapped:
+            print("The Not now button was tapped")
+            break
+        case .didPresented:
+            print("STLocationRequestController did presented")
+            break
+        case .didDisappear:
+            print("STLocationRequestController did disappear")
+            break
+        }
     }
     
 }

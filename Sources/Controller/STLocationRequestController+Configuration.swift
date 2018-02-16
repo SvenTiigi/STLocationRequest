@@ -7,7 +7,7 @@
 
 import UIKit
 import MapKit
-import Font_Awesome_Swift
+import FontAwesome_swift
 
 public extension STLocationRequestController {
     
@@ -82,9 +82,9 @@ public extension STLocationRequestController {
         public var pulseEffectRadius: CGFloat = 180.0
         
         /// Set the location symbol icon which will be displayed in the middle of the location request screen.
-        /// Default value: FAType.FALocationArrow. Which icons are available can
-        /// be found on http://fontawesome.io/icons/ or https://github.com/Vaberer/Font-Awesome-Swift.
-        public var locationSymbolIcon: FAType = .FALocationArrow
+        /// Default value: FontAwesome.locationArrow
+        /// Available icons can be found here http://fontawesome.io/icons/ or https://github.com/thii/FontAwesome.swift
+        public var locationSymbolIcon: FontAwesome = .locationArrow
         
         /// The location symbol size. Default value is `150`
         public var locationSymbolSize: CGFloat = 150.0

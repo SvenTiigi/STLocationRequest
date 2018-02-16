@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import SnapKit
+import FontAwesome_swift
 
 /// STLocationRequest is a UIViewController-Extension which is used to request the User-Location, at the very first time, in a simple and elegent way.
 /// It shows a beautiful 3D 360 degree Flyover-MapView which shows 14 random citys or landmarks.
@@ -89,7 +90,8 @@ public class STLocationRequestController: UIViewController {
     lazy private var locationSymbolLabel: UILabel = {
         let label = UILabel()
         label.isHidden = self.configuration.isLocationSymbolHidden
-        label.setFAIcon(icon: self.configuration.locationSymbolIcon, iconSize: self.configuration.locationSymbolSize)
+        label.font = UIFont.fontAwesome(ofSize: self.configuration.locationSymbolSize)
+        label.text = String.fontAwesomeIcon(name: self.configuration.locationSymbolIcon)
         label.textColor = self.configuration.locationSymbolColor
         label.textAlignment = .center
         return label
