@@ -195,7 +195,7 @@ public class STLocationRequestController: UIViewController {
         self.changePlace(timer: nil)
         // Start the timer for changing the place
         self.placeChangeTimer = Timer.scheduledTimer(
-            timeInterval: self.configuration.places.timeTillPlaceSwitches,
+            timeInterval: self.configuration.places.changeInterval,
             target: self,
             selector: #selector(changePlace(timer:)),
             userInfo: nil,

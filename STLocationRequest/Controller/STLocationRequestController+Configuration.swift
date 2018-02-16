@@ -17,9 +17,6 @@ public extension STLocationRequestController {
     struct Configuration {
         
         /// The title which will be presented at the top of the STLocationRequestController
-        /// text: Default-Value: "We need your location for some awesome features"
-        /// font: Default-Value: UIFont.systemFontOfSize(25.0)
-        /// color: Default-Value: .white
         public var title: Title = (
             text: "We need your location for some awesome features",
             font: .systemFont(ofSize: 25.0),
@@ -27,10 +24,6 @@ public extension STLocationRequestController {
         )
         
         /// The AllowButton which will trigger the location request
-        /// title: Default-Value: "Alright"
-        /// font: Default-Value: systemFont(ofSize: 21)
-        /// highlightedBackgroundColor: Default-Value: white
-        /// highlightedTitleColor: Default-Value: UIColor.clear.withAlphaComponent(0.5)
         public var allowButton: Button = (
             title: "Alright",
             font: .systemFont(ofSize: 21),
@@ -39,10 +32,6 @@ public extension STLocationRequestController {
         )
         
         /// The NotNowButton which will dismiss the STLocationRequestController
-        /// title: Default-Value: "Alright"
-        /// font: Default-Value: systemFont(ofSize: 21)
-        /// highlightedBackgroundColor: Default-Value: white
-        /// highlightedTitleColor: Default-Value: UIColor.clear.withAlphaComponent(0.5)
         public var notNowButton: Button = (
             title: "Not now",
             font: .systemFont(ofSize: 21),
@@ -51,12 +40,6 @@ public extension STLocationRequestController {
         )
         
         /// The MapView
-        /// type: Default-Value: satelliteFlyover
-        /// alpha: Default-Value: 1
-        /// altitude: Default-Value: 600
-        /// pitch: Default-Value: 45
-        /// headingStep: Default-Value: 20
-        /// animationDuration: Default-Value: 4
         public var mapView: MapView = (
             type: .satelliteFlyover,
             alpha: 1.0,
@@ -66,15 +49,10 @@ public extension STLocationRequestController {
             animationDuration: 4.0
         )
         
-        /// The backgroundcolor for the view of the STLocationRequestController which is used
-        /// in combination with `mapViewAlphaValue` to match the STLocationRequestController
-        /// with the design of your app. Default value is a white color.
+        /// The backgroundcolor for the view of the STLocationRequestController
         public var backgroundColor: UIColor = .white
         
         /// The PulseEffect underneath the LocationSymbol
-        /// enabled: Default-Value: true
-        /// color: Default-Value: white
-        /// radius: Default-Value: 180
         public var pulseEffect: PulseEffect = (
             enabled: true,
             color: .white,
@@ -82,10 +60,6 @@ public extension STLocationRequestController {
         )
 
         /// The Location Symbol which will be displayed in the middle of the STLocationRequestController
-        /// icon: Default-Value: .fontAwesome(code: "locationarrow")
-        /// size: Default-Value: 150
-        /// color: Default-Value: white
-        /// hidden: Default-Value: false
         public var locationSymbol: LocationSymbol = (
             icon: .fontAwesome(code: "locationarrow"),
             size: 150,
@@ -102,12 +76,9 @@ public extension STLocationRequestController {
         public var authorizeType: Authorization = .requestWhenInUseAuthorization
         
         /// The Places
-        /// filter: Default-Value: nil
-        /// timeTillPlaceSwitches: Default-Value: 15
-        /// custom: Default-Value: Initialized Array
         public var places: Places = (
             filter: nil,
-            timeTillPlaceSwitches: 15,
+            changeInterval: 15,
             custom: []
         )
         
@@ -165,7 +136,7 @@ public extension STLocationRequestController.Configuration {
     /// The Places Configuration Type
     typealias Places = (
         filter: [STLocationRequestController.Place]?,
-        timeTillPlaceSwitches: TimeInterval,
+        changeInterval: TimeInterval,
         custom: [CLLocationCoordinate2D]
     )
     
