@@ -12,6 +12,12 @@
 		3D0FFD362036E9AA007C528A /* PreviewGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3D0FFD352036E9AA007C528A /* PreviewGIF.gif */; };
 		3D0FFD562036EE38007C528A /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0FFD552036EE38007C528A /* SwiftIconFont.framework */; };
 		3D0FFD572036EE43007C528A /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0FFD552036EE38007C528A /* SwiftIconFont.framework */; };
+		3D0FFDA820370C33007C528A /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D244D0E2036E423007BD2E7 /* SnapKit.framework */; };
+		3D0FFDA920370C33007C528A /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0FFD552036EE38007C528A /* SwiftIconFont.framework */; };
+		3D0FFDAC20370C8C007C528A /* SwiftIconFont.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D0FFD552036EE38007C528A /* SwiftIconFont.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D0FFDAD20370C8C007C528A /* SnapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D244D0E2036E423007BD2E7 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D0FFDB120370CB3007C528A /* SwiftIconFont.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D0FFD552036EE38007C528A /* SwiftIconFont.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D0FFDB220370CB3007C528A /* SnapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D244D0E2036E423007BD2E7 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D244C8D2036DF9A007BD2E7 /* STLocationRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D244C832036DF9A007BD2E7 /* STLocationRequest.framework */; };
 		3D244C922036DF9A007BD2E7 /* STLocationRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244C912036DF9A007BD2E7 /* STLocationRequestTests.swift */; };
 		3D244C942036DF9A007BD2E7 /* STLocationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D244C862036DF9A007BD2E7 /* STLocationRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -64,6 +70,28 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3D0FFDAB20370C68007C528A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3D0FFDAC20370C8C007C528A /* SwiftIconFont.framework in CopyFiles */,
+				3D0FFDAD20370C8C007C528A /* SnapKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D0FFDAE20370C9A007C528A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3D0FFDB120370CB3007C528A /* SwiftIconFont.framework in CopyFiles */,
+				3D0FFDB220370CB3007C528A /* SnapKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -88,8 +116,6 @@
 		3D244D042036E091007BD2E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D244D092036E091007BD2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D244D0E2036E423007BD2E7 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		3D244D0F2036E423007BD2E7 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
-		3D244D132036E5A2007BD2E7 /* FontAwesome_swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome_swift.framework; path = Carthage/Build/iOS/FontAwesome_swift.framework; sourceTree = "<group>"; };
 		3D244D172036E6CF007BD2E7 /* PresentButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentButton.swift; sourceTree = "<group>"; };
 		3D244D182036E6CF007BD2E7 /* UIColor+Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Main.swift"; sourceTree = "<group>"; };
 		3D244D192036E6CF007BD2E7 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
@@ -113,6 +139,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D244C8D2036DF9A007BD2E7 /* STLocationRequest.framework in Frameworks */,
+				3D0FFDA820370C33007C528A /* SnapKit.framework in Frameworks */,
+				3D0FFDA920370C33007C528A /* SwiftIconFont.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				3D0FFD552036EE38007C528A /* SwiftIconFont.framework */,
-				3D244D132036E5A2007BD2E7 /* FontAwesome_swift.framework */,
-				3D244D0F2036E423007BD2E7 /* FontAwesome.framework */,
 				3D244D0E2036E423007BD2E7 /* SnapKit.framework */,
 			);
 			name = Frameworks;
@@ -259,6 +285,7 @@
 				3D244C802036DF9A007BD2E7 /* Headers */,
 				3D244C812036DF9A007BD2E7 /* Resources */,
 				3D244D122036E432007BD2E7 /* Carthage */,
+				3D0FFDAE20370C9A007C528A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -276,6 +303,7 @@
 				3D244C882036DF9A007BD2E7 /* Sources */,
 				3D244C892036DF9A007BD2E7 /* Frameworks */,
 				3D244C8A2036DF9A007BD2E7 /* Resources */,
+				3D0FFDAB20370C68007C528A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -648,6 +676,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9PL44RX378;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = STLocationRequestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.tiigi.STLocationRequestTests;
@@ -663,6 +695,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9PL44RX378;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = STLocationRequestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.tiigi.STLocationRequestTests;
