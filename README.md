@@ -23,7 +23,7 @@ STLocationRequest is a simple and elegant way to request the users location serv
 STLocationRequest is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```ruby
+```bash
 pod 'STLocationRequest'
 ```
 
@@ -129,7 +129,7 @@ The usage description will be shown in the default iOS location request dialog, 
 ## Example Application
 In order to run the example Application you have to first generate the Frameworks via `Carthage`.
 
-```ruby
+```bash
 carthage update --platform iOS
 open STLocationRequest.xcodeproj
 ```
