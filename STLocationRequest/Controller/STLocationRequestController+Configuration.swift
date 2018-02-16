@@ -199,13 +199,18 @@ public extension STLocationRequestController.Configuration {
 
 extension STLocationRequestController.Configuration.SymbolIcon: RawRepresentable {
     
+    /// The raw type that can be used to represent all values of the conforming
     public typealias RawValue = (font: Fonts, icon: String?)
     
+    /// Creates a new instance with the specified raw value.
     public init?(rawValue: RawValue) {
+        // Return nil as no initialization via rawValue is supported
         return nil
     }
     
+    /// /// The corresponding value of the raw type.
     public var rawValue: RawValue {
+        /// Switch on self
         switch self {
         case .fontAwesome(let code):
             return (.FontAwesome, String.fontAwesomeIcon(code))

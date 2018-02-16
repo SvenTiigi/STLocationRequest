@@ -13,37 +13,70 @@ public extension STLocationRequestController {
     /// The STLocationRequestController.Place
     enum Place: Int {
         // MARK: USA
+        /// New York Statue of Liberty
         case newYorkStatueOfLiberty
+        /// New York Manhatten
         case newYork
+        /// San Francisco Golden Gate Bridge
         case sanFranciscoGoldenGateBridge
+        /// New York Central Park
         case centralParkNY
+        /// Google Plex
         case googlePlex
+        /// Miami Beach
         case miamiBeach
+        /// Laguna Beach
         case lagunaBeach
+        /// Griffith Observatory
         case griffithObservatory
+        /// Luxor Resort Las Vegas
         case luxorResortLasVegas
+        /// Apple Headquarter
         case appleHeadquarter
+        
         // MARK: Germany
+        /// Berlin Brandenbuger Gate
         case berlinBrandenburgerGate
+        /// Hamburg Townhall
         case hamburgTownHall
+        /// Cologne Cathedral
         case cologneCathedral
+        /// Munic Church
         case munichCurch
+        /// Neuschwanstein Castle
         case neuschwansteinCastle
+        /// Hamburg Elb-Philharmonic
         case hamburgElbPhilharmonic
+        /// Muenster Castle
         case muensterCastle
+        
         // MARK: Italy
+        /// Colosseum Rom
         case romeColosseum
+        /// Piazza Di Trevi
         case piazzaDiTrevi
+        
         // MARK: Spain
+        /// Sagrade Familia Spain
         case sagradaFamiliaSpain
+        
         // MARK: England
+        
+        /// London Big Ben
         case londonBigBen
+        /// London Eye
         case londonEye
+        
         // MARK: Australia
+        /// Opera House Sydney
         case sydneyOperaHouse
+        
         // MARK: France
+        /// Paris Eiffel Tower
         case parisEiffelTower
+        
         // MARK: Custom Places
+        /// Custom Places
         case customPlaces
     }
 
