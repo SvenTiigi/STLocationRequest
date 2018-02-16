@@ -13,9 +13,9 @@
 ## Description
 STLocationRequest is a simple and elegant way to request the users location services at the very first time written in Swift. The `STLocationRequestController` shows a beautiful 3D 360° Flyover MapView with over 25 cities and landmarks 🗺.
 
-<br/><br/>
-
 ## Installation
+
+### CocoaPods
 
 STLocationRequest is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
