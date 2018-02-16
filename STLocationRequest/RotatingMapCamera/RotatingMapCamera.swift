@@ -71,11 +71,8 @@ class RotatingMapCamera {
     ///   - altitude: The altitude. Default value: 600.0
     ///   - pitch: The pitch. Default value: 45.0
     ///   - headingStep: The headingStep. Default value: 20.0
-    init(mapView: MKMapView,
-                duration: Double = 4.0,
-                altitude: CLLocationDistance = 600.0,
-                pitch: CGFloat = 45.0,
-                headingStep: Double = 20.0) {
+    init(mapView: MKMapView, duration: Double = 4.0, altitude: CLLocationDistance = 600.0,
+         pitch: CGFloat = 45.0, headingStep: Double = 20.0) {
         self.mapView = mapView
         self.duration = duration
         self.altitude = altitude

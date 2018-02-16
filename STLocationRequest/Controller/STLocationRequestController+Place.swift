@@ -49,7 +49,6 @@ public extension STLocationRequestController {
 
 }
 
-
 // MARK: RawRepresentable
 
 extension STLocationRequestController.Place: RawRepresentable {
@@ -130,10 +129,11 @@ extension STLocationRequestController.Place {
     
     /// Retrieve an array of CLLocationCoordiante2D for given Place filter and custom places
     ///
-    /// - Parameter filter: An array of STAwesomePlaces Enums which only should be added to the return array. If the parameter is nil all places will be added to the return array.
+    /// - Parameter filter: An array of STAwesomePlaces Enums which only should be added to the return array.
+    ///   If the parameter is nil all places will be added to the return array.
     /// - Returns: CLLocationCoordinate2D Array of awesome places
     static func getPlaces(withPlacesFilter filter: [STLocationRequestController.Place]?,
-                          andCustomPlaces customPlaces: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D]{
+                          andCustomPlaces customPlaces: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D] {
         // Initialize Places by iterate Place enumeration with filter
         var places = STLocationRequestController.Place.iterate().flatMap { (place) -> CLLocationCoordinate2D? in
             // If the current iteration is customPlaces

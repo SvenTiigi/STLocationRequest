@@ -10,15 +10,15 @@ import UIKit
 
 class LFTPulseAnimation: CALayer {
 	
-	var radius:                 CGFloat = 200.0
-	var fromValueForRadius:     Float = 0.0
-	var fromValueForAlpha:      Float = 0.45
-	var keyTimeForHalfOpacity:  Float = 0.2
-	var animationDuration:      TimeInterval = 3.0
-	var pulseInterval:          TimeInterval = 0.0
-	var useTimingFunction:      Bool = true
-	var animationGroup:         CAAnimationGroup = CAAnimationGroup()
-	var repetitions:            Float = Float.infinity
+	var radius: CGFloat = 200.0
+	var fromValueForRadius: Float = 0.0
+	var fromValueForAlpha: Float = 0.45
+	var keyTimeForHalfOpacity: Float = 0.2
+	var animationDuration: TimeInterval = 3.0
+	var pulseInterval: TimeInterval = 0.0
+	var useTimingFunction = true
+	var animationGroup = CAAnimationGroup()
+	var repetitions = Float.infinity
 	
 	// Need to implement that, because otherwise it can't find
 	// the constructor init(layer:AnyObject!)
@@ -32,13 +32,13 @@ class LFTPulseAnimation: CALayer {
 		self.contentsScale = UIScreen.main.scale
 		self.opacity = 0.0
 		self.backgroundColor = UIColor.blue.cgColor
-		self.radius = radius;
-		self.repetitions = repeatCount;
+		self.radius = radius
+		self.repetitions = repeatCount
 		self.position = position
         DispatchQueue.global(qos: .background).async {
             self.setupAnimationGroup()
             self.setPulseRadius(self.radius)
-            if (self.pulseInterval != Double.infinity) {
+            if self.pulseInterval != Double.infinity {
                 DispatchQueue.main.async(execute: {
                     self.add(self.animationGroup, forKey: "pulse")
                 })

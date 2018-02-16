@@ -10,7 +10,8 @@ import MapKit
 import SnapKit
 import SwiftIconFont
 
-/// STLocationRequest is a UIViewController-Extension which is used to request the User-Location, at the very first time, in a simple and elegent way.
+/// STLocationRequest is a UIViewController-Extension which is used
+/// to request the User-Location, at the very first time, in a simple and elegent way.
 /// It shows a beautiful 3D 360 degree Flyover-MapView which shows 14 random citys or landmarks.
 public class STLocationRequestController: UIViewController {
     
@@ -84,7 +85,10 @@ public class STLocationRequestController: UIViewController {
     lazy private var locationSymbolLabel: UILabel = {
         let label = UILabel()
         label.isHidden = self.configuration.locationSymbol.hidden
-        label.font = UIFont.icon(from: self.configuration.locationSymbol.icon.rawValue.font, ofSize: self.configuration.locationSymbol.size)
+        label.font = UIFont.icon(
+            from: self.configuration.locationSymbol.icon.rawValue.font,
+            ofSize: self.configuration.locationSymbol.size
+        )
         label.text = self.configuration.locationSymbol.icon.rawValue.icon
         label.textColor = self.configuration.locationSymbol.color
         label.textAlignment = .center
@@ -95,8 +99,8 @@ public class STLocationRequestController: UIViewController {
     lazy private var pulseEffect: LFTPulseAnimation = {
         let pulseEffect = LFTPulseAnimation(
             repeatCount: Float.infinity,
-            radius:self.configuration.pulseEffect.radius,
-            position:self.view.center
+            radius: self.configuration.pulseEffect.radius,
+            position: self.view.center
         )
         pulseEffect.backgroundColor = self.configuration.pulseEffect.color.cgColor
         pulseEffect.isHidden = !self.configuration.pulseEffect.enabled
@@ -287,7 +291,7 @@ public extension STLocationRequestController {
     /// Please keep in mind that the 3D Flyover-View will only work on a **real** iOS Device **not** in the Simulator.
     ///
     /// - Parameters:
-    ///   - viewController: The `UIViewController` which will be used to present the STLocationRequestController modally.
+    ///   - viewController: The ViewController which will be used to present the STLocationRequestController modally.
     ///   - completion: When the STLocationRequestController has been presented
     func present(onViewController viewController: UIViewController, completion: (() -> Void)? = nil) {
         // The STLocationRequestController is correctly initialized. Present the STLocationRequestController
@@ -402,11 +406,9 @@ private extension STLocationRequestController {
         case .requestAlwaysAuthorization:
             // Request always
             self.locationManager.requestAlwaysAuthorization()
-            break
         case .requestWhenInUseAuthorization:
             // Request when in use
             self.locationManager.requestWhenInUseAuthorization()
-            break
         }
     }
     

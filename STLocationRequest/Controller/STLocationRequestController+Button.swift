@@ -26,7 +26,8 @@ extension STLocationRequestController {
         ///   - font: The font
         ///   - target: The target
         ///   - action: The action
-        convenience init(configurationButton: STLocationRequestController.Configuration.Button,  target: Any?, action: Selector) {
+        convenience init(configurationButton: STLocationRequestController.Configuration.Button,
+                         target: Any?, action: Selector) {
             self.init(type: .custom)
             self.highlightedBackgroundColor = configurationButton.highlightedBackgroundColor
             self.setTitle(configurationButton.title, for: .normal)
