@@ -1,0 +1,2 @@
+github "SnapKit/SnapKit" ~> 4.0.0
+github "0x73/SwiftIconFont" ~> 2.7.3

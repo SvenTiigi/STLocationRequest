@@ -1,0 +1,795 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D0FFD302036E958007C528A /* STLocationRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D244C832036DF9A007BD2E7 /* STLocationRequest.framework */; };
+		3D0FFD312036E958007C528A /* STLocationRequest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D244C832036DF9A007BD2E7 /* STLocationRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D0FFD362036E9AA007C528A /* PreviewGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3D0FFD352036E9AA007C528A /* PreviewGIF.gif */; };
+		3D0FFD562036EE38007C528A /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0FFD552036EE38007C528A /* SwiftIconFont.framework */; };
+		3D0FFD572036EE43007C528A /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0FFD552036EE38007C528A /* SwiftIconFont.framework */; };
+		3D0FFDA820370C33007C528A /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D244D0E2036E423007BD2E7 /* SnapKit.framework */; };
+		3D0FFDA920370C33007C528A /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0FFD552036EE38007C528A /* SwiftIconFont.framework */; };
+		3D0FFDAC20370C8C007C528A /* SwiftIconFont.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D0FFD552036EE38007C528A /* SwiftIconFont.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D0FFDAD20370C8C007C528A /* SnapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D244D0E2036E423007BD2E7 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D0FFDB120370CB3007C528A /* SwiftIconFont.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D0FFD552036EE38007C528A /* SwiftIconFont.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D0FFDB220370CB3007C528A /* SnapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D244D0E2036E423007BD2E7 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D244C8D2036DF9A007BD2E7 /* STLocationRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D244C832036DF9A007BD2E7 /* STLocationRequest.framework */; };
+		3D244C922036DF9A007BD2E7 /* STLocationRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244C912036DF9A007BD2E7 /* STLocationRequestTests.swift */; };
+		3D244C942036DF9A007BD2E7 /* STLocationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D244C862036DF9A007BD2E7 /* STLocationRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D244CBD2036E01D007BD2E7 /* RotatingMapCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CB22036E01D007BD2E7 /* RotatingMapCamera.swift */; };
+		3D244CBE2036E01D007BD2E7 /* LFTPulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CB42036E01D007BD2E7 /* LFTPulseAnimation.swift */; };
+		3D244CBF2036E01D007BD2E7 /* STLocationRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CB62036E01D007BD2E7 /* STLocationRequestController.swift */; };
+		3D244CC02036E01D007BD2E7 /* STLocationRequestController+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CB72036E01D007BD2E7 /* STLocationRequestController+Authorization.swift */; };
+		3D244CC12036E01D007BD2E7 /* STLocationRequestController+Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CB82036E01D007BD2E7 /* STLocationRequestController+Place.swift */; };
+		3D244CC22036E01D007BD2E7 /* STLocationRequestController+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CB92036E01D007BD2E7 /* STLocationRequestController+Event.swift */; };
+		3D244CC32036E01D007BD2E7 /* STLocationRequestController+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CBA2036E01D007BD2E7 /* STLocationRequestController+Button.swift */; };
+		3D244CC42036E01D007BD2E7 /* STLocationRequestController+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CBB2036E01D007BD2E7 /* STLocationRequestController+Configuration.swift */; };
+		3D244CFE2036E091007BD2E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CFD2036E091007BD2E7 /* AppDelegate.swift */; };
+		3D244D052036E091007BD2E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D244D042036E091007BD2E7 /* Assets.xcassets */; };
+		3D244D102036E423007BD2E7 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D244D0E2036E423007BD2E7 /* SnapKit.framework */; };
+		3D244D1A2036E6CF007BD2E7 /* PresentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244D172036E6CF007BD2E7 /* PresentButton.swift */; };
+		3D244D1B2036E6CF007BD2E7 /* UIColor+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244D182036E6CF007BD2E7 /* UIColor+Main.swift */; };
+		3D244D1C2036E6CF007BD2E7 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244D192036E6CF007BD2E7 /* UIImage+Gif.swift */; };
+		3D244D1D2036E6E0007BD2E7 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D244D0E2036E423007BD2E7 /* SnapKit.framework */; };
+		3D244D222036E73E007BD2E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244D202036E73E007BD2E7 /* ViewController.swift */; };
+		3D244D232036E73E007BD2E7 /* ViewController+STLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244D212036E73E007BD2E7 /* ViewController+STLocationRequest.swift */; };
+		3D244D262036E790007BD2E7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D244D242036E790007BD2E7 /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D0FFD322036E958007C528A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D244C7A2036DF9A007BD2E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D244C822036DF9A007BD2E7;
+			remoteInfo = STLocationRequest;
+		};
+		3D244C8E2036DF9A007BD2E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D244C7A2036DF9A007BD2E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D244C822036DF9A007BD2E7;
+			remoteInfo = STLocationRequest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3D0FFD342036E958007C528A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3D0FFD312036E958007C528A /* STLocationRequest.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D0FFDAB20370C68007C528A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3D0FFDAC20370C8C007C528A /* SwiftIconFont.framework in CopyFiles */,
+				3D0FFDAD20370C8C007C528A /* SnapKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D0FFDAE20370C9A007C528A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3D0FFDB120370CB3007C528A /* SwiftIconFont.framework in CopyFiles */,
+				3D0FFDB220370CB3007C528A /* SnapKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3D0FFD352036E9AA007C528A /* PreviewGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = PreviewGIF.gif; sourceTree = "<group>"; };
+		3D0FFD552036EE38007C528A /* SwiftIconFont.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftIconFont.framework; path = Carthage/Build/iOS/SwiftIconFont.framework; sourceTree = "<group>"; };
+		3D244C832036DF9A007BD2E7 /* STLocationRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STLocationRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D244C862036DF9A007BD2E7 /* STLocationRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STLocationRequest.h; sourceTree = "<group>"; };
+		3D244C872036DF9A007BD2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D244C8C2036DF9A007BD2E7 /* STLocationRequestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STLocationRequestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D244C912036DF9A007BD2E7 /* STLocationRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLocationRequestTests.swift; sourceTree = "<group>"; };
+		3D244C932036DF9A007BD2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D244CB22036E01D007BD2E7 /* RotatingMapCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingMapCamera.swift; sourceTree = "<group>"; };
+		3D244CB42036E01D007BD2E7 /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
+		3D244CB62036E01D007BD2E7 /* STLocationRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLocationRequestController.swift; sourceTree = "<group>"; };
+		3D244CB72036E01D007BD2E7 /* STLocationRequestController+Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Authorization.swift"; sourceTree = "<group>"; };
+		3D244CB82036E01D007BD2E7 /* STLocationRequestController+Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Place.swift"; sourceTree = "<group>"; };
+		3D244CB92036E01D007BD2E7 /* STLocationRequestController+Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Event.swift"; sourceTree = "<group>"; };
+		3D244CBA2036E01D007BD2E7 /* STLocationRequestController+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Button.swift"; sourceTree = "<group>"; };
+		3D244CBB2036E01D007BD2E7 /* STLocationRequestController+Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Configuration.swift"; sourceTree = "<group>"; };
+		3D244CFB2036E091007BD2E7 /* STLocationRequestExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STLocationRequestExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D244CFD2036E091007BD2E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3D244D042036E091007BD2E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D244D092036E091007BD2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D244D0E2036E423007BD2E7 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		3D244D172036E6CF007BD2E7 /* PresentButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentButton.swift; sourceTree = "<group>"; };
+		3D244D182036E6CF007BD2E7 /* UIColor+Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Main.swift"; sourceTree = "<group>"; };
+		3D244D192036E6CF007BD2E7 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		3D244D202036E73E007BD2E7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3D244D212036E73E007BD2E7 /* ViewController+STLocationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+STLocationRequest.swift"; sourceTree = "<group>"; };
+		3D244D252036E790007BD2E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D244C7F2036DF9A007BD2E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D244D102036E423007BD2E7 /* SnapKit.framework in Frameworks */,
+				3D0FFD562036EE38007C528A /* SwiftIconFont.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D244C892036DF9A007BD2E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D244C8D2036DF9A007BD2E7 /* STLocationRequest.framework in Frameworks */,
+				3D0FFDA820370C33007C528A /* SnapKit.framework in Frameworks */,
+				3D0FFDA920370C33007C528A /* SwiftIconFont.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D244CF82036E091007BD2E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D244D1D2036E6E0007BD2E7 /* SnapKit.framework in Frameworks */,
+				3D0FFD572036EE43007C528A /* SwiftIconFont.framework in Frameworks */,
+				3D0FFD302036E958007C528A /* STLocationRequest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D244C792036DF9A007BD2E7 = {
+			isa = PBXGroup;
+			children = (
+				3D244C852036DF9A007BD2E7 /* STLocationRequest */,
+				3D244C902036DF9A007BD2E7 /* STLocationRequestTests */,
+				3D244CFC2036E091007BD2E7 /* STLocationRequestExample */,
+				3D244C842036DF9A007BD2E7 /* Products */,
+				3D244D0D2036E423007BD2E7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3D244C842036DF9A007BD2E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D244C832036DF9A007BD2E7 /* STLocationRequest.framework */,
+				3D244C8C2036DF9A007BD2E7 /* STLocationRequestTests.xctest */,
+				3D244CFB2036E091007BD2E7 /* STLocationRequestExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D244C852036DF9A007BD2E7 /* STLocationRequest */ = {
+			isa = PBXGroup;
+			children = (
+				3D244C862036DF9A007BD2E7 /* STLocationRequest.h */,
+				3D244C872036DF9A007BD2E7 /* Info.plist */,
+				3D244CB52036E01D007BD2E7 /* Controller */,
+				3D244CB32036E01D007BD2E7 /* PulseAnimation */,
+				3D244CB12036E01D007BD2E7 /* RotatingMapCamera */,
+			);
+			path = STLocationRequest;
+			sourceTree = "<group>";
+		};
+		3D244C902036DF9A007BD2E7 /* STLocationRequestTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D244C912036DF9A007BD2E7 /* STLocationRequestTests.swift */,
+				3D244C932036DF9A007BD2E7 /* Info.plist */,
+			);
+			path = STLocationRequestTests;
+			sourceTree = "<group>";
+		};
+		3D244CB12036E01D007BD2E7 /* RotatingMapCamera */ = {
+			isa = PBXGroup;
+			children = (
+				3D244CB22036E01D007BD2E7 /* RotatingMapCamera.swift */,
+			);
+			path = RotatingMapCamera;
+			sourceTree = "<group>";
+		};
+		3D244CB32036E01D007BD2E7 /* PulseAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				3D244CB42036E01D007BD2E7 /* LFTPulseAnimation.swift */,
+			);
+			path = PulseAnimation;
+			sourceTree = "<group>";
+		};
+		3D244CB52036E01D007BD2E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D244CB62036E01D007BD2E7 /* STLocationRequestController.swift */,
+				3D244CB72036E01D007BD2E7 /* STLocationRequestController+Authorization.swift */,
+				3D244CB82036E01D007BD2E7 /* STLocationRequestController+Place.swift */,
+				3D244CB92036E01D007BD2E7 /* STLocationRequestController+Event.swift */,
+				3D244CBA2036E01D007BD2E7 /* STLocationRequestController+Button.swift */,
+				3D244CBB2036E01D007BD2E7 /* STLocationRequestController+Configuration.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3D244CFC2036E091007BD2E7 /* STLocationRequestExample */ = {
+			isa = PBXGroup;
+			children = (
+				3D244CFD2036E091007BD2E7 /* AppDelegate.swift */,
+				3D244D202036E73E007BD2E7 /* ViewController.swift */,
+				3D244D212036E73E007BD2E7 /* ViewController+STLocationRequest.swift */,
+				3D244D092036E091007BD2E7 /* Info.plist */,
+				3D244D162036E6B0007BD2E7 /* Supporting Files */,
+			);
+			path = STLocationRequestExample;
+			sourceTree = "<group>";
+		};
+		3D244D0D2036E423007BD2E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D0FFD552036EE38007C528A /* SwiftIconFont.framework */,
+				3D244D0E2036E423007BD2E7 /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D244D162036E6B0007BD2E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D244D242036E790007BD2E7 /* Launch Screen.storyboard */,
+				3D244D042036E091007BD2E7 /* Assets.xcassets */,
+				3D0FFD352036E9AA007C528A /* PreviewGIF.gif */,
+				3D244D172036E6CF007BD2E7 /* PresentButton.swift */,
+				3D244D182036E6CF007BD2E7 /* UIColor+Main.swift */,
+				3D244D192036E6CF007BD2E7 /* UIImage+Gif.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3D244C802036DF9A007BD2E7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D244C942036DF9A007BD2E7 /* STLocationRequest.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3D244C822036DF9A007BD2E7 /* STLocationRequest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D244C972036DF9A007BD2E7 /* Build configuration list for PBXNativeTarget "STLocationRequest" */;
+			buildPhases = (
+				3D244C7E2036DF9A007BD2E7 /* Sources */,
+				3D244C7F2036DF9A007BD2E7 /* Frameworks */,
+				3D244C802036DF9A007BD2E7 /* Headers */,
+				3D244C812036DF9A007BD2E7 /* Resources */,
+				3D244D122036E432007BD2E7 /* Carthage */,
+				3D0FFDAE20370C9A007C528A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STLocationRequest;
+			productName = STLocationRequest;
+			productReference = 3D244C832036DF9A007BD2E7 /* STLocationRequest.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3D244C8B2036DF9A007BD2E7 /* STLocationRequestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D244C9A2036DF9A007BD2E7 /* Build configuration list for PBXNativeTarget "STLocationRequestTests" */;
+			buildPhases = (
+				3D244C882036DF9A007BD2E7 /* Sources */,
+				3D244C892036DF9A007BD2E7 /* Frameworks */,
+				3D244C8A2036DF9A007BD2E7 /* Resources */,
+				3D0FFDAB20370C68007C528A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D244C8F2036DF9A007BD2E7 /* PBXTargetDependency */,
+			);
+			name = STLocationRequestTests;
+			productName = STLocationRequestTests;
+			productReference = 3D244C8C2036DF9A007BD2E7 /* STLocationRequestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D244CFA2036E091007BD2E7 /* STLocationRequestExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D244D0A2036E091007BD2E7 /* Build configuration list for PBXNativeTarget "STLocationRequestExample" */;
+			buildPhases = (
+				3D244CF72036E091007BD2E7 /* Sources */,
+				3D244CF82036E091007BD2E7 /* Frameworks */,
+				3D244CF92036E091007BD2E7 /* Resources */,
+				3D244D1F2036E6F2007BD2E7 /* Carthage */,
+				3D0FFD342036E958007C528A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D0FFD332036E958007C528A /* PBXTargetDependency */,
+			);
+			name = STLocationRequestExample;
+			productName = STLocationRequestExample;
+			productReference = 3D244CFB2036E091007BD2E7 /* STLocationRequestExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D244C7A2036DF9A007BD2E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Sven Tiigi";
+				TargetAttributes = {
+					3D244C822036DF9A007BD2E7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					3D244C8B2036DF9A007BD2E7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					3D244CFA2036E091007BD2E7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3D244C7D2036DF9A007BD2E7 /* Build configuration list for PBXProject "STLocationRequest" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D244C792036DF9A007BD2E7;
+			productRefGroup = 3D244C842036DF9A007BD2E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D244C822036DF9A007BD2E7 /* STLocationRequest */,
+				3D244C8B2036DF9A007BD2E7 /* STLocationRequestTests */,
+				3D244CFA2036E091007BD2E7 /* STLocationRequestExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D244C812036DF9A007BD2E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D244C8A2036DF9A007BD2E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D244CF92036E091007BD2E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D244D262036E790007BD2E7 /* Launch Screen.storyboard in Resources */,
+				3D0FFD362036E9AA007C528A /* PreviewGIF.gif in Resources */,
+				3D244D052036E091007BD2E7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D244D122036E432007BD2E7 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftIconFont.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		3D244D1F2036E6F2007BD2E7 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftIconFont.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D244C7E2036DF9A007BD2E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D244CC32036E01D007BD2E7 /* STLocationRequestController+Button.swift in Sources */,
+				3D244CBF2036E01D007BD2E7 /* STLocationRequestController.swift in Sources */,
+				3D244CC42036E01D007BD2E7 /* STLocationRequestController+Configuration.swift in Sources */,
+				3D244CC12036E01D007BD2E7 /* STLocationRequestController+Place.swift in Sources */,
+				3D244CBD2036E01D007BD2E7 /* RotatingMapCamera.swift in Sources */,
+				3D244CBE2036E01D007BD2E7 /* LFTPulseAnimation.swift in Sources */,
+				3D244CC22036E01D007BD2E7 /* STLocationRequestController+Event.swift in Sources */,
+				3D244CC02036E01D007BD2E7 /* STLocationRequestController+Authorization.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D244C882036DF9A007BD2E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D244C922036DF9A007BD2E7 /* STLocationRequestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D244CF72036E091007BD2E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D244D222036E73E007BD2E7 /* ViewController.swift in Sources */,
+				3D244CFE2036E091007BD2E7 /* AppDelegate.swift in Sources */,
+				3D244D232036E73E007BD2E7 /* ViewController+STLocationRequest.swift in Sources */,
+				3D244D1B2036E6CF007BD2E7 /* UIColor+Main.swift in Sources */,
+				3D244D1C2036E6CF007BD2E7 /* UIImage+Gif.swift in Sources */,
+				3D244D1A2036E6CF007BD2E7 /* PresentButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D0FFD332036E958007C528A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D244C822036DF9A007BD2E7 /* STLocationRequest */;
+			targetProxy = 3D0FFD322036E958007C528A /* PBXContainerItemProxy */;
+		};
+		3D244C8F2036DF9A007BD2E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D244C822036DF9A007BD2E7 /* STLocationRequest */;
+			targetProxy = 3D244C8E2036DF9A007BD2E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3D244D242036E790007BD2E7 /* Launch Screen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D244D252036E790007BD2E7 /* Base */,
+			);
+			name = "Launch Screen.storyboard";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D244C952036DF9A007BD2E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3D244C962036DF9A007BD2E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3D244C982036DF9A007BD2E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9PL44RX378;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = STLocationRequest/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.tiigi.STLocationRequest;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D244C992036DF9A007BD2E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9PL44RX378;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = STLocationRequest/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.tiigi.STLocationRequest;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D244C9B2036DF9A007BD2E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9PL44RX378;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = STLocationRequestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.tiigi.STLocationRequestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D244C9C2036DF9A007BD2E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9PL44RX378;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = STLocationRequestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.tiigi.STLocationRequestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D244D0B2036E091007BD2E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9PL44RX378;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = STLocationRequestExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.tiigi.STLocationRequestExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D244D0C2036E091007BD2E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9PL44RX378;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = STLocationRequestExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.tiigi.STLocationRequestExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D244C7D2036DF9A007BD2E7 /* Build configuration list for PBXProject "STLocationRequest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D244C952036DF9A007BD2E7 /* Debug */,
+				3D244C962036DF9A007BD2E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D244C972036DF9A007BD2E7 /* Build configuration list for PBXNativeTarget "STLocationRequest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D244C982036DF9A007BD2E7 /* Debug */,
+				3D244C992036DF9A007BD2E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D244C9A2036DF9A007BD2E7 /* Build configuration list for PBXNativeTarget "STLocationRequestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D244C9B2036DF9A007BD2E7 /* Debug */,
+				3D244C9C2036DF9A007BD2E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D244D0A2036E091007BD2E7 /* Build configuration list for PBXNativeTarget "STLocationRequestExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D244D0B2036E091007BD2E7 /* Debug */,
+				3D244D0C2036E091007BD2E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D244C7A2036DF9A007BD2E7 /* Project object */;
+}
