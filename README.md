@@ -127,14 +127,6 @@ STLocationRequestController.Authorization.**requestAlwaysAuthorization**
 
 The usage description will be shown in the default iOS location request dialog, which will show up when the user tapped the allow button.
 
-## Example Application
-In order to run the example Application you have to first generate the Frameworks via `Carthage`.
-
-```bash
-carthage update --platform iOS
-open STLocationRequest.xcodeproj
-```
-
 ## Presenting-Recommendation
 
 The recommended way to present `STLocationRequestController` is the following way.
@@ -164,6 +156,14 @@ Please keep in mind that the 3D flyover view will only work on a real iOS device
 
 # Contributing
 Contributions are very welcome 🙌 🤓
+
+## Example Application
+In order to run the example Application you have to first generate the Frameworks via `Carthage`.
+
+```bash
+carthage update --platform iOS
+open STLocationRequest.xcodeproj
+```
 
 ## License
 
