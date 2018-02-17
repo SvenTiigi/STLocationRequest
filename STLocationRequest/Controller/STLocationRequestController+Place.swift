@@ -79,7 +79,7 @@ public extension STLocationRequestController {
         /// Custom Places
         case customPlaces
     }
-
+    
 }
 
 // MARK: RawRepresentable

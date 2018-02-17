@@ -58,7 +58,7 @@ public extension STLocationRequestController {
             color: .white,
             radius: 180
         )
-
+        
         /// The Location Symbol which will be displayed in the middle of the STLocationRequestController
         public var locationSymbol: LocationSymbol = (
             icon: .fontAwesome(code: "locationarrow"),

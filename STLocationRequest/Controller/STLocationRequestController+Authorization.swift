@@ -16,5 +16,5 @@ public extension STLocationRequestController {
         /// Location-Request always authorization
         case requestAlwaysAuthorization
     }
-
+    
 }

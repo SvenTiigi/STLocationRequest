@@ -164,7 +164,7 @@ public class STLocationRequestController: UIViewController {
         // Init with config
         self.init(configuration: config)
     }
-
+    
     /// This initializer is not supported and will return nil
     /// Please use the configuration initializers
     public required init?(coder aDecoder: NSCoder) {
