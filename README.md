@@ -161,8 +161,8 @@ Contributions are very welcome 🙌 🤓
 In order to run the example Application you have to first generate the Frameworks via `Carthage`.
 
 ```bash
-carthage update --platform iOS
-open STLocationRequest.xcodeproj
+$ carthage update --platform iOS
+$ open STLocationRequest.xcodeproj
 ```
 
 ## License
