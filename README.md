@@ -39,7 +39,7 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate STLocationRequest into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
 github "SvenTiigi/STLocationRequest"
@@ -56,10 +56,10 @@ import STLocationRequest
 
 // Initialize STLocationRequestController with STLocationRequestController.Configuration
 let locationRequestController = STLocationRequestController { (config: inout STLocationRequestController.Configuration) in
-    config.titleText = "We need your location for some awesome features"
-    config.allowButtonTitle = "Alright"
-    config.notNowButtonTitle = "Not now"
-    config.mapViewAlpha = 0.9
+    config.title.text = "We need your location for some awesome features"
+    config.allowButton.title = "Alright"
+    config.notNowButton.title = "Not now"
+    config.mapView.alpha = 0.9
     config.backgroundColor = UIColor.lightGray
     config.authorizeType = .requestWhenInUseAuthorization
 }
