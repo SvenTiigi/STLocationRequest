@@ -80,7 +80,7 @@ locationRequestController.present(onViewController: self)
 The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. There are plenty of options available 👨‍💻 More details can be found [here](https://github.com/SvenTiigi/STLocationRequest/blob/master/Sources/Controller/STLocationRequestController%2BConfiguration.swift)
 
 ## OnEvent
-The `onEvent` closure allows you to get notified if an `STLocationRequestController.Event` occured. For example to detect if the user has authorized or denied the location request or tapped the `Not Now` Button.
+The `onEvent` function get invoked if an `STLocationRequestController.Event` occured. Simply set an anonymous function of type `(Event) -> Void` to evaluate the event.
 
 ```swift
 locationRequestController.onEvent = { (event: STLocationRequestController.Event) in
@@ -99,7 +99,7 @@ locationRequestController.onEvent = { (event: STLocationRequestController.Event)
 }
 ```
 
-Or just simply pass a function 👌
+or just pass a function 👌
 
 ```swift
 locationRequestController.onEvent = onLocationRequestControllerEvent
