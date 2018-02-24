@@ -149,6 +149,7 @@ Please keep in mind that the 3D flyover view will only work on a real iOS device
 ## Dependencies
 `STLocationRequest` is using following libraries.
 
++ [FlyoverKit](https://github.com/SvenTiigi/FlyoverKit)
 + [SwiftIconFont](https://github.com/0x73/SwiftIconFont)
 + [SwiftPulse](https://github.com/ctews/SwiftPulse)
 + [SnapKit](https://github.com/SnapKit/SnapKit)
