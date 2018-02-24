@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import SwiftIconFont
+import FlyoverKit
 
 // MARK: Configuration
 
@@ -41,12 +42,9 @@ public extension STLocationRequestController {
         
         /// The MapView
         public var mapView: MapView = (
+            configuration: FlyoverCamera.Configuration.Theme.default.rawValue,
             type: .satelliteFlyover,
-            alpha: 1.0,
-            altitude: 600,
-            pitch: 45,
-            headingStep: 20.0,
-            animationDuration: 4.0
+            alpha: 1.0
         )
         
         /// The backgroundcolor for the view of the STLocationRequestController
@@ -110,12 +108,9 @@ public extension STLocationRequestController.Configuration {
     
     /// The MapView Configuration Type
     typealias MapView = (
-        type: MKMapType,
-        alpha: CGFloat,
-        altitude: CLLocationDistance,
-        pitch: CGFloat,
-        headingStep: Double,
-        animationDuration: Double
+        configuration: FlyoverCamera.Configuration,
+        type: FlyoverMapView.MapType,
+        alpha: CGFloat
     )
     
     /// The PulseEffect Configuration Type

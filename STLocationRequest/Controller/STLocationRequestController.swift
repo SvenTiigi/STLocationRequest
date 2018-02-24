@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 import SnapKit
 import SwiftIconFont
+import FlyoverKit
 
 /// STLocationRequest is a UIViewController-Extension which is used
 /// to request the User-Location, at the very first time, in a simple and elegent way.
@@ -57,12 +58,12 @@ public class STLocationRequestController: UIViewController {
         )
     }()
     
-    /// The MapView
-    lazy private var mapView: MKMapView = {
-        let mapView = MKMapView()
-        mapView.mapType = self.configuration.mapView.type
-        mapView.showsCompass = false
-        mapView.showsScale = false
+    /// The FlyoverMapView
+    lazy private var flyoverMapView: FlyoverMapView = {
+        let mapView = FlyoverMapView(
+            configuration: self.configuration.mapView.configuration,
+            mapType: self.configuration.mapView.type
+        )
         mapView.alpha = self.configuration.mapView.alpha
         return mapView
     }()
@@ -127,17 +128,6 @@ public class STLocationRequestController: UIViewController {
         return locationManager
     }()
     
-    /// The rotating map camera
-    lazy private var rotatingMapCamera: RotatingMapCamera = {
-        return RotatingMapCamera(
-            mapView: self.mapView,
-            duration: self.configuration.mapView.animationDuration,
-            altitude: self.configuration.mapView.altitude,
-            pitch: self.configuration.mapView.pitch,
-            headingStep: self.configuration.mapView.headingStep
-        )
-    }()
-    
     /// The place change timer
     private var placeChangeTimer: Timer?
     
@@ -180,7 +170,7 @@ public class STLocationRequestController: UIViewController {
         // Setting the backgroundColor for the UIView of STLocationRequestController
         self.view.backgroundColor = self.configuration.backgroundColor
         // Add subviews
-        self.view.addSubview(self.mapView)
+        self.view.addSubview(self.flyoverMapView)
         self.view.addSubview(self.titleLabel)
         self.view.addSubview(self.locationSymbolLabel)
         self.view.addSubview(self.allowButton)
@@ -221,7 +211,7 @@ public class STLocationRequestController: UIViewController {
     /// Layout Subviews
     private func layoutSubviews() {
         // MapView
-        self.mapView.snp.makeConstraints { (make) in
+        self.flyoverMapView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
         // TitleLabel
@@ -332,7 +322,7 @@ private extension STLocationRequestController {
         // Clear timer
         self.placeChangeTimer = nil
         // Stop Rotation
-        self.rotatingMapCamera.stop()
+        self.flyoverMapView.stop()
     }
     
     /// Emit an STLocationRequestController.Event
@@ -379,7 +369,7 @@ private extension STLocationRequestController {
         // Retrieve random place coorindate
         let placeCoordinate = self.places[randomIndex]
         // Start Rotating MapView Camera for place coordinate
-        self.rotatingMapCamera.start(lookingAt: placeCoordinate, animated: false)
+        self.flyoverMapView.start(flyover: placeCoordinate)
     }
     
     /// Get a random Index from an given array without repeating an index

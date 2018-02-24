@@ -21,7 +21,6 @@
 		3D244C8D2036DF9A007BD2E7 /* STLocationRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D244C832036DF9A007BD2E7 /* STLocationRequest.framework */; };
 		3D244C922036DF9A007BD2E7 /* STLocationRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244C912036DF9A007BD2E7 /* STLocationRequestTests.swift */; };
 		3D244C942036DF9A007BD2E7 /* STLocationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D244C862036DF9A007BD2E7 /* STLocationRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D244CBD2036E01D007BD2E7 /* RotatingMapCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CB22036E01D007BD2E7 /* RotatingMapCamera.swift */; };
 		3D244CBE2036E01D007BD2E7 /* LFTPulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CB42036E01D007BD2E7 /* LFTPulseAnimation.swift */; };
 		3D244CBF2036E01D007BD2E7 /* STLocationRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CB62036E01D007BD2E7 /* STLocationRequestController.swift */; };
 		3D244CC02036E01D007BD2E7 /* STLocationRequestController+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244CB72036E01D007BD2E7 /* STLocationRequestController+Authorization.swift */; };
@@ -39,6 +38,17 @@
 		3D244D222036E73E007BD2E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244D202036E73E007BD2E7 /* ViewController.swift */; };
 		3D244D232036E73E007BD2E7 /* ViewController+STLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D244D212036E73E007BD2E7 /* ViewController+STLocationRequest.swift */; };
 		3D244D262036E790007BD2E7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D244D242036E790007BD2E7 /* Launch Screen.storyboard */; };
+		3D719DB92041F5C300ED30A3 /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D719DB82041F5C300ED30A3 /* FlyoverKit.framework */; };
+		3D719DBA2041F5D000ED30A3 /* FlyoverKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D719DB82041F5C300ED30A3 /* FlyoverKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D719DBB2041F9E500ED30A3 /* FlyoverKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D719DB82041F5C300ED30A3 /* FlyoverKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D719DBC2041FA0100ED30A3 /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D719DB82041F5C300ED30A3 /* FlyoverKit.framework */; };
+		3D719DC52041FBCC00ED30A3 /* .jazzy.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 3D719DBE2041FBCB00ED30A3 /* .jazzy.yaml */; };
+		3D719DC62041FBCC00ED30A3 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 3D719DBF2041FBCB00ED30A3 /* Cartfile */; };
+		3D719DC72041FBCC00ED30A3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3D719DC02041FBCB00ED30A3 /* .swiftlint.yml */; };
+		3D719DC82041FBCC00ED30A3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3D719DC12041FBCB00ED30A3 /* README.md */; };
+		3D719DC92041FBCC00ED30A3 /* STLocationRequest.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3D719DC22041FBCC00ED30A3 /* STLocationRequest.podspec */; };
+		3D719DCA2041FBCC00ED30A3 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = 3D719DC32041FBCC00ED30A3 /* .swift-version */; };
+		3D719DCB2041FBCC00ED30A3 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3D719DC42041FBCC00ED30A3 /* .travis.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +86,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3D719DBB2041F9E500ED30A3 /* FlyoverKit.framework in CopyFiles */,
 				3D0FFDAC20370C8C007C528A /* SwiftIconFont.framework in CopyFiles */,
 				3D0FFDAD20370C8C007C528A /* SnapKit.framework in CopyFiles */,
 			);
@@ -87,6 +98,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3D719DBA2041F5D000ED30A3 /* FlyoverKit.framework in CopyFiles */,
 				3D0FFDB120370CB3007C528A /* SwiftIconFont.framework in CopyFiles */,
 				3D0FFDB220370CB3007C528A /* SnapKit.framework in CopyFiles */,
 			);
@@ -103,7 +115,6 @@
 		3D244C8C2036DF9A007BD2E7 /* STLocationRequestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STLocationRequestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D244C912036DF9A007BD2E7 /* STLocationRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLocationRequestTests.swift; sourceTree = "<group>"; };
 		3D244C932036DF9A007BD2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D244CB22036E01D007BD2E7 /* RotatingMapCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingMapCamera.swift; sourceTree = "<group>"; };
 		3D244CB42036E01D007BD2E7 /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
 		3D244CB62036E01D007BD2E7 /* STLocationRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLocationRequestController.swift; sourceTree = "<group>"; };
 		3D244CB72036E01D007BD2E7 /* STLocationRequestController+Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "STLocationRequestController+Authorization.swift"; sourceTree = "<group>"; };
@@ -122,6 +133,14 @@
 		3D244D202036E73E007BD2E7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D244D212036E73E007BD2E7 /* ViewController+STLocationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+STLocationRequest.swift"; sourceTree = "<group>"; };
 		3D244D252036E790007BD2E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3D719DB82041F5C300ED30A3 /* FlyoverKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlyoverKit.framework; path = Carthage/Build/iOS/FlyoverKit.framework; sourceTree = "<group>"; };
+		3D719DBE2041FBCB00ED30A3 /* .jazzy.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .jazzy.yaml; sourceTree = SOURCE_ROOT; };
+		3D719DBF2041FBCB00ED30A3 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		3D719DC02041FBCB00ED30A3 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		3D719DC12041FBCB00ED30A3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		3D719DC22041FBCC00ED30A3 /* STLocationRequest.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = STLocationRequest.podspec; sourceTree = SOURCE_ROOT; };
+		3D719DC32041FBCC00ED30A3 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = SOURCE_ROOT; };
+		3D719DC42041FBCC00ED30A3 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +150,7 @@
 			files = (
 				3D244D102036E423007BD2E7 /* SnapKit.framework in Frameworks */,
 				3D0FFD562036EE38007C528A /* SwiftIconFont.framework in Frameworks */,
+				3D719DB92041F5C300ED30A3 /* FlyoverKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +170,7 @@
 			files = (
 				3D244D1D2036E6E0007BD2E7 /* SnapKit.framework in Frameworks */,
 				3D0FFD572036EE43007C528A /* SwiftIconFont.framework in Frameworks */,
+				3D719DBC2041FA0100ED30A3 /* FlyoverKit.framework in Frameworks */,
 				3D0FFD302036E958007C528A /* STLocationRequest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,9 +204,13 @@
 			children = (
 				3D244C862036DF9A007BD2E7 /* STLocationRequest.h */,
 				3D244C872036DF9A007BD2E7 /* Info.plist */,
+				3D719DCE2041FC7100ED30A3 /* Authorization */,
+				3D719DCC2041FC7000ED30A3 /* Button */,
+				3D719DD02041FC7100ED30A3 /* Configuration */,
 				3D244CB52036E01D007BD2E7 /* Controller */,
+				3D719DCF2041FC7100ED30A3 /* Event */,
+				3D719DCD2041FC7000ED30A3 /* Place */,
 				3D244CB32036E01D007BD2E7 /* PulseAnimation */,
-				3D244CB12036E01D007BD2E7 /* RotatingMapCamera */,
 			);
 			path = STLocationRequest;
 			sourceTree = "<group>";
@@ -197,14 +222,6 @@
 				3D244C932036DF9A007BD2E7 /* Info.plist */,
 			);
 			path = STLocationRequestTests;
-			sourceTree = "<group>";
-		};
-		3D244CB12036E01D007BD2E7 /* RotatingMapCamera */ = {
-			isa = PBXGroup;
-			children = (
-				3D244CB22036E01D007BD2E7 /* RotatingMapCamera.swift */,
-			);
-			path = RotatingMapCamera;
 			sourceTree = "<group>";
 		};
 		3D244CB32036E01D007BD2E7 /* PulseAnimation */ = {
@@ -219,11 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				3D244CB62036E01D007BD2E7 /* STLocationRequestController.swift */,
-				3D244CB72036E01D007BD2E7 /* STLocationRequestController+Authorization.swift */,
-				3D244CB82036E01D007BD2E7 /* STLocationRequestController+Place.swift */,
-				3D244CB92036E01D007BD2E7 /* STLocationRequestController+Event.swift */,
-				3D244CBA2036E01D007BD2E7 /* STLocationRequestController+Button.swift */,
-				3D244CBB2036E01D007BD2E7 /* STLocationRequestController+Configuration.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -235,6 +247,7 @@
 				3D244D202036E73E007BD2E7 /* ViewController.swift */,
 				3D244D212036E73E007BD2E7 /* ViewController+STLocationRequest.swift */,
 				3D244D092036E091007BD2E7 /* Info.plist */,
+				3D719DBD2041FBAF00ED30A3 /* MetaData */,
 				3D244D162036E6B0007BD2E7 /* Supporting Files */,
 			);
 			path = STLocationRequestExample;
@@ -243,6 +256,7 @@
 		3D244D0D2036E423007BD2E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D719DB82041F5C300ED30A3 /* FlyoverKit.framework */,
 				3D0FFD552036EE38007C528A /* SwiftIconFont.framework */,
 				3D244D0E2036E423007BD2E7 /* SnapKit.framework */,
 			);
@@ -260,6 +274,60 @@
 				3D244D192036E6CF007BD2E7 /* UIImage+Gif.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3D719DBD2041FBAF00ED30A3 /* MetaData */ = {
+			isa = PBXGroup;
+			children = (
+				3D719DBE2041FBCB00ED30A3 /* .jazzy.yaml */,
+				3D719DC32041FBCC00ED30A3 /* .swift-version */,
+				3D719DC02041FBCB00ED30A3 /* .swiftlint.yml */,
+				3D719DC42041FBCC00ED30A3 /* .travis.yml */,
+				3D719DBF2041FBCB00ED30A3 /* Cartfile */,
+				3D719DC12041FBCB00ED30A3 /* README.md */,
+				3D719DC22041FBCC00ED30A3 /* STLocationRequest.podspec */,
+			);
+			name = MetaData;
+			sourceTree = "<group>";
+		};
+		3D719DCC2041FC7000ED30A3 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				3D244CBA2036E01D007BD2E7 /* STLocationRequestController+Button.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		3D719DCD2041FC7000ED30A3 /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				3D244CB82036E01D007BD2E7 /* STLocationRequestController+Place.swift */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
+		3D719DCE2041FC7100ED30A3 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				3D244CB72036E01D007BD2E7 /* STLocationRequestController+Authorization.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		3D719DCF2041FC7100ED30A3 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				3D244CB92036E01D007BD2E7 /* STLocationRequestController+Event.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		3D719DD02041FC7100ED30A3 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3D244CBB2036E01D007BD2E7 /* STLocationRequestController+Configuration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,8 +466,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D719DCB2041FBCC00ED30A3 /* .travis.yml in Resources */,
+				3D719DC72041FBCC00ED30A3 /* .swiftlint.yml in Resources */,
+				3D719DC62041FBCC00ED30A3 /* Cartfile in Resources */,
 				3D244D262036E790007BD2E7 /* Launch Screen.storyboard in Resources */,
+				3D719DC82041FBCC00ED30A3 /* README.md in Resources */,
+				3D719DCA2041FBCC00ED30A3 /* .swift-version in Resources */,
 				3D0FFD362036E9AA007C528A /* PreviewGIF.gif in Resources */,
+				3D719DC52041FBCC00ED30A3 /* .jazzy.yaml in Resources */,
+				3D719DC92041FBCC00ED30A3 /* STLocationRequest.podspec in Resources */,
 				3D244D052036E091007BD2E7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +490,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftIconFont.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FlyoverKit.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -431,6 +507,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftIconFont.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FlyoverKit.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -450,7 +527,6 @@
 				3D244CBF2036E01D007BD2E7 /* STLocationRequestController.swift in Sources */,
 				3D244CC42036E01D007BD2E7 /* STLocationRequestController+Configuration.swift in Sources */,
 				3D244CC12036E01D007BD2E7 /* STLocationRequestController+Place.swift in Sources */,
-				3D244CBD2036E01D007BD2E7 /* RotatingMapCamera.swift in Sources */,
 				3D244CBE2036E01D007BD2E7 /* LFTPulseAnimation.swift in Sources */,
 				3D244CC22036E01D007BD2E7 /* STLocationRequestController+Event.swift in Sources */,
 				3D244CC02036E01D007BD2E7 /* STLocationRequestController+Authorization.swift in Sources */,
@@ -634,7 +710,7 @@
 				);
 				INFOPLIST_FILE = STLocationRequest/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.tiigi.STLocationRequest;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -660,7 +736,7 @@
 				);
 				INFOPLIST_FILE = STLocationRequest/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.tiigi.STLocationRequest;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
