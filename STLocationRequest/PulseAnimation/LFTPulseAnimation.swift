@@ -104,12 +104,10 @@ class LFTPulseAnimation: CALayer {
         self.animationGroup.duration = self.animationDuration + self.pulseInterval
         self.animationGroup.repeatCount = self.repetitions
         self.animationGroup.isRemovedOnCompletion = false
-        
         if self.useTimingFunction {
             let defaultCurve = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
             self.animationGroup.timingFunction = defaultCurve
         }
-        
         self.animationGroup.animations = [createScaleAnimation(), createOpacityAnimation()]
     }
     
@@ -119,7 +117,6 @@ class LFTPulseAnimation: CALayer {
         scaleAnimation.fromValue = NSNumber(value: self.fromValueForRadius as Float)
         scaleAnimation.toValue = NSNumber(value: 1.0 as Float)
         scaleAnimation.duration = self.animationDuration
-        
         return scaleAnimation
     }
     
@@ -130,7 +127,6 @@ class LFTPulseAnimation: CALayer {
         opacityAnimation.values = [self.fromValueForAlpha, 0.8, 0]
         opacityAnimation.keyTimes = [0, NSNumber(value: self.keyTimeForHalfOpacity), 1]
         opacityAnimation.isRemovedOnCompletion = false
-        
         return opacityAnimation
     }
     
