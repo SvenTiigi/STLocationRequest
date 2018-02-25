@@ -5,7 +5,6 @@
 //  Created by Sven Tiigi on 18.11.17.
 //
 
-import Foundation
 import CoreLocation
 
 public extension STLocationRequestController {

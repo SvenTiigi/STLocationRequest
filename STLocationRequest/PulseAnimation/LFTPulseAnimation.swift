@@ -11,24 +11,36 @@ import UIKit
 /// The LFTPulseAnimation for displaying an pulse effect
 class LFTPulseAnimation: CALayer {
     
+    // MARK: Properties
+    
     /// The radius
     var radius: CGFloat = 200.0
+    
     /// FromValue Radius
     var fromValueForRadius: Float = 0.0
+    
     /// FromValue Alpha
     var fromValueForAlpha: Float = 0.45
+    
     /// keyTime Half Opacity
     var keyTimeForHalfOpacity: Float = 0.2
+    
     /// The animation duration
     var animationDuration: TimeInterval = 3.0
+    
     /// The interval
     var pulseInterval: TimeInterval = 0.0
+    
     /// Use Timing Function Boolean
     var useTimingFunction = true
+    
     /// The animation group
     var animationGroup = CAAnimationGroup()
+    
     /// Repetitions
     var repetitions = Float.infinity
+    
+    // MARK: Initializer
     
     /// Need to implement that, because otherwise it can't find
     /// the constructor init(layer:AnyObject!)
@@ -62,10 +74,15 @@ class LFTPulseAnimation: CALayer {
         }
     }
     
-    /// Initializer with NSCoder
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    /// Initializer with NSCoder. Unsupported will return nil
+    ///
+    /// - Parameter aDecoder: The decoder
+    required init?(coder aDecoder: NSCoder) {
+        // Return nil
+        return nil
     }
+    
+    // MARK: Public API
     
     /// Set Pulse Radius
     ///
@@ -80,8 +97,10 @@ class LFTPulseAnimation: CALayer {
         self.position = tempPos
     }
     
+    // MARK: Private API
+    
     /// Setup Animation Group
-    func setupAnimationGroup() {
+    private func setupAnimationGroup() {
         self.animationGroup = CAAnimationGroup()
         self.animationGroup.duration = self.animationDuration + self.pulseInterval
         self.animationGroup.repeatCount = self.repetitions
@@ -96,7 +115,7 @@ class LFTPulseAnimation: CALayer {
     }
     
     /// Create Scale Animation
-    func createScaleAnimation() -> CABasicAnimation {
+    private func createScaleAnimation() -> CABasicAnimation {
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale.xy")
         scaleAnimation.fromValue = NSNumber(value: self.fromValueForRadius as Float)
         scaleAnimation.toValue = NSNumber(value: 1.0 as Float)
@@ -106,7 +125,7 @@ class LFTPulseAnimation: CALayer {
     }
     
     /// Create Opacity Animation
-    func createOpacityAnimation() -> CAKeyframeAnimation {
+    private func createOpacityAnimation() -> CAKeyframeAnimation {
         let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
         opacityAnimation.duration = self.animationDuration
         opacityAnimation.values = [self.fromValueForAlpha, 0.8, 0]

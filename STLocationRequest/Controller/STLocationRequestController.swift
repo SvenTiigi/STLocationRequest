@@ -40,6 +40,11 @@ public class STLocationRequestController: UIViewController {
     /// The configuration
     private var configuration: Configuration
     
+    /// The PlaceChanger
+    lazy private var placeChanger: PlaceChanger = {
+        return PlaceChanger(self.configuration.places, self.onChangePlace)
+    }()
+    
     /// The Allow-Button
     lazy private var allowButton: Button = {
         return Button(
@@ -107,29 +112,13 @@ public class STLocationRequestController: UIViewController {
         pulseEffect.isHidden = !self.configuration.pulseEffect.enabled
         return pulseEffect
     }()
-    
-    /// Places Coordinate array
-    lazy private var places: [CLLocationCoordinate2D] = {
-        return Place.getPlaces(
-            withPlacesFilter: self.configuration.places.filter,
-            andCustomPlaces: self.configuration.places.custom
-        )
-    }()
-    
-    /// Array to store random integer values
-    lazy private var randomNumbers: [Int] = {
-        return [Int]()
-    }()
-    
+
     /// CLLocationManager
     lazy private var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.delegate = self
         return locationManager
     }()
-    
-    /// The place change timer
-    private var placeChangeTimer: Timer?
     
     // MARK: Initializers
     
@@ -139,7 +128,7 @@ public class STLocationRequestController: UIViewController {
     public init(configuration: Configuration) {
         // Set configuration
         self.configuration = configuration
-        // Init
+        // Super Init
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -162,6 +151,12 @@ public class STLocationRequestController: UIViewController {
         return nil
     }
     
+    /// Deinit
+    deinit {
+        // Perform CleanUp
+        self.cleanUp()
+    }
+    
     // MARK: View-Lifecycle
     
     /// ViewDidLoad
@@ -170,27 +165,19 @@ public class STLocationRequestController: UIViewController {
         // Setting the backgroundColor for the UIView of STLocationRequestController
         self.view.backgroundColor = self.configuration.backgroundColor
         // Add subviews
-        self.view.addSubview(self.flyoverMapView)
-        self.view.addSubview(self.titleLabel)
-        self.view.addSubview(self.locationSymbolLabel)
-        self.view.addSubview(self.allowButton)
-        self.view.addSubview(self.notNowButton)
+        [self.flyoverMapView,
+         self.titleLabel,
+         self.locationSymbolLabel,
+         self.allowButton,
+         self.notNowButton].forEach(self.view.addSubview)
         // Layout subview
         self.layoutSubviews()
         // Add layers
         self.view.layer.insertSublayer(self.pulseEffect, below: self.locationSymbolLabel.layer)
         // Check orientation
         self.checkOrientation()
-        // Initial change place
-        self.changePlace(timer: nil)
-        // Start the timer for changing the place
-        self.placeChangeTimer = Timer.scheduledTimer(
-            timeInterval: self.configuration.places.changeInterval,
-            target: self,
-            selector: #selector(changePlace(timer:)),
-            userInfo: nil,
-            repeats: true
-        )
+        // Start place changer
+        self.placeChanger.start()
     }
     
     /// ViewDidDisappear
@@ -200,12 +187,19 @@ public class STLocationRequestController: UIViewController {
         self.cleanUp()
     }
     
-    /// Deinit
-    deinit {
-        // Perform CleanUp
-        self.cleanUp()
+    /// ViewDidLayoutSubviews
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Recenter pulseEffect Layer
+        self.pulseEffect.position = self.view.center
     }
     
+    /// ViewWillTransition toSize
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        self.checkOrientation()
+    }
+
     // MARK: Layout
     
     /// Layout Subviews
@@ -263,22 +257,9 @@ public class STLocationRequestController: UIViewController {
         }
     }
     
-    /// ViewDidLayoutSubviews
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        // Recenter pulseEffect Layer
-        self.pulseEffect.position = self.view.center
-    }
-    
-    /// ViewWillTransition to size
-    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        self.checkOrientation()
-    }
-    
 }
 
-// MARK: Present/Dismiss functions
+// MARK: Public API Present/Dismiss functions
 
 public extension STLocationRequestController {
     
@@ -292,7 +273,7 @@ public extension STLocationRequestController {
         // The STLocationRequestController is correctly initialized. Present the STLocationRequestController
         viewController.present(self, animated: true) {
             // Invoke controller update
-            self.emit(event: .didPresented)
+            self.onEvent?(.didPresented)
             // Invoke completion
             completion?()
         }
@@ -303,7 +284,7 @@ public extension STLocationRequestController {
         // Dismiss the STLocationRequestController
         self.dismiss(animated: true) {
             // Inform the delegate, that the STLocationRequestController is disappeared
-            self.emit(event: .didDisappear)
+            self.onEvent?(.didDisappear)
             // Invoke completion
             completion?()
         }
@@ -311,26 +292,24 @@ public extension STLocationRequestController {
     
 }
 
-// MARK: Private helper functions
+// MARK: Private API
 
 private extension STLocationRequestController {
     
-    /// Clean up the STLocationRequestController
-    func cleanUp() {
-        // Invalidate timer
-        self.placeChangeTimer?.invalidate()
-        // Clear timer
-        self.placeChangeTimer = nil
-        // Stop Rotation
-        self.flyoverMapView.stop()
+    /// OnChangePlace update the current flyover coordinate
+    ///
+    /// - Parameter coordinate: The new Coordinate
+    func onChangePlace(coordinate: CLLocationCoordinate2D) {
+        // Start Rotating MapView Camera for place coordinate
+        self.flyoverMapView.start(flyover: coordinate)
     }
     
-    /// Emit an STLocationRequestController.Event
-    ///
-    /// - Parameter event: The Event
-    func emit(event: Event) {
-        // Invoke onChange
-        self.onEvent?(event)
+    /// Clean up the STLocationRequestController
+    func cleanUp() {
+        // Stop place changer
+        self.placeChanger.stop()
+        // Stop Rotation
+        self.flyoverMapView.stop()
     }
     
     /// Check device orientation
@@ -351,49 +330,6 @@ private extension STLocationRequestController {
         self.pulseEffect.setPulseRadius(isLandscape ? 0 : self.configuration.pulseEffect.radius)
     }
     
-}
-
-// MARK: Change/Rotate MapView Place
-
-private extension STLocationRequestController {
-    
-    /// Change the current place
-    @objc func changePlace(timer: Timer?) {
-        // If the timer is not nil and there is only one place return the function
-        if timer != nil && self.places.count == 1 {
-            // Return out of function as there is only one place to show
-            return
-        }
-        // Retrieve random index
-        let randomIndex = self.randomSequenceGenerator(0, max: self.places.count - 1)()
-        // Retrieve random place coorindate
-        let placeCoordinate = self.places[randomIndex]
-        // Start Rotating MapView Camera for place coordinate
-        self.flyoverMapView.start(flyover: placeCoordinate)
-    }
-    
-    /// Get a random Index from an given array without repeating an index
-    ///
-    /// - Parameters:
-    ///   - min: min. value
-    ///   - max: max. value
-    /// - Returns: random integer (without a repeating random int)
-    func randomSequenceGenerator(_ min: Int, max: Int) -> () -> Int {
-        return {
-            if self.randomNumbers.count == 0 {
-                self.randomNumbers = Array(min...max)
-            }
-            let index = Int(arc4random_uniform(UInt32(self.randomNumbers.count)))
-            return self.randomNumbers.remove(at: index)
-        }
-    }
-    
-}
-
-// MARK: Button Action Handler
-
-private extension STLocationRequestController {
-    
     /// Allow button was touched request authorization by AuthorizeType
     @objc func allowButtonTouched() {
         // Switch on authorite type
@@ -410,7 +346,7 @@ private extension STLocationRequestController {
     /// Not now button was touched dismiss Viewcontroller
     @objc func notNowButtonTouched() {
         // Update the Controller
-        self.emit(event: .notNowButtonTapped)
+        self.onEvent?(.notNowButtonTapped)
         // Dismiss Controller
         self.dismiss()
     }
@@ -429,7 +365,7 @@ extension STLocationRequestController: CLLocationManagerDelegate {
             return
         }
         // Emit Event
-        self.emit(event: event)
+        self.onEvent?(event)
         // Dismiss
         self.dismiss()
     }

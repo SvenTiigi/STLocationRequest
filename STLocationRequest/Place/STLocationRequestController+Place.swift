@@ -5,13 +5,12 @@
 //  Created by Sven Tiigi on 18.11.17.
 //
 
-import Foundation
 import CoreLocation
 
 public extension STLocationRequestController {
     
     /// The STLocationRequestController.Place
-    enum Place: Int {
+    enum Place {
         // MARK: USA
         /// New York Statue of Liberty
         case newYorkStatueOfLiberty
@@ -33,7 +32,8 @@ public extension STLocationRequestController {
         case luxorResortLasVegas
         /// Apple Headquarter
         case appleHeadquarter
-        
+        /// Apple Park
+        case applePark
         // MARK: Germany
         /// Berlin Brandenbuger Gate
         case berlinBrandenburgerGate
@@ -49,32 +49,25 @@ public extension STLocationRequestController {
         case hamburgElbPhilharmonic
         /// Muenster Castle
         case muensterCastle
-        
         // MARK: Italy
         /// Colosseum Rom
         case romeColosseum
         /// Piazza Di Trevi
         case piazzaDiTrevi
-        
         // MARK: Spain
         /// Sagrade Familia Spain
         case sagradaFamiliaSpain
-        
         // MARK: England
-        
         /// London Big Ben
         case londonBigBen
         /// London Eye
         case londonEye
-        
         // MARK: Australia
         /// Opera House Sydney
         case sydneyOperaHouse
-        
         // MARK: France
         /// Paris Eiffel Tower
         case parisEiffelTower
-        
         // MARK: Custom Places
         /// Custom Places
         case customPlaces
@@ -121,6 +114,8 @@ extension STLocationRequestController.Place: RawRepresentable {
             return CLLocationCoordinate2D(latitude: 36.095511, longitude: -115.176072)
         case .appleHeadquarter:
             return CLLocationCoordinate2D(latitude: 37.332100, longitude: -122.029642)
+        case .applePark:
+            return CLLocationCoordinate2D(latitude: 37.334774, longitude: -122.009002)
         case .berlinBrandenburgerGate:
             return CLLocationCoordinate2D(latitude: 52.516275, longitude: 13.377704)
         case .hamburgTownHall:
@@ -156,53 +151,14 @@ extension STLocationRequestController.Place: RawRepresentable {
     
 }
 
-// MARK: Retrieve Places
+// MARK: STLocationRequestController.Place iterate Extension
 
 extension STLocationRequestController.Place {
     
-    /// Retrieve an array of CLLocationCoordiante2D for given Place filter and custom places
-    ///
-    /// - Parameter filter: An array of STAwesomePlaces Enums which only should be added to the return array.
-    ///   If the parameter is nil all places will be added to the return array.
-    /// - Returns: CLLocationCoordinate2D Array of awesome places
-    static func getPlaces(withPlacesFilter filter: [STLocationRequestController.Place]?,
-                          andCustomPlaces customPlaces: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D] {
-        // Initialize Places by iterate Place enumeration with filter
-        var places = STLocationRequestController.Place.iterate().flatMap { (place) -> CLLocationCoordinate2D? in
-            // If the current iteration is customPlaces
-            if place == .customPlaces {
-                return nil
-            }
-            // Check if the placesFilter is available and place is not covered by filter
-            if let filter = filter, !filter.contains(place) {
-                return nil
-            } else {
-                return place.rawValue
-            }
-        }
-        // Check if a filter is set
-        if let filter = filter {
-            // Check if no customPlaces are applied as filter
-            if !filter.contains(.customPlaces) {
-                // Return initialized palces
-                return places
-            }
-        }
-        // Check if customPlaces are available
-        guard customPlaces.count > 0 else {
-            // Custom Places are available return places
-            return places
-        }
-        // Append contents of customPlaces
-        places.append(contentsOf: customPlaces)
-        // Return the places array
-        return places
-    }
-    
-    /// Private helper function to iterate all values of an enum
+    /// Iterate all cases of enumeration
     ///
     /// - Returns: Iterator for the enumeration
-    private static func iterate() -> AnyIterator<STLocationRequestController.Place> {
+    static func iterate() -> AnyIterator<STLocationRequestController.Place> {
         var counter = 0
         return AnyIterator {
             let next = withUnsafePointer(to: &counter) {

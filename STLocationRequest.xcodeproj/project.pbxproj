@@ -49,6 +49,7 @@
 		3D719DC92041FBCC00ED30A3 /* STLocationRequest.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3D719DC22041FBCC00ED30A3 /* STLocationRequest.podspec */; };
 		3D719DCA2041FBCC00ED30A3 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = 3D719DC32041FBCC00ED30A3 /* .swift-version */; };
 		3D719DCB2041FBCC00ED30A3 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3D719DC42041FBCC00ED30A3 /* .travis.yml */; };
+		3D7E57182042E03C0067E67D /* PlaceChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7E57172042E03C0067E67D /* PlaceChanger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		3D719DC22041FBCC00ED30A3 /* STLocationRequest.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = STLocationRequest.podspec; sourceTree = SOURCE_ROOT; };
 		3D719DC32041FBCC00ED30A3 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = SOURCE_ROOT; };
 		3D719DC42041FBCC00ED30A3 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
+		3D7E57172042E03C0067E67D /* PlaceChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceChanger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				3D244CB82036E01D007BD2E7 /* STLocationRequestController+Place.swift */,
+				3D7E57172042E03C0067E67D /* PlaceChanger.swift */,
 			);
 			path = Place;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				3D244CF92036E091007BD2E7 /* Resources */,
 				3D244D1F2036E6F2007BD2E7 /* Carthage */,
 				3D0FFD342036E958007C528A /* Embed Frameworks */,
+				3D7E57192042E6410067E67D /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -516,6 +520,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		3D7E57192042E6410067E67D /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -525,6 +543,7 @@
 			files = (
 				3D244CC32036E01D007BD2E7 /* STLocationRequestController+Button.swift in Sources */,
 				3D244CBF2036E01D007BD2E7 /* STLocationRequestController.swift in Sources */,
+				3D7E57182042E03C0067E67D /* PlaceChanger.swift in Sources */,
 				3D244CC42036E01D007BD2E7 /* STLocationRequestController+Configuration.swift in Sources */,
 				3D244CC12036E01D007BD2E7 /* STLocationRequestController+Place.swift in Sources */,
 				3D244CBE2036E01D007BD2E7 /* LFTPulseAnimation.swift in Sources */,
