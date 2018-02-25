@@ -71,8 +71,8 @@ class PlaceChanger {
     /// - Parameters:
     ///   - placesConfiguration: The places configration
     ///   - onChangePlace: The onChangePlace closure
-    init(_ placesConfiguration: STLocationRequestController.Configuration.Places,
-         _ onChangePlace: @escaping ChangePlace) {
+    init(placesConfiguration: STLocationRequestController.Configuration.Places,
+         onChangePlace: @escaping ChangePlace) {
         // Set place configuration
         self.placesConfiguration = placesConfiguration
         // Set onChangePlace closure

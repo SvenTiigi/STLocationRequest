@@ -41,12 +41,15 @@ public class STLocationRequestController: UIViewController {
     private var configuration: Configuration
     
     /// The PlaceChanger
-    lazy private var placeChanger: PlaceChanger = {
-        return PlaceChanger(self.configuration.places, self.onChangePlace)
+    private lazy var placeChanger: PlaceChanger = {
+        return PlaceChanger(
+            placesConfiguration: self.configuration.places,
+            onChangePlace: self.flyoverMapView.start
+        )
     }()
     
     /// The Allow-Button
-    lazy private var allowButton: Button = {
+    private lazy var allowButton: Button = {
         return Button(
             configurationButton: self.configuration.allowButton,
             target: self,
@@ -55,7 +58,7 @@ public class STLocationRequestController: UIViewController {
     }()
     
     /// The Not-Now-Button
-    lazy private var notNowButton: Button = {
+    private lazy var notNowButton: Button = {
         return Button(
             configurationButton: self.configuration.notNowButton,
             target: self,
@@ -64,7 +67,7 @@ public class STLocationRequestController: UIViewController {
     }()
     
     /// The FlyoverMapView
-    lazy private var flyoverMapView: FlyoverMapView = {
+    private lazy var flyoverMapView: FlyoverMapView = {
         let mapView = FlyoverMapView(
             configuration: self.configuration.mapView.configuration,
             mapType: self.configuration.mapView.type
@@ -74,7 +77,7 @@ public class STLocationRequestController: UIViewController {
     }()
     
     /// TitleLabel
-    lazy private var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = self.configuration.title.text
         label.textAlignment = .center
@@ -88,7 +91,7 @@ public class STLocationRequestController: UIViewController {
     }()
     
     /// Location Symbol Label
-    lazy private var locationSymbolLabel: UILabel = {
+    private lazy var locationSymbolLabel: UILabel = {
         let label = UILabel()
         label.isHidden = self.configuration.locationSymbol.hidden
         label.font = UIFont.icon(
@@ -102,7 +105,7 @@ public class STLocationRequestController: UIViewController {
     }()
     
     /// The pulse effect
-    lazy private var pulseEffect: LFTPulseAnimation = {
+    private lazy var pulseEffect: LFTPulseAnimation = {
         let pulseEffect = LFTPulseAnimation(
             repeatCount: Float.infinity,
             radius: self.configuration.pulseEffect.radius,
@@ -114,7 +117,7 @@ public class STLocationRequestController: UIViewController {
     }()
 
     /// CLLocationManager
-    lazy private var locationManager: CLLocationManager = {
+    private lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.delegate = self
         return locationManager
@@ -295,14 +298,6 @@ public extension STLocationRequestController {
 // MARK: Private API
 
 private extension STLocationRequestController {
-    
-    /// OnChangePlace update the current flyover coordinate
-    ///
-    /// - Parameter coordinate: The new Coordinate
-    func onChangePlace(coordinate: CLLocationCoordinate2D) {
-        // Start Rotating MapView Camera for place coordinate
-        self.flyoverMapView.start(flyover: coordinate)
-    }
     
     /// Clean up the STLocationRequestController
     func cleanUp() {
