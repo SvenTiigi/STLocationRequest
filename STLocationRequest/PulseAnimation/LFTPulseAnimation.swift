@@ -91,7 +91,6 @@ class LFTPulseAnimation: CALayer {
         self.radius = radius
         let tempPos = self.position
         let diameter = self.radius * 2
-        
         self.bounds = CGRect(x: 0.0, y: 0.0, width: diameter, height: diameter)
         self.cornerRadius = self.radius
         self.position = tempPos
