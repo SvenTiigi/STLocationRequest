@@ -27,17 +27,27 @@ public extension STLocationRequestController {
         /// The AllowButton which will trigger the location request
         public var allowButton: Button = (
             title: "Alright",
+            titleColor: .white,
             font: .systemFont(ofSize: 21),
+            backgroundColor: UIColor.white.withAlphaComponent(0.08),
             highlightedBackgroundColor: .white,
-            highlightedTitleColor: UIColor.clear.withAlphaComponent(0.5)
+            highlightedTitleColor: UIColor.clear.withAlphaComponent(0.5),
+            borderColor: .white,
+            borderWidth: 1.0,
+            cornerRadius: 5.0
         )
         
         /// The NotNowButton which will dismiss the STLocationRequestController
         public var notNowButton: Button = (
             title: "Not now",
+            titleColor: .white,
             font: .systemFont(ofSize: 21),
+            backgroundColor: UIColor.white.withAlphaComponent(0.08),
             highlightedBackgroundColor: .white,
-            highlightedTitleColor: UIColor.clear.withAlphaComponent(0.5)
+            highlightedTitleColor: UIColor.clear.withAlphaComponent(0.5),
+            borderColor: .white,
+            borderWidth: 1.0,
+            cornerRadius: 5.0
         )
         
         /// The MapView
@@ -101,9 +111,14 @@ public extension STLocationRequestController.Configuration {
     /// The Button Configuration Type
     typealias Button = (
         title: String,
+        titleColor: UIColor,
         font: UIFont,
+        backgroundColor: UIColor,
         highlightedBackgroundColor: UIColor,
-        highlightedTitleColor: UIColor
+        highlightedTitleColor: UIColor,
+        borderColor: UIColor,
+        borderWidth: CGFloat,
+        cornerRadius: CGFloat
     )
     
     /// The MapView Configuration Type

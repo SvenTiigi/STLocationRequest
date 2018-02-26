@@ -34,13 +34,13 @@ extension STLocationRequestController {
             self.titleLabel?.font = configurationButton.font
             self.titleLabel?.numberOfLines = 0
             self.titleLabel?.lineBreakMode = .byWordWrapping
-            self.titleLabel?.textColor = .white
-            self.backgroundColor = UIColor.white.withAlphaComponent(0.08)
+            self.backgroundColor = configurationButton.backgroundColor
             self.addTarget(target, action: action, for: .touchUpInside)
-            self.layer.borderWidth = 1.0
-            self.layer.borderColor = UIColor.white.cgColor
-            self.layer.cornerRadius = 5.0
+            self.layer.borderWidth = configurationButton.borderWidth
+            self.layer.borderColor = configurationButton.borderColor.cgColor
+            self.layer.cornerRadius = configurationButton.cornerRadius
             self.layer.masksToBounds = true
+            self.setTitleColor(configurationButton.titleColor, for: .normal)
             self.setTitleColor(configurationButton.highlightedTitleColor, for: .highlighted)
         }
         
