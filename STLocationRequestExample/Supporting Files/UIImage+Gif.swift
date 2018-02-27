@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Arne Bahlo. All rights reserved.
 //
 
-import UIKit
 import ImageIO
+import UIKit
 
 extension UIImageView {
 

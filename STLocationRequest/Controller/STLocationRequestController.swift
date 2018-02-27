@@ -5,11 +5,11 @@
 //  Created by Sven Tiigi on 02.12.15.
 //
 
-import UIKit
+import FlyoverKit
 import MapKit
+import UIKit
 import SnapKit
 import SwiftIconFont
-import FlyoverKit
 
 /// STLocationRequest is a UIViewController-Extension which is used
 /// to request the User-Location, at the very first time, in a simple and elegent way.

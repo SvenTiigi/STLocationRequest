@@ -13,7 +13,7 @@ import STLocationRequest
 extension ViewController {
     
     /// Present the STLocationRequestController
-    func presentLocationRequestController(){
+    func presentLocationRequestController() {
         
         // Initialize STLocationRequestController with Configuration
         let locationRequestController = STLocationRequestController { config in
@@ -43,19 +43,14 @@ extension ViewController {
         case .locationRequestAuthorized:
             print("The user accepted the use of location services")
             self.locationManager.startUpdatingLocation()
-            break
         case .locationRequestDenied:
             print("The user denied the use of location services")
-            break
         case .notNowButtonTapped:
             print("The Not now button was tapped")
-            break
         case .didPresented:
             print("STLocationRequestController did presented")
-            break
         case .didDisappear:
             print("STLocationRequestController did disappear")
-            break
         }
     }
     

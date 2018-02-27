@@ -54,7 +54,7 @@ class PlaceChanger {
             }
         }
         // Check if customPlaces are available
-        guard self.placesConfiguration.custom.count > 0 else {
+        guard !self.placesConfiguration.custom.isEmpty else {
             // Custom Places are available return places
             return places
         }
@@ -137,7 +137,7 @@ class PlaceChanger {
     /// - Returns: random integer (without a repeating random int)
     private func randomSequenceGenerator(min: Int, max: Int) -> () -> Int {
         return {
-            if self.randomNumbers.count == 0 {
+            if self.randomNumbers.isEmpty {
                 self.randomNumbers = Array(min...max)
             }
             let index = Int(arc4random_uniform(UInt32(self.randomNumbers.count)))

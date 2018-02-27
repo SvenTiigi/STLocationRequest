@@ -5,10 +5,10 @@
 //  Created by Sven Tiigi on 14.01.18.
 //
 
-import UIKit
-import MapKit
-import SwiftIconFont
 import FlyoverKit
+import MapKit
+import UIKit
+import SwiftIconFont
 
 // MARK: Configuration
 

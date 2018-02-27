@@ -5,10 +5,10 @@
 //  Created by Sven Tiigi on 02.12.15.
 //
 
-import UIKit
 import CoreLocation
-import SnapKit
+import UIKit
 import SafariServices
+import SnapKit
 
 /// Example application ViewController to present the STLocationRequestController
 class ViewController: UIViewController {
@@ -111,7 +111,12 @@ class ViewController: UIViewController {
     
     /// Add NavigationItems
     func addNavigationItems() {
-        let githubBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "github"), style: .plain, target: self, action: #selector(githubBarButtonItemTouched(_:)))
+        let githubBarButtonItem = UIBarButtonItem(
+            image: #imageLiteral(resourceName: "github"),
+            style: .plain,
+            target: self,
+            action: #selector(githubBarButtonItemTouched(_:))
+        )
         self.navigationItem.rightBarButtonItem = githubBarButtonItem
     }
     

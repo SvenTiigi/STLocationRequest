@@ -164,7 +164,9 @@ extension STLocationRequestController.Place {
             let next = withUnsafePointer(to: &counter) {
                 $0.withMemoryRebound(to: self, capacity: 1) { $0.pointee }
             }
-            if next.hashValue != counter { return nil }
+            if next.hashValue != counter {
+                return nil
+            }
             counter += 1
             return next
         }
