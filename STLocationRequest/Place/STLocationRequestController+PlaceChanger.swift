@@ -1,5 +1,5 @@
 //
-//  PlaceChanger.swift
+//  STLocationRequestController+PlaceChanger.swift
 //  STLocationRequest
 //
 //  Created by Sven Tiigi on 25.02.18.
