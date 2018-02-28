@@ -35,13 +35,13 @@
                 <a href="../Classes/LFTPulseAnimation.html">LFTPulseAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/RotatingMapCamera.html">RotatingMapCamera</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/STLocationRequestController.html">STLocationRequestController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/STLocationRequestController/Button.html">– Button</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/STLocationRequestController/PlaceChanger.html">– PlaceChanger</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/STLocationRequestController/Configuration.html">– Configuration</a>
@@ -82,6 +82,13 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -326,6 +333,17 @@
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializer"></a>
+                <a name="//apple_ref/swift/Section/Initializer" class="dashAnchor"></a>
+                <a href="#/Initializer">
+                  <h3 class="section-name">Initializer</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -438,20 +456,50 @@ Doesn&rsquo;t seem to look in the super class</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initializer with NSCoder</p>
+                        <p>Initializer with NSCoder. Unsupported will return nil</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>aDecoder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The decoder</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20API"></a>
+                <a name="//apple_ref/swift/Section/Public API" class="dashAnchor"></a>
+                <a href="#/Public%20API">
+                  <h3 class="section-name">Public API</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -498,12 +546,23 @@ Doesn&rsquo;t seem to look in the super class</p>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Private%20API"></a>
+                <a name="//apple_ref/swift/Section/Private API" class="dashAnchor"></a>
+                <a href="#/Private%20API">
+                  <h3 class="section-name">Private API</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17STLocationRequest17LFTPulseAnimationC05setupD5GroupyyF"></a>
+                    <a name="/s:17STLocationRequest17LFTPulseAnimationC05setupD5Group33_5092774A06EA525998AD18663FFEC2D6LLyyF"></a>
                     <a name="//apple_ref/swift/Method/setupAnimationGroup()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17STLocationRequest17LFTPulseAnimationC05setupD5GroupyyF">setupAnimationGroup()</a>
+                    <a class="token" href="#/s:17STLocationRequest17LFTPulseAnimationC05setupD5Group33_5092774A06EA525998AD18663FFEC2D6LLyyF">setupAnimationGroup()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -518,7 +577,7 @@ Doesn&rsquo;t seem to look in the super class</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setupAnimationGroup</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupAnimationGroup</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -528,9 +587,9 @@ Doesn&rsquo;t seem to look in the super class</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17STLocationRequest17LFTPulseAnimationC011createScaleD0So07CABasicD0CyF"></a>
+                    <a name="/s:17STLocationRequest17LFTPulseAnimationC011createScaleD033_5092774A06EA525998AD18663FFEC2D6LLSo07CABasicD0CyF"></a>
                     <a name="//apple_ref/swift/Method/createScaleAnimation()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17STLocationRequest17LFTPulseAnimationC011createScaleD0So07CABasicD0CyF">createScaleAnimation()</a>
+                    <a class="token" href="#/s:17STLocationRequest17LFTPulseAnimationC011createScaleD033_5092774A06EA525998AD18663FFEC2D6LLSo07CABasicD0CyF">createScaleAnimation()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -545,7 +604,7 @@ Doesn&rsquo;t seem to look in the super class</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createScaleAnimation</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CABasicAnimation</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">createScaleAnimation</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CABasicAnimation</span></code></pre>
 
                         </div>
                       </div>
@@ -555,9 +614,9 @@ Doesn&rsquo;t seem to look in the super class</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17STLocationRequest17LFTPulseAnimationC013createOpacityD0So010CAKeyframeD0CyF"></a>
+                    <a name="/s:17STLocationRequest17LFTPulseAnimationC013createOpacityD033_5092774A06EA525998AD18663FFEC2D6LLSo010CAKeyframeD0CyF"></a>
                     <a name="//apple_ref/swift/Method/createOpacityAnimation()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17STLocationRequest17LFTPulseAnimationC013createOpacityD0So010CAKeyframeD0CyF">createOpacityAnimation()</a>
+                    <a class="token" href="#/s:17STLocationRequest17LFTPulseAnimationC013createOpacityD033_5092774A06EA525998AD18663FFEC2D6LLSo010CAKeyframeD0CyF">createOpacityAnimation()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -572,7 +631,7 @@ Doesn&rsquo;t seem to look in the super class</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createOpacityAnimation</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CAKeyframeAnimation</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">createOpacityAnimation</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CAKeyframeAnimation</span></code></pre>
 
                         </div>
                       </div>

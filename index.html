@@ -34,13 +34,13 @@
                 <a href="Classes/LFTPulseAnimation.html">LFTPulseAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/RotatingMapCamera.html">RotatingMapCamera</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/STLocationRequestController.html">STLocationRequestController</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/STLocationRequestController/Button.html">– Button</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/STLocationRequestController/PlaceChanger.html">– PlaceChanger</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/STLocationRequestController/Configuration.html">– Configuration</a>
@@ -72,11 +72,11 @@
             
             <h1 id='stlocationrequest' class='heading'>STLocationRequest</h1>
 
-<p><a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0"></a>
+<p><a href="https://travis-ci.org/SvenTiigi/STLocationRequest"><img src="https://travis-ci.org/SvenTiigi/STLocationRequest.svg?branch=master" alt="Build Status"></a>
+<a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0"></a>
 <a href="http://cocoapods.org/pods/STLocationRequest"><img src="https://img.shields.io/cocoapods/v/STLocationRequest.svg?style=flat" alt="Version"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
-<a href="http://cocoapods.org/pods/STLocationRequest"><img src="https://img.shields.io/cocoapods/l/STLocationRequest.svg?style=flat" alt="License"></a>
-<a href="http://cocoapods.org/pods/STLocationRequest"><img src="https://img.shields.io/cocoapods/p/STLocationRequest.svg?style=flat" alt="Platform"></a>
+<a href="https://sventiigi.github.io/STLocationRequest"><img src="https://github.com/SvenTiigi/STLocationRequest/blob/gh-pages/badge.svg" alt="Documentation"></a>
 <a href="http://cocoapods.org/pods/STLocationRequest"><img src="https://img.shields.io/cocoapods/dt/STLocationRequest.svg?style=flat" alt="Downloads"></a>
 <a href="https://twitter.com/SvenTiigi/"><img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter"></a></p>
 
@@ -99,15 +99,15 @@ it, simply add the following line to your Podfile:</p>
 <p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.</p>
 
 <p>You can install Carthage with <a href="http://brew.sh/">Homebrew</a> using the following command:</p>
-<pre class="highlight shell"><code><span class="nv">$ </span>brew update
-<span class="nv">$ </span>brew <span class="nb">install </span>carthage
+<pre class="highlight shell"><code><span class="gp">$ </span>brew update
+<span class="gp">$ </span>brew install carthage
 </code></pre>
 
-<p>To integrate Alamofire into your Xcode project using Carthage, specify it in your <code>Cartfile</code>:</p>
+<p>To integrate STLocationRequest into your Xcode project using Carthage, specify it in your <code>Cartfile</code>:</p>
 <pre class="highlight plaintext"><code>github "SvenTiigi/STLocationRequest"
 </code></pre>
 
-<p>Run <code>carthage update --platform iOS</code> to build the framework and drag the built <code>STLocationRequest.framework</code>, <code>SnapKit.framework</code> and <code>SwiftIconFont.framwork</code> into your Xcode project. </p>
+<p>Run <code>carthage update --platform iOS</code> to build the framework and drag the built <code>STLocationRequest.framework</code>, <code>FlyoverKit.framework</code>, <code>SnapKit.framework</code> and <code>SwiftIconFont.framwork</code> into your Xcode project. </p>
 
 <p>On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework paths (for all Frameworks) as mentioned in <a href="https://github.com/Carthage/Carthage/blob/master/README.md">Carthage Getting started Step 4, 5 and 6</a></p>
 <h2 id='usage' class='heading'>Usage</h2>
@@ -115,10 +115,10 @@ it, simply add the following line to your Podfile:</p>
 
 <span class="c1">// Initialize STLocationRequestController with STLocationRequestController.Configuration</span>
 <span class="k">let</span> <span class="nv">locationRequestController</span> <span class="o">=</span> <span class="kt">STLocationRequestController</span> <span class="p">{</span> <span class="p">(</span><span class="nv">config</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">STLocationRequestController</span><span class="o">.</span><span class="kt">Configuration</span><span class="p">)</span> <span class="k">in</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">titleText</span> <span class="o">=</span> <span class="s">"We need your location for some awesome features"</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">allowButtonTitle</span> <span class="o">=</span> <span class="s">"Alright"</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">notNowButtonTitle</span> <span class="o">=</span> <span class="s">"Not now"</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">mapViewAlpha</span> <span class="o">=</span> <span class="mf">0.9</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"We need your location for some awesome features"</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">allowButton</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"Alright"</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">notNowButton</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"Not now"</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">mapView</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.9</span>
     <span class="n">config</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">lightGray</span>
     <span class="n">config</span><span class="o">.</span><span class="n">authorizeType</span> <span class="o">=</span> <span class="o">.</span><span class="n">requestWhenInUseAuthorization</span>
 <span class="p">}</span>
@@ -139,10 +139,10 @@ it, simply add the following line to your Podfile:</p>
 </blockquote>
 <h2 id='configuration' class='heading'>Configuration</h2>
 
-<p>The <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> can be customized via the the <code><a href="Classes/STLocationRequestController/Configuration.html">STLocationRequestController.Configuration</a></code> struct. There are plenty of options available 👨‍💻 More details can be found <a href="https://github.com/SvenTiigi/STLocationRequest/blob/master/Sources/Controller/STLocationRequestController%2BConfiguration.swift">here</a></p>
+<p>The <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> can be customized via the the <code><a href="Classes/STLocationRequestController/Configuration.html">STLocationRequestController.Configuration</a></code> struct. There are plenty of options available 👨‍💻 More details can be found <a href="https://github.com/SvenTiigi/STLocationRequest/blob/master/STLocationRequest/Controller/STLocationRequestController%2BConfiguration.swift">here</a></p>
 <h2 id='onevent' class='heading'>OnEvent</h2>
 
-<p>The <code>onEvent</code> closure allows you to get notified if an <code><a href="Classes/STLocationRequestController/Event.html">STLocationRequestController.Event</a></code> occured. For example to detect if the user has authorized or denied the location request or tapped the <code>Not Now</code> Button.</p>
+<p>The <code>onEvent</code> function get invoked if an <code><a href="Classes/STLocationRequestController/Event.html">STLocationRequestController.Event</a></code> occured. Simply set an anonymous function of type <code>(Event) -&gt; Void</code> to evaluate the event.</p>
 <pre class="highlight swift"><code><span class="n">locationRequestController</span><span class="o">.</span><span class="n">onEvent</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt">STLocationRequestController</span><span class="o">.</span><span class="kt">Event</span><span class="p">)</span> <span class="k">in</span>
     <span class="k">switch</span> <span class="n">event</span> <span class="p">{</span>
         <span class="k">case</span> <span class="o">.</span><span class="nv">locationRequestAuthorized</span><span class="p">:</span>
@@ -159,7 +159,7 @@ it, simply add the following line to your Podfile:</p>
 <span class="p">}</span>
 </code></pre>
 
-<p>Or just simply pass a function 👌</p>
+<p>or just pass a function 👌</p>
 <pre class="highlight swift"><code><span class="n">locationRequestController</span><span class="o">.</span><span class="n">onEvent</span> <span class="o">=</span> <span class="n">onLocationRequestControllerEvent</span>
 
 <span class="kd">func</span> <span class="nf">onLocationRequestControllerEvent</span><span class="p">(</span><span class="n">_</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">STLocationRequestController</span><span class="o">.</span><span class="kt">Event</span><span class="p">)</span> <span class="p">{</span>
@@ -181,12 +181,6 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 
 <p>The usage description will be shown in the default iOS location request dialog, which will show up when the user tapped the allow button.</p>
-<h2 id='example-application' class='heading'>Example Application</h2>
-
-<p>In order to run the example Application you have to first generate the Frameworks via <code>Carthage</code>.</p>
-<pre class="highlight shell"><code>carthage update <span class="nt">--platform</span> iOS
-open STLocationRequest.xcodeproj
-</code></pre>
 <h2 id='presenting-recommendation' class='heading'>Presenting-Recommendation</h2>
 
 <p>The recommended way to present <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> is the following way.</p>
@@ -208,13 +202,20 @@ open STLocationRequest.xcodeproj
 <p><code>STLocationRequest</code> is using following libraries.</p>
 
 <ul>
+<li><a href="https://github.com/SvenTiigi/FlyoverKit">FlyoverKit</a></li>
 <li><a href="https://github.com/0x73/SwiftIconFont">SwiftIconFont</a></li>
 <li><a href="https://github.com/ctews/SwiftPulse">SwiftPulse</a></li>
 <li><a href="https://github.com/SnapKit/SnapKit">SnapKit</a></li>
 </ul>
-<h1 id='contributing' class='heading'>Contributing</h1>
+<h2 id='contributing' class='heading'>Contributing</h2>
 
 <p>Contributions are very welcome 🙌 🤓</p>
+<h2 id='example-application' class='heading'>Example Application</h2>
+
+<p>In order to run the example Application you have to first generate the Frameworks via <code>Carthage</code>.</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>carthage update --platform iOS
+<span class="gp">$ </span>open STLocationRequest.xcodeproj
+</code></pre>
 <h2 id='license' class='heading'>License</h2>
 <pre class="highlight plaintext"><code>STLocationRequest
 Copyright (c) 2018 Sven Tiigi &lt;sven.tiigi@gmail.com&gt;

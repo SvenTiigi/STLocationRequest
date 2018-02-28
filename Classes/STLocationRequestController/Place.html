@@ -35,13 +35,13 @@
                 <a href="../../Classes/LFTPulseAnimation.html">LFTPulseAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Classes/RotatingMapCamera.html">RotatingMapCamera</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../../Classes/STLocationRequestController.html">STLocationRequestController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../../Classes/STLocationRequestController/Button.html">– Button</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/STLocationRequestController/PlaceChanger.html">– PlaceChanger</a>
               </li>
               <li class="nav-group-task">
                 <a href="../../Classes/STLocationRequestController/Configuration.html">– Configuration</a>
@@ -73,7 +73,7 @@
             <h1>Place</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">Place</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">Place</span></code></pre>
 
                 </div>
               </div>
@@ -383,6 +383,37 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="k">case</span> <span class="n">appleHeadquarter</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17STLocationRequest0aB10ControllerC5PlaceO9appleParkA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/applePark" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17STLocationRequest0aB10ControllerC5PlaceO9appleParkA2EmF">applePark</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Apple Park</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">applePark</span></code></pre>
 
                         </div>
                       </div>
@@ -965,61 +996,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17STLocationRequest0aB10ControllerC5PlaceO9getPlacesSaySC22CLLocationCoordinate2DVGSayAEGSg04withF6Filter_AI09andCustomF0tFZ"></a>
-                    <a name="//apple_ref/swift/Method/getPlaces(withPlacesFilter:andCustomPlaces:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17STLocationRequest0aB10ControllerC5PlaceO9getPlacesSaySC22CLLocationCoordinate2DVGSayAEGSg04withF6Filter_AI09andCustomF0tFZ">getPlaces(withPlacesFilter:andCustomPlaces:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Retrieve an array of CLLocationCoordiante2D for given Place filter and custom places</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getPlaces</span><span class="p">(</span><span class="n">withPlacesFilter</span> <span class="nv">filter</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../../Classes/STLocationRequestController.html">STLocationRequestController</a></span><span class="o">.</span><span class="kt">Place</span><span class="p">]?,</span>
-                      <span class="n">andCustomPlaces</span> <span class="nv">customPlaces</span><span class="p">:</span> <span class="p">[</span><span class="kt">CLLocationCoordinate2D</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">CLLocationCoordinate2D</span><span class="p">]</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>filter</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An array of STAwesomePlaces Enums which only should be added to the return array.
-If the parameter is nil all places will be added to the return array.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>CLLocationCoordinate2D Array of awesome places</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:17STLocationRequest0aB10ControllerC5PlaceO7iterate33_49463BA9CC9109964F80EF9C65DD1106LLs11AnyIteratorVyAEGyFZ"></a>
+                    <a name="/s:17STLocationRequest0aB10ControllerC5PlaceO7iterates11AnyIteratorVyAEGyFZ"></a>
                     <a name="//apple_ref/swift/Method/iterate()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17STLocationRequest0aB10ControllerC5PlaceO7iterate33_49463BA9CC9109964F80EF9C65DD1106LLs11AnyIteratorVyAEGyFZ">iterate()</a>
+                    <a class="token" href="#/s:17STLocationRequest0aB10ControllerC5PlaceO7iterates11AnyIteratorVyAEGyFZ">iterate()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1027,14 +1006,14 @@ If the parameter is nil all places will be added to the return array.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Private helper function to iterate all values of an enum</p>
+                        <p>Iterate all cases of enumeration</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">iterate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyIterator</span><span class="o">&lt;</span><span class="kt"><a href="../../Classes/STLocationRequestController.html">STLocationRequestController</a></span><span class="o">.</span><span class="kt">Place</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">iterate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyIterator</span><span class="o">&lt;</span><span class="kt"><a href="../../Classes/STLocationRequestController.html">STLocationRequestController</a></span><span class="o">.</span><span class="kt">Place</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
