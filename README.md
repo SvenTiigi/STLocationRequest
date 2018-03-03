@@ -2,7 +2,7 @@
     <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Preview GIF" width="70%">
 </p>
 
-# STLocationRequest
+<h1 align="center">STLocationRequest</h1>
 <p align="center">
     <a href="https://developer.apple.com/swift/">
         <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0">
