@@ -1,20 +1,33 @@
+<p align="center">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Preview GIF" width="70%">
+</p>
+
 # STLocationRequest
+<p align="center">
+    <a href="https://developer.apple.com/swift/">
+        <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0">
+    </a>
+    <a href="https://travis-ci.org/SvenTiigi/STLocationRequest">
+        <img src="https://travis-ci.org/SvenTiigi/STLocationRequest.svg?branch=master" alt="Build Status">
+    </a>
+    <a href="http://cocoapods.org/pods/STLocationRequest">
+        <img src="https://img.shields.io/cocoapods/v/STLocationRequest.svg?style=flat" alt="Version">
+    </a>
+    <a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
+    </a>
+    <a href="https://sventiigi.github.io/STLocationRequest">
+        <img src="https://github.com/SvenTiigi/STLocationRequest/blob/gh-pages/badge.svg" alt="Documentation">
+    </a>
+    <a href="http://cocoapods.org/pods/STLocationRequest">
+        <img src="https://img.shields.io/cocoapods/dt/STLocationRequest.svg?style=flat" alt="Downloads">
+    </a>
+    <a href="https://twitter.com/SvenTiigi/">
+        <img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter">
+    </a>
+</p>
 
-[![Build Status](https://travis-ci.org/SvenTiigi/STLocationRequest.svg?branch=master)](https://travis-ci.org/SvenTiigi/STLocationRequest)
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
-[![Version](https://img.shields.io/cocoapods/v/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Documentation](https://github.com/SvenTiigi/STLocationRequest/blob/gh-pages/badge.svg)](https://sventiigi.github.io/STLocationRequest)
-[![Downloads](https://img.shields.io/cocoapods/dt/STLocationRequest.svg?style=flat)](http://cocoapods.org/pods/STLocationRequest)
-[![Twitter](https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat)](https://twitter.com/SvenTiigi/)
-
-<img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Demo GIF" align="right" width="60%" />
-<br/>
-
-## Description
 STLocationRequest is a simple and elegant way to request the users location services at the very first time written in Swift. The `STLocationRequestController` shows a beautiful 3D 360° Flyover MapView with over 25 cities and landmarks.
-
-<br/><br/>
 
 ## Installation
 
