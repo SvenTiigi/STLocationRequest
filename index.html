@@ -70,23 +70,37 @@
         <section>
           <section class="section">
             
-            <h1 id='stlocationrequest' class='heading'>STLocationRequest</h1>
+            <p align="center">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Preview GIF" width="70%">
+</p>
 
-<p><a href="https://travis-ci.org/SvenTiigi/STLocationRequest"><img src="https://travis-ci.org/SvenTiigi/STLocationRequest.svg?branch=master" alt="Build Status"></a>
-<a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0"></a>
-<a href="http://cocoapods.org/pods/STLocationRequest"><img src="https://img.shields.io/cocoapods/v/STLocationRequest.svg?style=flat" alt="Version"></a>
-<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
-<a href="https://sventiigi.github.io/STLocationRequest"><img src="https://github.com/SvenTiigi/STLocationRequest/blob/gh-pages/badge.svg" alt="Documentation"></a>
-<a href="http://cocoapods.org/pods/STLocationRequest"><img src="https://img.shields.io/cocoapods/dt/STLocationRequest.svg?style=flat" alt="Downloads"></a>
-<a href="https://twitter.com/SvenTiigi/"><img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter"></a></p>
+<h1 align="center">STLocationRequest</h1>
 
-<p><img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Demo GIF" align="right" width="60%" />
-<br/></p>
-<h2 id='description' class='heading'>Description</h2>
+<p align="center">
+    <a href="https://developer.apple.com/swift/">
+        <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0">
+    </a>
+    <a href="https://travis-ci.org/SvenTiigi/STLocationRequest">
+        <img src="https://travis-ci.org/SvenTiigi/STLocationRequest.svg?branch=master" alt="Build Status">
+    </a>
+    <a href="http://cocoapods.org/pods/STLocationRequest">
+        <img src="https://img.shields.io/cocoapods/v/STLocationRequest.svg?style=flat" alt="Version">
+    </a>
+    <a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
+    </a>
+    <a href="https://sventiigi.github.io/STLocationRequest">
+        <img src="https://github.com/SvenTiigi/STLocationRequest/blob/gh-pages/badge.svg" alt="Documentation">
+    </a>
+    <a href="http://cocoapods.org/pods/STLocationRequest">
+        <img src="https://img.shields.io/cocoapods/dt/STLocationRequest.svg?style=flat" alt="Downloads">
+    </a>
+    <a href="https://twitter.com/SvenTiigi/">
+        <img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter">
+    </a>
+</p>
 
-<p>STLocationRequest is a simple and elegant way to request the users location services at the very first time written in Swift. The <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> shows a beautiful 3D 360° Flyover MapView with over 25 cities and landmarks.</p>
-
-<p><br/><br/></p>
+<p>STLocationRequest is a simple and elegant way to request the users location services at the very first time. The <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> shows a beautiful 3D 360° Flyover-MapView bult on top of <a href="https://github.com/SvenTiigi/FlyoverKit">FlyoverKit</a> with over 25 cities and landmarks.</p>
 <h2 id='installation' class='heading'>Installation</h2>
 <h3 id='cocoapods' class='heading'>CocoaPods</h3>
 
@@ -107,7 +121,16 @@ it, simply add the following line to your Podfile:</p>
 <pre class="highlight plaintext"><code>github "SvenTiigi/STLocationRequest"
 </code></pre>
 
-<p>Run <code>carthage update --platform iOS</code> to build the framework and drag the built <code>STLocationRequest.framework</code>, <code>FlyoverKit.framework</code>, <code>SnapKit.framework</code> and <code>SwiftIconFont.framwork</code> into your Xcode project. </p>
+<p>Run <code>carthage update --platform iOS</code> to build the framework and drag the built</p>
+
+<ul>
+<li><code>STLocationRequest.framework</code></li>
+<li><code>FlyoverKit.framework</code></li>
+<li><code>SnapKit.framework</code></li>
+<li><code>SwiftIconFont.framwork</code></li>
+</ul>
+
+<p>into your Xcode project. </p>
 
 <p>On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework paths (for all Frameworks) as mentioned in <a href="https://github.com/Carthage/Carthage/blob/master/README.md">Carthage Getting started Step 4, 5 and 6</a></p>
 <h2 id='usage' class='heading'>Usage</h2>
@@ -139,7 +162,7 @@ it, simply add the following line to your Podfile:</p>
 </blockquote>
 <h2 id='configuration' class='heading'>Configuration</h2>
 
-<p>The <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> can be customized via the the <code><a href="Classes/STLocationRequestController/Configuration.html">STLocationRequestController.Configuration</a></code> struct. There are plenty of options available 👨‍💻 More details can be found <a href="https://github.com/SvenTiigi/STLocationRequest/blob/master/STLocationRequest/Controller/STLocationRequestController%2BConfiguration.swift">here</a></p>
+<p>The <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> can be customized via the the <code><a href="Classes/STLocationRequestController/Configuration.html">STLocationRequestController.Configuration</a></code> struct. There are plenty of options available 👨‍💻 More details can be found <a href="https://github.com/SvenTiigi/STLocationRequest/blob/master/STLocationRequest/Configuration/STLocationRequestController%2BConfiguration.swift">here</a></p>
 <h2 id='onevent' class='heading'>OnEvent</h2>
 
 <p>The <code>onEvent</code> function get invoked if an <code><a href="Classes/STLocationRequestController/Event.html">STLocationRequestController.Event</a></code> occured. Simply set an anonymous function of type <code>(Event) -&gt; Void</code> to evaluate the event.</p>
