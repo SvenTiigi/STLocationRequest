@@ -57,7 +57,14 @@ To integrate STLocationRequest into your Xcode project using Carthage, specify i
 github "SvenTiigi/STLocationRequest"
 ```
 
-Run `carthage update --platform iOS` to build the framework and drag the built `STLocationRequest.framework`, `FlyoverKit.framework`, `SnapKit.framework` and `SwiftIconFont.framwork` into your Xcode project. 
+Run `carthage update --platform iOS` to build the framework and drag the built
+
+* `STLocationRequest.framework`
+* `FlyoverKit.framework`
+* `SnapKit.framework`
+* `SwiftIconFont.framwork`
+
+into your Xcode project. 
 
 On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework paths (for all Frameworks) as mentioned in [Carthage Getting started Step 4, 5 and 6](https://github.com/Carthage/Carthage/blob/master/README.md)
 
