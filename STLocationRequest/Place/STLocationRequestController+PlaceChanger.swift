@@ -10,13 +10,11 @@ import CoreLocation
 
 extension STLocationRequestController {
     
+    /// ChangePlace function typealias
+    typealias ChangePlace = (CLLocationCoordinate2D) -> Void
+    
     /// The PlaceChanger
     class PlaceChanger {
-        
-        // MARK: Typealias
-        
-        /// ChangePlace function typealias
-        typealias ChangePlace = (CLLocationCoordinate2D) -> Void
         
         // MARK: Properties
         
@@ -35,7 +33,7 @@ extension STLocationRequestController {
         /// The places
         private lazy var places: [CLLocationCoordinate2D] = {
             // Initialize Places by iterate Place enumeration with filter
-            var places = STLocationRequestController.Place.iterate().flatMap { (place) -> CLLocationCoordinate2D? in
+            var places = STLocationRequestController.Place.iterate().compactMap { (place) -> CLLocationCoordinate2D? in
                 // If the current iteration is customPlaces
                 if place == .customPlaces {
                     return nil
