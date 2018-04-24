@@ -1,6 +1,7 @@
 <p align="center">
     <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest_Logo.png" alt="Logo" width="30%">
 </p>
+<br/>
 
 <h1 align="center">STLocationRequest</h1>
 <p align="center">
