@@ -1,6 +1,7 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Preview GIF" width="70%">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest_Logo.png" alt="Logo" width="30%">
 </p>
+<br/>
 
 <h1 align="center">STLocationRequest</h1>
 <p align="center">
@@ -28,6 +29,10 @@
 </p>
 
 STLocationRequest is a simple and elegant way to request the users location services at the very first time. The `STLocationRequestController` shows a beautiful 3D 360° Flyover-MapView bult on top of [FlyoverKit](https://github.com/SvenTiigi/FlyoverKit) with over 25 cities and landmarks.
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Preview GIF" width="70%">
+</p>
 
 ## Installation
 
@@ -96,7 +101,7 @@ locationRequestController.present(onViewController: self)
 > Please keep in mind that the 3D flyover view will only work on a real iOS device ([Read more](#ios-simulator)).
 
 ## Configuration
-The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. There are plenty of options available 👨‍💻 More details can be found [here](https://github.com/SvenTiigi/STLocationRequest/blob/master/STLocationRequest/Controller/STLocationRequestController%2BConfiguration.swift)
+The `STLocationRequestController` can be customized via the the `STLocationRequestController.Configuration` struct. There are plenty of options available 👨‍💻 More details can be found [here](https://github.com/SvenTiigi/STLocationRequest/blob/master/STLocationRequest/Configuration/STLocationRequestController%2BConfiguration.swift)
 
 ## OnEvent
 The `onEvent` function get invoked if an `STLocationRequestController.Event` occured. Simply set an anonymous function of type `(Event) -> Void` to evaluate the event.
