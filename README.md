@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest_Logo.jpg" alt="Logo" width="40%">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest_Logo.png" alt="Logo" width="30%">
 </p>
 
 <h1 align="center">STLocationRequest</h1>
