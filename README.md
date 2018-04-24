@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Preview GIF" width="70%">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest_Logo.jpg" alt="Logo" width="40%">
 </p>
 
 <h1 align="center">STLocationRequest</h1>
@@ -28,6 +28,10 @@
 </p>
 
 STLocationRequest is a simple and elegant way to request the users location services at the very first time. The `STLocationRequestController` shows a beautiful 3D 360° Flyover-MapView bult on top of [FlyoverKit](https://github.com/SvenTiigi/FlyoverKit) with over 25 cities and landmarks.
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Preview GIF" width="70%">
+</p>
 
 ## Installation
 
