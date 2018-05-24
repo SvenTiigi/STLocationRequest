@@ -20,4 +20,4 @@ before_install:
 script: 
   - carthage build --no-skip-current
   - fastlane test
-  - pod lib lint
+  - pod lib lint --allow-warnings
