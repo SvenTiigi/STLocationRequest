@@ -52,7 +52,7 @@ public extension STLocationRequestController {
         
         /// The MapView
         public var mapView: MapView = (
-            configuration: FlyoverCamera.Configuration.Theme.default.rawValue,
+            configuration: .default,
             type: .satelliteFlyover,
             alpha: 1.0
         )
@@ -194,19 +194,19 @@ extension STLocationRequestController.Configuration.SymbolIcon: RawRepresentable
         /// Switch on self
         switch self {
         case .fontAwesome(let code):
-            return (.FontAwesome, String.fontAwesomeIcon(code))
+            return (.fontAwesome, String.fontAwesomeIcon(code))
         case .iconic(code: let code):
-            return (.Iconic, String.fontIconicIcon(code))
+            return (.iconic, String.fontIconicIcon(code))
         case .ionicon(code: let code):
-            return (.Ionicon, String.fontIonIcon(code))
+            return (.ionicon, String.fontIonIcon(code))
         case .octicon(code: let code):
-            return (.Octicon, String.fontOcticon(code))
+            return (.octicon, String.fontOcticon(code))
         case .themify(code: let code):
-            return (.Themify, String.fontThemifyIcon(code))
+            return (.themify, String.fontThemifyIcon(code))
         case .mapIcon(code: let code):
-            return (.MapIcon, String.fontMapIcon(code))
+            return (.mapIcon, String.fontMapIcon(code))
         case .materialIcon(code: let code):
-            return (.MaterialIcon, String.fontMaterialIcon(code))
+            return (.materialIcon, String.fontMaterialIcon(code))
         }
     }
     
