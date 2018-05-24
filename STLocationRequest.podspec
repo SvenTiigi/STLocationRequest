@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.requires_arc     = true
     s.source_files     = 'STLocationRequest/**/*'
     s.frameworks       = 'UIKit', 'MapKit'
-    s.dependency 'FlyoverKit', '~> 1.0.0'
-    s.dependency 'SnapKit', '~> 4.0.0'
-    s.dependency 'SwiftIconFont', '~> 2.7.3'
+    s.dependency 'FlyoverKit', '1.2.0'
+    s.dependency 'SnapKit', '4.0.0'
+    s.dependency 'SwiftIconFont', '2.8.0'
 end
