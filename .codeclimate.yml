@@ -17,3 +17,6 @@ exclude_patterns:
   - "*.md"
   - "*.podspec"
   - "*.xcodeproj"
+  - "Cartfile"
+  - "Cartfile.resolved"
+  - "**/*.h"
