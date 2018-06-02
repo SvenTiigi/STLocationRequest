@@ -20,3 +20,4 @@ exclude_patterns:
   - "Cartfile"
   - "Cartfile.resolved"
   - "**/*.h"
+  - "**/*.plist"
