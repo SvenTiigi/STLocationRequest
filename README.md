@@ -6,7 +6,7 @@
 <h1 align="center">STLocationRequest</h1>
 <p align="center">
     <a href="https://developer.apple.com/swift/">
-        <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0">
+        <img src="https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat" alt="Swift 4.0">
     </a>
     <a href="https://travis-ci.org/SvenTiigi/STLocationRequest">
         <img src="https://travis-ci.org/SvenTiigi/STLocationRequest.svg?branch=master" alt="Build Status">
@@ -17,11 +17,21 @@
     <a href="https://github.com/Carthage/Carthage">
         <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
     </a>
-    <a href="https://sventiigi.github.io/STLocationRequest">
-        <img src="https://github.com/SvenTiigi/STLocationRequest/blob/gh-pages/badge.svg" alt="Documentation">
+    <a href="http://cocoapods.org/pods/STLocationRequest">
+        <img src="https://img.shields.io/cocoapods/p/STLocationRequest.svg?style=flat" alt="Platform">
     </a>
     <a href="http://cocoapods.org/pods/STLocationRequest">
         <img src="https://img.shields.io/cocoapods/dt/STLocationRequest.svg?style=flat" alt="Downloads">
+    </a>
+    <br/>
+    <a href="https://codeclimate.com/github/SvenTiigi/STLocationRequest/maintainability">
+        <img src="https://api.codeclimate.com/v1/badges/705327ebce8601d9df4b/maintainability" alt="Maintainability">
+    </a>
+    <a href="https://codeclimate.com/github/SvenTiigi/STLocationRequest/test_coverage">
+        <img src="https://api.codeclimate.com/v1/badges/705327ebce8601d9df4b/test_coverage" alt="Test Coverage">
+    </a>
+    <a href="https://sventiigi.github.io/STLocationRequest">
+        <img src="https://github.com/SvenTiigi/STLocationRequest/blob/gh-pages/badge.svg" alt="Documentation">
     </a>
     <a href="https://twitter.com/SvenTiigi/">
         <img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter">
