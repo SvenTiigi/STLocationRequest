@@ -1,0 +1,9 @@
+plugins:
+  swiftlint:
+    enabled: true
+exclude_patterns: 
+  - "STLocationRequestExample/"
+  - "STLocationRequestTests/"
+  - "Configs/"
+  - "Carthage/"
+  - "fastlane/"

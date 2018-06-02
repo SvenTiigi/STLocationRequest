@@ -12,7 +12,7 @@ platform :ios do
     version = version_bump_podspec(path: "STLocationRequest.podspec", version_number: options[:version])
     git_commit(
       path: ["STLocationRequest.podspec"],
-      message: "[Fastlane Release 🚀] Bump to #{version}"
+      message: "[STLocationRequest Release 🚀] Bump to #{version}"
     )
     add_git_tag(tag: version)
     push_git_tags()
@@ -24,7 +24,19 @@ platform :ios do
   lane :test do
     scan(
       project: "STLocationRequest.xcodeproj",
-      scheme: "STLocationRequest"
+      scheme: "STLocationRequest",
+      clean: true,
+      code_coverage: true
+    )
+  end
+
+  desc "Runs coverage"
+  lane :coverage do
+    slather(
+      proj: "STLocationRequest.xcodeproj",
+      scheme: "STLocationRequest",
+      travis: true,
+      cobertura_xml: true
     )
   end
   
