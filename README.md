@@ -27,9 +27,6 @@
     <a href="https://codeclimate.com/github/SvenTiigi/STLocationRequest/maintainability">
         <img src="https://api.codeclimate.com/v1/badges/705327ebce8601d9df4b/maintainability" alt="Maintainability">
     </a>
-    <a href="https://codeclimate.com/github/SvenTiigi/STLocationRequest/test_coverage">
-        <img src="https://api.codeclimate.com/v1/badges/705327ebce8601d9df4b/test_coverage" alt="Test Coverage">
-    </a>
     <a href="https://sventiigi.github.io/STLocationRequest">
         <img src="https://github.com/SvenTiigi/STLocationRequest/blob/gh-pages/badge.svg" alt="Documentation">
     </a>
