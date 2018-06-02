@@ -28,6 +28,7 @@ platform :ios do
       clean: true,
       code_coverage: true
     )
+    pod_lib_lint(allow_warnings: true)
   end
 
   desc "Runs coverage"
@@ -36,7 +37,8 @@ platform :ios do
       proj: "STLocationRequest.xcodeproj",
       scheme: "STLocationRequest",
       travis: true,
-      cobertura_xml: true
+      cobertura_xml: true,
+      ignore: ["Tests/*"]
     )
   end
   
