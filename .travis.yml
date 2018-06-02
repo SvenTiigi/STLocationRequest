@@ -24,7 +24,6 @@ before_script:
 
 script: 
   - carthage build --no-skip-current
-  - pod lib lint --allow-warnings
   - fastlane test
 
 after_script:
