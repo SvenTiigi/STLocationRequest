@@ -105,7 +105,7 @@ class LFTPulseAnimation: CALayer {
         self.animationGroup.repeatCount = self.repetitions
         self.animationGroup.isRemovedOnCompletion = false
         if self.useTimingFunction {
-            let defaultCurve = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+            let defaultCurve = CAMediaTimingFunction(name: .default)
             self.animationGroup.timingFunction = defaultCurve
         }
         self.animationGroup.animations = [createScaleAnimation(), createOpacityAnimation()]

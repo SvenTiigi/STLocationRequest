@@ -33,7 +33,7 @@ extension STLocationRequestController {
         /// The places
         private lazy var places: [CLLocationCoordinate2D] = {
             // Initialize Places by iterate Place enumeration with filter
-            var places = STLocationRequestController.Place.iterate().compactMap { (place) -> CLLocationCoordinate2D? in
+            var places = STLocationRequestController.Place.allCases.compactMap { (place) -> CLLocationCoordinate2D? in
                 // If the current iteration is customPlaces
                 if place == .customPlaces {
                     return nil

@@ -10,7 +10,7 @@ import CoreLocation
 public extension STLocationRequestController {
     
     /// The STLocationRequestController.Place
-    enum Place {
+    enum Place: CaseIterable {
         // MARK: USA
         /// New York Statue of Liberty
         case newYorkStatueOfLiberty
@@ -146,29 +146,6 @@ extension STLocationRequestController.Place: RawRepresentable {
             return CLLocationCoordinate2D(latitude: 48.85815, longitude: 2.29452)
         case .customPlaces:
             return CLLocationCoordinate2D(latitude: 0, longitude: 0)
-        }
-    }
-    
-}
-
-// MARK: STLocationRequestController.Place iterate Extension
-
-extension STLocationRequestController.Place {
-    
-    /// Iterate all cases of enumeration
-    ///
-    /// - Returns: Iterator for the enumeration
-    static func iterate() -> AnyIterator<STLocationRequestController.Place> {
-        var counter = 0
-        return AnyIterator {
-            let next = withUnsafePointer(to: &counter) {
-                $0.withMemoryRebound(to: self, capacity: 1) { $0.pointee }
-            }
-            if next.hashValue != counter {
-                return nil
-            }
-            counter += 1
-            return next
         }
     }
     

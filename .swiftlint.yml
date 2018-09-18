@@ -6,7 +6,6 @@ opt_in_rules: # some rules are only opt-in
   - conditional_returns_on_newline
   - closure_spacing
   - implicitly_unwrapped_optional
-  - missing_docs
   - valid_docs
 
 included: # paths to include during linting. `--path` is ignored if present.
