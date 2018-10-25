@@ -4,31 +4,42 @@ default_platform :ios
 
 platform :ios do
 
-  desc "Release a new version"
+  desc "Release a new version of STLocationRequest"
   lane :release do |options|
     ensure_git_status_clean
     ensure_git_branch(branch: 'master')
     test
-    version = version_bump_podspec(path: "STLocationRequest.podspec", version_number: options[:version])
-    git_commit(
-      path: ["STLocationRequest.podspec"],
-      message: "[STLocationRequest Release 🚀] Bump to #{version}"
-    )
+    version = options[:version]
+    increment(version: version)
     add_git_tag(tag: version)
     push_git_tags()
     push_to_git_remote()
     pod_push()
   end
 
-  desc "Runs all the tests"
+  desc "Increment Version"
+  lane :increment do |options|
+    version = options[:version]
+    version_bump_podspec(path: "STLocationRequest.podspec", version_number: version)
+    set_info_plist_value(path: "STLocationRequest/Info.plist", key: "CFBundleShortVersionString", value: version)
+    set_info_plist_value(path: "STLocationRequestTests/Info.plist", key: "CFBundleShortVersionString", value: version)
+    set_info_plist_value(path: "STLocationRequestExample/Info.plist", key: "CFBundleShortVersionString", value: version)
+    git_commit(
+        path: ["STLocationRequest.podspec", "STLocationRequest/Info.plist", "STLocationRequestTests/Info.plist", "STLocationRequestExample/Info.plist"],
+        message: "STLocationRequest Version #{version} 🚀"
+    )
+  end
+
+  desc "Runs Tests"
   lane :test do
+    carthage(command: "build", no_skip_current: true, cache_builds: true)
+    pod_lib_lint
     scan(
       project: "STLocationRequest.xcodeproj",
       scheme: "STLocationRequest",
       clean: true,
       code_coverage: true
     )
-    pod_lib_lint(allow_warnings: true)
   end
 
   desc "Runs coverage"
