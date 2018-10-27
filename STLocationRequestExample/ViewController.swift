@@ -8,7 +8,6 @@
 import CoreLocation
 import UIKit
 import SafariServices
-import SnapKit
 
 /// Example application ViewController to present the STLocationRequestController
 class ViewController: UIViewController {
@@ -80,31 +79,34 @@ class ViewController: UIViewController {
         // Check if running on simulator
         if self.isSimulator {
             // Layout simulator warning label
-            self.simulatorWarningLabel.snp.makeConstraints { (make) in
-                make.left.equalTo(self.view).offset(10)
-                make.right.equalTo(self.view).inset(10)
-                make.height.equalTo(60)
-                make.bottom.equalTo(self.view).inset(50)
-            }
+            self.simulatorWarningLabel.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                self.simulatorWarningLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+                self.simulatorWarningLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10),
+                self.simulatorWarningLabel.heightAnchor.constraint(equalToConstant: 60),
+                self.simulatorWarningLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -50)
+            ])
         }
         // Layout PresentControllerButton
-        self.presentControllerButton.snp.makeConstraints { (make) in
-            make.left.equalTo(self.view).offset(20)
-            make.right.equalTo(self.view).inset(20)
-            make.height.equalTo(60)
-            if self.isSimulator {
-                make.bottom.equalTo(self.simulatorWarningLabel.snp.top).offset(-20)
-            } else {
-                make.bottom.equalTo(self.view).inset(70)
-            }
+        self.presentControllerButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.presentControllerButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+            self.presentControllerButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20),
+            self.presentControllerButton.heightAnchor.constraint(equalToConstant: 60)
+        ])
+        if self.isSimulator {
+            self.presentControllerButton.bottomAnchor.constraint(equalTo: self.simulatorWarningLabel.topAnchor, constant: -20).isActive = true
+        } else {
+            self.presentControllerButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -70).isActive = true
         }
         // Layout ImageView
-        self.imageView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view).offset(120)
-            make.left.equalTo(self.view).offset(20)
-            make.right.equalTo(self.view).inset(20)
-            make.bottom.equalTo(self.presentControllerButton.snp.top).offset(-10)
-        }
+        self.imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.imageView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 120),
+            self.imageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+            self.imageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20),
+            self.imageView.bottomAnchor.constraint(equalTo: self.presentControllerButton.topAnchor, constant: -10)
+        ])
     }
     
     // MARK: NavigationItems
