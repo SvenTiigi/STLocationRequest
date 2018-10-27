@@ -73,8 +73,6 @@ Run `carthage update --platform iOS` to build the framework and drag the built
 
 * `STLocationRequest.framework`
 * `FlyoverKit.framework`
-* `SnapKit.framework`
-* `SwiftIconFont.framwork`
 
 into your Xcode project. 
 
@@ -182,9 +180,7 @@ Please keep in mind that the 3D flyover view will only work on a real iOS device
 `STLocationRequest` is using following libraries.
 
 + [FlyoverKit](https://github.com/SvenTiigi/FlyoverKit)
-+ [SwiftIconFont](https://github.com/0x73/SwiftIconFont)
 + [SwiftPulse](https://github.com/ctews/SwiftPulse)
-+ [SnapKit](https://github.com/SnapKit/SnapKit)
 
 ## Contributing
 Contributions are very welcome 🙌 🤓
