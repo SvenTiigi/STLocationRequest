@@ -1,4 +1,4 @@
-fastlane_version "2.57.2"
+fastlane_version "2.89.0"
 
 default_platform :ios
 
@@ -24,8 +24,15 @@ platform :ios do
     set_info_plist_value(path: "Configs/STLocationRequest.plist", key: "CFBundleShortVersionString", value: version)
     set_info_plist_value(path: "Configs/STLocationRequestTests.plist", key: "CFBundleShortVersionString", value: version)
     set_info_plist_value(path: "Example-iOS/Resources/Info.plist", key: "CFBundleShortVersionString", value: version)
+    set_info_plist_value(path: "Example-tvOS/Info.plist", key: "CFBundleShortVersionString", value: version)
     git_commit(
-        path: ["STLocationRequest.podspec", "Configs/STLocationRequest.plist", "Configs/STLocationRequestTests.plist", "Example-iOS/Resources/Info.plist"],
+        path: [
+          "STLocationRequest.podspec", 
+          "Configs/STLocationRequest.plist", 
+          "Configs/STLocationRequestTests.plist", 
+          "Example-iOS/Resources/Info.plist",
+          "Example-tvOS/Info.plist"
+        ],
         message: "STLocationRequest Version #{version} 🚀"
     )
   end
