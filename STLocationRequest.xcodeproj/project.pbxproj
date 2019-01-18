@@ -405,8 +405,7 @@
 			children = (
 				3D4AE3DC21F26841002D764C /* STLocationRequestTests.swift */,
 			);
-			name = Tests;
-			path = Tests/STLocationRequestTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		DD7502721C68FC1B006590AF /* Frameworks */ = {
