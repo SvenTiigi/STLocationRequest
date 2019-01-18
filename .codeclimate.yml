@@ -3,6 +3,7 @@ plugins:
     enabled: true
 exclude_patterns: 
   - "Example-iOS/"
+  - "Example-tvOS/"
   - "Tests/"
   - "Configs/"
   - "Carthage/"
