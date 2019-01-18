@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
     s.author                    = { "Sven Tiigi" => "sven.tiigi@gmail.com" }
     s.source                    = { :git => "https://github.com/SvenTiigi/STLocationRequest.git", :tag => s.version.to_s }
     s.ios.deployment_target     = "10.0"
+    s.tvos.deployment_target    = "10.0"
     s.source_files              = 'Sources/**/*'
     s.frameworks                = 'Foundation', 'UIKit', 'MapKit'
     s.dependency 'FlyoverKit', '1.2.2'
