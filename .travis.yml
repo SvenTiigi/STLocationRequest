@@ -23,7 +23,6 @@ before_script:
   - ./cc-test-reporter before-build
 
 script: 
-  - carthage build --no-skip-current
   - fastlane test
 
 after_script:
