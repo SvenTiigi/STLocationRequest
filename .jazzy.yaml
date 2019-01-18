@@ -3,8 +3,7 @@
 copyright: Copyright 2019 Sven Tiigi
 author: Sven Tiigi
 github_url: https://github.com/SvenTiigi/STLocationRequest
-xcodebuild_arguments: [-target, STLocationRequest]
-module: STLocationRequest
+xcodebuild_arguments: [-target, STLocationRequest-iOS]
 clean: true
 output: ./Documentation
 min_acl: private
