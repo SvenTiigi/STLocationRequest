@@ -15,8 +15,10 @@ public extension STLocationRequestController {
     enum Authorization: String, Codable, Equatable, Hashable, CaseIterable {
         /// Location-Request when in use authorization
         case requestWhenInUseAuthorization
+        #if os(iOS)
         /// Location-Request always authorization
         case requestAlwaysAuthorization
+        #endif
     }
     
 }

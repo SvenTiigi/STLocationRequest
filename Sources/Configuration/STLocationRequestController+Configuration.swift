@@ -72,8 +72,10 @@ public extension STLocationRequestController {
             hidden: false
         )
         
+        #if os(iOS)
         /// The StatusBarStyle. Default value: .lightContent
         public var statusBarStyle: UIStatusBarStyle = .lightContent
+        #endif
         
         /// Set the authorize Type for STLocationRequestController.
         /// Choose between: `.requestWhenInUseAuthorization` and `.requestAlwaysAuthorization`.

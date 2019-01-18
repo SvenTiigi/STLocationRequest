@@ -30,10 +30,12 @@ public class STLocationRequestController: UIViewController {
     /// if an STLocationRequestController.Event occured
     public var onEvent: ((Event) -> Void)?
     
+    #if os(iOS)
     /// The preferredStatusBarStyle
     public override var preferredStatusBarStyle: UIStatusBarStyle {
         return self.configuration.statusBarStyle
     }
+    #endif
     
     // MARK: Private properties
     
@@ -298,6 +300,7 @@ private extension STLocationRequestController {
     
     /// Check device orientation
     func checkOrientation() {
+        #if os(iOS)
         // Check if current Device is not phone type
         if UIDevice.current.userInterfaceIdiom != .phone {
             // Return out of function
@@ -312,15 +315,18 @@ private extension STLocationRequestController {
         }
         // Set pulse radius
         self.pulseEffect.setPulseRadius(isLandscape ? 0 : self.configuration.pulseEffect.radius)
+        #endif
     }
     
     /// Allow button was touched request authorization by AuthorizeType
     @objc func allowButtonTouched() {
         // Switch on authorite type
         switch self.configuration.authorizeType {
+        #if os(iOS)
         case .requestAlwaysAuthorization:
             // Request always
             self.locationManager.requestAlwaysAuthorization()
+        #endif
         case .requestWhenInUseAuthorization:
             // Request when in use
             self.locationManager.requestWhenInUseAuthorization()

@@ -53,11 +53,21 @@ extension UIViewController {
     
     /// The Anchor
     var anchor: Anchor {
+        #if os(iOS)
         if #available(iOS 11.0, *) {
             return self.view.safeAreaLayoutGuide
         } else {
             return self.view
         }
+        #elseif os(tvOS)
+        if #available(tvOS 11.0, *) {
+            return self.view.safeAreaLayoutGuide
+        } else {
+            return self.view
+        }
+        #else
+        return self.view
+        #endif
     }
     
 }
