@@ -241,9 +241,7 @@ public class STLocationRequestController: UIViewController {
         // LocationSymbolLabel Constraints
         NSLayoutConstraint.activate(on: self.locationSymbolLabel, [
             self.locationSymbolLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 10),
-            self.locationSymbolLabel.leadingAnchor.constraint(equalTo: self.anchor.leadingAnchor),
-            self.locationSymbolLabel.trailingAnchor.constraint(equalTo: self.anchor.trailingAnchor),
-            self.locationSymbolLabel.centerXAnchor.constraint(equalTo: self.anchor.centerXAnchor),
+            self.locationSymbolLabel.centerXAnchor.constraint(equalTo: self.anchor.centerXAnchor, constant: -5),
             self.locationSymbolLabel.centerYAnchor.constraint(equalTo: self.anchor.centerYAnchor),
             self.locationSymbolLabel.bottomAnchor.constraint(equalTo: self.allowButton.topAnchor, constant: -10)
         ])
