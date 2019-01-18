@@ -87,8 +87,8 @@ public class STLocationRequestController: UIViewController {
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textColor = self.configuration.title.color
-        label.shadowColor = UIColor(red: 108/255, green: 108/255, blue: 108/255, alpha: 1)
-        label.shadowOffset = CGSize(width: 0, height: 1)
+        label.shadowColor = .init(red: 108 / 255, green: 108 / 255, blue: 108 / 255, alpha: 1)
+        label.shadowOffset = .init(width: 0, height: 1)
         return label
     }()
     
@@ -163,8 +163,10 @@ public class STLocationRequestController: UIViewController {
     
     /// Deinit
     deinit {
-        // Perform CleanUp
-        self.cleanUp()
+        // Stop place changer
+        self.placeChanger.stop()
+        // Stop Rotation
+        self.flyoverMapView.stop()
     }
     
     // MARK: View-Lifecycle
@@ -188,17 +190,6 @@ public class STLocationRequestController: UIViewController {
         self.checkOrientation()
         // Start place changer
         self.placeChanger.start()
-    }
-    
-    /// ViewDidDisappear
-    override public func viewDidDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        // Perform CleanUp
-        self.cleanUp()
-    }
-    
-    var frame: CGRect {
-        return self.view.frame
     }
     
     /// ViewDidLayoutSubviews
@@ -253,7 +244,7 @@ public class STLocationRequestController: UIViewController {
     
 }
 
-// MARK: - Public API Present/Dismiss functions
+// MARK: - Present/Dismiss
 
 public extension STLocationRequestController {
     
@@ -286,17 +277,9 @@ public extension STLocationRequestController {
     
 }
 
-// MARK: - Private API
+// MARK: - Check Orientation
 
 private extension STLocationRequestController {
-    
-    /// Clean up the STLocationRequestController
-    func cleanUp() {
-        // Stop place changer
-        self.placeChanger.stop()
-        // Stop Rotation
-        self.flyoverMapView.stop()
-    }
     
     /// Check device orientation
     func checkOrientation() {
@@ -317,9 +300,16 @@ private extension STLocationRequestController {
         self.pulseEffect.setPulseRadius(isLandscape ? 0 : self.configuration.pulseEffect.radius)
         #endif
     }
+
+}
+
+// MARK: - Button Touch Handler
+
+private extension STLocationRequestController {
     
     /// Allow button was touched request authorization by AuthorizeType
-    @objc func allowButtonTouched() {
+    @objc
+    func allowButtonTouched() {
         // Switch on authorite type
         switch self.configuration.authorizeType {
         #if os(iOS)
@@ -334,7 +324,8 @@ private extension STLocationRequestController {
     }
     
     /// Not now button was touched dismiss Viewcontroller
-    @objc func notNowButtonTouched() {
+    @objc
+    func notNowButtonTouched() {
         // Update the Controller
         self.onEvent?(.notNowButtonTapped)
         // Dismiss Controller
@@ -348,7 +339,8 @@ private extension STLocationRequestController {
 extension STLocationRequestController: CLLocationManagerDelegate {
     
     /// LocationManager didChangeAuthorizationStatus
-    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    public func locationManager(_ manager: CLLocationManager,
+                                didChangeAuthorization status: CLAuthorizationStatus) {
         // Check if Event is available
         guard let event = status.toEvent() else {
             // Return out of function no event to emit
