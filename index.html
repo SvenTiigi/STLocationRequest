@@ -37,22 +37,22 @@
                 <a href="Classes/STLocationRequestController.html">STLocationRequestController</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/STLocationRequestController/Button.html">– Button</a>
+                <a href="Classes/STLocationRequestController/Authorization.html">– Authorization</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/STLocationRequestController/PlaceChanger.html">– PlaceChanger</a>
+                <a href="Classes/STLocationRequestController/Button.html">– Button</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/STLocationRequestController/Configuration.html">– Configuration</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/STLocationRequestController/Place.html">– Place</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/STLocationRequestController/Event.html">– Event</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/STLocationRequestController/Authorization.html">– Authorization</a>
+                <a href="Classes/STLocationRequestController/Place.html">– Place</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/STLocationRequestController/PlaceChanger.html">– PlaceChanger</a>
               </li>
             </ul>
           </li>
@@ -61,6 +61,20 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Extensions/CLAuthorizationStatus.html">CLAuthorizationStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/NSLayoutConstraint.html">NSLayoutConstraint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Anchor.html">Anchor</a>
               </li>
             </ul>
           </li>
@@ -71,14 +85,16 @@
           <section class="section">
             
             <p align="center">
-    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Preview GIF" width="70%">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest_Logo.png" alt="Logo" width="30%">
 </p>
+
+<p><br/></p>
 
 <h1 align="center">STLocationRequest</h1>
 
 <p align="center">
     <a href="https://developer.apple.com/swift/">
-        <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0">
+        <img src="https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat" alt="Swift 4.2">
     </a>
     <a href="https://travis-ci.org/SvenTiigi/STLocationRequest">
         <img src="https://travis-ci.org/SvenTiigi/STLocationRequest.svg?branch=master" alt="Build Status">
@@ -89,11 +105,18 @@
     <a href="https://github.com/Carthage/Carthage">
         <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
     </a>
-    <a href="https://sventiigi.github.io/STLocationRequest">
-        <img src="https://github.com/SvenTiigi/STLocationRequest/blob/gh-pages/badge.svg" alt="Documentation">
+    <a href="http://cocoapods.org/pods/STLocationRequest">
+        <img src="https://img.shields.io/cocoapods/p/STLocationRequest.svg?style=flat" alt="Platform">
     </a>
     <a href="http://cocoapods.org/pods/STLocationRequest">
         <img src="https://img.shields.io/cocoapods/dt/STLocationRequest.svg?style=flat" alt="Downloads">
+    </a>
+    <br/>
+    <a href="https://codeclimate.com/github/SvenTiigi/STLocationRequest/maintainability">
+        <img src="https://api.codeclimate.com/v1/badges/705327ebce8601d9df4b/maintainability" alt="Maintainability">
+    </a>
+    <a href="https://sventiigi.github.io/STLocationRequest">
+        <img src="https://github.com/SvenTiigi/STLocationRequest/blob/gh-pages/badge.svg" alt="Documentation">
     </a>
     <a href="https://twitter.com/SvenTiigi/">
         <img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter">
@@ -101,6 +124,10 @@
 </p>
 
 <p>STLocationRequest is a simple and elegant way to request the users location services at the very first time. The <code><a href="Classes/STLocationRequestController.html">STLocationRequestController</a></code> shows a beautiful 3D 360° Flyover-MapView bult on top of <a href="https://github.com/SvenTiigi/FlyoverKit">FlyoverKit</a> with over 25 cities and landmarks.</p>
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/STLocationRequest/gh-pages/readMeAssets/STLocationRequest.gif" alt="Preview GIF" width="70%">
+</p>
 <h2 id='installation' class='heading'>Installation</h2>
 <h3 id='cocoapods' class='heading'>CocoaPods</h3>
 
@@ -113,8 +140,8 @@ it, simply add the following line to your Podfile:</p>
 <p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.</p>
 
 <p>You can install Carthage with <a href="http://brew.sh/">Homebrew</a> using the following command:</p>
-<pre class="highlight shell"><code><span class="gp">$ </span>brew update
-<span class="gp">$ </span>brew install carthage
+<pre class="highlight shell"><code><span class="nv">$ </span>brew update
+<span class="nv">$ </span>brew <span class="nb">install </span>carthage
 </code></pre>
 
 <p>To integrate STLocationRequest into your Xcode project using Carthage, specify it in your <code>Cartfile</code>:</p>
@@ -126,8 +153,6 @@ it, simply add the following line to your Podfile:</p>
 <ul>
 <li><code>STLocationRequest.framework</code></li>
 <li><code>FlyoverKit.framework</code></li>
-<li><code>SnapKit.framework</code></li>
-<li><code>SwiftIconFont.framwork</code></li>
 </ul>
 
 <p>into your Xcode project. </p>
@@ -226,9 +251,7 @@ it, simply add the following line to your Podfile:</p>
 
 <ul>
 <li><a href="https://github.com/SvenTiigi/FlyoverKit">FlyoverKit</a></li>
-<li><a href="https://github.com/0x73/SwiftIconFont">SwiftIconFont</a></li>
 <li><a href="https://github.com/ctews/SwiftPulse">SwiftPulse</a></li>
-<li><a href="https://github.com/SnapKit/SnapKit">SnapKit</a></li>
 </ul>
 <h2 id='contributing' class='heading'>Contributing</h2>
 
@@ -236,12 +259,12 @@ it, simply add the following line to your Podfile:</p>
 <h2 id='example-application' class='heading'>Example Application</h2>
 
 <p>In order to run the example Application you have to first generate the Frameworks via <code>Carthage</code>.</p>
-<pre class="highlight shell"><code><span class="gp">$ </span>carthage update --platform iOS
-<span class="gp">$ </span>open STLocationRequest.xcodeproj
+<pre class="highlight shell"><code><span class="nv">$ </span>carthage update <span class="nt">--platform</span> iOS
+<span class="nv">$ </span>open STLocationRequest.xcodeproj
 </code></pre>
 <h2 id='license' class='heading'>License</h2>
 <pre class="highlight plaintext"><code>STLocationRequest
-Copyright (c) 2018 Sven Tiigi &lt;sven.tiigi@gmail.com&gt;
+Copyright (c) 2019 Sven Tiigi &lt;sven.tiigi@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -265,8 +288,8 @@ THE SOFTWARE.
           </section>
         </section>
         <section id="footer">
-          <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Copyright 2019 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

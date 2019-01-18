@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CLAuthorizationStatus Extension Reference</title>
+    <title>UIViewController Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/CLAuthorizationStatus" class="dashAnchor"></a>
-    <a title="CLAuthorizationStatus Extension Reference"></a>
+    <a name="//apple_ref/swift/Extension/UIViewController" class="dashAnchor"></a>
+    <a title="UIViewController Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">STLocationRequest Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">STLocationRequest Reference</a>
         <img id="carat" src="../img/carat.png" />
-        CLAuthorizationStatus Extension Reference
+        UIViewController Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -84,10 +84,10 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>CLAuthorizationStatus</h1>
+            <h1>UIViewController</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">CLAuthorizationStatus</span> <span class="p">:</span> <span class="kt">Int32</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">UIViewController</span> <span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt">UIAppearanceContainer</span><span class="p">,</span> <span class="kt">UITraitEnvironment</span><span class="p">,</span> <span class="kt">UIContentContainer</span><span class="p">,</span> <span class="kt">UIFocusEnvironment</span></code></pre>
 
                 </div>
               </div>
@@ -99,9 +99,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So21CLAuthorizationStatusV17STLocationRequestE7toEventAC0cD10ControllerC0F0OSgyF"></a>
-                    <a name="//apple_ref/swift/Method/toEvent()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So21CLAuthorizationStatusV17STLocationRequestE7toEventAC0cD10ControllerC0F0OSgyF">toEvent()</a>
+                    <a name="/s:So16UIViewControllerC17STLocationRequestE6anchorAC6Anchor_pvp"></a>
+                    <a name="//apple_ref/swift/Property/anchor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17STLocationRequestE6anchorAC6Anchor_pvp">anchor</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -109,20 +109,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Convert CLAuthorizationStatus to a STLocationRequestController.Event</p>
+                        <p>The Anchor</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">toEvent</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/STLocationRequestController.html">STLocationRequestController</a></span><span class="o">.</span><span class="kt">Event</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">anchor</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Anchor.html">Anchor</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The optional event conversion</p>
                       </div>
                     </section>
                   </div>
