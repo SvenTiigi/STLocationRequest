@@ -21,11 +21,11 @@ platform :ios do
   lane :increment do |options|
     version = options[:version]
     version_bump_podspec(path: "STLocationRequest.podspec", version_number: version)
-    set_info_plist_value(path: "STLocationRequest/Info.plist", key: "CFBundleShortVersionString", value: version)
-    set_info_plist_value(path: "STLocationRequestTests/Info.plist", key: "CFBundleShortVersionString", value: version)
-    set_info_plist_value(path: "STLocationRequestExample/Info.plist", key: "CFBundleShortVersionString", value: version)
+    set_info_plist_value(path: "Configs/STLocationRequest.plist", key: "CFBundleShortVersionString", value: version)
+    set_info_plist_value(path: "Configs/STLocationRequestTests.plist", key: "CFBundleShortVersionString", value: version)
+    set_info_plist_value(path: "Example-iOS/Resources/Info.plist", key: "CFBundleShortVersionString", value: version)
     git_commit(
-        path: ["STLocationRequest.podspec", "STLocationRequest/Info.plist", "STLocationRequestTests/Info.plist", "STLocationRequestExample/Info.plist"],
+        path: ["STLocationRequest.podspec", "Configs/STLocationRequest.plist", "Configs/STLocationRequestTests.plist", "Example-iOS/Resources/Info.plist"],
         message: "STLocationRequest Version #{version} 🚀"
     )
   end
@@ -36,7 +36,7 @@ platform :ios do
     pod_lib_lint
     scan(
       project: "STLocationRequest.xcodeproj",
-      scheme: "STLocationRequest",
+      scheme: "STLocationRequest-iOS",
       clean: true,
       code_coverage: true
     )
@@ -46,7 +46,7 @@ platform :ios do
   lane :coverage do
     slather(
       proj: "STLocationRequest.xcodeproj",
-      scheme: "STLocationRequest",
+      scheme: "STLocationRequest-iOS",
       travis: true,
       cobertura_xml: true,
       ignore: ["Tests/*"]

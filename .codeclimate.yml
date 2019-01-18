@@ -2,8 +2,8 @@ plugins:
   swiftlint:
     enabled: true
 exclude_patterns: 
-  - "STLocationRequestExample/"
-  - "STLocationRequestTests/"
+  - "Example-iOS/"
+  - "Tests/"
   - "Configs/"
   - "Carthage/"
   - "fastlane/"

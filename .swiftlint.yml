@@ -9,10 +9,11 @@ opt_in_rules: # some rules are only opt-in
   - valid_docs
 
 included: # paths to include during linting. `--path` is ignored if present.
-  - STLocationRequest
+  - Sources
 
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - Frameworks
+  - Tests
+  - Example-iOS
 
 disabled_rules: # rule identifiers to exclude from running
   - trailing_whitespace
