@@ -1,6 +1,6 @@
 # STLocationRequest document generator jazzy settings
 
-copyright: Copyright 2018 Sven Tiigi
+copyright: Copyright 2019 Sven Tiigi
 author: Sven Tiigi
 github_url: https://github.com/SvenTiigi/STLocationRequest
 xcodebuild_arguments: [-target, STLocationRequest]
