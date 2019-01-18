@@ -11,5 +11,4 @@ Pod::Spec.new do |s|
     s.source_files              = 'Sources/**/*'
     s.frameworks                = 'Foundation', 'UIKit', 'MapKit'
     s.dependency 'FlyoverKit', '1.2.2'
-    s.resources = 'Sources/Resources/*'
 end
