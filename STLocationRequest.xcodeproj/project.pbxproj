@@ -47,9 +47,9 @@
 		3D4AE3D221F263FD002D764C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D4AE3D121F263FD002D764C /* Assets.xcassets */; };
 		3D4AE3D721F26447002D764C /* STLocationRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* STLocationRequest.framework */; };
 		3D4AE3D821F26447002D764C /* STLocationRequest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* STLocationRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D4AE3DD21F26841002D764C /* STLocationRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4AE3DC21F26841002D764C /* STLocationRequestTests.swift */; };
+		3D4AE3DE21F26841002D764C /* STLocationRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4AE3DC21F26841002D764C /* STLocationRequestTests.swift */; };
 		52D6D9871BEFF229002C0205 /* STLocationRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* STLocationRequest.framework */; };
-		8933C78E1EB5B82C000D00A4 /* STLocationRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* STLocationRequestTests.swift */; };
-		8933C7901EB5B82D000D00A4 /* STLocationRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* STLocationRequestTests.swift */; };
 		DD7502921C690C7A006590AF /* STLocationRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* STLocationRequest.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,10 +150,10 @@
 		3D4AE3CC21F263FC002D764C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D4AE3D121F263FD002D764C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D4AE3D321F263FD002D764C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D4AE3DC21F26841002D764C /* STLocationRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = STLocationRequestTests.swift; path = Tests/STLocationRequestTests.swift; sourceTree = SOURCE_ROOT; };
 		52D6D97C1BEFF229002C0205 /* STLocationRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STLocationRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* STLocationRequest-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "STLocationRequest-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9F01BEFFFBE002C0205 /* STLocationRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STLocationRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8933C7891EB5B82A000D00A4 /* STLocationRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLocationRequestTests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* STLocationRequest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = STLocationRequest.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* STLocationRequestTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = STLocationRequestTests.plist; sourceTree = "<group>"; };
 		DD75028D1C690C7A006590AF /* STLocationRequest-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "STLocationRequest-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -403,7 +403,7 @@
 		8933C7831EB5B7EB000D00A4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				8933C7891EB5B82A000D00A4 /* STLocationRequestTests.swift */,
+				3D4AE3DC21F26841002D764C /* STLocationRequestTests.swift */,
 			);
 			name = Tests;
 			path = Tests/STLocationRequestTests;
@@ -792,7 +792,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8933C7901EB5B82D000D00A4 /* STLocationRequestTests.swift in Sources */,
+				3D4AE3DD21F26841002D764C /* STLocationRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,7 +817,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8933C78E1EB5B82C000D00A4 /* STLocationRequestTests.swift in Sources */,
+				3D4AE3DE21F26841002D764C /* STLocationRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
