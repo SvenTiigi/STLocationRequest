@@ -6,7 +6,7 @@
 <h1 align="center">STLocationRequest</h1>
 <p align="center">
     <a href="https://developer.apple.com/swift/">
-        <img src="https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat" alt="Swift 4.0">
+        <img src="https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat" alt="Swift 4.2">
     </a>
     <a href="https://travis-ci.org/SvenTiigi/STLocationRequest">
         <img src="https://travis-ci.org/SvenTiigi/STLocationRequest.svg?branch=master" alt="Build Status">
@@ -197,7 +197,7 @@ $ open STLocationRequest.xcodeproj
 
 ```
 STLocationRequest
-Copyright (c) 2018 Sven Tiigi <sven.tiigi@gmail.com>
+Copyright (c) 2019 Sven Tiigi <sven.tiigi@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
