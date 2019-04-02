@@ -48,6 +48,8 @@ extension CLAuthorizationStatus {
             // Not determined shouldn't be triggered
             // As we request location services
             return nil
+        @unknown default:
+            return .locationRequestDenied
         }
     }
     

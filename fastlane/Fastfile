@@ -19,23 +19,42 @@ platform :ios do
 
   desc "Increment Version"
   lane :increment do |options|
-    version = options[:version]
-    version_bump_podspec(path: "STLocationRequest.podspec", version_number: version)
-    set_info_plist_value(path: "Configs/STLocationRequest.plist", key: "CFBundleShortVersionString", value: version)
-    set_info_plist_value(path: "Configs/STLocationRequestTests.plist", key: "CFBundleShortVersionString", value: version)
-    set_info_plist_value(path: "Example-iOS/Resources/Info.plist", key: "CFBundleShortVersionString", value: version)
-    set_info_plist_value(path: "Example-tvOS/Info.plist", key: "CFBundleShortVersionString", value: version)
-    git_commit(
-        path: [
-          "STLocationRequest.podspec", 
-          "Configs/STLocationRequest.plist", 
-          "Configs/STLocationRequestTests.plist", 
-          "Example-iOS/Resources/Info.plist",
-          "Example-tvOS/Info.plist"
-        ],
-        message: "STLocationRequest Version #{version} 🚀"
-    )
-  end
+  version = options[:version]
+  version_bump_podspec(
+    path: "STLocationRequest.podspec", 
+    version_number: version
+  )
+  set_info_plist_value(
+    path: "Configs/STLocationRequest.plist", 
+    key: "CFBundleShortVersionString", 
+    value: version
+  )
+  set_info_plist_value(
+    path: "Configs/STLocationRequestTests.plist", 
+    key: "CFBundleShortVersionString", 
+    value: version
+  )
+  set_info_plist_value(
+    path: "Example-iOS/Resources/Info.plist", 
+    key: "CFBundleShortVersionString", 
+    value: version
+  )
+  set_info_plist_value(
+    path: "Example-tvOS/Info.plist", 
+    key: "CFBundleShortVersionString", 
+    value: version
+  )
+  git_commit(
+      path: [
+        "STLocationRequest.podspec", 
+        "Configs/STLocationRequest.plist", 
+        "Configs/STLocationRequestTests.plist", 
+        "Example-iOS/Resources/Info.plist",
+        "Example-tvOS/Info.plist"
+      ],
+      message: "STLocationRequest Version #{version} 🚀"
+  )
+end
 
   desc "Runs Tests"
   lane :test do
@@ -44,6 +63,12 @@ platform :ios do
     scan(
       project: "STLocationRequest.xcodeproj",
       scheme: "STLocationRequest-iOS",
+      clean: true,
+      code_coverage: true
+    )
+    scan(
+      project: "STLocationRequest.xcodeproj",
+      scheme: "STLocationRequest-tvOS",
       clean: true,
       code_coverage: true
     )
