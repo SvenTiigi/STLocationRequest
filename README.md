@@ -128,16 +128,6 @@ locationRequestController.onEvent = { (event: STLocationRequestController.Event)
 }
 ```
 
-or just pass a function 👌
-
-```swift
-locationRequestController.onEvent = onLocationRequestControllerEvent
-
-func onLocationRequestControllerEvent(_ event: STLocationRequestController.Event) {
-    // Evaluate the event
-}
-```
-
 ## Info.plist
 
 In order to perform a location request you have to define a usage description in your `Info.plist` file.
