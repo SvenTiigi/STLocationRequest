@@ -133,8 +133,6 @@
 		3D4AE3AA21F25E69002D764C /* STLocationRequest.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = STLocationRequest.podspec; sourceTree = SOURCE_ROOT; };
 		3D4AE3AB21F25E69002D764C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		3D4AE3AC21F25E69002D764C /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
-		3D4AE3AD21F25E69002D764C /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
-		3D4AE3AE21F25E69002D764C /* .codeclimate.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .codeclimate.yml; sourceTree = SOURCE_ROOT; };
 		3D4AE3AF21F25E69002D764C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		3D4AE3B021F25E69002D764C /* .jazzy.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .jazzy.yaml; sourceTree = SOURCE_ROOT; };
 		3D4AE3B121F25E69002D764C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
@@ -369,13 +367,11 @@
 			children = (
 				DD7502721C68FC1B006590AF /* Frameworks */,
 				DD7502731C68FC20006590AF /* Tests */,
-				3D4AE3AE21F25E69002D764C /* .codeclimate.yml */,
 				3D4AE3AF21F25E69002D764C /* .gitignore */,
 				3D4AE3B021F25E69002D764C /* .jazzy.yaml */,
 				3D4AE3B321F25E7B002D764C /* Fastfile */,
 				3D4AE3B221F25E69002D764C /* .swift-version */,
 				3D4AE3AB21F25E69002D764C /* .swiftlint.yml */,
-				3D4AE3AD21F25E69002D764C /* .travis.yml */,
 				3D4AE3AC21F25E69002D764C /* Cartfile */,
 				3D4AE3B121F25E69002D764C /* LICENSE */,
 				3D4AE3A921F25E69002D764C /* README.md */,
