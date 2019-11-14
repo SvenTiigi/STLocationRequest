@@ -8,9 +8,6 @@
     <a href="https://developer.apple.com/swift/">
         <img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat" alt="Swift 5.0">
     </a>
-    <a href="https://travis-ci.org/SvenTiigi/STLocationRequest">
-        <img src="https://travis-ci.org/SvenTiigi/STLocationRequest.svg?branch=master" alt="Build Status">
-    </a>
     <a href="http://cocoapods.org/pods/STLocationRequest">
         <img src="https://img.shields.io/cocoapods/v/STLocationRequest.svg?style=flat" alt="Version">
     </a>
@@ -19,13 +16,6 @@
     </a>
     <a href="http://cocoapods.org/pods/STLocationRequest">
         <img src="https://img.shields.io/cocoapods/p/STLocationRequest.svg?style=flat" alt="Platform">
-    </a>
-    <a href="http://cocoapods.org/pods/STLocationRequest">
-        <img src="https://img.shields.io/cocoapods/dt/STLocationRequest.svg?style=flat" alt="Downloads">
-    </a>
-    <br/>
-    <a href="https://codeclimate.com/github/SvenTiigi/STLocationRequest/maintainability">
-        <img src="https://api.codeclimate.com/v1/badges/705327ebce8601d9df4b/maintainability" alt="Maintainability">
     </a>
     <a href="https://sventiigi.github.io/STLocationRequest">
         <img src="https://github.com/SvenTiigi/STLocationRequest/blob/gh-pages/badge.svg" alt="Documentation">
