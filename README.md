@@ -59,15 +59,15 @@ To integrate STLocationRequest into your Xcode project using Carthage, specify i
 github "SvenTiigi/STLocationRequest"
 ```
 
-Run `carthage update --platform iOS` to build the framework and drag the built
+Run `carthage update --platform iOS` to build the framework and drag the build:
 
 * `STLocationRequest.framework`
-* `FlyoverKit.framework`
+* `FlyoverKit.framework` 
 
-into your Xcode project. 
+into your Xcode project.
 
-On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework paths (for all Frameworks) as mentioned in [Carthage Getting started Step 4, 5 and 6](https://github.com/Carthage/Carthage/blob/master/README.md)
-
+On your application targets’ “Build Phases” settings tab, click the “+” icon, choose “New Run Script Phase” and add the Framework paths (for all Frameworks) as mentioned in [Carthage Getting started Step 4, 5 and 6](https://github.com/Carthage/Carthage/blob/master/README.md)
+ 
 ## Usage
 
 ```swift
@@ -120,7 +120,7 @@ locationRequestController.onEvent = { (event: STLocationRequestController.Event)
 
 ## Info.plist
 
-In order to perform a location request you have to define a usage description in your `Info.plist` file.
+To perform a location request, define a usage description in your `Info.plist` file.
 
 STLocationRequestController.Authorization.**requestWhenInUseAuthorization**
 ```swift
@@ -134,11 +134,11 @@ STLocationRequestController.Authorization.**requestAlwaysAuthorization**
 <string>The usage description</string>
 ```
 
-The usage description will be shown in the default iOS location request dialog, which will show up when the user tapped the allow button.
+The usage description will be shown in the default iOS location request dialog after the user taps the allow button.
 
 ## Presenting-Recommendation
 
-The recommended way to present `STLocationRequestController` is the following way.
+The recommended way to present `STLocationRequestController` is:
 
 ```swift
 if STLocationRequestController.shouldPresentLocationRequestController {
@@ -157,16 +157,16 @@ Please keep in mind that the 3D flyover view will only work on a real iOS device
 </p>
 
 ## Dependencies
-`STLocationRequest` is using following libraries.
+`STLocationRequest` uses the following libraries.
 
 + [FlyoverKit](https://github.com/SvenTiigi/FlyoverKit)
 + [SwiftPulse](https://github.com/ctews/SwiftPulse)
 
 ## Contributing
-Contributions are very welcome 🙌 🤓
+Contributions are very welcome. 🙌 🤓
 
 ## Example Application
-In order to run the example Application you have to first generate the Frameworks via `Carthage`.
+To run the example Application, generate the Frameworks via `Carthage` first.
 
 ```bash
 $ carthage update --platform iOS
